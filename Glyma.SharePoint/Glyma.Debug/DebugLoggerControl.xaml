@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Glyma.Debug.DebugLoggerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="33" d:DesignWidth="450">
+    <UserControl.Resources>
+        <Style x:Key="SeparatorStyle"
+               TargetType="Border">
+            <Setter Property="BorderThickness" Value="1,0,0,0"/>
+            <Setter Property="BorderBrush" Value="#FFC5C5C5"/>
+            <Setter Property="Margin" Value="5,5,0,5"/>
+            <Setter Property="Width" Value="2"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel x:Name="LayoutRoot" Background="White" Height="33" Orientation="Horizontal" Width="450">
+        <Button Content="Save Debug Output" Height="23" x:Name="SaveDebugOutput" Margin="5, 0, 0, 0" Click="SaveDebugOutput_Click" />
+        <Border Style="{StaticResource SeparatorStyle}"/>
+        <TextBox x:Name="CustomMessage" Width="200" Height="23" Margin="5, 0, 0, 0" />
+        <Button Content="Add Debug Line" x:Name="AddLineToOutput" Height="23" Margin="5, 0, 0, 0" Click="AddLineToOutput_Click" />
+    </StackPanel>
+</UserControl>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="252bb720-5e84-424a-a60b-acf90d519281" solutionId="252bb720-5e84-424a-a60b-acf90d519281" resetWebServer="false" sharePointProductVersion="" name="SevenSigma.Logging" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="19f3cdfb-8a95-4d8e-ab73-ebf8c82c6466" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="9fc13fe4-5724-4636-b4d8-2ef90fd9297f" />
+    <projectItemReference itemId="4b25937d-6530-4038-9a1c-4b34906e1ecf" />
+  </projectItems>
+</package>

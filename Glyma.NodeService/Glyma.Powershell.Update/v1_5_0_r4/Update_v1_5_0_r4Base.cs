@@ -1,0 +1,285 @@
+﻿using System;
+using System.Data.SqlClient;
+using System.Globalization;
+using System.Linq;
+using System.Management.Automation;
+using Glyma.Powershell.Smo;
+
+namespace Glyma.Powershell.Update.v1_5_0_r4
+{
+    /// <summary>
+    /// This class will update a v1.5.0rev2 of the Glyma server to be v1.5.0rev3 compliant.
+    /// </summary>
+    internal class Update_v1_5_0_r4Base : IUpdateGLDatabase
+    {
+        private string _transactionDatabaseServer = null;
+
+        private string MapDatabaseConnectionString
+        {
+            get
+            {
+                return "Data Source=" + DatabaseServer + ";Initial Catalog=" + MapDatabaseName + ";Integrated Security=True";
+            }
+        }
+
+        private string TransactionDatabaseConnectionString
+        {
+            get
+            {
+                return "Data Source=" + TransactionDatabaseServer + ";Initial Catalog=" + TransactionDatabaseName + ";Integrated Security=True";
+            }
+        }
+
+        /// <summary>
+        /// This is mandatory field. It will be used for both the map database and the transaction database (if none is separately declared).
+        /// </summary>
+        public string DatabaseServer
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// The name of the map database.
+        /// </summary>
+        public string MapDatabaseName
+        {
+            get;
+            set;
+        }
+
+        /// <summary>
+        /// If this field is set, it will be used as the database server for the transaction database. If it is not set, the DatabaseServer property will be used.
+        /// </summary>
+        public string TransactionDatabaseServer
+        {
+            get
+            {
+                if (_transactionDatabaseServer == null)
+                {
+                    return DatabaseServer;
+                }
+
+                return _transactionDatabaseServer;
+            }
+            set
+            {
+                _transactionDatabaseServer = value;
+            }
+        }
+
+        /// <summary>
+        /// The name of the transaction database.
+        /// </summary>
+        public string TransactionDatabaseName
+        {
+            get;
+            set;
+        }
+
+        private void UpdateMappingToolDatabase(PSCmdlet callingCmdlet)
+        {
+            using (var mapDatabaseContext = new MappingTool.MappingToolDatabaseDataContext(MapDatabaseConnectionString))
+            {
+                var glymaDbVersion = mapDatabaseContext.GetGlymaDbVersion();
+
+                foreach (var row in glymaDbVersion)
+                {
+                    if (row.Column1 != "v1.5.0r3")
+                    {
+                        callingCmdlet.WriteWarning(string.Format("This update can only update the v1.5.0r3 database to v1.5.0r4 database. The version of this database is {0}.", row.Column1));
+
+                        return;
+                    }
+                }
+            }
+
+            using (var mapDbConnection = new SqlConnection(MapDatabaseConnectionString))
+            {
+                mapDbConnection.Open();
+                var transaction = mapDbConnection.BeginTransaction();
+                try
+                {
+                    callingCmdlet.WriteWarning("Database update started, please wait...");
+                    new UpdateAllMetadata().Execute(mapDbConnection, transaction);
+                    callingCmdlet.WriteWarning("Updated to new description metadata name");
+
+                    var descriptionTypeMetadataList = new QueryMetadata("Description.Type").GetItems(mapDbConnection, transaction);
+                    callingCmdlet.WriteWarning(string.Format("{0} description type records found.", descriptionTypeMetadataList.Count()));
+
+                    var descriptionMetadataList = new QueryMetadata("Description.Content").GetItems(mapDbConnection, transaction);
+                    callingCmdlet.WriteWarning(string.Format("{0} description records found.", descriptionMetadataList.Count()));
+
+                    foreach (var updatableNode in descriptionTypeMetadataList)
+                    {
+                        var found = descriptionMetadataList.FirstOrDefault(q => q.NodeUid == updatableNode.NodeUid);
+                        if (found != null)
+                        {
+                            if (string.IsNullOrEmpty(found.MetadataValue))
+                            {
+                                new DeleteMetadata(updatableNode.MetadataId).Execute(mapDbConnection, transaction);
+                                new DeleteMetadata(found.MetadataId).Execute(mapDbConnection, transaction);
+                                callingCmdlet.WriteWarning(string.Format("Node Id {0} description deleted",
+                                    updatableNode.NodeUid));
+                            }
+                            else if (found.MetadataValue.StartsWith("http://") || found.MetadataValue.StartsWith("https://") || updatableNode.MetadataValue == "Iframe")
+                            {
+                                var parts = found.MetadataValue.Split(',');
+                                if (parts.Count() == 3)
+                                {
+                                    new UpdateMetadata(found.MetadataId, "Description.Url", parts[0])
+                                        .Execute(mapDbConnection, transaction);
+                                    new InsertMetadata("Description.Width", parts[1].Replace("px", ""),
+                                        found.NodeUid, found.RootMapUid, found.DomainUid,
+                                        found.Created, found.Modified, found.CreatedBy, found.ModifiedBy)
+                                        .Execute(mapDbConnection, transaction);
+                                    new InsertMetadata("Description.Height", parts[2].Replace("px", ""),
+                                        found.NodeUid, found.RootMapUid, found.DomainUid,
+                                        found.Created, found.Modified, found.CreatedBy, found.ModifiedBy)
+                                        .Execute(mapDbConnection, transaction);
+                                    new UpdateMetadata(updatableNode.MetadataId, "Description.Type", "Iframe")
+                                        .Execute(mapDbConnection, transaction);
+                                    callingCmdlet.WriteWarning(
+                                        string.Format("Node Id {0} description has updated to Iframe",
+                                            updatableNode.NodeUid));
+                                }
+                                else
+                                {
+                                    new UpdateMetadata(updatableNode.MetadataId, "Description.Type", "Html").Execute(mapDbConnection, transaction);
+                                }
+                            }
+                            else
+                            {
+                                var descriptionUpdater = new OldHtmlDescriptionUpdater(found.MetadataValue, callingCmdlet);
+                                new UpdateMetadata(updatableNode.MetadataId, "Description.Type", "Html")
+                                    .Execute(mapDbConnection, transaction);
+                                new UpdateMetadata(found.MetadataId, "Description.Content", descriptionUpdater.Description)
+                                    .Execute(mapDbConnection, transaction);
+                                if (descriptionUpdater.Width > 0)
+                                {
+                                    new InsertMetadata("Description.Width", descriptionUpdater.Width.ToString(CultureInfo.InvariantCulture), found.NodeUid, found.RootMapUid, found.DomainUid, found.Created, found.Modified, found.CreatedBy, found.ModifiedBy)
+                                    .Execute(mapDbConnection, transaction);
+                                }
+
+                                if (descriptionUpdater.Height > 0)
+                                {
+                                    new InsertMetadata("Description.Height", descriptionUpdater.Height.ToString(CultureInfo.InvariantCulture), found.NodeUid, found.RootMapUid, found.DomainUid, found.Created, found.Modified, found.CreatedBy, found.ModifiedBy)
+                                    .Execute(mapDbConnection, transaction);
+                                }
+                                callingCmdlet.WriteWarning(string.Format("Node Id {0} description has updated to Html", updatableNode.NodeUid));
+                            }
+                        }
+                        else
+                        {
+                            new DeleteMetadata(updatableNode.MetadataId).Execute(mapDbConnection, transaction);
+                            callingCmdlet.WriteWarning(string.Format("Node Id {0} description deleted",
+                                    updatableNode.NodeUid));
+                        }
+                    }
+
+
+                    foreach (var description in descriptionMetadataList)
+                    {
+                        var found = descriptionTypeMetadataList.FirstOrDefault(q => q.NodeUid == description.NodeUid);
+                        if (found == null)
+                        {
+                            if (string.IsNullOrEmpty(description.MetadataValue))
+                            {
+                                new DeleteMetadata(description.MetadataId).Execute(mapDbConnection, transaction);
+                                callingCmdlet.WriteWarning(string.Format("Node Id {0} description deleted", description.NodeUid));
+                            }
+                            else if (description.MetadataValue.StartsWith("http://") || description.MetadataValue.StartsWith("https://"))
+                            {
+                                var parts = description.MetadataValue.Split(',');
+                                if (parts.Count() == 3)
+                                {
+                                    new UpdateMetadata(description.MetadataId, "Description.Url", parts[0])
+                                        .Execute(mapDbConnection, transaction);
+                                    new InsertMetadata("Description.Width", parts[1].Replace("px", ""), description.NodeUid, description.RootMapUid, description.DomainUid, description.Created, description.Modified, description.CreatedBy, description.ModifiedBy)
+                                        .Execute(mapDbConnection, transaction);
+                                    new InsertMetadata("Description.Height", parts[2].Replace("px", ""), description.NodeUid, description.RootMapUid, description.DomainUid, description.Created, description.Modified, description.CreatedBy, description.ModifiedBy)
+                                        .Execute(mapDbConnection, transaction);
+                                    new InsertMetadata("Description.Type", "Iframe", description.NodeUid, description.RootMapUid, description.DomainUid, description.Created, description.Modified, description.CreatedBy, description.ModifiedBy)
+                                        .Execute(mapDbConnection, transaction);
+                                    callingCmdlet.WriteWarning(string.Format("Node Id {0} description has updated to Iframe", description.NodeUid));
+                                }
+                                else
+                                {
+                                    new InsertMetadata("Description.Type", "Html", description.NodeUid, description.RootMapUid, description.DomainUid, description.Created, description.Modified, description.CreatedBy, description.ModifiedBy)
+                                        .Execute(mapDbConnection, transaction);
+                                    callingCmdlet.WriteWarning(string.Format("Node Id {0} description has updated to Iframe", description.NodeUid));
+                                }
+                            }
+                            else
+                            {
+                                var descriptionUpdater = new OldHtmlDescriptionUpdater(description.MetadataValue, callingCmdlet);
+                                new InsertMetadata("Description.Type", "Html", description.NodeUid, description.RootMapUid, description.DomainUid, description.Created, description.Modified, description.CreatedBy, description.ModifiedBy)
+                                        .Execute(mapDbConnection, transaction);
+                                new UpdateMetadata(description.MetadataId, "Description.Content", descriptionUpdater.Description)
+                                        .Execute(mapDbConnection, transaction);
+                                if (descriptionUpdater.Width > 0)
+                                {
+                                    new InsertMetadata("Description.Width", descriptionUpdater.Width.ToString(CultureInfo.InvariantCulture), description.NodeUid, description.RootMapUid, description.DomainUid, description.Created, description.Modified, description.CreatedBy, description.ModifiedBy)
+                                    .Execute(mapDbConnection, transaction);
+                                }
+
+                                if (descriptionUpdater.Height > 0)
+                                {
+                                    new InsertMetadata("Description.Height", descriptionUpdater.Height.ToString(CultureInfo.InvariantCulture), description.NodeUid, description.RootMapUid, description.DomainUid, description.Created, description.Modified, description.CreatedBy, description.ModifiedBy)
+                                    .Execute(mapDbConnection, transaction);
+                                }
+                                callingCmdlet.WriteWarning(string.Format("Node Id {0} description has updated to Html", description.NodeUid));
+                            }
+                            
+                        }
+                    }
+
+
+                    transaction.Commit();
+
+                    var updateGlymaDbVersion = new EmbeddedSqlScript("Glyma.Powershell.Update.v1_5_0_r4.UpdateGlymaDbVersion.sql");
+                    updateGlymaDbVersion.ExecuteNonQuery(mapDbConnection);
+
+                    
+                    
+
+                    callingCmdlet.WriteWarning("Database update completed");
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    callingCmdlet.WriteWarning("Updated failed: " + ex.Message);
+                    return;
+                }
+
+                mapDbConnection.Close();
+            }
+
+            using (var transactionDbConnection = new SqlConnection(TransactionDatabaseConnectionString))
+            {
+                try
+                {
+                    transactionDbConnection.Open();
+                    var updateGlymatransactionDbVersion = new EmbeddedSqlScript("Glyma.Powershell.Update.v1_5_0_r4.UpdateGlymaDbVersion.sql");
+                    updateGlymatransactionDbVersion.ExecuteNonQuery(transactionDbConnection);
+                }
+                catch (Exception ex)
+                {
+                    callingCmdlet.WriteWarning("Updated failed: " + ex.Message);
+                    return;
+                }
+                transactionDbConnection.Close();
+            }
+        }
+
+        public void ExecuteCmdletBase(PSCmdlet callingCmdlet)
+        {
+            UpdateMappingToolDatabase(callingCmdlet);
+        }
+
+
+        
+
+
+    }
+}

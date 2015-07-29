@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://sevensigma.com.au/GlymaUtilityService" elementFormDefault="qualified" targetNamespace="http://sevensigma.com.au/GlymaUtilityService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd2" namespace="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" />
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetExportJobs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainUid" type="q1:guid" />
+        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="rootMapUid" type="q2:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExportJobsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" minOccurs="0" name="GetExportJobsResult" nillable="true" type="q3:ExportJobsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExportJobsForMapType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" minOccurs="0" name="mapType" type="q4:MapType" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainUid" type="q5:guid" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="rootMapUid" type="q6:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetExportJobsForMapTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" minOccurs="0" name="GetExportJobsForMapTypeResult" nillable="true" type="q7:ExportJobsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateExportJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainUid" type="q8:guid" />
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="rootMapUid" type="q9:guid" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="exportProperties" nillable="true" type="q10:ArrayOfKeyValueOfstringstring" />
+        <xs:element xmlns:q11="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" minOccurs="0" name="mapType" type="q11:MapType" />
+        <xs:element xmlns:q12="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" minOccurs="0" name="exportType" type="q12:ExportType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateExportJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" minOccurs="0" name="CreateExportJobResult" nillable="true" type="q13:ExportJobResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteExportJob">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" minOccurs="0" name="exportJob" nillable="true" type="q14:ExportJob" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteExportJobResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" minOccurs="0" name="DeleteExportJobResult" nillable="true" type="q15:ExportJobResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExportingAvailable">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExportingAvailableResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" minOccurs="0" name="IsExportingAvailableResult" nillable="true" type="q16:ExportAvailabilityResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

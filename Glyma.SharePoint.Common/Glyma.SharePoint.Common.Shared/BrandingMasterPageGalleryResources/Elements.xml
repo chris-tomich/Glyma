@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="BrandingMasterPageGalleryResources" List="116" Url="_catalogs/masterpage/Glyma" RootWebOnly="TRUE">
+    <File Path="BrandingMasterPageGalleryResources\Glyma-minimal-page.aspx" Type="GhostableInLibrary" Url="Glyma-minimal-page.aspx">
+      <Property Name="Title" Value="Glyma Minimal Page Layout" />
+      <Property Name="FileLeafRef" Value="Glyma-minimal-page.aspx"/>
+      <Property Name="MasterPageDescription" Value="A full screen page layout containing the Glyma web parts." />
+      <Property Name="UIVersion" Value="$UIVersion$" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="PublishingAssociatedContentType" Value=";#Page;#0x010100C568DB52D9D0A14D9B2FDCC96666E9F2007948130EC3DB064584E219954237AF39;#"></Property>
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Page Layout" />
+      <Property Name="_ModerationStatus" Value="0" />
+      <Property Name="FileDirRef" Value="_catalogs/masterpage/Glyma" />
+      <Property Name="FSObjType" Value="0" />
+    </File>
+    <File Path="BrandingMasterPageGalleryResources\glyma-minimal.master" Type="GhostableInLibrary" Url="glyma-minimal.master">
+      <Property Name="Title" Value="Glyma Branded Master Page" />
+      <Property Name="FileLeafRef" Value="glyma-minimal.master"/>
+      <Property Name="MasterPageDescription" Value="A minimal master page used to display a full screen Glyma branded experience." />
+      <Property Name="UIVersion" Value="$UIVersion$" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Master Page" />
+      <Property Name="_ModerationStatus" Value="0" />
+      <Property Name="FileDirRef" Value="_catalogs/masterpage/Glyma" />
+      <Property Name="FSObjType" Value="0" />
+    </File>
+    <File Path="BrandingMasterPageGalleryResources\glyma-yammer-minimal.master" Type="GhostableInLibrary" Url="glyma-yammer-minimal.master">
+      <Property Name="Title" Value="Glyma Branded Yammer Enabled Master Page" />
+      <Property Name="FileLeafRef" Value="glyma-yammer-minimal.master"/>
+      <Property Name="MasterPageDescription" Value="A minimal master page used to display a full screen Glyma branded experience and include Yammer integration." />
+      <Property Name="UIVersion" Value="$UIVersion$" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Master Page" />
+      <Property Name="_ModerationStatus" Value="0" />
+      <Property Name="FileDirRef" Value="_catalogs/masterpage/Glyma" />
+      <Property Name="FSObjType" Value="0" />
+    </File>
+  </Module>
+</Elements>

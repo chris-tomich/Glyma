@@ -1,0 +1,227 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+<<<<<<< HEAD
+using SilverlightMappingToolBasic.GlymaSecurityService;
+=======
+using System.Windows;
+using SilverlightMappingToolBasic.GlymaSharePointSecurityService;
+>>>>>>> origin/projectmapmanagement-feature
+using SilverlightMappingToolBasic.UI.Extensions.Security;
+using TransactionalNodeService.Proxy;
+
+namespace SilverlightMappingToolBasic.UI.SuperGraph.View.SecurityManagement
+{
+    public sealed class RootMap : SecurityObject
+    {
+        private bool _isOperationPanelVisible;
+
+        private readonly string _parentName;
+        private bool _disableAutoRealign;
+        private bool _yammerEnabled;
+        private string _yammerNetwork;
+        private bool _isExpanded;
+        private bool _inSightful;
+        public bool IsExpanded
+        {
+            get
+            {
+                return _isExpanded;
+            }
+            set
+            {
+                if (value != _isExpanded)
+                {
+                    _isExpanded = value;
+                    OnPropertyChanged("IsExpanded");
+                }
+            }
+        }
+
+        public bool IsSelectable { get; private set; }
+
+        private bool _isSelected;
+        public override bool IsSelected
+        {
+            get
+            {
+                return _isSelected;
+            }
+            set
+            {
+                if (IsSelectable)
+                {
+                    _isSelected = value;
+                    OnPropertyChanged("IsSelected");
+                    OnPropertyChanged("SelectedIndicatorVisiblity");
+                }
+                else
+                {
+                    _isSelected = false;
+                    OnPropertyChanged("IsSelected");
+                    OnPropertyChanged("SelectedIndicatorVisiblity");
+                }
+            }
+        }
+
+        public override string DisplayName
+        {
+            get
+            {
+                return _parentName + " - " + Name;
+            }
+        }
+
+        public bool IsOperationPanelVisible
+        {
+            get { return _isOperationPanelVisible; }
+            set
+            {
+                if (_isOperationPanelVisible != value)
+                {
+                    _isOperationPanelVisible = value;
+                    OnPropertyChanged("IsOperationPanelVisible");
+                    OnPropertyChanged("OperationPanelVisibility");
+                }
+            }
+        }
+
+        public Visibility OperationPanelVisibility
+        {
+            get { return _isOperationPanelVisible ? Visibility.Visible : Visibility.Collapsed; }
+        }
+
+
+
+<<<<<<< HEAD
+        public RootMap(INode node, Dictionary<PermissionLevel, ObservableCollection<GlymaSecurityGroup>> template, string parentName)
+=======
+        public RootMap(INode node, Dictionary<PermissionLevel, ObservableCollection<GlymaSPSecurityGroup>> template, string parentName, bool isSelectable = true)
+>>>>>>> origin/projectmapmanagement-feature
+            : base(node, template, false)
+        {
+            _parentName = parentName;
+            IsSelectable = isSelectable;
+            if (Node.Metadata.FindMetadata("AllowAutoRealign") != null)
+            {
+                var value = Node.Metadata.FindMetadata("AllowAutoRealign").Value;
+                if (value == "False" || value == "false" || value == "0")
+                {
+                    _disableAutoRealign = true;
+                }
+                else
+                {
+                    _disableAutoRealign = false;
+                }
+            }
+
+            if (Node.Metadata.FindMetadata("Yammer.Network") != null)
+            {
+                var value = Node.Metadata.FindMetadata("Yammer.Network").Value;
+                if (value.Length > 0)
+                {
+                    _yammerNetwork = value;
+                    _yammerEnabled = true;
+                }
+                else
+                {
+                    _yammerNetwork = string.Empty;
+                    _yammerEnabled = false;
+                }
+            }
+
+            if (Node.Metadata.FindMetadata("InSightful") != null)
+            {
+                var value = Node.Metadata.FindMetadata("InSightful").Value;
+                if (value == "1" || value == "true" || value == "True")
+                {
+                    _inSightful = true;
+                }
+                else
+                {
+                    _inSightful = false;
+                }
+            }
+        }
+
+
+        public bool DisableAutoRealign
+        {
+            get
+            {
+                return _disableAutoRealign;
+            }
+            set
+            {
+                _disableAutoRealign = value;
+                OnPropertyChanged("AllowAutoRealign");
+                OnMetadataChanged("AllowAutoRealign", (!value).ToString());
+            }
+        }
+
+        public bool YammerEnabled
+        {
+            get
+            {
+                return _yammerEnabled;
+            }
+            set
+            {
+                if (_yammerEnabled != value)
+                {
+                    _yammerEnabled = value;
+                    OnPropertyChanged("YammerEnabled");
+                    if (value)
+                    {
+                        OnMetadataChanged("Yammer.Network", YammerNetwork);
+                    }
+                    else
+                    {
+                        OnMetadataChanged("Yammer.Network", string.Empty);
+                    }
+                }
+            }
+        }
+
+        public string YammerNetwork
+        {
+            get
+            {
+                return _yammerNetwork;
+            }
+            set
+            {
+                if (_yammerNetwork != value)
+                {
+                    _yammerNetwork = value;
+                    OnPropertyChanged("YammerNetwork");
+                    OnMetadataChanged("Yammer.Network", _yammerNetwork);
+                }
+            }
+        }
+
+        public bool InSightful
+        {
+            get
+            {
+                return _inSightful;
+            }
+            set
+            {
+                if (_inSightful != value)
+                {
+                    _inSightful = value;
+                    OnPropertyChanged("InSightful");
+                    if (value)
+                    {
+                        OnMetadataChanged("InSightful", "True");
+                    }
+                    else
+                    {
+                        OnMetadataChanged("InSightful", "False");
+                    }
+                }
+            }
+        }
+    }
+}

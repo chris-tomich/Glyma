@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug - SharePoint 2010</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74885E23-5CB0-43C2-B9BB-FF171409C897}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Glyma.NodeServiceApp</RootNamespace>
+    <AssemblyName>Glyma.NodeServiceApp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectMode>SharePointCustomization</ProjectMode>
+    <SandboxedSolution>False</SandboxedSolution>
+    <IncludeAssemblyInPackage>True</IncludeAssemblyInPackage>
+    <OldToolsVersion>12.0</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ErrorReport>prompt</ErrorReport>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <TokenReplacementFileExtensions>aspx</TokenReplacementFileExtensions>
+    <TokenReplacementFileExtensions>svc</TokenReplacementFileExtensions>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Properties\GlymaAssemblyKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>14.0</TargetOfficeVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SP2010</DefineConstants>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SP2013</DefineConstants>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>14.0</TargetOfficeVersion>
+    <OutputPath>bin\Release - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;SP2010</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <OutputPath>bin\Release - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;SP2013</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zlib, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Ionic.Zlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management.Automation" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.PowerShell" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'">
+      <ItemGroup>
+        <Reference Include="System.ServiceModel.Activation" />
+      </ItemGroup>
+    </When>
+    <When Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'">
+      <ItemGroup>
+        <Reference Include="System.ServiceModel.Activation" />
+      </ItemGroup>
+    </When>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="ADMIN\GlymaNodeServiceApp\Create.aspx.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\GlymaNodeServiceApp\Create.aspx.designer.cs">
+      <DependentUpon>Create.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\GlymaNodeServiceApp\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\GlymaNodeServiceApp\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NodeServiceAppService\IGlymaNodeServiceApp.cs" />
+    <Compile Include="ISAPI\sevensigma\transactionalmappingtoolservice.svc.cs">
+      <DependentUpon>transactionalmappingtoolservice.svc</DependentUpon>
+    </Compile>
+    <Compile Include="NodeServiceAppService\NodeService.cs" />
+    <Compile Include="NodeServiceAppService\NodeServiceApplication.cs" />
+    <Compile Include="NodeServiceAppClient\NodeServiceApplicationProxy.cs" />
+    <Compile Include="NodeServiceAppClient\NodeServiceClient.cs" />
+    <Compile Include="NodeServiceAppService\NodeServiceHostFactory.cs" />
+    <Compile Include="NodeServiceAppService\NodeServiceInstance.cs" />
+    <Compile Include="NodeServiceAppClient\NodeServiceProxy.cs" />
+    <Compile Include="PowerShellRegistration\NewGlymaNodeServiceApplication.cs" />
+    <Compile Include="PowerShellRegistration\NewGlymaNodeServiceApplicationProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ADMIN\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a575f709-f41b-469b-9605-a59a6d5ae57d}</SharePointProjectItemId>
+    </None>
+    <None Include="PowerShellHelp\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{6ad4c5b7-f218-4ea8-8132-a2aaa3c42baf}</SharePointProjectItemId>
+    </None>
+    <None Include="ISAPI\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{d3fc2a3d-7ea6-4916-96ec-4fa989bf46a8}</SharePointProjectItemId>
+    </None>
+    <None Include="Properties\GlymaAssemblyKey.pfx" />
+    <None Include="Package\Package.package">
+      <PackageId>{44c54c10-6ede-419c-a20d-02240698755c}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="PowerShellRegistration\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{e662cdb7-98b0-4dae-9687-5377400e0442}</SharePointProjectItemId>
+    </None>
+    <Content Include="ISAPI\sevensigma\GlymaSecurityService.svc" />
+    <Content Include="ISAPI\sevensigma\GlymaUtilityService.svc" />
+    <Content Include="ISAPI\sevensigma\transactionalmappingtoolservice.svc" />
+    <Content Include="PowerShellHelp\Glyma.Powershell.dll.Help.xml" />
+    <Content Include="PowerShellHelp\Glyma.Powershell.SharePoint.dll.Help.xml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <None Include="WebClients\GlymaNodeServiceApp\client.config" />
+    <None Include="WebClients\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{1cdcca90-1906-4069-bb90-c3334032fd5d}</SharePointProjectItemId>
+    </None>
+    <None Include="WebServices\GlymaNodeServiceApp\web.config" />
+    <None Include="WebServices\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{8402a8b3-6f72-45c7-999c-00738ab15b0b}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glyma.Security\Glyma.Security.csproj">
+      <Project>{e115cfa0-83f9-40fe-aa33-e031381a1ee7}</Project>
+      <Name>Glyma.Security</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glyma.UtilityService.Common\Glyma.UtilityService.Common.csproj">
+      <Project>{ba39fc2a-2ae8-4d53-ace9-bc079af045cf}</Project>
+      <Name>Glyma.UtilityService.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glyma.UtilityService.SharePoint\Glyma.UtilityService.SharePoint.csproj">
+      <Project>{a44f7b1a-dae2-4d11-859e-98d6273595ba}</Project>
+      <Name>Glyma.UtilityService.SharePoint</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactionalNodeService.Common\TransactionalNodeService.Common.csproj">
+      <Project>{2ef6d8d5-b34e-407f-bfe2-7aa26e116884}</Project>
+      <Name>TransactionalNodeService.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactionalNodeService.SharePoint\TransactionalNodeService.SharePoint.csproj">
+      <Project>{f494b98b-0ff9-4a86-bb8a-74884c110ba9}</Project>
+      <Name>TransactionalNodeService.SharePoint</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ADMIN\GlymaNodeServiceApp\Create.aspx" />
+    <Content Include="ADMIN\GlymaNodeServiceApp\Manage.aspx" />
+    <Content Include="PowerShellRegistration\GlymaNodeServiceApplication.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="WebServices\GlymaNodeServiceApp\NodeService.svc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'">
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'">
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <ProjectWebFiles Include=".\**\*.aspx;.\**\*.svc" />
+      <ProjectWebFiles Include=".\**\Package.Template.xml" />
+    </ItemGroup>
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointFolderVersion\$" ReplacementText="\" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointFolderVersion\$" ReplacementText="\15\" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointFolderVersion\$" ReplacementText="\" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointFolderVersion\$" ReplacementText="\15\" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SystemWebExtensionsAssemblyVersion\$" ReplacementText="Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SystemWebExtensionsAssemblyVersion\$" ReplacementText="Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SystemWebExtensionsAssemblyVersion\$" ReplacementText="Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SystemWebExtensionsAssemblyVersion\$" ReplacementText="Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="14.0" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="15.0" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="14.0" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="15.0" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+  </Target>
+</Project>

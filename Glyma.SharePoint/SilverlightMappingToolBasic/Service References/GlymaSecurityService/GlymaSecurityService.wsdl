@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://sevensigma.com.au/GlymaSecurityService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GlymaSecurityService" targetNamespace="http://sevensigma.com.au/GlymaSecurityService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc/mex?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://sevensigma.com.au/GlymaSecurityService/Imports">
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc/mex?xsd=xsd0" namespace="http://sevensigma.com.au/GlymaSecurityService" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Glyma.Security" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc/mex?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IGlymaSecurityService_GetUsersPermissionLevelName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersPermissionLevelName" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetUsersPermissionLevelName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersPermissionLevelNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetUsersPermissionLevel_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersPermissionLevel" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetUsersPermissionLevel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersPermissionLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetAllSecurityGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSecurityGroups" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetAllSecurityGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSecurityGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetSecurableContextId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurableContextId" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetSecurableContextId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurableContextIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_UpdateSecurityAssociations_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSecurityAssociations" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_UpdateSecurityAssociations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSecurityAssociationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetSecurityAssociations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityAssociations" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetSecurityAssociations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSecurityAssociationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetPermissionNameForObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionNameForObject" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetPermissionNameForObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionNameForObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetPermissionLevelForObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionLevelForObject" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_GetPermissionLevelForObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPermissionLevelForObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_SetProjectManagerGroupAssociations_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetProjectManagerGroupAssociations" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_SetProjectManagerGroupAssociations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetProjectManagerGroupAssociationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_BreakRootMapInheritance_InputMessage">
+    <wsdl:part name="parameters" element="tns:BreakRootMapInheritance" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_BreakRootMapInheritance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BreakRootMapInheritanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_RestoreRootMapInheritance_InputMessage">
+    <wsdl:part name="parameters" element="tns:RestoreRootMapInheritance" />
+  </wsdl:message>
+  <wsdl:message name="IGlymaSecurityService_RestoreRootMapInheritance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RestoreRootMapInheritanceResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGlymaSecurityService">
+    <wsdl:operation name="GetUsersPermissionLevelName">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetUsersPermissionLevelName" message="tns:IGlymaSecurityService_GetUsersPermissionLevelName_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetUsersPermissionLevelNameResponse" message="tns:IGlymaSecurityService_GetUsersPermissionLevelName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersPermissionLevel">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetUsersPermissionLevel" message="tns:IGlymaSecurityService_GetUsersPermissionLevel_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetUsersPermissionLevelResponse" message="tns:IGlymaSecurityService_GetUsersPermissionLevel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSecurityGroups">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetAllSecurityGroups" message="tns:IGlymaSecurityService_GetAllSecurityGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetAllSecurityGroupsResponse" message="tns:IGlymaSecurityService_GetAllSecurityGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecurableContextId">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetSecurableContextId" message="tns:IGlymaSecurityService_GetSecurableContextId_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetSecurableContextIdResponse" message="tns:IGlymaSecurityService_GetSecurableContextId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSecurityAssociations">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/UpdateSecurityAssociations" message="tns:IGlymaSecurityService_UpdateSecurityAssociations_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/UpdateSecurityAssociationsResponse" message="tns:IGlymaSecurityService_UpdateSecurityAssociations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSecurityAssociations">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetSecurityAssociations" message="tns:IGlymaSecurityService_GetSecurityAssociations_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetSecurityAssociationsResponse" message="tns:IGlymaSecurityService_GetSecurityAssociations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionNameForObject">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetPermissionNameForObject" message="tns:IGlymaSecurityService_GetPermissionNameForObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetPermissionNameForObjectResponse" message="tns:IGlymaSecurityService_GetPermissionNameForObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPermissionLevelForObject">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetPermissionLevelForObject" message="tns:IGlymaSecurityService_GetPermissionLevelForObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/GetPermissionLevelForObjectResponse" message="tns:IGlymaSecurityService_GetPermissionLevelForObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetProjectManagerGroupAssociations">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/SetProjectManagerGroupAssociations" message="tns:IGlymaSecurityService_SetProjectManagerGroupAssociations_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/SetProjectManagerGroupAssociationsResponse" message="tns:IGlymaSecurityService_SetProjectManagerGroupAssociations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BreakRootMapInheritance">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/BreakRootMapInheritance" message="tns:IGlymaSecurityService_BreakRootMapInheritance_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/BreakRootMapInheritanceResponse" message="tns:IGlymaSecurityService_BreakRootMapInheritance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RestoreRootMapInheritance">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/RestoreRootMapInheritance" message="tns:IGlymaSecurityService_RestoreRootMapInheritance_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaSecurityService/IGlymaSecurityService/RestoreRootMapInheritanceResponse" message="tns:IGlymaSecurityService_RestoreRootMapInheritance_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="GlymaSecurityService">
+    <wsdl:port name="BasicHttpBinding_IGlymaSecurityService" binding="i0:BasicHttpBinding_IGlymaSecurityService">
+      <soap:address location="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

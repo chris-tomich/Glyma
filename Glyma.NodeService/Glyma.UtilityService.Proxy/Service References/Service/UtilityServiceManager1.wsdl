@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://sevensigma.com.au/GlymaUtilityService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UtilityServiceManager" targetNamespace="http://sevensigma.com.au/GlymaUtilityService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://sevensigma.com.au/GlymaUtilityService/Imports">
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd0" namespace="http://sevensigma.com.au/GlymaUtilityService" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/Glyma.UtilityService.Common" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd2" namespace="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUtilityServiceManager_GetExportJobs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExportJobs" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_GetExportJobs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExportJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_GetExportJobs_ExportErrorFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/Glyma.UtilityService.Common" name="detail" element="q1:ExportError" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_GetExportJobsForMapType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExportJobsForMapType" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_GetExportJobsForMapType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExportJobsForMapTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_GetExportJobsForMapType_ExportErrorFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/Glyma.UtilityService.Common" name="detail" element="q2:ExportError" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_CreateExportJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateExportJob" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_CreateExportJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateExportJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_CreateExportJob_ExportErrorFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/Glyma.UtilityService.Common" name="detail" element="q3:ExportError" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_DeleteExportJob_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteExportJob" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_DeleteExportJob_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteExportJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_DeleteExportJob_ExportErrorFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/Glyma.UtilityService.Common" name="detail" element="q4:ExportError" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_IsExportingAvailable_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExportingAvailable" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_IsExportingAvailable_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExportingAvailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUtilityServiceManager_IsExportingAvailable_ExportErrorFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/Glyma.UtilityService.Common" name="detail" element="q5:ExportError" />
+  </wsdl:message>
+  <wsdl:portType name="IUtilityServiceManager">
+    <wsdl:operation name="GetExportJobs">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/GetExportJobs" message="tns:IUtilityServiceManager_GetExportJobs_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/GetExportJobsResponse" message="tns:IUtilityServiceManager_GetExportJobs_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/GetExportJobsExportErrorFault" name="ExportErrorFault" message="tns:IUtilityServiceManager_GetExportJobs_ExportErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExportJobsForMapType">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/GetExportJobsForMapType" message="tns:IUtilityServiceManager_GetExportJobsForMapType_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/GetExportJobsForMapTypeResponse" message="tns:IUtilityServiceManager_GetExportJobsForMapType_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/GetExportJobsForMapTypeExportErrorFault" name="ExportErrorFault" message="tns:IUtilityServiceManager_GetExportJobsForMapType_ExportErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateExportJob">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/CreateExportJob" message="tns:IUtilityServiceManager_CreateExportJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/CreateExportJobResponse" message="tns:IUtilityServiceManager_CreateExportJob_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/CreateExportJobExportErrorFault" name="ExportErrorFault" message="tns:IUtilityServiceManager_CreateExportJob_ExportErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteExportJob">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/DeleteExportJob" message="tns:IUtilityServiceManager_DeleteExportJob_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/DeleteExportJobResponse" message="tns:IUtilityServiceManager_DeleteExportJob_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/DeleteExportJobExportErrorFault" name="ExportErrorFault" message="tns:IUtilityServiceManager_DeleteExportJob_ExportErrorFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExportingAvailable">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/IsExportingAvailable" message="tns:IUtilityServiceManager_IsExportingAvailable_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/IsExportingAvailableResponse" message="tns:IUtilityServiceManager_IsExportingAvailable_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://sevensigma.com.au/GlymaUtilityService/IUtilityServiceManager/IsExportingAvailableExportErrorFault" name="ExportErrorFault" message="tns:IUtilityServiceManager_IsExportingAvailable_ExportErrorFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="UtilityServiceManager">
+    <wsdl:port name="BasicHttpBinding_IUtilityServiceManager" binding="i0:BasicHttpBinding_IUtilityServiceManager">
+      <soap:address location="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

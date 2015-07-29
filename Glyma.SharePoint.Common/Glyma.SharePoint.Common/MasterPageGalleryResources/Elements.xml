@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="MasterPageGalleryResources" List="116" Url="_catalogs/masterpage/Glyma" RootWebOnly="TRUE">
+    <File Path="MasterPageGalleryResources\glyma.master" Type="GhostableInLibrary" Url="glyma.master">
+      <Property Name="Title" Value="Glyma Master Page" />
+      <Property Name="FileLeafRef" Value="glyma.master"/>
+      <Property Name="MasterPageDescription" Value="Based on the default master page, this page contains the dependencies for Glyma." />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Master Page" />
+      <Property Name="_ModerationStatus" Value="0" />
+      <Property Name="FileDirRef" Value="_catalogs/masterpage/Glyma" />
+      <Property Name="FSObjType" Value="0" />
+    </File>
+    <File Path="MasterPageGalleryResources\glyma-yammer.master" Type="GhostableInLibrary" Url="glyma-yammer.master">
+      <Property Name="Title" Value="Glyma Yammer Enabled Master Page" />
+      <Property Name="FileLeafRef" Value="glyma-yammer.master"/>
+      <Property Name="MasterPageDescription" Value="Based on the default master page, this page contains the dependencies for Glyma and Yammer." />
+      <Property Name="UIVersion" Value="15" />
+      <Property Name="PublishingHidden" Value="FALSE" />
+      <Property Name="HtmlDesignAssociated" Value="FALSE" />
+      <Property Name="ContentType" Value="Master Page" />
+      <Property Name="_ModerationStatus" Value="0" />
+      <Property Name="FileDirRef" Value="_catalogs/masterpage/Glyma" />
+      <Property Name="FSObjType" Value="0" />
+    </File>
+  </Module>
+</Elements>

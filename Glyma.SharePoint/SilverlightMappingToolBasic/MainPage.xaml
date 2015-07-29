@@ -1,0 +1,75 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  x:Class="SilverlightMappingToolBasic.MainPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:superGraph="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View"
+             xmlns:debugControls="clr-namespace:Glyma.Debug;assembly=Glyma.Debug"
+             xmlns:mtcontrols="clr-namespace:SilverlightMappingToolBasic.Controls"
+             xmlns:sidebar="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Sidebar"
+             xmlns:breadcrumbSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.BreadcrumbSupportClasses"
+             xmlns:mouseCursor="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.MouseCursor"
+             xmlns:nodeControlSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.NodeControlSupportClasses"
+             xmlns:richTextSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.RichTextSupportClasses"
+             xmlns:statusBar="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.StatusBar"
+             xmlns:zoomingControl="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.ZoomingControl"
+             xmlns:loading="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Loading"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600" KeyUp="UserControl_KeyUp" Loaded="MainPage_Loaded">
+    <controls:Grid                                                                                                                                                                          
+        xmlns:controls="http://schemas.microsoft.com/winfx/2006/xaml/presentation"                                                                                                                                                                                
+        x:Name="LayoutRoot" ShowGridLines="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="38" x:Name="BreadcrumbRow" />
+            <RowDefinition Height="0" x:Name="DebugPanelRow" />
+            <RowDefinition Height="*" x:Name="MapRow" />
+            <RowDefinition Height="0" x:Name="ToolbarRow" />
+            <RowDefinition Height="20" x:Name="StatusBarRow" />
+            <!--<RowDefinition Height="0" x:Name="SearchRow" /> -->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <breadcrumbSupportClasses:BreadcrumbBarControl Grid.Column="1" Grid.Row="0"  x:Name="Breadcrumbs" Background="White" Margin="0,0,0,0"/>
+        <sidebar:SidebarControl x:Name="Sidebar" Grid.Column="0" Grid.Row="0" Grid.RowSpan="5" Opacity="1" Canvas.ZIndex="110"></sidebar:SidebarControl>
+        
+        <debugControls:DebugLoggerControl Grid.Column="1" Grid.Row="1" x:Name="DebugPanel" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Left" Background="White"/>
+        <Canvas Grid.Column="1" Grid.Row="1" x:Name="PreloadControls">
+            <nodeControlSupportClasses:NodeDetailsControl x:Name="NodeDetailsControl" Visibility="Collapsed"></nodeControlSupportClasses:NodeDetailsControl>
+            <nodeControlSupportClasses:NodeTextInput x:Name="NodeTextEditor" Canvas.Left="-200" Canvas.Top="-200"></nodeControlSupportClasses:NodeTextInput>
+        </Canvas>
+        <!-- <mapDepth:CompendiumMapDepthMap Grid.Row="1" x:Name="uxCompendiumMapControl" /> -->
+        <!-- <singleDepth:CompendiumFirstDepthMap Grid.Row="2" x:Name="uxCompendiumMapControl""/> -->
+        <superGraph:SuperGraphControl Grid.Column="1" Grid.Row="2" x:Name="SuperGraph" Canvas.ZIndex="-10"/>
+        <TextBox  Visibility="Collapsed" Width="100" Height="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2" IsTabStop="True" x:Name="SearchBox" TextChanged="SearchBox_OnTextChanged" controls:Canvas.ZIndex="0"></TextBox>
+        <StackPanel Grid.Column="1" Grid.Row="2" Canvas.ZIndex="0" x:Name="PanLayer" Margin="0,0,0,0" Background="Transparent" Cursor="Hand" Visibility="Collapsed"></StackPanel>
+        <mtcontrols:Toolbar Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Visibility="Collapsed" Background="White"/>
+        <!--
+        <Grid Grid.Row="3" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="75" />
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="Node Name Filter:" Margin="5,0,0,0" VerticalAlignment="Center"/>
+            <TextBox x:Name="SearchTextBox" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Width="250"/>
+            <Button x:Name="SearchButton" Content="Search" Grid.Column="2" Click="SearchButton_Click" />
+        </Grid>-->
+        <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Bottom"  HorizontalAlignment="Right">
+            <statusBar:StatusBar x:Name="StatusBar" Margin="-300,-19,0,0" ForcePushClicked="StatusBar_ForcePushClicked" Width="300"></statusBar:StatusBar>
+        </StackPanel>
+        <zoomingControl:Zooming x:Name="ZommingControl" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Grid.RowSpan="3" VerticalAlignment="Bottom" HorizontalAlignment="Left" Height="189" Width="60" Margin="10"></zoomingControl:Zooming>
+        <Grid Name="Loader" Row="0" Column="0" RowSpan="5" ColumnSpan="2" Background="#FFFFFFFF" Opacity="1" Canvas.ZIndex="120" Visibility="Visible">
+            <loading:Loader HorizontalAlignment="Center" VerticalAlignment="Center" Colour="#FF1F3B53"></loading:Loader>
+            <TextBlock FontFamily="Segoe UI Light" FontSize="14" Margin="7,7,0,0" Text="100%" x:Name="Progress" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF1F3B53" />
+            <StackPanel Orientation="Vertical" VerticalAlignment="Center" Width="400" Height="150" x:Name="LoaderStatusText">
+                <Grid Height="150">
+                    <StackPanel Orientation="Horizontal" Margin="5,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                        <TextBlock FontFamily="Segoe UI Light" FontSize="14" Text='Initialising Glyma, please wait...' x:Name="StatusText" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF1F3B53" TextWrapping="Wrap" Width="350" TextAlignment="Center" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </controls:Grid>
+</UserControl>

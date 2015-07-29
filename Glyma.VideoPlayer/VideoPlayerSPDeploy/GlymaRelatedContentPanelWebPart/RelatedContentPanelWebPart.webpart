@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="VideoPlayerSPDeploy.RelatedContentPanelWebPart.RelatedContentPanelWebPart, $SharePoint.Project.AssemblyFullName$" />
+      <importErrorMessage>$Resources:core,ImportErrorMessage;</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">Glyma Related Content Panels</property>
+        <property name="Description" type="string">The Glyma related content side panels.</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

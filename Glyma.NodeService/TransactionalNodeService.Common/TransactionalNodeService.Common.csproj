@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug - SharePoint 2010</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2EF6D8D5-B34E-407F-BFE2-7AA26E116884}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransactionalNodeService.Common</RootNamespace>
+    <AssemblyName>TransactionalNodeService.Common</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Properties\key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - SharePoint 2010\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SP2010</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - SharePoint 2013\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SP2013</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OutputPath>bin\Release - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;SP2010</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <OutputPath>bin\Release - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;SP2013</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zlib">
+      <HintPath>Assemblies\Ionic.Zlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GlymaServerVersion.cs" />
+    <Compile Include="ITransactionalMappingToolService.cs" />
+    <Compile Include="ITransactionalMappingToolServiceCommonBase.cs" />
+    <Compile Include="Model\AuditLogItem.cs" />
+    <Compile Include="Model\CompressedResponseTuple.cs" />
+    <Compile Include="Model\Descriptor.cs" />
+    <Compile Include="Model\Domain.cs" />
+    <Compile Include="Model\GlymaVersion.cs" />
+    <Compile Include="Model\IMapElement.cs" />
+    <Compile Include="Model\IMapElementLoader.cs" />
+    <Compile Include="Model\Metadata.cs" />
+    <Compile Include="Model\Node.cs" />
+    <Compile Include="Model\Relationship.cs" />
+    <Compile Include="Model\Types\DescriptorType.cs" />
+    <Compile Include="Model\Types\IMapTypeElement.cs" />
+    <Compile Include="Model\Types\MapSchema.cs" />
+    <Compile Include="Model\Types\MapTypeElement.cs" />
+    <Compile Include="Model\Types\MetadataType.cs" />
+    <Compile Include="Model\Types\NodeType.cs" />
+    <Compile Include="Model\Types\RelationshipType.cs" />
+    <Compile Include="Model\UserRole.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\AddMetadataBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\AddNodeBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\AddRelationshipBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\BulkOperationResponse.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\BulkOperations.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\DeleteMetadataBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\DeleteNodeBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\DeleteRelationshipBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\IBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\UpdateMetadataBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\UpdateNodeBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\Bulk\UpdateRelationshipBulkOperation.cs" />
+    <Compile Include="NodeServiceOperations\ConnectionSupportClasses\GlymaSessionConfiguration.cs" />
+    <Compile Include="NodeServiceOperations\ConnectionSupportClasses\IDbConnectionAbstraction.cs" />
+    <Compile Include="NodeServiceOperations\ConnectionSupportClasses\IGlymaConnectionFactory.cs" />
+    <Compile Include="NodeServiceOperations\ConnectionSupportClasses\IGlymaDbConnections.cs" />
+    <Compile Include="NodeServiceOperations\DelayedNodeService.cs" />
+    <Compile Include="NodeServiceOperations\ConnectionSupportClasses\IGlymaSession.cs" />
+    <Compile Include="NodeServiceOperations\IMapTransaction.cs" />
+    <Compile Include="NodeServiceOperations\IPersistableSessionContainer.cs" />
+    <Compile Include="NodeServiceOperations\IPersistableSessionObject.cs" />
+    <Compile Include="NodeServiceOperations\MapChange.cs" />
+    <Compile Include="NodeServiceOperations\MapParameter.cs" />
+    <Compile Include="NodeServiceOperations\MapParameters.cs" />
+    <Compile Include="NodeServiceOperations\MapParameterSqlBuilder.cs" />
+    <Compile Include="NodeServiceOperations\MapResponse.cs" />
+    <Compile Include="NodeServiceOperations\MapSession.cs" />
+    <Compile Include="NodeServiceOperations\MapTransaction.cs" />
+    <Compile Include="NodeServiceOperations\MapTransactionSupportClasses\InsertQueryBuilder.cs" />
+    <Compile Include="NodeServiceOperations\MapTransactionSupportClasses\IQueryBuilder.cs" />
+    <Compile Include="NodeServiceOperations\MapTransactionSupportClasses\UpdateQueryBuilder.cs" />
+    <Compile Include="NodeServiceOperations\MapTransactionWrapper.cs" />
+    <Compile Include="NodeServiceOperations\MetadataContext.cs" />
+    <Compile Include="NodeServiceOperations\MetadataContextType.cs" />
+    <Compile Include="NodeServiceOperations\NodeService.cs" />
+    <Compile Include="NodeServiceOperations\QueryOperations\IQueryOperation.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\AndEdgeCondOp.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\EdgeComponentType.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\EdgeConditionTest.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\EdgeElementType.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\EdgeResult.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\EqualEdgeCondOp.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\IEdgeCondOp.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\MetadataEdgeConditionTest.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\NotEqualEdgeCondOp.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditionOperations\OrEdgeCondOp.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\EdgeConditions.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\FilterCondition.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\FilterConditions.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\IQueryableMapObject.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\QueryMap.cs" />
+    <Compile Include="NodeServiceOperations\QuerySupportClasses\QueryResponse.cs" />
+    <Compile Include="NodeServiceOperations\SearchSupportClasses\QueryNodes.cs" />
+    <Compile Include="NodeServiceOperations\SearchSupportClasses\SearchCondition.cs" />
+    <Compile Include="NodeServiceOperations\SearchSupportClasses\SearchConditions.cs" />
+    <Compile Include="NodeServiceOperations\SearchSupportClasses\SearchedNode.cs" />
+    <Compile Include="NodeServiceOperations\SearchSupportClasses\SearchMapResult.cs" />
+    <Compile Include="NodeServiceOperations\SearchSupportClasses\SearchResponse.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\CreateDescriptor.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\CreateMetadata.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\CreateNode.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\CreateRelationship.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\CreateRootMap.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\DeleteDomain.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\DeleteMetadata.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\DeleteNode.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\DeleteRelationship.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\DeleteRootMap.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\ITransactionOperation.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\SessionFinalisation.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\UpdateDescriptor.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\UpdateMetadata.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\UpdateNode.cs" />
+    <Compile Include="NodeServiceOperations\TransactionOperations\UpdateRelationship.cs" />
+    <Compile Include="NodeServiceOperations\TransactionType.cs" />
+    <Compile Include="NodeServiceOperations\TypeResponse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionalMappingToolServiceCommonBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\key.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

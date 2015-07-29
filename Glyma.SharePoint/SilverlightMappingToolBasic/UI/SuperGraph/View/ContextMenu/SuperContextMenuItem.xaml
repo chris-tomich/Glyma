@@ -1,0 +1,26 @@
+﻿<toolkit:MenuItem x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.ContextMenu.SuperContextMenuItem"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+    mc:Ignorable="d"
+    d:DesignHeight="40" d:DesignWidth="200" Style="{StaticResource SuperMenuItemStyle}" MouseEnter="ContextMenuCut_MouseEnter" MouseLeave="ContextMenuCut_MouseLeave">
+        <toolkit:MenuItem.Icon> 
+            <Path x:Name="Icon"  Data="{Binding IconPath}" Stretch="Uniform" Fill="{Binding IconColour}" Width="12" Height="12" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <TransformGroup.Children>
+                        <RotateTransform Angle="{Binding IconAngle}" />
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </TransformGroup.Children>
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+        </toolkit:MenuItem.Icon>
+    <toolkit:MenuItem.HeaderTemplate>
+        <DataTemplate>
+            <TextBlock Text="{Binding}" TextWrapping="Wrap"></TextBlock>
+        </DataTemplate>
+    </toolkit:MenuItem.HeaderTemplate>
+</toolkit:MenuItem>

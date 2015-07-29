@@ -1,0 +1,3 @@
+﻿<%@ServiceHost Language="C#"
+    Service="Glyma.NodeServiceApp.NodeServiceApplication, $SharePoint.Project.AssemblyFullName$"
+    Factory="Glyma.NodeServiceApp.NodeServiceHostFactory, $SharePoint.Project.AssemblyFullName$" %>

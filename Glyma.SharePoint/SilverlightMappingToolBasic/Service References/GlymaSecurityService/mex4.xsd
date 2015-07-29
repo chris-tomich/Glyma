@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/Glyma.Security" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Glyma.Security" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc/mex?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="GetPermissionNameResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPermissionNameResponse" nillable="true" type="tns:GetPermissionNameResponse" />
+  <xs:complexType name="ResponseObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HasError" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResponseObject" nillable="true" type="tns:ResponseObject" />
+  <xs:complexType name="GetPermissionLevelResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="tns:GlymaPermissionLevel" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetPermissionLevelResponse" nillable="true" type="tns:GetPermissionLevelResponse" />
+  <xs:simpleType name="GlymaPermissionLevel">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GlymaSecurityManager" />
+      <xs:enumeration value="GlymaProjectManager" />
+      <xs:enumeration value="GlymaMapManager" />
+      <xs:enumeration value="GlymaMapAuthor" />
+      <xs:enumeration value="GlymaMapReader" />
+      <xs:enumeration value="GlymaMapAuthorOld" />
+      <xs:enumeration value="GlymaMapReaderOld" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GlymaPermissionLevel" nillable="true" type="tns:GlymaPermissionLevel" />
+  <xs:complexType name="GetAllSecurityGroupsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseObject">
+        <xs:sequence>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Result" nillable="true" type="q1:ArrayOfKeyValueOfGlymaPermissionLevelArrayOfGlymaSecurityGroupVPqgLoCD" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetAllSecurityGroupsResponse" nillable="true" type="tns:GetAllSecurityGroupsResponse" />
+  <xs:complexType name="ArrayOfGlymaSecurityGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GlymaSecurityGroup" nillable="true" type="tns:GlymaSecurityGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGlymaSecurityGroup" nillable="true" type="tns:ArrayOfGlymaSecurityGroup" />
+  <xs:complexType name="GlymaSecurityGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupId" type="xs:int" />
+      <xs:element minOccurs="0" name="SecurableContextId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GlymaSecurityGroup" nillable="true" type="tns:GlymaSecurityGroup" />
+  <xs:complexType name="GetSecurableContextIdResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSecurableContextIdResponse" nillable="true" type="tns:GetSecurableContextIdResponse" />
+  <xs:complexType name="ArrayOfGlymaSecurityAssociation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GlymaSecurityAssociation" nillable="true" type="tns:GlymaSecurityAssociation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGlymaSecurityAssociation" nillable="true" type="tns:ArrayOfGlymaSecurityAssociation" />
+  <xs:complexType name="GlymaSecurityAssociation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BreakInheritance" type="xs:boolean" />
+      <xs:element minOccurs="0" name="GlymaSecurityGroup" nillable="true" type="tns:GlymaSecurityGroup" />
+      <xs:element minOccurs="0" name="SecurableObject" nillable="true" type="tns:GlymaSecurableObject" />
+      <xs:element minOccurs="0" name="Value" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GlymaSecurityAssociation" nillable="true" type="tns:GlymaSecurityAssociation" />
+  <xs:complexType name="GlymaSecurableObject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="SecurableObjectUid" type="ser:guid" />
+      <xs:element minOccurs="0" name="SecurableParentUid" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GlymaSecurableObject" nillable="true" type="tns:GlymaSecurableObject" />
+  <xs:complexType name="GetSecurityAssociationsResponse">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ResponseObject">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="tns:SecurityAssociations" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="GetSecurityAssociationsResponse" nillable="true" type="tns:GetSecurityAssociationsResponse" />
+  <xs:complexType name="SecurityAssociations">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="HasAssociations" nillable="true" type="q2:ArrayOfKeyValueOfGlymaSecurityGroupboolean8202CtMC" />
+      <xs:element minOccurs="0" name="IsInherited" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SecurityAssociations" nillable="true" type="tns:SecurityAssociations" />
+</xs:schema>

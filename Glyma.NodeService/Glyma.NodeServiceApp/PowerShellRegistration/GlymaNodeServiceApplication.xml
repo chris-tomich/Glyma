@@ -1,0 +1,82 @@
+﻿<ps:Config xmlns:ps="urn:Microsoft.SharePoint.PowerShell"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:schemaLocation="urn:Microsoft.SharePoint.PowerShell SPCmdletSchema.xml">
+  <ps:Assembly Name="$SharePoint.Project.AssemblyFullName$">
+    <ps:Cmdlet>
+      <ps:VerbName>New-NodeServiceApplication</ps:VerbName>
+      <ps:ClassName>Glyma.NodeServiceApp.PowerShellRegistration.NewGlymaNodeServiceApplication</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>New-NodeServiceApplicationProxy</ps:VerbName>
+      <ps:ClassName>Glyma.NodeServiceApp.PowerShellRegistration.NewGlymaNodeServiceApplicationProxy</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+  </ps:Assembly>
+  <ps:Assembly Name="Glyma.Powershell.SharePoint, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2704b4e62e725461">
+    <ps:Cmdlet>
+      <ps:VerbName>Add-SPGLPermissionLevels</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.SharePoint.Add_SPGLPermissionLevels</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.SharePoint.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Export-SPGLMap</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.SharePoint.Export_SPGLMap</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.SharePoint.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Get-SPGLDomain</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.SharePoint.Get_SPGLDomain</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.SharePoint.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>New-SPGLSecurableContext</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.SharePoint.New_SPGLSecurableContext</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.SharePoint.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Set-SPGLSiteAssociation</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.SharePoint.Set_SPGLSiteAssociation</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.SharePoint.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Set-SPGLWebServiceMaximum</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.SharePoint.Set_SPGLWebServiceMaximum</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.SharePoint.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+  </ps:Assembly>
+  <ps:Assembly Name="Glyma.Powershell, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2704b4e62e725461">
+    <ps:Cmdlet>
+      <ps:VerbName>Copy-GLMap</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.Copy_GLMap</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Get-GLDomain</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.Get_GLDomain</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Get-GLMap</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.Get_GLMap</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>New-GLDatabase</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.New_GLDatabase</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+    <ps:Cmdlet>
+      <ps:VerbName>Repair-GLDatabaseIntegrity</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.Repair_GLDatabaseIntegrity</ps:ClassName>
+      <ps:HelpFile>Glyma.Powershell.dll.Help.xml</ps:HelpFile>
+    </ps:Cmdlet>
+  </ps:Assembly>
+  <ps:Assembly Name="Glyma.Powershell.Update, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2704b4e62e725461">
+    <ps:Cmdlet>
+      <ps:VerbName>Update-GLDatabase</ps:VerbName>
+      <ps:ClassName>Glyma.Powershell.Update.Update_GLDatabase</ps:ClassName>
+      <ps:HelpFile />
+    </ps:Cmdlet>
+  </ps:Assembly>
+</ps:Config>

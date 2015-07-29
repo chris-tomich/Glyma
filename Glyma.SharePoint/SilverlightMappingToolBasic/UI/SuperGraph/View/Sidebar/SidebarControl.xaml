@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.Sidebar.SidebarControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:extensions="clr-namespace:SilverlightMappingToolBasic.UI.Extensions"
+    xmlns:sidebar="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Sidebar"
+    xmlns:subMenu="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Sidebar.SubMenu"
+    mc:Ignorable="d"
+    d:DesignHeight="500" d:DesignWidth="20" MouseRightButtonUp="UserControl_MouseRightButtonUp">
+<StackPanel HorizontalAlignment="Left" x:Name="LayoutRoot" VerticalAlignment="Stretch" Orientation="Horizontal" Opacity="1" IsHitTestVisible="True">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ToolbarStates">
+                <VisualState x:Name="Opened">
+                    <Storyboard>
+                        <DoubleAnimation extensions:ThicknessAnimation.Element="{Binding ElementName=ToolBarPanel}"  extensions:ThicknessAnimation.To="0,0,0,0" extensions:ThicknessAnimation.From="-70,0,0,0" Duration="0:0:0.2" />
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Closed">
+                    <Storyboard>
+                        <DoubleAnimation extensions:ThicknessAnimation.Element="{Binding ElementName=ToolBarPanel}" extensions:ThicknessAnimation.To="-70,0,0,0" extensions:ThicknessAnimation.From="0,0,0,0" Duration="0:0:0.2" />
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Border Background="#FF57afcf" x:Name="ToolBarPanel" CornerRadius="3,0,3,3" Width="70" Margin="-70,0,0,0" VerticalAlignment="Top">
+            <StackPanel Orientation="Vertical" Margin="0,8,0,8">
+            
+            <!--authorization:ReadWriteAuthorization.RequiresPermission="Explorer" 
+                                   authorization:ReadWriteAuthorization.Mode="Read" -->
+            <StackPanel x:Name="Logo" Background="#FF57afcf">
+                <Image x:Name="LogoImage" Margin="0,15" Height ="40" Source="/SilverlightMappingToolBasic;component/Images/SidebarIcon/glymalogo.png"></Image>
+            </StackPanel>
+            <sidebar:SuperSidebarButton ToolTipService.ToolTip="Switch to Author Mode" ButtonClicked="Pointer_OnButtonClicked" Height="68" x:Name="Pointer" 
+                                        Visibility="Collapsed" ReaderImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/switch-author.png" 
+                                        AuthorImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/switch-author-author.png" 
+                                        ReaderHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/switch-author-hover.png"
+                                        AuthorHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/switch-author.png"></sidebar:SuperSidebarButton>
+            <sidebar:SuperSidebarButton ToolTipService.ToolTip="Switch to Explorer Mode" ButtonClicked="Pan_OnButtonClicked" Height="68" x:Name="Explorer"
+                                    Visibility="Collapsed" ReaderImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/switch-explorer.png" 
+                                    AuthorImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/switch-explorer-author.png"
+                                    ReaderHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/switch-explorer-hover.png" 
+                                    AuthorHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/switch-explorer.png"></sidebar:SuperSidebarButton>
+            <!--authorization:ReadWriteAuthorization.RequiresPermission="Pointer" 
+                                   authorization:ReadWriteAuthorization.Mode="ReadWrite" -->
+            <!--authorization:ReadWriteAuthorization.RequiresPermission="Pointer" 
+                                   authorization:ReadWriteAuthorization.Mode="Read" -->
+            <sidebar:SuperSidebarButton ToolTipService.ToolTip="Refresh" ButtonClicked="Refresh_OnButtonClicked" Height="68" x:Name="Refresh"
+                                    ReaderImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/refresh.png" 
+                                    AuthorImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/refresh-author.png"
+                                    ReaderHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/refresh-hover.png" 
+                                    AuthorHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/refresh.png"></sidebar:SuperSidebarButton>
+            <!--authorization:ReadWriteAuthorization.RequiresPermission="Pointer" 
+                                   authorization:ReadWriteAuthorization.Mode="ReadWrite" -->
+            <sidebar:SuperSidebarButton ToolTipService.ToolTip="Realign" Height="68" x:Name="Realign"
+                                    ReaderImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/realign.png" 
+                                    AuthorImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/realign-author.png"
+                                    ReaderHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/realign-hover.png"
+                                    AuthorHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/realign.png">
+            </sidebar:SuperSidebarButton>
+            <sidebar:SuperSidebarButton ToolTipService.ToolTip="Zooming" Height="68" x:Name="Zoom" Visibility="Collapsed"
+                                    ReaderImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/zoombutton.png" 
+                                    AuthorImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/zoombutton-author.png"
+                                    ReaderHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/zoombutton-hover.png"
+                                    AuthorHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/zoombutton.png">
+            </sidebar:SuperSidebarButton>
+            <sidebar:SuperSidebarButton ButtonClicked="FullScreen_OnButtonClicked" Height="68" x:Name="FullScreen"
+                                    ReaderImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/full-screen.png"
+                                    AuthorImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/full-screen-author.png"
+                                    ReaderHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/full-screen-hover.png" 
+                                    AuthorHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/full-screen.png"></sidebar:SuperSidebarButton>
+            <sidebar:SuperSidebarButton ButtonClicked="ExitFullScreen_OnButtonClicked" Height="68" x:Name="ExitFullScreen" Visibility="Collapsed"
+                                    ReaderImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/exit-full-screen.png" 
+                                    AuthorImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/exit-full-screen-author.png"
+                                    ReaderHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/exit-full-screen-hover.png" 
+                                    AuthorHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/exit-full-screen.png"></sidebar:SuperSidebarButton>
+            <sidebar:SuperSidebarButton Height="68" x:Name="MapFilter" Visibility="Collapsed"
+                                    ReaderImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/map-filter.png"
+                                    AuthorImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/map-filter-author.png"
+                                    ReaderHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/map-filter-hover.png" 
+                                    AuthorHoverImageSource="/SilverlightMappingToolBasic;component/Images/SidebarIcon/map-filter.png">
+            </sidebar:SuperSidebarButton>
+            
+        </StackPanel>
+        </Border>
+        <Border x:Name="ToolBarPanelControl" ToolTipService.ToolTip="Collapse Sidebar" Width="16" Height ="40" Margin="-2,0,0,0" VerticalAlignment="Top" Background="#FF57afcf" CornerRadius="0,3,3,0">
+            <StackPanel Height="40">
+                <Button Cursor="Hand" x:Name="ExpandButton" Width="14" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Click="ExpandButton_Clicked" Style="{StaticResource BorderlesStyle}">
+                    <Image Margin="-2,0,0,0" Source="/SilverlightMappingToolBasic;component/Images/SidebarIcon/expansion-dots.png" Stretch="None"></Image>
+                </Button>
+            </StackPanel>
+        </Border>
+        <Canvas>
+            <subMenu:RealignSubMenu Height="80" Width="160" Margin="-10,145,0,0" x:Name="RealignSubMenu" Visibility="Collapsed">
+            </subMenu:RealignSubMenu>
+            <subMenu:ZoomSubMenu Height="120" Width="45" Margin="-10,215,0,0" x:Name="ZoomSubMenu" Visibility="Collapsed"></subMenu:ZoomSubMenu>
+            <subMenu:MapFilterSubMenu Margin="-10,420,0,0" x:Name="MapFilterSubMenu"  Visibility="Collapsed"></subMenu:MapFilterSubMenu>
+        </Canvas>
+        
+    </StackPanel>
+</UserControl>

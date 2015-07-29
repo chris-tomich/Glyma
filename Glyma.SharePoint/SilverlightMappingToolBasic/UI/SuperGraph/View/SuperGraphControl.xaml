@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.SuperGraphControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:customcontrols="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View"
+             xmlns:contextMenu="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.ContextMenu"
+    xmlns:richTextSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.RichTextSupportClasses"
+    xmlns:nodeControlSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.NodeControlSupportClasses"
+    xmlns:selector="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Selector"
+    xmlns:arrow="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Arrow"
+    xmlns:mouse="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.MouseCursor"
+    mc:Ignorable="d" SizeChanged="SuperGraphControl_OnSizeChanged"
+    d:DesignHeight="300" d:DesignWidth="400" Loaded="SuperGraphControl_Loaded" KeyDown="OnKeyDown" IsTabStop="True" KeyUp="OnKeyUp" MouseWheel="UserControl_MouseWheel" MouseLeave="UserControl_MouseLeave" Cursor="Hand">
+    <Canvas x:Name="LayoutRoot" Background="White" Drop="OnFileDragAndDrop" AllowDrop="True" Width="Auto" Height="Auto">
+        <!--mouse:SuperCursor.CursorTemplate="{StaticResource Pointer}"-->
+        <selector:NodesSelector x:Name="Selector" Visibility="Collapsed" >
+            <Border x:Name="DragSelectionBorder" BorderBrush="Blue" BorderThickness="1" Background="LightBlue" CornerRadius="1" Opacity="0.5"/>
+        </selector:NodesSelector>
+        <contextMenu:ContextMenuContainer x:Name="ContextMenuContainer" Canvas.ZIndex="10000"></contextMenu:ContextMenuContainer>
+        <Canvas x:Name="NodeContainer">
+            
+            <Canvas.RenderTransform>
+                <TransformGroup x:Name="TransformGroup">
+                    <ScaleTransform x:Name="ScaleTransform"></ScaleTransform>
+                </TransformGroup>
+            </Canvas.RenderTransform>
+        </Canvas>
+        
+    </Canvas>    
+    
+</UserControl>

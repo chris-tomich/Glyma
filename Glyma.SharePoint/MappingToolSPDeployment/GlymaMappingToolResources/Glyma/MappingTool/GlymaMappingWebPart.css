@@ -1,0 +1,638 @@
+﻿#silverlightMappingControlHost 
+{
+   width: 100%;
+   height: 650px;
+}
+
+
+#mappingtool-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#mappingtool-wrapper a {
+    font-family: Roboto Condensed;
+    line-height: 1.4em;
+    color: #ee2211;
+}
+
+#mappingtool-wrapper a:visited {
+    color: #ee2211;
+}
+
+
+#mappingtool-wrapper ul, li {
+    list-style: none;
+    padding: 0;
+}
+
+#mappingtool-wrapper a:link {
+    text-decoration: none;
+}
+
+.ui-loader.ui-corner-all.ui-body-a.ui-loader-default {
+    display: none;
+}
+
+#mappingtool-wrapper div { 
+    display: block;
+}
+
+canvas#mapCanvas {
+    touch-action: none;
+    -ms-touch-action: none;
+    z-index: 0;
+}
+
+#right-webpart {
+    position: relative;
+    z-index: 10;
+}
+
+#left-sidebar-container {
+    position: relative;
+    float: left;
+    z-index: 4;
+    height: 100%;
+}
+
+#left-expender {
+    -ms-border-radius: 0 3px 3px 0;
+    border-radius: 0 3px 3px 0;
+    margin: 5px 0 0 0;
+    width: 15px;
+    height: 45px;
+    background: #58aed1 url('../Icons/leftsidebar/expansion-dots.png') no-repeat right center;
+    float: left;
+}
+
+#left-expender:hover {
+    background: #58aed1 url('../Icons/leftsidebar/expansion-dots-hover.png') no-repeat right center;
+}
+
+#sidebar-glyma-logo {
+    background: url('../Icons/leftsidebar/glymalogo.png') no-repeat center;
+    height: 70px;
+}
+
+#left-sidebar {
+    background-color: #58aed1;
+    -ms-border-radius: 3px 0 3px 3px;
+    border-radius: 3px 0 3px 3px;
+    margin: 5px 0 0 0;
+    padding: 10px 0;
+    width: 70px;
+    float: left;
+    position: relative;
+    z-index: 4;
+}
+
+.sidebar-button {
+    background-color: #58aed1;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60px;
+    margin-top: 10px;
+    width: 70px;
+}
+
+.sidebar-button a {
+    padding: 0 100% 100% 0;
+}
+
+.sidebar-button:hover {
+    background-color: #c7e0ea;
+}
+
+
+#sidebar-refresh {
+    background-image: url('../Icons/leftsidebar/refresh.png');
+}
+
+#sidebar-refresh:hover {
+    background-image: url('../Icons/leftsidebar/refresh-hover.png');
+}
+
+#sidebar-realign {
+    background-image: url('../Icons/leftsidebar/Realign.png');
+}
+
+#sidebar-realign:hover {
+    background-image: url('../Icons/leftsidebar/Realign-hover.png');
+}
+
+#sidebar-fullscreen {
+    background-image: url('../Icons/leftsidebar/full-screen.png');
+}
+
+#sidebar-fullscreen:hover {
+    background-image: url('../Icons/leftsidebar/full-screen-hover.png');
+}
+
+#sidebar-exitfullscreen {
+    background-image: url('../Icons/leftsidebar/exit-full-screen.png');
+}
+
+#sidebar-exitfullscreen:hover {
+    background-image: url('../Icons/leftsidebar/exit-full-screen-hover.png');
+}
+
+#breadcrumbs {
+margin-left: 10px;
+margin-top: 10px;
+float: left;
+}
+
+#breadcrumb-container {
+    float: left;
+    position: relative;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;     
+}
+
+#breadcrumb-home {
+    background: #003d64 url('../Icons/breadcrumb/Home.png') no-repeat center;
+    float: left;
+    position: relative;
+    height: 25px;
+    width: 25px;
+    display: none; 
+    cursor: pointer; 
+    cursor: hand;
+}
+
+#breadcrumb-home:hover {
+    background: #58aed1 url('../Icons/breadcrumb/Home.png') no-repeat center;
+}
+
+.breadcrumb-item {
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    height: 24px;
+    color: #ffffff;
+    padding-right: 10px;
+    margin-left: -10px;
+    margin-bottom: 1px;
+    *margin-bottom: 2px;
+}
+
+#mappingtool-wrapper .breadcrumb-item a {
+    -moz-min-width: 120px;
+    -ms-min-width: 120px;
+    -o-min-width: 120px;
+    -webkit-min-width: 120px;
+    min-width: 120px;
+    padding: 5px 10px 5px 20px;
+    background: #58aed1;
+    position: relative;
+    display: block;
+    float: left;
+    font-size: 12px;
+    font-family: sans-serif;
+    color: #ffffff;
+    margin-right: 1px;
+}
+
+
+
+#mappingtool-wrapper .breadcrumb-item:first-child a {
+	padding-left: 10px;
+}
+
+#mappingtool-wrapper .breadcrumb-item:first-child a:before {
+    display: none;
+}
+
+#mappingtool-wrapper .breadcrumb-item a:hover:after {
+     border-left-color: #003d64 !important;
+}
+
+#mappingtool-wrapper .breadcrumb-item a:after {
+    content: " ";
+    display: block;
+    width: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid #58aed1;
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    left: 100%;
+    z-index: 2;
+}
+
+#mappingtool-wrapper .breadcrumb-item a:before { 
+	content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 10px solid white;
+    position: absolute;
+    top: 0;
+    margin-top: 0;
+    margin-left: 10px;
+    left: -10px;
+    z-index: 1;
+}
+
+#mappingtool-wrapper .breadcrumb li:last-child a {
+	background: transparent !important;
+	color: black;
+	pointer-events: none;
+	cursor: default;
+}
+
+#mappingtool-wrapper .breadcrumb-item a:hover { background: #003d64; }
+
+
+
+img.nodedetailbutton {
+    cursor: pointer;
+}
+
+img.nodedetailbutton:hover {
+    -ms-opacity: 0.5;
+    opacity: 0.5;
+}
+
+div#loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+}
+
+div#loader.notification {
+    background: #000000;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+div#loader.loading {
+    background: url("../Icons/loader.gif") 50% 50% no-repeat #000000;
+    background: url("../Icons/loader.gif") 50% 50% no-repeat rgba(0, 0, 0, 0.6);
+}
+
+.noti {
+    margin: 10% auto;
+    width: 600px;
+    color: white;
+}
+
+.noti h2{
+    color: white;
+}
+
+.noti a.l {
+    display: block;
+    padding: 4px;
+    padding-top: 110px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-decoration: none;
+    text-align: center;
+    width: 100px;
+}
+
+div.logos .b {
+    float: left;
+    padding: 10px;
+}
+
+.noti .bs a {
+    background-image: url('../Icons/sl.png');
+    -ms-background-size: 150px 150px;
+    background-size: 150px 150px;
+}
+
+.noti .bf a {
+    background-image: url('../Icons/ff.png');
+}
+
+.noti .bc a {
+    background-image: url('../Icons/ch.png');
+}
+
+.noti .bi a {
+    background-image: url('../Icons/ie.png');
+}
+
+.noti .bg a {
+    background-image: url('../Icons/gl.png');
+}
+
+h2.whatnow {
+    clear: left;
+    text-align: center;
+}
+
+div.b.bor {
+    font-size: 20px;
+    height: 100px;
+    padding-top: 50px;
+    margin: 10px;
+}
+
+span.bro, span.vendor {
+    display: block;
+}
+
+div.logos div.b span.vendor {
+    display: none;
+}
+
+div.update-options {
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+div.update-option {
+float: left;
+}
+
+div#install-plugin {
+width: 180px;
+}
+
+div#upgrade-browser {
+width: 360px;
+margin-left: 20px;
+}
+
+div.logos {
+clear: left;
+}
+
+div.update-option-text {
+font-style: italic;
+font-weight: 100;
+}
+
+div.update-option-title {
+font-weight: 900;
+}
+
+div#errorPanel {
+width: 400px;
+}
+
+div.b.bg {
+left: 50%;
+margin-left: 130px;
+}
+
+
+
+/*
+#mapCanvas {
+    cursor: url('../Icons/cursor/hand.png') 4 4, auto;
+}
+
+#mapCanvas:active {
+    cursor: url('../Icons/cursor/drag.png') 4 4, crosshair;
+}*/
+
+#zoom-control {
+    position: absolute;
+    bottom: 20px;
+    left: 5px;
+    width: 55px;
+    text-align: center;
+    z-index: 3;
+    float: left;
+    vertical-align: bottom;
+}
+
+#slider {
+    height: 100px;
+    float: left;
+    margin-left: 15px;
+}
+
+.zoom-button {
+    clear: both;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.zoom-button-right {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+    margin-top: 37px;
+    cursor: pointer;
+    cursor: hand;
+}
+
+#zoom-view-reset {
+    background: url('../Icons/leftsidebar/zoom/view-reset.png') 0 0, no-repeat;
+}
+
+#zoom-view-reset:hover {
+    background: url('../Icons/leftsidebar/zoom/view-reset-hover.png') 0 0, no-repeat;
+}
+
+#zoom-in {
+    background: url('../Icons/leftsidebar/zoom/zoom-in.png') 0 0, no-repeat;
+}
+
+#zoom-in:hover {
+    background: url('../Icons/leftsidebar/zoom/zoom-in-hover.png') 0 0, no-repeat;
+}
+
+#zoom-out {
+    background: url('../Icons/leftsidebar/zoom/zoom-out.png') 0 0, no-repeat;
+}
+
+#zoom-out:hover {
+    background: url('../Icons/leftsidebar/zoom/zoom-out-hover.png') 0 0, no-repeat;
+}
+
+#zoom-default {
+    background: url('../Icons/leftsidebar/zoom/default.png') 0 0, no-repeat;
+}
+
+#zoom-default:hover {
+    background: url('../Icons/leftsidebar/zoom/default-hover.png') 0 0, no-repeat;
+}
+
+.unselectable {
+    -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+#mapselect {
+    -ms-opacity: 1;
+    opacity: 1;
+}
+
+#mapselect .div-row {
+    clear: both;
+}
+
+#mapselect .dialog-text {
+    width: 542px;
+    text-align: center;
+    height: 18px;
+    vertical-align: middle;
+    padding: 10px;
+}
+#mapselect .float-left {
+    float: left;
+}
+
+#mapselect .dialog-text span {
+    width: 100%;
+    font-size: 150%;
+    font-weight: 700;
+}
+
+#mapselect .close-button {
+    width: 38px;
+    height: 38px;
+}
+
+#mapselect .dialog-head {
+    width: 600px;
+    height: auto;
+    position: absolute;
+    background-color: #003d64;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    -ms-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -ms-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#mapselect .dialog-body {
+    position: relative;
+    top: 38px;
+    background-color: #c7e0ea;
+    padding: 10px;
+}
+
+#mapselect .dialog-content {
+    margin: 10px;
+    background-color: #FFFFFF;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    padding: 10px;
+    font-size: 120%;
+    font-weight: bold;
+    color: #58aed1;
+    font-weight: bold;
+}
+
+#mapselect .dialog-actions {
+text-align: right;
+padding-right: 10px;
+}
+
+#mapselect .select-box span {
+    display: none;
+}
+
+#mapselect .dialog-content-row {
+    height: 20px;
+    margin-top: 10px;
+}
+
+#mapselect .select-label {
+    width: 120px;
+}
+
+#mapselect .select-box select {
+    width: 300px;
+    height: 20px;
+}
+
+#mapselect select {
+    width: 300px;
+    height: 20px;
+    font-size: 100%;
+    line-height: 1;
+    border: #58aed1 1px solid;
+    -ms-border-radius: 3px;
+    border-radius: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow: hidden;
+}
+
+#mapselect a.glyma-button {
+    -moz-box-shadow:inset 0px 1px 0px 0px #f5978e;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    -ms-box-shadow:inset 0px 1px 0px 0px #f5978e;
+    box-shadow:inset 0px 1px 0px 0px #f5978e;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f24537), color-stop(1, #c62d1f) );
+	background:-moz-linear-gradient( center top, #f24537 5%, #c62d1f 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f24537', endColorstr='#c62d1f');
+	background-color:#f24537;
+	-webkit-border-top-left-radius:8px;
+	-moz-border-radius-topleft:8px;
+    -ms-border-top-left-radius:8px;
+    border-top-left-radius:8px;
+	-webkit-border-top-right-radius:8px;
+	-moz-border-radius-topright:8px;
+    -ms-border-top-right-radius:8px;
+    border-top-right-radius:8px;
+	-webkit-border-bottom-right-radius:8px;
+	-moz-border-radius-bottomright:8px;
+    -ms-border-bottom-right-radius:8px;
+    border-bottom-right-radius:8px;
+	-webkit-border-bottom-left-radius:8px;
+	-moz-border-radius-bottomleft:8px;
+    -ms-border-bottom-left-radius:8px;
+    border-bottom-left-radius:8px;
+	text-indent:0;
+	border:1px solid #d02718;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+	height:30px;
+	line-height:30px;
+	width:110px;
+	text-decoration:none;
+	text-align:center;
+    -ms-text-shadow:1px 1px 0px #810e05;
+    text-shadow:1px 1px 0px #810e05;
+}
+
+#mapselect a.glyma-button:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #c62d1f), color-stop(1, #f24537) );
+	background:-moz-linear-gradient( center top, #c62d1f 5%, #f24537 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#c62d1f', endColorstr='#f24537');
+	background-color:#c62d1f;
+}
+
+#mapselect a.glyma-button:active {
+	position:relative;
+	top:1px;
+}
+
+#glyma-body #left-webpart > div > div#loader {
+position: fixed;
+}
+
+ul#breadcrumb-container {
+    padding: 0 0 0 10px;
+}

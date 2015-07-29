@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug - SharePoint 2010</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{89E81C20-2E94-48D4-A1FE-38B253ACEF31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VideoPlayerSPDeploy</RootNamespace>
+    <AssemblyName>VideoPlayerSPDeploy</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
+    <ProjectMode>SharePointCustomization</ProjectMode>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU' ">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>14.0</TargetOfficeVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug - SharePoint 2010\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SP2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU' ">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug - SharePoint 2013\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SP2013</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU' ">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>14.0</TargetOfficeVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;SP2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU' ">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;SP2013</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="GlymaRelatedContentPanelWebPart\RelatedContentPanelWebPart.cs" />
+    <Compile Include="CONTROLTEMPLATES\RelatedContentPanelWebPartUserControl.ascx.cs">
+      <DependentUpon>RelatedContentPanelWebPartUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CONTROLTEMPLATES\RelatedContentPanelWebPartUserControl.ascx.designer.cs">
+      <DependentUpon>RelatedContentPanelWebPartUserControl.ascx.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CONTROLTEMPLATES\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bbe3ea30-2cbf-405e-afc7-5178f1aa271e}</SharePointProjectItemId>
+    </None>
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{b298b62d-4d55-4fb8-acbe-cbac0f4e11b9}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="GlymaRelatedContentPanelWebPart\RelatedContentPanelWebPart.webpart">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GlymaRelatedContentPanelWebPart\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{376c5da3-51b1-4f17-87fd-212efdb3c9df}</SharePointProjectItemId>
+    </None>
+    <None Include="GlymaRelatedContentPanelResources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{673581fe-3882-4911-a47b-d8549e5b45e0}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Package\Package.package">
+      <PackageId>{e280ea1e-f2dc-416e-b5c0-74e92f6b2f6b}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Features\GlymaRelatedContentPanels\GlymaRelatedContentPanels.feature">
+      <FeatureId>{c45ffcd2-6f57-4023-976c-d51877ab6177}</FeatureId>
+    </None>
+    <None Include="Features\GlymaRelatedContentPanels\GlymaRelatedContentPanels.Template.xml">
+      <DependentUpon>GlymaRelatedContentPanels.feature</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GlymaRelatedContentPanelResources\Glyma\RelatedContentPanels\GlymaRelatedContentPanels.js" />
+    <Content Include="GlymaRelatedContentPanelResources\Glyma\RelatedContentPanels\RelatedContentPanel.css" />
+    <Content Include="GlymaRelatedContentPanelWebPart\Elements.xml" />
+    <Content Include="CONTROLTEMPLATES\RelatedContentPanelWebPartUserControl.ascx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="GlymaRelatedContentPanelResources\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Images\VideoPlayerSPDeploy\GlymaFeatureLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="false" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)Glyma.RelatedContentPanels\GlymaRelatedContentPanels.js" "$(ProjectDir)GlymaRelatedContentPanelResources\Glyma\RelatedContentPanels"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <ProjectWebFiles Include="CONTROLTEMPLATES\RelatedContentPanelWebPartUserControl.ascx" />
+      <ProjectWebFiles Include=".\**\Package.Template.xml" />
+    </ItemGroup>
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="14.0" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="15.0" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="14.0" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="15.0" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+  </Target>
+</Project>

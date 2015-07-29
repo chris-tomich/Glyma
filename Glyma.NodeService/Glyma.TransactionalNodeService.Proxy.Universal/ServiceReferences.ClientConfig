@@ -1,0 +1,20 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_ITransactionalMappingToolService"
+                    maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITransactionalMappingToolService"
+                contract="Service.ITransactionalMappingToolService" name="BasicHttpBinding_ITransactionalMappingToolService" />
+            <endpoint address="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_ITransactionalMappingToolService"
+                contract="Service.ITransactionalMappingToolService" name="BasicHttpBinding_ITransactionalMappingToolService1" />
+        </client>
+    </system.serviceModel>
+</configuration>

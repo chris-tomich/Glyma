@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.Extensions.VideoWebPart.VideoControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:nodeControlSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.NodeControlSupportClasses"
+    mc:Ignorable="d"
+    d:DesignHeight="14" d:DesignWidth="18" Loaded="UserControl_Loaded">
+    
+    <Canvas x:Name="LayoutRoot" Background="Transparent">
+        <nodeControlSupportClasses:NodeCornerButton Style="{StaticResource NodeCorerButtonStyle}" 
+                                                    Height="14" Width="20" Click="PauseButton_OnButtonClicked" 
+                                                    Visibility="Visible" x:Name="PauseButton" 
+                                                    >
+        </nodeControlSupportClasses:NodeCornerButton>
+        <nodeControlSupportClasses:NodeCornerButton Style="{StaticResource NodeCorerButtonStyle}" Visibility="Visible"
+                                                    Height="14" Width="20"  Click="PlayButton_OnButtonClicked" 
+                                                    x:Name="PlayButton" 
+                                                    >
+            
+        </nodeControlSupportClasses:NodeCornerButton>
+    </Canvas>
+</UserControl>

@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="VideoPlayer.UI.VideoPlayerMainContainer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tls="clr-namespace:VideoPlayer.UI"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <!-- Animates the rectangle's opacity. -->
+        <Storyboard x:Name="FadeInControlPanel">
+            <DoubleAnimation
+                        Storyboard.TargetName="ControlsPanel"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0.0" To="1.0" Duration="0:0:1" />
+        </Storyboard>
+        <Storyboard x:Name="FadeOutControlPanel">
+            <DoubleAnimation
+                        Storyboard.TargetName="ControlsPanel"
+                        Storyboard.TargetProperty="Opacity"
+                        From="1.0" To="0.0" Duration="0:0:1" />
+        </Storyboard>
+    </UserControl.Resources>
+    <Canvas Width="400" Height="300" Background="Black" MouseEnter="MediaPlayer_MouseEnter" MouseLeave="MediaPlayer_MouseLeave">
+        <tls:MediaElementControl x:Name="MediaElementControl"  Margin="0,0,0,0" ></tls:MediaElementControl>
+        <StackPanel x:Name="ControlsPanel" Orientation="Vertical" 
+                    HorizontalAlignment="Stretch" Canvas.Left="0" Canvas.Top="0" Canvas.ZIndex="2" IsHitTestVisible="True" AllowDrop="True" Cursor="Hand" Width="400"  Height="300">
+            <StackPanel Orientation="Horizontal" Height="30">
+                <tls:UrlControl x:Name="UrlControl"  Height="30" VerticalAlignment="Top"></tls:UrlControl>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="20" Margin="0,250,0,0">
+                <tls:PlayControl x:Name="PlayControl" Height="20" Width="80" ></tls:PlayControl>
+                <tls:TimeLineSlider x:Name="SliderControl" Height="20" Width="250"></tls:TimeLineSlider>
+                <tls:VolumeControl x:Name="VolumeControl" Height="20" Width="70"></tls:VolumeControl>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel x:Name="ErrorPanel" HorizontalAlignment="Center" Canvas.Left="100" Canvas.Top="120"
+                    VerticalAlignment="Center" Orientation="Horizontal" Visibility="Collapsed">
+            <Image Source="/VideoPlayer;component/Images/failed-icon.png" Height="25" Width="25" Margin="0,0,5,0" />
+            <TextBlock x:Name="ErrorTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray" Text="Unable to load video" FontSize="16"/>
+        </StackPanel>
+        
+    </Canvas>
+</UserControl>

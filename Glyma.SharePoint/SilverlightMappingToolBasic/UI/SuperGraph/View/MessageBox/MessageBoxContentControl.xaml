@@ -1,0 +1,217 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.MessageBox.MessageBoxContentControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d"
+    d:DesignHeight="120" d:DesignWidth="520">
+    
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+<VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="MessageBoxStyle">
+                <VisualState x:Name="Confirmation">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ConfirmationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="InformationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ErrorIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="WarningIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="YesButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="NoButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="CancelButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Warning">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ConfirmationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="InformationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ErrorIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="WarningIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="YesButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="NoButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="CancelButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Error">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ConfirmationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="InformationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ErrorIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="WarningIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="YesButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="NoButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="CancelButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="Information">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ConfirmationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="InformationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ErrorIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="WarningIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="YesButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="NoButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="CancelButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+                <VisualState x:Name="ErrorWithNoInput">
+                    <Storyboard>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ConfirmationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="InformationIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ErrorIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="WarningIcon" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="YesButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="NoButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                        <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="CancelButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"></RowDefinition>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid x:Name="ErrorIcon" Margin="10,10,10,10" Grid.Row="1" Grid.Column="1"  >
+            <Grid x:Name="ErrorBackground" Width="48" Height="48">
+                <Ellipse Fill="#FFFC6938"/>
+            </Grid>
+            <Path  Data="F1M874.094,289.369L854.3,254.63C854.028,254.151 853.515,253.856 852.958,253.856 852.403,253.856 851.89,254.151 851.617,254.63L831.824,289.369C831.555,289.84 831.559,290.416 831.835,290.883 832.111,291.348 832.618,291.634 833.165,291.634L872.752,291.634C873.299,291.634 873.805,291.348 874.081,290.883 874.357,290.416 874.361,289.84 874.094,289.369 M855.653,287.189L850.264,287.189 850.264,282.745 855.653,282.745 855.653,287.189z M855.653,279.41L850.264,279.41 850.264,266.077 855.653,266.077 855.653,279.41z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <TransformGroup.Children>
+                            <RotateTransform Angle="0" />
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </TransformGroup.Children>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+        <Grid x:Name="ConfirmationIcon" Margin="10,10,10,10" Grid.Row="1" Grid.Column="1"  >
+            <Grid x:Name="ConfirmBackground" Width="48" Height="48">
+                <Ellipse Fill="#FF9CCB19"/>
+            </Grid>
+            <Path Data="F1M1355.27,1727.8L1346.08,1727.8C1346.06,1726.48 1346.05,1725.67 1346.05,1725.38 1346.05,1722.41 1346.54,1719.96 1347.52,1718.04 1348.51,1716.12 1350.47,1713.96 1353.43,1711.56 1356.38,1709.16 1358.14,1707.58 1358.72,1706.84 1359.61,1705.66 1360.05,1704.37 1360.05,1702.95 1360.05,1700.98 1359.27,1699.29 1357.7,1697.89 1356.12,1696.49 1354,1695.78 1351.34,1695.78 1348.77,1695.78 1346.62,1696.52 1344.89,1697.98 1343.16,1699.44 1341.98,1701.68 1341.33,1704.68L1332.04,1703.53C1332.3,1699.23 1334.13,1695.58 1337.53,1692.58 1340.93,1689.58 1345.38,1688.08 1350.91,1688.08 1356.72,1688.08 1361.34,1689.6 1364.77,1692.63 1368.21,1695.67 1369.92,1699.2 1369.92,1703.24 1369.92,1705.47 1369.29,1707.58 1368.03,1709.58 1366.77,1711.57 1364.08,1714.28 1359.95,1717.71 1357.81,1719.49 1356.48,1720.92 1355.97,1722 1355.45,1723.08 1355.22,1725.01 1355.27,1727.8z M1346.08,1741.41L1346.08,1731.29 1356.2,1731.29 1356.2,1741.41 1346.08,1741.41z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <TransformGroup.Children>
+                            <RotateTransform Angle="0" />
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </TransformGroup.Children>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+        <Grid x:Name="InformationIcon" Width="48" Height="48" Grid.Row="1" Grid.Column="1" >
+            <Grid x:Name="InfoBackground" Width="48" Height="48">
+                <Ellipse Fill="#FF33A1C9"/>
+            </Grid>
+            <Path Data="F1M950.458,504.864L940.094,504.864 940.094,503.164 940.925,503.164C941.828,503.164 942.434,503.083 942.748,502.922 943.057,502.758 943.276,502.531 943.404,502.231 943.532,501.935 943.597,501.239 943.597,500.148L943.597,488.226 940.094,488.226 940.094,486.547C941.216,486.414 942.153,486.226 942.917,485.987 943.68,485.747 944.546,485.367 945.518,484.846L946.994,484.846 946.994,501.079C946.994,501.646 947.078,502.071 947.24,502.354 947.401,502.635 947.628,502.843 947.917,502.971 948.206,503.099 948.737,503.164 949.505,503.164L950.458,503.164 M943.576,476.395C944.034,475.944 944.589,475.719 945.234,475.719 945.882,475.719 946.437,475.944 946.896,476.395 947.354,476.848 947.584,477.398 947.584,478.046 947.584,478.692 947.354,479.247 946.896,479.704 946.437,480.164 945.882,480.392 945.234,480.392 944.589,480.392 944.034,480.164 943.576,479.704 943.117,479.247 942.888,478.692 942.888,478.046 942.888,477.398 943.117,476.848 943.576,476.395z M945.276,468.91C933.469,468.91 923.896,478.483 923.896,490.29 923.896,502.099 933.469,511.671 945.276,511.671 957.084,511.671 966.656,502.099 966.656,490.29 966.656,478.483 957.084,468.91 945.276,468.91z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <TransformGroup.Children>
+                            <RotateTransform Angle="0" />
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </TransformGroup.Children>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+        <Grid x:Name="WarningIcon" Width="48" Height="48" Grid.Row="1" Grid.Column="1" >
+            <Grid x:Name="WarningBackground" Width="48" Height="48">
+                <Ellipse Fill="#FFFFCC11"/>
+            </Grid>
+            <Path Data="F1M874.094,289.369L854.3,254.63C854.028,254.151 853.515,253.856 852.958,253.856 852.403,253.856 851.89,254.151 851.617,254.63L831.824,289.369C831.555,289.84 831.559,290.416 831.835,290.883 832.111,291.348 832.618,291.634 833.165,291.634L872.752,291.634C873.299,291.634 873.805,291.348 874.081,290.883 874.357,290.416 874.361,289.84 874.094,289.369 M855.653,287.189L850.264,287.189 850.264,282.745 855.653,282.745 855.653,287.189z M855.653,279.41L850.264,279.41 850.264,266.077 855.653,266.077 855.653,279.41z" Stretch="Uniform" Fill="#FFFFFFFF" Width="26" Height="26" Margin="0,0,0,0" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <TransformGroup.Children>
+                            <RotateTransform Angle="0" />
+                            <ScaleTransform ScaleX="1" ScaleY="1" />
+                        </TransformGroup.Children>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+        </Grid>
+        <TextBlock x:Name="TbMessage" TextWrapping="Wrap" Text="This is the Text" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" Margin="10"></TextBlock>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2" Grid.Row="2">
+            <telerik:RadButton x:Name="YesButton" Content="OK" Click="YesButton_Click" Cursor="Hand"  Style="{StaticResource SuperButtonStyle}" FontFamily="Trebuchet MS" FontSize="14" Foreground="White" FontWeight="ExtraBold" BorderThickness="0" HorizontalAlignment="Right" Margin="10" MaxWidth="200" MinWidth="100" Padding="30,2"></telerik:RadButton>
+            <telerik:RadButton x:Name="NoButton" Content="No" Click="NoButton_Click" Cursor="Hand"  Style="{StaticResource SuperButtonStyle}" FontFamily="Trebuchet MS" FontSize="14" Foreground="White" FontWeight="ExtraBold" BorderThickness="0" HorizontalAlignment="Right" Margin="10" MaxWidth="200" MinWidth="100"  Padding="30,2"></telerik:RadButton>
+            <telerik:RadButton x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Cursor="Hand"  Style="{StaticResource SuperButtonStyle}" FontFamily="Trebuchet MS" FontSize="14" Foreground="White" FontWeight="ExtraBold" BorderThickness="0" HorizontalAlignment="Right" Margin="10" MaxWidth="200" MinWidth="100"  Padding="30,2"></telerik:RadButton>
+        </StackPanel>
+    </Grid>
+</UserControl>

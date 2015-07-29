@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://sevensigma.com.au/GlymaSecurityService" elementFormDefault="qualified" targetNamespace="http://sevensigma.com.au/GlymaSecurityService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Glyma.Security" />
+  <xs:element name="GetUsersPermissionLevelName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersPermissionLevelNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="GetUsersPermissionLevelNameResult" nillable="true" type="q1:GetPermissionNameResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersPermissionLevel">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUsersPermissionLevelResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="GetUsersPermissionLevelResult" nillable="true" type="q2:GetPermissionLevelResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSecurityGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllSecurityGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="GetAllSecurityGroupsResult" nillable="true" type="q3:GetAllSecurityGroupsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecurableContextId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecurableContextIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="GetSecurableContextIdResult" nillable="true" type="q4:GetSecurableContextIdResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSecurityAssociations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="securityAssocation" nillable="true" type="q5:ArrayOfGlymaSecurityAssociation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateSecurityAssociationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="UpdateSecurityAssociationsResult" nillable="true" type="q6:ResponseObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecurityAssociations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="groups" nillable="true" type="q7:ArrayOfGlymaSecurityGroup" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="securbleObject" nillable="true" type="q8:GlymaSecurableObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetSecurityAssociationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="GetSecurityAssociationsResult" nillable="true" type="q9:GetSecurityAssociationsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionNameForObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="securbleObject" nillable="true" type="q10:GlymaSecurableObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionNameForObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="GetPermissionNameForObjectResult" nillable="true" type="q11:GetPermissionNameResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionLevelForObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="securbleObject" nillable="true" type="q12:GlymaSecurableObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPermissionLevelForObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="GetPermissionLevelForObjectResult" nillable="true" type="q13:GetPermissionLevelResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProjectManagerGroupAssociations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="securableObject" nillable="true" type="q14:GlymaSecurableObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetProjectManagerGroupAssociationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="SetProjectManagerGroupAssociationsResult" nillable="true" type="q15:ResponseObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BreakRootMapInheritance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="securableObject" nillable="true" type="q16:GlymaSecurableObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BreakRootMapInheritanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="BreakRootMapInheritanceResult" nillable="true" type="q17:ResponseObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RestoreRootMapInheritance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="webUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="securableObject" nillable="true" type="q18:GlymaSecurableObject" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RestoreRootMapInheritanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Glyma.Security" minOccurs="0" name="RestoreRootMapInheritanceResult" nillable="true" type="q19:GetSecurityAssociationsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

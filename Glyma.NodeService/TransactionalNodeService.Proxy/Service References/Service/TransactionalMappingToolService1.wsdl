@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://sevensigma.com.au/TransactionalNodeService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TransactionalMappingToolService" targetNamespace="http://sevensigma.com.au/TransactionalNodeService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://sevensigma.com.au/TransactionalNodeService/Imports">
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd0" namespace="http://sevensigma.com.au/TransactionalNodeService" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common.Model" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd3" namespace="http://sevensigma.com.au/TransactionalNodeService/OpObjects" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITransactionalMappingToolService_GetApplicationVersion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationVersion" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_GetApplicationVersion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetApplicationVersionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_CreateDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDomain" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_CreateDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_CreateRootMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRootMap" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_CreateRootMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRootMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_DeleteDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDomain" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_DeleteDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_DeleteRootMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRootMap" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_DeleteRootMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRootMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BeginTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:BeginTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BeginTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BeginTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_CompleteTransaction_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_CompleteTransaction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompleteTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_GetAllMapTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMapTypes" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_GetAllMapTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllMapTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_QueryDomains_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryDomains" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_QueryDomains_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryDomainsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_QueryMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryMap" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_QueryMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_QueryMapPaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryMapPaged" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_QueryMapPaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryMapPagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_QueryMapByDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:QueryMapByDomain" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_QueryMapByDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:QueryMapByDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_SearchMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMap" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_SearchMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_NA_InputMessage">
+    <wsdl:part name="parameters" element="tns:NA" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_NA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BNA_InputMessage">
+    <wsdl:part name="parameters" element="tns:BNA" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BNA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BNAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_ND_InputMessage">
+    <wsdl:part name="parameters" element="tns:ND" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_ND_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BND_InputMessage">
+    <wsdl:part name="parameters" element="tns:BND" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BND_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BNDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_NU_InputMessage">
+    <wsdl:part name="parameters" element="tns:NU" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_NU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NUResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BNU_InputMessage">
+    <wsdl:part name="parameters" element="tns:BNU" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BNU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BNUResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_RA_InputMessage">
+    <wsdl:part name="parameters" element="tns:RA" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_RA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BRA_InputMessage">
+    <wsdl:part name="parameters" element="tns:BRA" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BRA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BRAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_RD_InputMessage">
+    <wsdl:part name="parameters" element="tns:RD" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_RD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BRD_InputMessage">
+    <wsdl:part name="parameters" element="tns:BRD" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BRD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BRDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_RU_InputMessage">
+    <wsdl:part name="parameters" element="tns:RU" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_RU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RUResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BRU_InputMessage">
+    <wsdl:part name="parameters" element="tns:BRU" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BRU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BRUResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_MA_InputMessage">
+    <wsdl:part name="parameters" element="tns:MA" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_MA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BMA_InputMessage">
+    <wsdl:part name="parameters" element="tns:BMA" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BMA_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BMAResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_MD_InputMessage">
+    <wsdl:part name="parameters" element="tns:MD" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_MD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BMD_InputMessage">
+    <wsdl:part name="parameters" element="tns:BMD" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BMD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BMDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_MU_InputMessage">
+    <wsdl:part name="parameters" element="tns:MU" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_MU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MUResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BMU_InputMessage">
+    <wsdl:part name="parameters" element="tns:BMU" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BMU_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BMUResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BO_InputMessage">
+    <wsdl:part name="parameters" element="tns:BO" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BO_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BOC_InputMessage">
+    <wsdl:part name="parameters" element="tns:BOC" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_BOC_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BOCResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_IsSessionCompleted_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsSessionCompleted" />
+  </wsdl:message>
+  <wsdl:message name="ITransactionalMappingToolService_IsSessionCompleted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsSessionCompletedResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITransactionalMappingToolService">
+    <wsdl:operation name="GetApplicationVersion">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/GetApplicationVersion" message="tns:ITransactionalMappingToolService_GetApplicationVersion_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/GetApplicationVersionResponse" message="tns:ITransactionalMappingToolService_GetApplicationVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDomain">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/CreateDomain" message="tns:ITransactionalMappingToolService_CreateDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/CreateDomainResponse" message="tns:ITransactionalMappingToolService_CreateDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRootMap">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/CreateRootMap" message="tns:ITransactionalMappingToolService_CreateRootMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/CreateRootMapResponse" message="tns:ITransactionalMappingToolService_CreateRootMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDomain">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/DeleteDomain" message="tns:ITransactionalMappingToolService_DeleteDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/DeleteDomainResponse" message="tns:ITransactionalMappingToolService_DeleteDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRootMap">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/DeleteRootMap" message="tns:ITransactionalMappingToolService_DeleteRootMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/DeleteRootMapResponse" message="tns:ITransactionalMappingToolService_DeleteRootMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BeginTransaction">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BeginTransaction" message="tns:ITransactionalMappingToolService_BeginTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BeginTransactionResponse" message="tns:ITransactionalMappingToolService_BeginTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompleteTransaction">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/CompleteTransaction" message="tns:ITransactionalMappingToolService_CompleteTransaction_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/CompleteTransactionResponse" message="tns:ITransactionalMappingToolService_CompleteTransaction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMapTypes">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/GetAllMapTypes" message="tns:ITransactionalMappingToolService_GetAllMapTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/GetAllMapTypesResponse" message="tns:ITransactionalMappingToolService_GetAllMapTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryDomains">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/QueryDomains" message="tns:ITransactionalMappingToolService_QueryDomains_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/QueryDomainsResponse" message="tns:ITransactionalMappingToolService_QueryDomains_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMap">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/QueryMap" message="tns:ITransactionalMappingToolService_QueryMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/QueryMapResponse" message="tns:ITransactionalMappingToolService_QueryMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMapPaged">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/QueryMapPaged" message="tns:ITransactionalMappingToolService_QueryMapPaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/QueryMapPagedResponse" message="tns:ITransactionalMappingToolService_QueryMapPaged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="QueryMapByDomain">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/QueryMapByDomain" message="tns:ITransactionalMappingToolService_QueryMapByDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/QueryMapByDomainResponse" message="tns:ITransactionalMappingToolService_QueryMapByDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchMap">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/SearchMap" message="tns:ITransactionalMappingToolService_SearchMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/SearchMapResponse" message="tns:ITransactionalMappingToolService_SearchMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NA">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/NA" message="tns:ITransactionalMappingToolService_NA_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/NAResponse" message="tns:ITransactionalMappingToolService_NA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BNA">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BNA" message="tns:ITransactionalMappingToolService_BNA_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BNAResponse" message="tns:ITransactionalMappingToolService_BNA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ND">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/ND" message="tns:ITransactionalMappingToolService_ND_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/NDResponse" message="tns:ITransactionalMappingToolService_ND_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BND">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BND" message="tns:ITransactionalMappingToolService_BND_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BNDResponse" message="tns:ITransactionalMappingToolService_BND_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NU">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/NU" message="tns:ITransactionalMappingToolService_NU_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/NUResponse" message="tns:ITransactionalMappingToolService_NU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BNU">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BNU" message="tns:ITransactionalMappingToolService_BNU_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BNUResponse" message="tns:ITransactionalMappingToolService_BNU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RA">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/RA" message="tns:ITransactionalMappingToolService_RA_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/RAResponse" message="tns:ITransactionalMappingToolService_RA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BRA">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BRA" message="tns:ITransactionalMappingToolService_BRA_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BRAResponse" message="tns:ITransactionalMappingToolService_BRA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RD">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/RD" message="tns:ITransactionalMappingToolService_RD_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/RDResponse" message="tns:ITransactionalMappingToolService_RD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BRD">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BRD" message="tns:ITransactionalMappingToolService_BRD_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BRDResponse" message="tns:ITransactionalMappingToolService_BRD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RU">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/RU" message="tns:ITransactionalMappingToolService_RU_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/RUResponse" message="tns:ITransactionalMappingToolService_RU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BRU">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BRU" message="tns:ITransactionalMappingToolService_BRU_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BRUResponse" message="tns:ITransactionalMappingToolService_BRU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MA">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/MA" message="tns:ITransactionalMappingToolService_MA_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/MAResponse" message="tns:ITransactionalMappingToolService_MA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BMA">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BMA" message="tns:ITransactionalMappingToolService_BMA_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BMAResponse" message="tns:ITransactionalMappingToolService_BMA_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MD">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/MD" message="tns:ITransactionalMappingToolService_MD_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/MDResponse" message="tns:ITransactionalMappingToolService_MD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BMD">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BMD" message="tns:ITransactionalMappingToolService_BMD_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BMDResponse" message="tns:ITransactionalMappingToolService_BMD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MU">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/MU" message="tns:ITransactionalMappingToolService_MU_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/MUResponse" message="tns:ITransactionalMappingToolService_MU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BMU">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BMU" message="tns:ITransactionalMappingToolService_BMU_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BMUResponse" message="tns:ITransactionalMappingToolService_BMU_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BO">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BO" message="tns:ITransactionalMappingToolService_BO_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BOResponse" message="tns:ITransactionalMappingToolService_BO_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="BOC">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BOC" message="tns:ITransactionalMappingToolService_BOC_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/BOCResponse" message="tns:ITransactionalMappingToolService_BOC_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsSessionCompleted">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/IsSessionCompleted" message="tns:ITransactionalMappingToolService_IsSessionCompleted_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/TransactionalNodeService/ITransactionalMappingToolService/IsSessionCompletedResponse" message="tns:ITransactionalMappingToolService_IsSessionCompleted_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="TransactionalMappingToolService">
+    <wsdl:port name="BasicHttpBinding_ITransactionalMappingToolService" binding="i0:BasicHttpBinding_ITransactionalMappingToolService">
+      <soap:address location="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

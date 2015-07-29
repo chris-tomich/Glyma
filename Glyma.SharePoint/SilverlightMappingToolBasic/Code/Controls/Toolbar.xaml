@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.Controls.Toolbar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="48" Width="340">
+    
+    <StackPanel Orientation="Horizontal" x:Name="LayoutRoot" Background="White">
+        <Image x:Name="MapImage" Source="/SilverlightMappingToolBasic;component/Images/network.png"  
+               MouseEnter="DoMouseEnter" MouseLeave="DoMouseLeave" Width="48" Height="48" Margin="0,0,10,0"
+               MouseLeftButtonDown="DoMouseDown" MouseLeftButtonUp="DoMouseUp" MouseMove="DoMouseMove">
+            <Image.RenderTransform>
+                <ScaleTransform CenterX="24" CenterY="24" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="QuestionImage" Source="/SilverlightMappingToolBasic;component/Images/question.png"  
+               MouseEnter="DoMouseEnter" MouseLeave="DoMouseLeave" Width="48" Height="48" Margin="0,0,10,0"
+               MouseLeftButtonDown="DoMouseDown" MouseLeftButtonUp="DoMouseUp" MouseMove="DoMouseMove">
+            <Image.RenderTransform>
+                <ScaleTransform  CenterX="24" CenterY="24" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="IdeaImage" Source="/SilverlightMappingToolBasic;component/Images/exclamation.png"  
+               MouseEnter="DoMouseEnter" MouseLeave="DoMouseLeave" Width="48" Height="48" Margin="0,0,10,0"
+               MouseLeftButtonDown="DoMouseDown" MouseLeftButtonUp="DoMouseUp" MouseMove="DoMouseMove">
+            <Image.RenderTransform>
+                <ScaleTransform CenterX="24" CenterY="24" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="ProImage" Source="/SilverlightMappingToolBasic;component/Images/plus.png"  
+               MouseEnter="DoMouseEnter" MouseLeave="DoMouseLeave" Width="48" Height="48" Margin="0,0,10,0"
+               MouseLeftButtonDown="DoMouseDown" MouseLeftButtonUp="DoMouseUp" MouseMove="DoMouseMove">
+            <Image.RenderTransform>
+                <ScaleTransform CenterX="24" CenterY="24" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="ConImage" Source="/SilverlightMappingToolBasic;component/Images/minus.png"  
+               MouseEnter="DoMouseEnter" MouseLeave="DoMouseLeave" Width="48" Height="48" Margin="0,0,10,0"
+               MouseLeftButtonDown="DoMouseDown" MouseLeftButtonUp="DoMouseUp" MouseMove="DoMouseMove">
+            <Image.RenderTransform>
+                <ScaleTransform CenterX="24" CenterY="24" />
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="DecisionImage" Source="/SilverlightMappingToolBasic;component/Images/generic.png"  
+               MouseEnter="DoMouseEnter" MouseLeave="DoMouseLeave" Width="48" Height="48"
+               MouseLeftButtonDown="DoMouseDown" MouseLeftButtonUp="DoMouseUp" MouseMove="DoMouseMove">
+            <Image.RenderTransform>
+                <ScaleTransform CenterX="24" CenterY="24" />
+            </Image.RenderTransform>
+        </Image>
+    </StackPanel>
+</UserControl>

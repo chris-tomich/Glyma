@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="c6b4b6bf-48df-4877-8ab5-d6eadb203d88" solutionId="c6b4b6bf-48df-4877-8ab5-d6eadb203d88" resetWebServer="false" sharePointProductVersion="" name="Glyma.NodeServiceInstaller" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="System.ComponentModel.Composition.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Glyma.UtilityService.Export\Assemblies\System.ComponentModel.Composition.dll" />
+    <customAssembly location="Telerik.Windows.Controls.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Glyma.UtilityService.Export\Assemblies\Telerik.Windows.Controls.dll" />
+    <customAssembly location="Telerik.Windows.Data.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Glyma.UtilityService.Export\Assemblies\Telerik.Windows.Data.dll" />
+    <customAssembly location="Telerik.Windows.Documents.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Glyma.UtilityService.Export\Assemblies\Telerik.Windows.Documents.dll" />
+    <customAssembly location="Telerik.Windows.Documents.FormatProviders.OpenXml.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Glyma.UtilityService.Export\Assemblies\Telerik.Windows.Documents.FormatProviders.OpenXml.dll" />
+    <customAssembly location="Telerik.Windows.Documents.FormatProviders.Pdf.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Glyma.UtilityService.Export\Assemblies\Telerik.Windows.Documents.FormatProviders.Pdf.dll" />
+    <customAssembly location="Telerik.Windows.Zip.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Glyma.UtilityService.Export\Assemblies\Telerik.Windows.Zip.dll" />
+    <customAssembly location="Telerik.Windows.Documents.FormatProviders.Html.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Glyma.UtilityService.Export\Assemblies\Telerik.Windows.Documents.FormatProviders.Html.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="33595f0f-4fbd-426d-bfe2-0ce8695fe2aa" />
+    <featureReference itemId="e8f6daaf-f117-440c-98c7-d1624e288a3c" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="30917b67-50e1-4585-8b99-c355c28e1acc" />
+  </projectItems>
+</package>

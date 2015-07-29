@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MappingToolConfig>
+  <Themes>
+    <Theme Name="Generic" Assembly="">
+      <Skin Name="Focal" NodeType="CompendiumGenericNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumGenericNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumListNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumListNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumArgumentNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumArgumentNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumNoteNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumNoteNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumReferenceNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumReferenceNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumDecisionNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumDecisionNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Generic</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumConNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Con</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumConNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Con</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumIdeaNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Idea</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumIdeaNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Idea</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumMapNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Map</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumMapNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Map</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="ChildCountLeftOffset">-10</Property>
+        <Property Name="ChildCountTopOffset">15</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumProNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Pro</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumProNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Pro</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="CompendiumQuestionNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Question</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="CompendiumQuestionNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Question</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+      <Skin Name="Focal" NodeType="DomainNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-15</Property>
+        <Property Name="TextMarginY">128</Property>
+        <Property Name="TextWidth">159</Property>
+        <Property Name="TextHeight">94</Property>
+        <Property Name="NodeImageName">Map</Property>
+        <Property Name="NodeSkinWidth">125</Property>
+        <Property Name="NodeSkinHeight">125</Property>
+      </Skin>
+      <Skin Name="Default" NodeType="DomainNode" Class="SilverlightMappingToolBasic.SimpleNodeSkin" Assembly="">
+        <Property Name="TextMarginX">-57</Property>
+        <Property Name="TextMarginY">30</Property>
+        <Property Name="TextWidth">140</Property>
+        <Property Name="TextHeight">60</Property>
+        <Property Name="NodeImageName">Map</Property>
+        <Property Name="NodeSkinWidth">25</Property>
+        <Property Name="NodeSkinHeight">25</Property>
+        <Property Name="MediaIconWidth">10</Property>
+        <Property Name="MediaIconHeight">10</Property>
+        <Property Name="MediaIconLeftOffset">15</Property>
+        <Property Name="MediaIconTopOffset">15</Property>
+        <Property Name="NoteLeftOffset">25</Property>
+        <Property Name="NoteTopOffset">0</Property>
+        <Property Name="TransclusionCountLeftOffset">22</Property>
+        <Property Name="TransclusionCountTopOffset">15</Property>
+      </Skin>
+    </Theme>
+  </Themes>
+  <ContextMenus>
+    <ContextMenu Name="MapNodeContextMenu">
+      <toolkit:ContextMenu
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+        <toolkit:MenuItem Header="Properties" x:Name="PropertiesMenuItem" Command="{Binding OpenProperties}"/>
+      </toolkit:ContextMenu>
+    </ContextMenu>
+    <ContextMenu Name="ConNodeContextMenu">
+      <toolkit:ContextMenu
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+        <toolkit:MenuItem Header="Properties"/>
+      </toolkit:ContextMenu>
+    </ContextMenu>
+  </ContextMenus>
+</MappingToolConfig>

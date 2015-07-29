@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="6dffb2dc-d98c-4c73-9cae-3de79f2a5612" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dev-sp/sites/TestSite1/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mex.wsdl" MetadataType="Wsdl" ID="596af607-c692-45f7-9a6a-9f035559f3dd" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?wsdl=wsdl0" />
+    <MetadataFile FileName="UtilityServiceManager2.wsdl" MetadataType="Wsdl" ID="42d32cc2-3e15-4d2e-9df6-69b2ad61e26f" SourceId="1" SourceUrl="http://dev-sp/sites/TestSite1/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex" />
+    <MetadataFile FileName="mex.xsd" MetadataType="Schema" ID="fed01905-42c2-431d-a10e-b72dd042f32d" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd0" />
+    <MetadataFile FileName="mex1.xsd" MetadataType="Schema" ID="8b27cfd8-38ab-400d-bf12-5ef6f8b45b85" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd1" />
+    <MetadataFile FileName="mex2.xsd" MetadataType="Schema" ID="17251b29-5cca-484a-99c4-05727997f401" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd2" />
+    <MetadataFile FileName="mex3.xsd" MetadataType="Schema" ID="be4e284b-7c19-4a77-b73b-93bdcebc443d" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd3" />
+    <MetadataFile FileName="mex4.xsd" MetadataType="Schema" ID="8d9f2981-8f9b-4567-8cb1-f7ba302ad13b" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd4" />
+    <MetadataFile FileName="UtilityServiceManager1.wsdl" MetadataType="Wsdl" ID="5a0fa24a-2332-430e-a6e3-7d4ac13c637d" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

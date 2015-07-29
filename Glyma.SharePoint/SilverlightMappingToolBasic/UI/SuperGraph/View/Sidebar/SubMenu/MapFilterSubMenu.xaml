@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.Sidebar.SubMenu.MapFilterSubMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:subMenu="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Sidebar.SubMenu"
+    xmlns:nodeControlSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.NodeControlSupportClasses"
+    mc:Ignorable="d"
+    d:DesignHeight="110" d:DesignWidth="139" MouseLeave="UserControl_MouseLeave">
+
+    <Border BorderBrush="#ff848788" Background="#FFFFFFFF" BorderThickness="0" CornerRadius="3,3,3,3">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" Color="Black"
+            Direction="135" Opacity="0.5" ShadowDepth="2">
+            </DropShadowEffect>
+        </Border.Effect>
+        <StackPanel Orientation="Vertical" Name="SubMenu" Background="White" Margin="25">
+            <StackPanel Orientation="Horizontal">
+                <nodeControlSupportClasses:NodeDetailIndicatorButton Margin="2" IsEnabled="False"
+                x:Name="ShowAll" 
+            Icon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/showall-static.png" 
+            HoverIcon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/showall-hover.png">
+                </nodeControlSupportClasses:NodeDetailIndicatorButton>
+                <nodeControlSupportClasses:NodeDetailIndicatorButton Margin="2" IsEnabled="False"
+                Icon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/map-static.png" 
+            HoverIcon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/map-hover.png">
+                </nodeControlSupportClasses:NodeDetailIndicatorButton>
+                <nodeControlSupportClasses:NodeDetailIndicatorButton Margin="2"  IsEnabled="False"
+            x:Name="Video"
+                Icon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/video-static.png" 
+            HoverIcon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/video-hover.png">
+                </nodeControlSupportClasses:NodeDetailIndicatorButton>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <nodeControlSupportClasses:NodeDetailIndicatorButton Margin="2"  IsEnabled="False"
+            x:Name="Location"
+                Icon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/locate-static.png" 
+            HoverIcon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/locate-hover.png">
+                </nodeControlSupportClasses:NodeDetailIndicatorButton>
+                <nodeControlSupportClasses:NodeDetailIndicatorButton Margin="2"  IsEnabled="False"
+            x:Name="Content"
+                Icon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/content-static.png" 
+            HoverIcon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/content-hover.png">
+                </nodeControlSupportClasses:NodeDetailIndicatorButton>
+                <nodeControlSupportClasses:NodeDetailIndicatorButton Margin="2"  IsEnabled="False"
+            x:Name="Feed"
+                Icon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/feed-static.png" 
+            HoverIcon="/SilverlightMappingToolBasic;component/Images/NodeControl/NodeDetailIndicator/feed-hover.png">
+                </nodeControlSupportClasses:NodeDetailIndicatorButton>
+            </StackPanel>
+            
+        </StackPanel>
+    </Border>
+</UserControl>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://sevensigma.com.au/TransactionalNodeService/OpObjects" elementFormDefault="qualified" targetNamespace="http://sevensigma.com.au/TransactionalNodeService/OpObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" />
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="RS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="C" nillable="true" type="tns:ArrayOfCH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RS" nillable="true" type="tns:RS" />
+  <xs:complexType name="ArrayOfCH">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CH" nillable="true" type="tns:CH" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCH" nillable="true" type="tns:ArrayOfCH" />
+  <xs:complexType name="CH">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:DE" />
+      <xs:element minOccurs="0" name="M" nillable="true" type="tns:DA" />
+      <xs:element minOccurs="0" name="N" nillable="true" type="tns:NO" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="O" type="q1:TransactionType" />
+      <xs:element minOccurs="0" name="P" type="ser:guid" />
+      <xs:element minOccurs="0" name="R" nillable="true" type="tns:RE" />
+      <xs:element minOccurs="0" name="T" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CH" nillable="true" type="tns:CH" />
+  <xs:complexType name="DE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" type="ser:guid" />
+      <xs:element minOccurs="0" name="N" type="ser:guid" />
+      <xs:element minOccurs="0" name="R" type="ser:guid" />
+      <xs:element minOccurs="0" name="T" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DE" nillable="true" type="tns:DE" />
+  <xs:complexType name="DA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CR" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="D" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="DI" type="ser:guid" />
+      <xs:element minOccurs="0" name="M" type="ser:guid" />
+      <xs:element minOccurs="0" name="MB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="N" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="R" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="RM" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="T" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DA" nillable="true" type="tns:DA" />
+  <xs:complexType name="NO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CR" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="D" type="ser:guid" />
+      <xs:element minOccurs="0" name="DH" type="xs:int" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="M" nillable="true" type="q2:ArrayOfKeyValueOfMetadataContextDAIemz4FG4" />
+      <xs:element minOccurs="0" name="MB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="N" type="ser:guid" />
+      <xs:element minOccurs="0" name="O" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RM" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="T" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NO" nillable="true" type="tns:NO" />
+  <xs:complexType name="RE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CR" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="D" type="ser:guid" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="M" nillable="true" type="q3:ArrayOfKeyValueOfMetadataContextDAIemz4FG4" />
+      <xs:element minOccurs="0" name="MB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MO" nillable="true" type="xs:dateTime" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="N" nillable="true" type="q4:ArrayOfKeyValueOfguidguid" />
+      <xs:element minOccurs="0" name="O" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="R" type="ser:guid" />
+      <xs:element minOccurs="0" name="RM" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="T" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RE" nillable="true" type="tns:RE" />
+  <xs:complexType name="NT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ME">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="NT" nillable="true" type="tns:NT" />
+  <xs:complexType name="ME">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="I" type="ser:guid" />
+      <xs:element minOccurs="0" name="N" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ME" nillable="true" type="tns:ME" />
+  <xs:complexType name="RT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ME">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="RT" nillable="true" type="tns:RT" />
+  <xs:complexType name="DT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ME">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DT" nillable="true" type="tns:DT" />
+  <xs:complexType name="MetadataType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:ME">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MetadataType" nillable="true" type="tns:MetadataType" />
+  <xs:complexType name="MP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" type="xs:boolean" />
+      <xs:element minOccurs="0" name="I" type="ser:guid" />
+      <xs:element minOccurs="0" name="S" type="ser:guid" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="T" type="q5:MapParameterType" />
+      <xs:element minOccurs="0" name="V" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MP" nillable="true" type="tns:MP" />
+  <xs:complexType name="OPS">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="O" nillable="true" type="q6:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OPS" nillable="true" type="tns:OPS" />
+  <xs:complexType name="BRA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="N" nillable="true" type="q7:ArrayOfKeyValueOfDTMP3qsds8mH" />
+      <xs:element minOccurs="0" name="O" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RI" type="ser:guid" />
+      <xs:element minOccurs="0" name="RM" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="T" nillable="true" type="tns:RT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BRA" nillable="true" type="tns:BRA" />
+  <xs:complexType name="BMA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="DT" nillable="true" type="tns:DT" />
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element minOccurs="0" name="MN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="N" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="R" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="RI" type="ser:guid" />
+      <xs:element minOccurs="0" name="RM" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="T" nillable="true" type="tns:MetadataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BMA" nillable="true" type="tns:BMA" />
+  <xs:complexType name="BND">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element minOccurs="0" name="N" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="RI" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BND" nillable="true" type="tns:BND" />
+  <xs:complexType name="BMU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element minOccurs="0" name="M" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="MN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RI" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BMU" nillable="true" type="tns:BMU" />
+  <xs:complexType name="BRD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element minOccurs="0" name="R" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="RI" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BRD" nillable="true" type="tns:BRD" />
+  <xs:complexType name="BNA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element minOccurs="0" name="O" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RI" type="ser:guid" />
+      <xs:element minOccurs="0" name="RM" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="T" nillable="true" type="tns:NT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BNA" nillable="true" type="tns:BNA" />
+  <xs:complexType name="BMD">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element minOccurs="0" name="M" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="RI" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BMD" nillable="true" type="tns:BMD" />
+  <xs:complexType name="BNU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element minOccurs="0" name="N" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="RI" type="ser:guid" />
+      <xs:element minOccurs="0" name="T" nillable="true" type="tns:NT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BNU" nillable="true" type="tns:BNU" />
+  <xs:complexType name="BRU">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="D" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="N" nillable="true" type="q8:ArrayOfKeyValueOfDTMP3qsds8mH" />
+      <xs:element minOccurs="0" name="R" nillable="true" type="tns:MP" />
+      <xs:element minOccurs="0" name="RI" type="ser:guid" />
+      <xs:element minOccurs="0" name="T" nillable="true" type="tns:RT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BRU" nillable="true" type="tns:BRU" />
+  <xs:complexType name="ArrayOfBOR">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BOR" nillable="true" type="tns:BOR" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBOR" nillable="true" type="tns:ArrayOfBOR" />
+  <xs:complexType name="BOR">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="I" type="xs:int" />
+      <xs:element minOccurs="0" name="R" nillable="true" type="tns:MP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BOR" nillable="true" type="tns:BOR" />
+</xs:schema>

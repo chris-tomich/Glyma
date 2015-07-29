@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{58A6B16D-F170-41E6-94DE-A07575D52A1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Glyma.UtilityService.Export</RootNamespace>
+    <AssemblyName>Glyma.UtilityService.Export</AssemblyName>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GlymaAssemblyKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SP2010</DefineConstants>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SP2010</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition, Version=2009.7.8.0, Culture=neutral, PublicKeyToken=13e5ffd4e05db186, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Windows.Controls, Version=2012.2.912.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2012.2.912.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents, Version=2012.2.912.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html">
+      <HintPath>Assemblies\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.OpenXml, Version=2012.2.912.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Documents.FormatProviders.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Pdf, Version=2012.2.912.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Documents.FormatProviders.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2012.2.912.35, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="TransactionalNodeService.Proxy.Universal, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2704b4e62e725461, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Glyma.NodeServiceApp\Assemblies\TransactionalNodeService.Proxy.Universal.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\EventArgs\ExceptionRaisedEventArgs.cs" />
+    <Compile Include="ExportPropertiesDictionary.cs" />
+    <Compile Include="GlymaExportUserState.cs" />
+    <Compile Include="IBIS\Common\Control\DocumentExportUtility.cs" />
+    <Compile Include="IBIS\Common\Control\NodeIconManager.cs" />
+    <Compile Include="IBIS\Common\Control\ExportUtility.cs" />
+    <Compile Include="IBIS\Common\Control\GlymaMapQuerier.cs" />
+    <Compile Include="Common\Control\Interface\IExportUtility.cs" />
+    <Compile Include="Common\Control\Interface\IMapQuerier.cs" />
+    <Compile Include="IBIS\Common\Model\MapEventArgs.cs" />
+    <Compile Include="Common\Control\MapQuerier.cs" />
+    <Compile Include="IBIS\Common\Extension\StringHelper.cs" />
+    <Compile Include="IBIS\Common\Model\Glyma\GlymaMap.cs" />
+    <Compile Include="IBIS\Common\Model\Glyma\GlymaNode.cs" />
+    <Compile Include="IBIS\Common\Model\Glyma\GlymaRelationship.cs" />
+    <Compile Include="Common\Model\NodeDescription.cs" />
+    <Compile Include="Common\Model\NodeVideo.cs" />
+    <Compile Include="IBIS\Common\Model\Interface\IGlymaNode.cs" />
+    <Compile Include="IBIS\Common\Model\Interface\IGlymaObject.cs" />
+    <Compile Include="IBIS\Common\Model\Interface\IGlymaRelationship.cs" />
+    <Compile Include="IBIS\Common\Model\Interface\IXmlMap.cs" />
+    <Compile Include="IBIS\Common\Model\Xml\XmlElementBase.cs" />
+    <Compile Include="IBIS\Common\Model\Xml\XmlMapBase.cs" />
+    <Compile Include="IBIS\Compendium\CompendiumExportUtility.cs" />
+    <Compile Include="IBIS\Compendium\Control\CompendiumMapQuerier.cs" />
+    <Compile Include="IBIS\Compendium\Extensions\NodeHelper.cs" />
+    <Compile Include="IBIS\Compendium\Extensions\NodeTypeManager.cs" />
+    <Compile Include="IBIS\Compendium\Model\CompendiumNode.cs" />
+    <Compile Include="IBIS\Compendium\Model\CompendiumXmlMap.cs" />
+    <Compile Include="IBIS\Compendium\Model\Glyma\ReferenceNode.cs" />
+    <Compile Include="IBIS\Common\Model\Interface\IXmlElement.cs" />
+    <Compile Include="IBIS\Compendium\Model\XmlLink\Link.cs" />
+    <Compile Include="IBIS\Compendium\Model\XmlLink\LinkBase.cs" />
+    <Compile Include="IBIS\Compendium\Model\XmlLink\LinkType.cs" />
+    <Compile Include="IBIS\Compendium\Model\XmlLink\LinkView.cs" />
+    <Compile Include="IBIS\Compendium\Model\XmlLink\ReferenceLink.cs" />
+    <Compile Include="IBIS\Compendium\Model\XmlNode\Image.cs" />
+    <Compile Include="IBIS\Compendium\Model\XmlNode\Page.cs" />
+    <Compile Include="IBIS\Compendium\Model\XmlNode\XmlNode.cs" />
+    <Compile Include="IBIS\Compendium\Model\XmlView\View.cs" />
+    <Compile Include="Common\EventArgs\ExportCompletedEventArgs.cs" />
+    <Compile Include="ExportUtilityFactory.cs" />
+    <Compile Include="IBIS\GlymaXml\GlymaXmlExportUtility.cs" />
+    <Compile Include="IBIS\GlymaXml\Model\GlymaXmlMap.cs" />
+    <Compile Include="IBIS\Html\HtmlExportUtility.cs" />
+    <Compile Include="IBIS\Pdf\PdfExportUtility.cs" />
+    <Compile Include="IBIS\Word\WordExportUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GlymaAssemblyKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glyma.UtilityService.Common\Glyma.UtilityService.Common.csproj">
+      <Project>{ba39fc2a-2ae8-4d53-ace9-bc079af045cf}</Project>
+      <Name>Glyma.UtilityService.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\RelatedContent.png" />
+    <EmbeddedResource Include="Images\Video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Feed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Cons.png" />
+    <EmbeddedResource Include="Images\Decision.png" />
+    <EmbeddedResource Include="Images\Idea.png" />
+    <EmbeddedResource Include="Images\Map.png" />
+    <EmbeddedResource Include="Images\Note.png" />
+    <EmbeddedResource Include="Images\Pro.png" />
+    <EmbeddedResource Include="Images\Question.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)..\Glyma.NodeService\Glyma.NodeServiceApp\Assemblies\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

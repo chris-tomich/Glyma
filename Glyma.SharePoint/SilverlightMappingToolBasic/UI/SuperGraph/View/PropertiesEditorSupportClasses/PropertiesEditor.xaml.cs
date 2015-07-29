@@ -1,0 +1,182 @@
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
+using SilverlightMappingToolBasic.UI.SuperGraph.View.MessageBox;
+using SilverlightMappingToolBasic.UI.SuperGraph.View.PropertiesEditorSupportClasses.Edit;
+using SilverlightMappingToolBasic.UI.ViewModel;
+
+namespace SilverlightMappingToolBasic.UI.SuperGraph.View.PropertiesEditorSupportClasses
+{
+    public partial class PropertiesEditor : UserControl
+    {
+        private NodePropertyDataGridSource _source;
+
+        public PropertiesEditor()
+        {
+            InitializeComponent();
+        }
+
+        private INodeProperties NodeContext
+        {
+            get
+            {
+                return DataContext as INodeProperties;
+            }
+        }
+
+        private void OnDataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            if (e.NewValue == null)
+            {
+                return;
+            }
+
+            var nodeContext = e.NewValue as INodeProperties;
+            if (nodeContext == null)
+            {
+                return;
+            }
+
+            _source = new NodePropertyDataGridSource(nodeContext.UIMetadata);
+            NodeMetadataDataGrid.ItemsSource = null;
+            NodeMetadataDataGrid.ItemsSource = _source;
+        }
+
+        private void OnPreparingCellForEdit(object sender, DataGridPreparingCellForEditEventArgs e)
+        {
+            var editingArea = e.EditingElement as TextBox;
+
+            if (editingArea != null)
+            {
+                if (string.IsNullOrEmpty(editingArea.Text.Trim()))
+                {
+                    editingArea.Text = "";
+                }
+            }
+        }
+
+        private void OnRowEditEnded(object sender, DataGridRowEditEndedEventArgs e)
+        {
+            if (NodeContext == null) return;
+            if (e.EditAction == DataGridEditAction.Commit)
+            {
+                var property = e.Row.DataContext as UIMetadata;
+
+                if (property != null)
+                {
+                    if (string.IsNullOrEmpty(property.Name.Trim()))
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        if (property.OriginalName == property.Name || !property.IsInserted)
+                        {
+                            NodeContext.Updates.Add(new UpdateMetadataDetail
+                            {
+                                Type = UpdateMetadataType.AddOrUpdateValue,
+                                NewKey = property.Name,
+                                NewValue = property.Value
+                            });
+
+                            property.OriginalName = property.Name;
+
+                            if (!property.IsInserted)
+                            {
+                                property.IsInserted = true;
+                            }
+                        }
+                        else
+                        {
+                            NodeContext.Updates.Add(new UpdateMetadataDetail
+                            {
+                                Type = UpdateMetadataType.UpdateKey,
+                                Key = property.OriginalName,
+                                NewKey = property.Name,
+                                NewValue = property.Value
+                            });
+                        }
+                    }
+
+                    if (_source.AugmentedCollection.All(q => q.IsInserted))
+                    {
+                        
+                        _source.NewLine();
+                        NodeMetadataDataGrid.ItemsSource = null;
+                        NodeMetadataDataGrid.ItemsSource = _source;
+                    }
+                }
+            }
+        }
+
+        private void NodeMetadataDataGrid_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //Get the elements under mouse
+            var elementsUnderMouse = VisualTreeHelper.FindElementsInHostCoordinates(e.GetPosition(null), this);
+            //Get the first row
+            var row =elementsUnderMouse.Where(q => q is DataGridRow).Cast<DataGridRow>().FirstOrDefault();
+            if (row != null)
+            {
+                NodeMetadataDataGrid.SelectedItem = row.DataContext;
+                BtnDelete.IsEnabled = true;
+            }
+            else
+            {
+                BtnDelete.IsEnabled = false;
+            }
+            
+        }
+
+
+        private void BtnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (NodeMetadataDataGrid.SelectedItem != null)
+            {
+                var metadata = NodeMetadataDataGrid.SelectedItem as UIMetadata;
+                if (metadata != null)
+                {
+                    if ((!metadata.IsInserted && string.IsNullOrEmpty(metadata.Name)) || (metadata.IsInserted && (string.IsNullOrWhiteSpace(metadata.OriginalName) || string.IsNullOrEmpty(metadata.OriginalName))))
+                    {
+                        SuperMessageBoxService.Show("Delete Property Failed", "The selected property did not exist", MessageBoxType.Error);
+                    }
+                    else
+                    {
+                        SuperMessageBoxService.ShowConfirmation("Delete Property", 
+                            string.Format("Are you sure to delete the property '{0}'?", metadata.Name), () => DeleteMetadata(metadata));
+                    }
+                    
+                }
+            }
+        }
+
+        private void DeleteMetadata(UIMetadata metadata)
+        {
+            if (NodeContext != null)
+            {
+                NodeContext.Updates.Add(new UpdateMetadataDetail
+                {
+                    Type = UpdateMetadataType.Delete,
+                    NewKey = metadata.Name,
+                });
+                _source.Remove(metadata);
+                NodeMetadataDataGrid.ItemsSource = null;
+                NodeMetadataDataGrid.ItemsSource = _source;
+                UpdateLayout();
+            }
+        }
+
+        private void NodeMetadataDataGrid_CellEditEnded(object sender, DataGridCellEditEndedEventArgs e)
+        {
+            if (e.EditAction == DataGridEditAction.Commit)
+            {
+
+            }
+        }
+    }
+
+    
+}

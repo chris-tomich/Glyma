@@ -1,0 +1,145 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompendiumMapSPService", "MappingToolSPDeployment\CompendiumMapSPService.csproj", "{E7EBEEE0-22FD-4B20-A088-6654013755AC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A} = {6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}
+		{5BA0924E-21CC-4383-8F33-16A33A77C72E} = {5BA0924E-21CC-4383-8F33-16A33A77C72E}
+		{968AE49F-2EB1-4705-B8ED-16D924697774} = {968AE49F-2EB1-4705-B8ED-16D924697774}
+		{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304} = {C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}
+		{99D179D6-5DD4-47EE-AD06-02EF378B487C} = {99D179D6-5DD4-47EE-AD06-02EF378B487C}
+		{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3} = {F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}
+		{962719FA-7514-4AE8-BD16-0BD084EAC872} = {962719FA-7514-4AE8-BD16-0BD084EAC872}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeService", "NodeService\NodeService.csproj", "{962719FA-7514-4AE8-BD16-0BD084EAC872}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NodeServiceUnitTests", "NodeServiceUnitTests\NodeServiceUnitTests.csproj", "{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SevenSigma.Logging", "SevenSigma.Logging\SevenSigma.Logging.csproj", "{6A1C5DD4-279C-4E87-875B-4A979016030D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverlightMappingToolBasic", "SilverlightMappingToolBasic\SilverlightMappingToolBasic.csproj", "{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeService", "ThemeService\ThemeService.csproj", "{5BA0924E-21CC-4383-8F33-16A33A77C72E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoPlayerSharedLib", "VideoPlayerSharedLib\VideoPlayerSharedLib.csproj", "{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleIoC", "SimpleIoC\SimpleIoC.csproj", "{968AE49F-2EB1-4705-B8ED-16D924697774}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyma.Debug", "Glyma.Debug\Glyma.Debug.csproj", "{99D179D6-5DD4-47EE-AD06-02EF378B487C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyma.Plugin", "Glyma.Plugin\Glyma.Plugin.csproj", "{7D4FB683-1D0E-4555-9946-C55C7DE83DED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Html5MappingTool", "Html5MappingTool\Html5MappingTool.csproj", "{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - SharePoint 2010|Any CPU = Debug - SharePoint 2010|Any CPU
+		Debug - SharePoint 2013|Any CPU = Debug - SharePoint 2013|Any CPU
+		Release - SharePoint 2010|Any CPU = Release - SharePoint 2010|Any CPU
+		Release - SharePoint 2013|Any CPU = Release - SharePoint 2013|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug - SharePoint 2010|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug - SharePoint 2010|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Debug - SharePoint 2010|Any CPU.Deploy.0 = Debug - SharePoint 2010|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug - SharePoint 2013|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug - SharePoint 2013|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Debug - SharePoint 2013|Any CPU.Deploy.0 = Debug - SharePoint 2013|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release - SharePoint 2010|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Release - SharePoint 2010|Any CPU.Build.0 = Release - SharePoint 2010|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Release - SharePoint 2010|Any CPU.Deploy.0 = Release - SharePoint 2010|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release - SharePoint 2013|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Release - SharePoint 2013|Any CPU.Build.0 = Release - SharePoint 2013|Any CPU
+		{E7EBEEE0-22FD-4B20-A088-6654013755AC}.Release - SharePoint 2013|Any CPU.Deploy.0 = Release - SharePoint 2013|Any CPU
+		{962719FA-7514-4AE8-BD16-0BD084EAC872}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug - SharePoint 2010|Any CPU
+		{962719FA-7514-4AE8-BD16-0BD084EAC872}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug - SharePoint 2010|Any CPU
+		{962719FA-7514-4AE8-BD16-0BD084EAC872}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug - SharePoint 2013|Any CPU
+		{962719FA-7514-4AE8-BD16-0BD084EAC872}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug - SharePoint 2013|Any CPU
+		{962719FA-7514-4AE8-BD16-0BD084EAC872}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release - SharePoint 2010|Any CPU
+		{962719FA-7514-4AE8-BD16-0BD084EAC872}.Release - SharePoint 2010|Any CPU.Build.0 = Release - SharePoint 2010|Any CPU
+		{962719FA-7514-4AE8-BD16-0BD084EAC872}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release - SharePoint 2013|Any CPU
+		{962719FA-7514-4AE8-BD16-0BD084EAC872}.Release - SharePoint 2013|Any CPU.Build.0 = Release - SharePoint 2013|Any CPU
+		{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug|Any CPU
+		{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug|Any CPU
+		{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}.Release - SharePoint 2010|Any CPU.Build.0 = Release|Any CPU
+		{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release|Any CPU
+		{6E5E5C1C-86B0-4321-A343-C91DF52FFD5A}.Release - SharePoint 2013|Any CPU.Build.0 = Release|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug - SharePoint 2010|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug - SharePoint 2010|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Debug - SharePoint 2010|Any CPU.Deploy.0 = Debug - SharePoint 2010|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug - SharePoint 2013|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug - SharePoint 2013|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Debug - SharePoint 2013|Any CPU.Deploy.0 = Debug - SharePoint 2013|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release - SharePoint 2010|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Release - SharePoint 2010|Any CPU.Build.0 = Release - SharePoint 2010|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Release - SharePoint 2010|Any CPU.Deploy.0 = Release - SharePoint 2010|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release - SharePoint 2013|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Release - SharePoint 2013|Any CPU.Build.0 = Release - SharePoint 2013|Any CPU
+		{6A1C5DD4-279C-4E87-875B-4A979016030D}.Release - SharePoint 2013|Any CPU.Deploy.0 = Release - SharePoint 2013|Any CPU
+		{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug - SharePoint 2010|Any CPU
+		{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug - SharePoint 2010|Any CPU
+		{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug - SharePoint 2013|Any CPU
+		{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug - SharePoint 2013|Any CPU
+		{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release - SharePoint 2010|Any CPU
+		{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}.Release - SharePoint 2010|Any CPU.Build.0 = Release - SharePoint 2010|Any CPU
+		{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release - SharePoint 2013|Any CPU
+		{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}.Release - SharePoint 2013|Any CPU.Build.0 = Release - SharePoint 2013|Any CPU
+		{5BA0924E-21CC-4383-8F33-16A33A77C72E}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug - SharePoint 2010|Any CPU
+		{5BA0924E-21CC-4383-8F33-16A33A77C72E}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug - SharePoint 2010|Any CPU
+		{5BA0924E-21CC-4383-8F33-16A33A77C72E}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug - SharePoint 2013|Any CPU
+		{5BA0924E-21CC-4383-8F33-16A33A77C72E}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug - SharePoint 2013|Any CPU
+		{5BA0924E-21CC-4383-8F33-16A33A77C72E}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release - SharePoint 2010|Any CPU
+		{5BA0924E-21CC-4383-8F33-16A33A77C72E}.Release - SharePoint 2010|Any CPU.Build.0 = Release - SharePoint 2010|Any CPU
+		{5BA0924E-21CC-4383-8F33-16A33A77C72E}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release - SharePoint 2013|Any CPU
+		{5BA0924E-21CC-4383-8F33-16A33A77C72E}.Release - SharePoint 2013|Any CPU.Build.0 = Release - SharePoint 2013|Any CPU
+		{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug|Any CPU
+		{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug|Any CPU
+		{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}.Release - SharePoint 2010|Any CPU.Build.0 = Release|Any CPU
+		{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release|Any CPU
+		{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}.Release - SharePoint 2013|Any CPU.Build.0 = Release|Any CPU
+		{968AE49F-2EB1-4705-B8ED-16D924697774}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug|Any CPU
+		{968AE49F-2EB1-4705-B8ED-16D924697774}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug|Any CPU
+		{968AE49F-2EB1-4705-B8ED-16D924697774}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug|Any CPU
+		{968AE49F-2EB1-4705-B8ED-16D924697774}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug|Any CPU
+		{968AE49F-2EB1-4705-B8ED-16D924697774}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release|Any CPU
+		{968AE49F-2EB1-4705-B8ED-16D924697774}.Release - SharePoint 2010|Any CPU.Build.0 = Release|Any CPU
+		{968AE49F-2EB1-4705-B8ED-16D924697774}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release|Any CPU
+		{968AE49F-2EB1-4705-B8ED-16D924697774}.Release - SharePoint 2013|Any CPU.Build.0 = Release|Any CPU
+		{99D179D6-5DD4-47EE-AD06-02EF378B487C}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D179D6-5DD4-47EE-AD06-02EF378B487C}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug|Any CPU
+		{99D179D6-5DD4-47EE-AD06-02EF378B487C}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug|Any CPU
+		{99D179D6-5DD4-47EE-AD06-02EF378B487C}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug|Any CPU
+		{99D179D6-5DD4-47EE-AD06-02EF378B487C}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release|Any CPU
+		{99D179D6-5DD4-47EE-AD06-02EF378B487C}.Release - SharePoint 2010|Any CPU.Build.0 = Release|Any CPU
+		{99D179D6-5DD4-47EE-AD06-02EF378B487C}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release|Any CPU
+		{99D179D6-5DD4-47EE-AD06-02EF378B487C}.Release - SharePoint 2013|Any CPU.Build.0 = Release|Any CPU
+		{7D4FB683-1D0E-4555-9946-C55C7DE83DED}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4FB683-1D0E-4555-9946-C55C7DE83DED}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug|Any CPU
+		{7D4FB683-1D0E-4555-9946-C55C7DE83DED}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D4FB683-1D0E-4555-9946-C55C7DE83DED}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug|Any CPU
+		{7D4FB683-1D0E-4555-9946-C55C7DE83DED}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4FB683-1D0E-4555-9946-C55C7DE83DED}.Release - SharePoint 2010|Any CPU.Build.0 = Release|Any CPU
+		{7D4FB683-1D0E-4555-9946-C55C7DE83DED}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release|Any CPU
+		{7D4FB683-1D0E-4555-9946-C55C7DE83DED}.Release - SharePoint 2013|Any CPU.Build.0 = Release|Any CPU
+		{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug|Any CPU
+		{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug|Any CPU
+		{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}.Release - SharePoint 2010|Any CPU.Build.0 = Release|Any CPU
+		{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release|Any CPU
+		{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}.Release - SharePoint 2013|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

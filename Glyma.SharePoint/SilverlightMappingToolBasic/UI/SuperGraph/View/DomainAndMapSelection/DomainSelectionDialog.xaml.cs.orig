@@ -1,0 +1,281 @@
+﻿using System;
+using System.Windows;
+using System.Windows.Controls;
+<<<<<<< HEAD
+using SilverlightMappingToolBasic.GlymaSecurityService;
+=======
+>>>>>>> origin/projectmapmanagement-feature
+using SilverlightMappingToolBasic.UI.Extensions.Security;
+using SilverlightMappingToolBasic.UI.SuperGraph.View.SecurityManagement;
+using SilverlightMappingToolBasic.UI.SuperGraph.View.SecurityManagement.UI;
+using Telerik.Windows.Controls;
+using TransactionalNodeService.Proxy;
+using Proxy = TransactionalNodeService.Proxy;
+using SelectionChangedEventArgs = Telerik.Windows.Controls.SelectionChangedEventArgs;
+
+namespace SilverlightMappingToolBasic.UI.SuperGraph.View.DomainAndMapSelection
+{
+    public partial class DomainSelectionDialog : ChildWindow
+    {
+        private NodeType _mapNodeType;
+
+        public class ContextInfoTuple : EventArgs
+        {
+            public INode Node;
+            public string Name;
+        }
+
+        public DomainSelectionDialog(SecurityManager securityManager)
+        {
+            InitializeComponent();
+            SecurityManager = securityManager;
+            if (App.PermissionLevel >= PermissionLevel.Author)
+            {
+                ManagementConsoleButton.Visibility = Visibility.Visible;
+            }
+        }
+
+        public IMapManager MapManager
+        {
+            get;
+            set;
+        }
+
+        public SecurityManager SecurityManager
+        {
+            get; 
+            private set;
+        }
+
+        private INode Domain
+        {
+            get;
+            set;
+        }
+
+        public INode Map
+        {
+            get;
+            private set;
+        }
+
+        private void LoadButton_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        private void ChildWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            DomainSelector.Items.Clear();
+
+            MapManager.QueryDomainsCompleted.RegisterEvent(OnAcquireDomainsCompleted);
+            MapManager.QueryDomainsAsync();
+        }
+
+        private void DomainSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e != null && e.AddedItems != null && e.AddedItems.Count > 0)
+            {
+                MapSelector.Items.Clear();
+                var selectedItem = e.AddedItems[0] as RadComboBoxItem;
+                if (selectedItem != null)
+                {
+                    Domain = selectedItem.DataContext as INode;
+
+                    if (Domain != null)
+                    {
+                        MapManager.QueryMapByDomainCompleted.RegisterEvent(Domain.DomainId, OnAcquireNodeByDomainCompleted);
+                        MapManager.QueryMapByDomainAsync(Domain.DomainId);
+<<<<<<< HEAD
+                        
+                        if (!PermissionLevel.IsOldPermission(App.PermissionLevel))
+                        {
+                            SecurityManager.GetPermissionNameForObjectAsync("DomainSelectionDialog", ClientOnGetPermissionNameForObjectCompleted, new GlymaSecurableObject { SecurableParentUid = Guid.Empty, SecurableObjectUid = Domain.DomainId });
+                        }
+=======
+>>>>>>> origin/projectmapmanagement-feature
+                    }
+                }
+                
+                
+                MapSelector.IsEnabled = false;
+            }
+        }
+
+<<<<<<< HEAD
+        private void ClientOnGetPermissionNameForObjectCompleted(object sender, GetPermissionNameForObjectCompletedEventArgs e)
+        {
+            if (!e.Result.HasError)
+            {
+                var permission = PermissionLevel.Convert(e.Result.Result);
+                //todo: if the user is security manager, needs to be returned as well
+                if (permission >= PermissionLevel.Author ||
+                    App.PermissionLevel == PermissionLevel.SecurityManager)
+                {
+                    NewMapButton.IsEnabled = true;
+                }
+            }
+            else
+            {
+                SuperMessageBoxService.ShowError("Error Occurred", e.Result.ErrorMessage);
+            }
+        }
+=======
+>>>>>>> origin/projectmapmanagement-feature
+
+        #region Load Domains
+        private void OnAcquireDomainsCompleted(object sender, Proxy.NodesEventArgs e)
+        {
+            DomainSelector.Items.Clear();
+
+            foreach (INode node in e.Nodes.Values)
+            {
+                var item = new RadComboBoxItem { DataContext = node, Content = node.Metadata.FindMetadata("Name").Value };
+
+                DomainSelector.Items.Add(item);
+            }
+        }
+
+        #endregion
+
+        #region Load Maps
+        private void OnAcquireNodeByDomainCompleted(object sender, Proxy.NodesEventArgs e)
+        {
+            foreach (var node in e.Nodes.Values)
+            {
+                if (Equals(node.NodeType, MapNodeType))
+                {
+                    var item = new RadComboBoxItem { DataContext = node, Content = node.Metadata.FindMetadata("Name").Value };
+
+                    MapSelector.Items.Add(item);
+
+                    MapSelector.IsEnabled = true;
+                }
+            }
+        }
+        #endregion
+
+        private void MapSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e != null && e.AddedItems != null && e.AddedItems.Count > 0)
+            {
+                var selectedItem = e.AddedItems[0] as RadComboBoxItem;
+                if (selectedItem != null)
+                {
+                    Map = selectedItem.DataContext as INode;
+                    LoadButton.IsEnabled = true;
+                }
+            }
+            else
+            {
+                LoadButton.IsEnabled = false;
+            }
+        }
+
+        #region Common Super Graph Types
+
+        protected NodeType MapNodeType
+        {
+            get
+            {
+                if (_mapNodeType == null)
+                {
+                    _mapNodeType = MapManager.NodeTypes["CompendiumMapNode"];
+                }
+
+                return _mapNodeType;
+            }
+        }
+
+        #endregion
+
+        private void ManagementConsoleButtonOnClick(object sender, RoutedEventArgs e)
+        {
+<<<<<<< HEAD
+            if (e.Nodes != null)
+            {
+                Map = e.Nodes.Values.FirstOrDefault();
+
+                if (Equals(Map.NodeType, MapManager.NodeTypes["CompendiumMapNode"]))
+                {
+                    var item = new RadComboBoxItem { DataContext = Map, Content = Map.Metadata.FindMetadata("Name").Value };
+
+                    MapSelector.Items.Add(item);
+
+                    MapSelector.IsEnabled = true;
+                }
+            }
+        }
+
+        private void newMapButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Domain != null)
+            {
+                var mapNameDialog = new NewMapDialog();
+                mapNameDialog.Closed += delegate
+                {
+                    if (mapNameDialog.DialogResult != null && mapNameDialog.DialogResult.Value)
+                    {
+                        Dispatcher.BeginInvoke(() => CreateMap(mapNameDialog.MapName));
+                    }
+                };
+                mapNameDialog.Show();
+            }
+        }
+
+        private void newDomainButton_Click(object sender, RoutedEventArgs e)
+        {
+            var domainNameDialog = new NewDomainDialog();
+            domainNameDialog.Closed += delegate
+            {
+                if (domainNameDialog.DialogResult != null && domainNameDialog.DialogResult.Value)
+                {
+                    Dispatcher.BeginInvoke(() => CreateNewDomain(domainNameDialog.DomainName));
+                }
+            };
+            domainNameDialog.Show();
+        }
+
+        private void CreateNewDomain(string domainName)
+        {
+            MapManager.CreateDomainCompleted.RegisterEvent(OnCreateNewDomainCompleted);
+            MapManager.CreateDomain(domainName);
+        }
+
+        private void OnCreateNewDomainCompleted(object sender, Proxy.DomainEventArgs e)
+        {
+            if (e != null && e.Domain != Guid.Empty)
+            {
+                SecurityManager.SetProjectManagerGroupAssociationsAsync("New Domain", OnNewDomainSecurityAssociationCreated, new GlymaSecurableObject
+                {
+                    SecurableParentUid = Guid.Empty,
+                    SecurableObjectUid = e.Domain
+                });
+            }
+            else
+            {
+                MapManager.QueryDomainsCompleted.RegisterEvent(OnAcquireDomainsCompleted);
+                MapManager.QueryDomainsAsync();
+            }
+            
+        }
+
+        private void OnNewDomainSecurityAssociationCreated(object sender, SetProjectManagerGroupAssociationsCompletedEventArgs e)
+=======
+            var permissionDialog = new ManagementConsoleDialog(MapManager, SecurityManager);
+            permissionDialog.Closed += ManagementConsoleOnClosed;
+            permissionDialog.Show();
+        }
+
+        private void ManagementConsoleOnClosed(object sender, EventArgs eventArgs)
+>>>>>>> origin/projectmapmanagement-feature
+        {
+            DomainSelector.Items.Clear();
+            MapSelector.Items.Clear();
+            MapSelector.IsEnabled = false;
+            MapManager.QueryDomainsCompleted.RegisterEvent(OnAcquireDomainsCompleted);
+            MapManager.QueryDomainsAsync();
+        }
+    }
+}
+

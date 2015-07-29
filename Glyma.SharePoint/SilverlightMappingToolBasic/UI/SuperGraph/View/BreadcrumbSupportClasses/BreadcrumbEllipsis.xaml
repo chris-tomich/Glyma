@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.BreadcrumbSupportClasses.BreadcrumbEllipsis"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:breadcrumbSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.BreadcrumbSupportClasses"
+    mc:Ignorable="d"
+    MouseLeave="UserControl_MouseLeave">
+    <StackPanel Orientation="Horizontal"  Name="LayoutRoot" HorizontalAlignment="Stretch" Height="26">
+        <StackPanel x:Name="Ellipsis" ToolTipService.ToolTip="Expand"  Orientation="Horizontal" Cursor="Hand"  Margin="0,0,0,0"  MouseLeftButtonUp="OnEllipsisMouseLeftButtonUp">
+            <StackPanel Orientation="Horizontal" Background="#FF57afcf"  >
+                <Ellipse Height="7" Width="7" StrokeThickness="1" Margin="10,0,0,0" >
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#FF468aa3" Offset="0"></GradientStop>
+                            <GradientStop Color="#FF74bcd4" Offset="0.7"></GradientStop>
+                            <GradientStop Color="#FFFFFFFF" Offset="1"></GradientStop>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                    <Ellipse.Stroke>
+                        <RadialGradientBrush RadiusX="1" RadiusY="1">
+                            <GradientStop Color="#FFFFFFFF" Offset="0.1"></GradientStop>
+                            <GradientStop Color="#FF57afcf" Offset="0.5"></GradientStop>
+                        </RadialGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+                <Ellipse Height="7" Width="7" StrokeThickness="1" Margin="2,0,0,0" >
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#FF468aa3" Offset="0"></GradientStop>
+                            <GradientStop Color="#FF74bcd4" Offset="0.7"></GradientStop>
+                            <GradientStop Color="#FFFFFFFF" Offset="1"></GradientStop>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                    <Ellipse.Stroke>
+                        <RadialGradientBrush RadiusX="1" RadiusY="1">
+                            <GradientStop Color="#FFFFFFFF" Offset="0.1"></GradientStop>
+                            <GradientStop Color="#FF57afcf" Offset="0.5"></GradientStop>
+                        </RadialGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+                <Ellipse Height="7" Width="7" StrokeThickness="1" Margin="2,0,4,0" >
+                    <Ellipse.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#FF468aa3" Offset="0"></GradientStop>
+                            <GradientStop Color="#FF74bcd4" Offset="0.7"></GradientStop>
+                            <GradientStop Color="#FFFFFFFF" Offset="1"></GradientStop>
+                        </LinearGradientBrush>
+                    </Ellipse.Fill>
+                    <Ellipse.Stroke>
+                        <RadialGradientBrush RadiusX="1" RadiusY="1">
+                            <GradientStop Color="#FFFFFFFF" Offset="0.1"></GradientStop>
+                            <GradientStop Color="#FF57afcf" Offset="0.5"></GradientStop>
+                        </RadialGradientBrush>
+                    </Ellipse.Stroke>
+                </Ellipse>
+            </StackPanel>
+
+        </StackPanel>
+        
+        <breadcrumbSupportClasses:BreadcrumbContainer x:Name="BreadcrumbContainer" Visibility="Collapsed" Margin="0"></breadcrumbSupportClasses:BreadcrumbContainer>
+    </StackPanel>
+</UserControl>

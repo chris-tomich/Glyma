@@ -1,0 +1,15 @@
+﻿<base:ContextMenuBase x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.Arrow.ArrowContextMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:contextMenu="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.ContextMenu"
+    xmlns:base="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.ContextMenu.Base"
+    mc:Ignorable="d"
+    d:DesignHeight="30" d:DesignWidth="150" LostFocus="UserControl_LostFocus" Height="35" Width="150">
+
+    <toolkit:ContextMenu Name="PopupMenu" Style="{StaticResource SuperContextMenuStyle}">
+        <contextMenu:SuperContextMenuItem Header="Delete"  IconPath="M33.977998,27.684L33.977998,58.102997 41.373998,58.102997 41.373998,27.684z M14.841999,27.684L14.841999,58.102997 22.237998,58.102997 22.237998,27.684z M4.0319996,22.433001L52.183,22.433001 52.183,63.999001 4.0319996,63.999001z M15.974,0L40.195001,0 40.195001,7.7260003 56.167001,7.7260003 56.167001,16.000999 0,16.000999 0,7.7260003 15.974,7.7260003z" Style="{StaticResource SuperMenuItemStyle}" x:Name="ContextMenuDelete" MouseLeftButtonUp="OnDeleteSingleClick" />
+    </toolkit:ContextMenu>
+</base:ContextMenuBase>

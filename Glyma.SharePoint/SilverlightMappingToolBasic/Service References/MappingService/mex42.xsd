@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/NodeService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/NodeService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="SoapNode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Domain" type="ser:guid" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Metadata" nillable="true" type="q1:ArrayOfKeyValueOfMetadataContextSoapMetadata7J59U_P52" />
+      <xs:element minOccurs="0" name="NodeType" nillable="true" type="tns:SoapNodeType" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Relationships" nillable="true" type="q2:ArrayOfKeyValueOfguidSoapRelationshipxmMmdVki" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoapNode" nillable="true" type="tns:SoapNode" />
+  <xs:complexType name="MetadataContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DescriptorTypeUid" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="MetadataName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeUid" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="RelationshipUid" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataContext" nillable="true" type="tns:MetadataContext" />
+  <xs:complexType name="SoapMetadata">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MetadataName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetadataType" nillable="true" type="tns:SoapMetadataType" />
+      <xs:element minOccurs="0" name="MetadataValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoapMetadata" nillable="true" type="tns:SoapMetadata" />
+  <xs:complexType name="SoapMetadataType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SoapTypeElement">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SoapMetadataType" nillable="true" type="tns:SoapMetadataType" />
+  <xs:complexType name="SoapTypeElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoapTypeElement" nillable="true" type="tns:SoapTypeElement" />
+  <xs:complexType name="SoapRelationshipType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SoapTypeElement">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SoapRelationshipType" nillable="true" type="tns:SoapRelationshipType" />
+  <xs:complexType name="SoapNodeType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SoapTypeElement">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SoapNodeType" nillable="true" type="tns:SoapNodeType" />
+  <xs:complexType name="SoapDescriptorType">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:SoapTypeElement">
+        <xs:sequence>
+          <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Metadata" nillable="true" type="q3:ArrayOfKeyValueOfstringSoapMetadataILKwlcId" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="SoapDescriptorType" nillable="true" type="tns:SoapDescriptorType" />
+  <xs:complexType name="SoapRelationship">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Metadata" nillable="true" type="q4:ArrayOfKeyValueOfstringSoapMetadataILKwlcId" />
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Nodes" nillable="true" type="q5:ArrayOfKeyValueOfSoapDescriptorTypeguiduqEsJzTc" />
+      <xs:element minOccurs="0" name="RelationshipType" nillable="true" type="tns:SoapRelationshipType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SoapRelationship" nillable="true" type="tns:SoapRelationship" />
+  <xs:complexType name="DeleteResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DeleteSuccessful" type="xs:boolean" />
+      <xs:element minOccurs="0" name="DeletedId" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeleteResult" nillable="true" type="tns:DeleteResult" />
+  <xs:complexType name="ConnectedNodesResult">
+    <xs:sequence>
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Nodes" nillable="true" type="q6:ArrayOfKeyValueOfguidSoapNodexmMmdVki" />
+      <xs:element minOccurs="0" name="Relationship" nillable="true" type="tns:SoapRelationship" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ConnectedNodesResult" nillable="true" type="tns:ConnectedNodesResult" />
+  <xs:complexType name="ConnectNodesFailureFault">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ConnectNodesFailureFault" nillable="true" type="tns:ConnectNodesFailureFault" />
+  <xs:complexType name="RelatedNodesSearchResult">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Nodes" nillable="true" type="q7:ArrayOfKeyValueOfguidSoapNodexmMmdVki" />
+      <xs:element minOccurs="0" name="SearchedNode" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RelatedNodesSearchResult" nillable="true" type="tns:RelatedNodesSearchResult" />
+  <xs:complexType name="ArrayOfSoapTypeElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SoapTypeElement" nillable="true" type="tns:SoapTypeElement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSoapTypeElement" nillable="true" type="tns:ArrayOfSoapTypeElement" />
+</xs:schema>

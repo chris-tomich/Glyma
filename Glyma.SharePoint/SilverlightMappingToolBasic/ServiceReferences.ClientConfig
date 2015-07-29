@@ -1,0 +1,44 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IThemeService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="TransportCredentialOnly" />
+                </binding>
+                <binding name="BasicHttpBinding_IMappingToolService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="TransportCredentialOnly" />
+                </binding>
+                <binding name="BasicHttpBinding_IMappingToolService1" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="TransportCredentialOnly" />
+                </binding>
+                <binding name="BasicHttpBinding_IGlymaSecurityService" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="TransportCredentialOnly" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://win2k8-sptest.dev.local/_vti_bin/SevenSigma/ThemeService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IThemeService"
+                contract="ThemeService.IThemeService" name="BasicHttpBinding_IThemeService" />
+            <endpoint address="http://win2k8-sptest.dev.local/_vti_bin/SevenSigma/MappingToolService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IMappingToolService"
+                contract="MappingService.IMappingToolService" name="BasicHttpBinding_IMappingToolService" />
+            <endpoint address="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IMappingToolService1"
+                contract="MappingService.IMappingToolService" name="BasicHttpBinding_IMappingToolService1" />
+            <endpoint address="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IMappingToolService1"
+                contract="MappingService.IMappingToolService" name="BasicHttpBinding_IMappingToolService2" />
+            <endpoint address="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IGlymaSecurityService"
+                contract="GlymaSecurityService.IGlymaSecurityService" name="BasicHttpBinding_IGlymaSecurityService" />
+            <endpoint address="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IGlymaSecurityService"
+                contract="GlymaSecurityService.IGlymaSecurityService" name="BasicHttpBinding_IGlymaSecurityService1" />
+        </client>
+    </system.serviceModel>
+</configuration>

@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E7D1738-3F7B-4DA4-AB86-3016F9D3D0F4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Glyma.SharePoint.Common</RootNamespace>
+    <AssemblyName>Glyma.SharePoint.Common</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <ActiveDeploymentConfiguration>No Activation</ActiveDeploymentConfiguration>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU' ">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>14.0</TargetOfficeVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug - SharePoint 2010\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SP2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU' ">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug - SharePoint 2013\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SP2013</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU' ">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>14.0</TargetOfficeVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;SP2010</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU' ">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;SP2013</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>GlymaCommonResources\Glyma\Common\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\ChoiceColumnChoices.cs" />
+    <Compile Include="Code\ColumnDetails.cs" />
+    <Compile Include="Code\GlymaColumns.cs" />
+    <Compile Include="Code\GlymaListsManager.cs" />
+    <Compile Include="Code\GlymaRoleManager.cs" />
+    <Compile Include="Code\ListDetails.cs" />
+    <Compile Include="Code\ReadOnlyColumnDetails.cs" />
+    <Compile Include="Code\ReadOnlyListDetails.cs" />
+    <Compile Include="Code\GlymaLists.cs" />
+    <Compile Include="Code\SPListExtensions.cs" />
+    <Compile Include="Code\SPWebExtensions.cs" />
+    <Compile Include="Features\GlymaPrerequisites\GlymaPrerequisites.EventReceiver.cs">
+      <DependentUpon>GlymaPrerequisites.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BrandingMasterPageGalleryResources\glyma-yammer-minimal.master" />
+    <None Include="BrandingMasterPageGalleryResources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{51dad4d3-60ca-4c3f-b395-cbe09d5f5b3d}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\GlymaPrerequisites\GlymaPrerequisites.feature">
+      <FeatureId>{3ebb79fb-b884-48fd-94b5-9730724402d4}</FeatureId>
+    </None>
+    <None Include="Features\GlymaBranding\GlymaBranding.feature">
+      <FeatureId>{86d77e03-6f50-4866-8fdb-69e2237cc79a}</FeatureId>
+    </None>
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-Bold.ttf" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-BoldItalic.ttf" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-Italic.ttf" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-Light.ttf" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-LightItalic.ttf" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-Regular.ttf" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedItalic300.woff" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedItalic400.woff" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedItalic700.woff" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedNormal300.woff" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedNormal400.woff" />
+    <None Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedNormal700.woff" />
+    <None Include="GlymaCommonResources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{161ec370-036a-4869-85e8-095cba0068c1}</SharePointProjectItemId>
+    </None>
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{9064e27f-15c4-4f3b-8389-f0e9d554e823}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="BrandingMasterPageGalleryResources\glyma-minimal.master" />
+    <None Include="MasterPageGalleryResources\glyma-yammer.master" />
+    <None Include="MasterPageGalleryResources\glyma.master" />
+    <None Include="MasterPageGalleryResources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{fe118d0e-6837-461e-86d8-91ab40963ba6}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{788fa3a7-01fc-426a-927b-ef888ef62101}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="BrandingMasterPageGalleryResources\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Features\GlymaPrerequisites\GlymaPrerequisites.Template.xml">
+      <DependentUpon>GlymaPrerequisites.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\GlymaBranding\GlymaBranding.Template.xml">
+      <DependentUpon>GlymaBranding.feature</DependentUpon>
+    </Content>
+    <Content Include="GlymaCommonResources\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="GlymaCommonResources\Glyma\Common\default.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\favicon.ico" />
+    <Content Include="GlymaCommonResources\Glyma\Common\featherlight.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-LICENSE.txt" />
+    <Content Include="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed.css" />
+    <Content Include="GlymaCommonResources\Glyma\Common\glyma-minimal-mappingtool.css" />
+    <Content Include="GlymaCommonResources\Glyma\Common\glyma-minimal-relatedcontentpanels.css" />
+    <Content Include="GlymaCommonResources\Glyma\Common\glyma-minimal.css" />
+    <Content Include="GlymaCommonResources\Glyma\Common\GlymaRedirector.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\glyma_api.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\hammer.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\jquery-1.10.2.min.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\jquery-ui.css" />
+    <Content Include="GlymaCommonResources\Glyma\Common\jquery-ui.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\jquery.mobile-1.4.2.min.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\jquery.mousewheel.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\modernizr-2.6.2.min.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\plugins.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\RTree.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\Silverlight.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\SilverlightErrorHandler.js" />
+    <Content Include="GlymaCommonResources\Glyma\Common\toolbar_divider.png" />
+    <Content Include="GlymaCommonResources\Glyma\Common\toolbar_dropshadow.png" />
+    <Content Include="GlymaCommonResources\Glyma\Common\toolbar_glymalogo.png" />
+    <Content Include="GlymaCommonResources\Glyma\Common\toolbar_gradient.png" />
+    <Content Include="GlymaCommonResources\Glyma\Common\toolbar_home.png" />
+    <Content Include="GlymaCommonResources\Glyma\Common\toolbar_questionmark.png" />
+    <Content Include="GlymaCommonResources\Glyma\Common\xml2json.js" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\activity-feed-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\activity-feed-unavailable.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\activity-feed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\arrow-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\arrow-left-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\arrow-left.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\arrow.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\breadcrumb\collapsed-dots.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\breadcrumb\Home.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\breadcrumb\levels-collapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\breadcrumb\linebreak.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\button-content-transparent.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\button-feed-transparent.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\button-map-transparent.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\button-pause-transparent.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\button-play-transparent.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\ch.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\close-window-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\close-window.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\cons-21x21.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\cursor\drag.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\cursor\hand.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\decision-21x21.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\expander-background.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\expansion-dots-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\expansion-dots.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\ff.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\gl.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\h-expansion-dots-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\h-expansion-dots.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\icon-panel-background-bottom.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\icon-panel-background-top.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\idea-21x21.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\ie.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\insights-feed-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\insights-feed-unavailable.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\insights-feed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\exit-full-screen-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\exit-full-screen.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\expansion-dots-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\expansion-dots.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\full-screen-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\full-screen.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\glymalogo.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\h-expansion-dots-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\h-expansion-dots.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\map-filter-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\map-filter.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\Realign-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\Realign.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\refresh-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\refresh.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\switch-author-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\switch-author.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\switch-explorer-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\switch-explorer.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\default-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\default.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\view-reset-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\view-reset.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\zoom-in-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\zoom-in.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\zoom-out-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\zoom-out.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\loader.gif" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\locate-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\locate-unavailable.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\locate.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\map-21x21.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\maps-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\maps-unavailable.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\maps.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-content-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-content-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-feed-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-feed-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-map-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-map-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-pause-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-pause-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-play-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\button-play-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\close-map-extension.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\collapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\cons-selected.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\content-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\content-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\decision-selected.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\expanded.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\feed-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\feed-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\idea-selected.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\locate-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\locate-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\map-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\map-selected.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\map-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\menubutton-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\menubutton-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\note-selected.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\open-map-extension.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\pro-selected.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\question-selected.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\semicollapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\showall-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\showall-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\video-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\nodemenu\video-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\note-21x21.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\pop-out-window-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\pop-out-window.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\pro-21x21.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\question-21x21.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\related-content-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\related-content-unavailable.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\related-content.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-content-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-content-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-feed-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-feed-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-map-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-map-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-pause-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-pause-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-play-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-play-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\collapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\expanded.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\menubutton-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\menubutton-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\semicollapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-content-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-content-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-feed-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-feed-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-map-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-map-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-pause-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-pause-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-play-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-play-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\collapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\expanded.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\menubutton-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\menubutton-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\semicollapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-content-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-content-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-feed-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-feed-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-map-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-map-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-pause-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-pause-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-play-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-play-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\collapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\expanded.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\menubutton-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\menubutton-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\semicollapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-content-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-content-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-feed-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-feed-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-map-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-map-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-pause-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-pause-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-play-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-play-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\collapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\expanded.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\menubutton-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\menubutton-static.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\semicollapsed.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\cons.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\decision.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\idea.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\map.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\note.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\pro.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\question.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\show-all-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\show-all-unavailable.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\show-all.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\sl.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\video-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\video-unavailable.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\video.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\yammer-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\yammer-unavailable.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\yammer.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\youtube-hover.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\youtube-unavailable.png" />
+    <Content Include="GlymaCommonResources\Glyma\Icons\youtube.png" />
+    <Content Include="BrandingMasterPageGalleryResources\Glyma-minimal-page.aspx" />
+    <Content Include="Images\Glyma.SharePoint.Common\GlymaFeatureLogo.png" />
+    <Content Include="MasterPageGalleryResources\Elements.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <PropertyGroup>
+    <PreBuildEvent>xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\Glyma-minimal-page.aspx" "$(ProjectDir)BrandingMasterPageGalleryResources\"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\Elements.xml" "$(ProjectDir)BrandingMasterPageGalleryResources\Elements.xml"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\MasterPageGalleryResources\Elements.xml" "$(ProjectDir)MasterPageGalleryResources\Elements.xml"  /Y /I /E
+if "$(ConfigurationName)" == "Debug - SharePoint 2010" (
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\glyma-minimal2010.master" "$(ProjectDir)BrandingMasterPageGalleryResources\glyma-minimal.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\glyma-yammer-minimal2010.master" "$(ProjectDir)BrandingMasterPageGalleryResources\glyma-yammer-minimal.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\MasterPageGalleryResources\glyma-yammer2010.master" "$(ProjectDir)MasterPageGalleryResources\glyma-yammer.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\MasterPageGalleryResources\glyma2010.master" "$(ProjectDir)MasterPageGalleryResources\glyma.master"  /Y /I /E
+)
+if "$(ConfigurationName)" == "Debug - SharePoint 2013" (
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\glyma-minimal2013.master" "$(ProjectDir)BrandingMasterPageGalleryResources\glyma-minimal.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\glyma-yammer-minimal2013.master" "$(ProjectDir)BrandingMasterPageGalleryResources\glyma-yammer-minimal.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\MasterPageGalleryResources\glyma-yammer2013.master" "$(ProjectDir)MasterPageGalleryResources\glyma-yammer.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\MasterPageGalleryResources\glyma2013.master" "$(ProjectDir)MasterPageGalleryResources\glyma.master"  /Y /I /E
+)
+if "$(ConfigurationName)" == "Release - SharePoint 2010" (
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\glyma-minimal2010.master" "$(ProjectDir)BrandingMasterPageGalleryResources\glyma-minimal.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\glyma-yammer-minimal2010.master" "$(ProjectDir)BrandingMasterPageGalleryResources\glyma-yammer-minimal.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\MasterPageGalleryResources\glyma-yammer2010.master" "$(ProjectDir)MasterPageGalleryResources\glyma-yammer.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\MasterPageGalleryResources\glyma2010.master" "$(ProjectDir)MasterPageGalleryResources\glyma.master"  /Y /I /E
+)
+if "$(ConfigurationName)" == "Release - SharePoint 2013" (
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\glyma-minimal2013.master" "$(ProjectDir)BrandingMasterPageGalleryResources\glyma-minimal.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\BrandingMasterPageGalleryResources\glyma-yammer-minimal2013.master" "$(ProjectDir)BrandingMasterPageGalleryResources\glyma-yammer-minimal.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\MasterPageGalleryResources\glyma-yammer2013.master" "$(ProjectDir)MasterPageGalleryResources\glyma-yammer.master"  /Y /I /E
+xcopy "$(SolutionDir)Glyma.SharePoint.Common.Shared\MasterPageGalleryResources\glyma2013.master" "$(ProjectDir)MasterPageGalleryResources\glyma.master"  /Y /I /E
+)</PreBuildEvent>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <UIVersionUpdateFiles Include="BrandingMasterPageGalleryResources\Elements.xml" />
+      <UIVersionUpdateFiles Include="MasterPageGalleryResources\Elements.xml" />
+      <AssmeblyUpdateFiles Include="BrandingMasterPageGalleryResources\Glyma-minimal-page.aspx" />
+      <ProjectWebFiles Include=".\**\Package.Template.xml" />
+    </ItemGroup>
+    <FileUpdate Files="@(AssmeblyUpdateFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(AssmeblyUpdateFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(AssmeblyUpdateFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(AssmeblyUpdateFiles)" Regex="\$MicrosoftSharePointAssemblyVersion\$" ReplacementText="Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(UIVersionUpdateFiles)" Regex="\$UIVersion\$" ReplacementText="4" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(UIVersionUpdateFiles)" Regex="\$UIVersion\$" ReplacementText="15" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(UIVersionUpdateFiles)" Regex="\$UIVersion\$" ReplacementText="4" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(UIVersionUpdateFiles)" Regex="\$UIVersion\$" ReplacementText="15" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="14.0" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="15.0" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="14.0" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="15.0" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(AssmeblyUpdateFiles)" Regex="\$StyleLibraryDirectoryName\$" ReplacementText="Style%20Library" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(AssmeblyUpdateFiles)" Regex="\$StyleLibraryDirectoryName\$" ReplacementText="Style Library" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(AssmeblyUpdateFiles)" Regex="\$StyleLibraryDirectoryName\$" ReplacementText="Style%20Library" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(AssmeblyUpdateFiles)" Regex="\$StyleLibraryDirectoryName\$" ReplacementText="Style Library" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)Glyma.API\*.js" "$(ProjectDir)GlymaCommonResources\Glyma\Common\"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

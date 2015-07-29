@@ -1,0 +1,234 @@
+@import url("fonts/RobotoCondensed/RobotoCondensed.css");
+
+/* used by the Starter Publishing master page for fixed width display */
+.customWidth {
+	width: 980px;
+	margin: auto;
+}
+
+/* used to reset the ootb styles on the title row tag in the Starter Collab master page; used for the fullscreen button in SP */
+#s4-titlerow {
+	background-color: transparent;
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+body 
+{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#glyma-body-area
+{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* NOTE: Not used by glyma.master but needed for search results version */
+body #s4-workspace 
+{
+    overflow: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 50px;
+}
+
+#top-bar 
+{
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    margin: 0px;
+    background-image: url('./toolbar_gradient.png');
+    background-repeat: repeat-x;
+}
+
+#top-bar-dropshadow 
+{
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: 45px;
+    background-image: url('./toolbar_dropshadow.png');
+    background-repeat: repeat-x;
+}
+
+#glyma-logo 
+{
+    position: absolute;
+    top: 15px;
+    display: inline-block;
+    margin-left: 12px;
+    margin-right: 12px;
+    width: 50px;
+    height: 20px;
+}
+
+#glyma-logo img
+{
+    border: none;
+}
+
+#top-bar-divider 
+{
+    position: absolute;
+    left: 80px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: 2px;
+    height: 47px;
+    background-image: url('./toolbar_divider.png');
+    background-repeat: no-repeat;
+}
+
+#logout-control 
+{
+    position: absolute;
+    left: 95px;
+    top: 14px;
+    color: #003D64;
+    font-style: italic;
+    font-size: 11pt;
+    font-family: 'Roboto Condensed', sans-serif;
+    cursor: pointer;
+}
+
+#logout-control a
+{
+    color: #003D64;
+}
+
+#home-link
+{
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 50%;
+    width: 40px;
+    height: 45px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+#home-link-logo
+{
+    margin-top: 10px;
+    margin-bottom: 2px;
+    width: 40px;
+    height: 14px;
+    background-image: url('./toolbar_home.png');
+    background-position: center center;
+    background-repeat: no-repeat
+}
+
+#home-link-text
+{
+    margin-top: 2px;
+    margin-bottom: 0px;
+    width: 40px;
+    height: 20px;
+    font-size: 8pt;
+    font-weight: bold;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #003D64; 
+}
+
+#search-bar 
+{
+    position: absolute;
+    top: 12px;
+    right: 40px;
+}
+
+#search-bar div 
+{
+    display: inline-block;
+}
+
+#search-bar input
+{
+    width: 225px;
+}
+
+#help-link
+{
+    position: absolute;
+    top: 0px;
+    display: inline-block;
+    right: 20px;
+    width: 14px;
+    height: 45px;
+    background-image: url('./toolbar_questionmark.png');
+    background-position: center center;
+    background-repeat: no-repeat
+}
+
+/* Using display: table and table-cell gives the springy auto sizing columns */
+#glyma-body 
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+}
+
+#left-webpart
+{
+    display: inline-block;
+    vertical-align: top;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 85px;
+    margin: 0px;
+    position: absolute;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+}
+
+#right-webpart 
+{
+    float: right;
+    padding-left: 5px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+#glyma-body #left-webpart > div, #glyma-body #left-webpart > div > div
+{
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px;
+    position: absolute;
+}
+
+#glyma-body #silverlightMappingControlHost
+{
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0px;
+    position: absolute;
+}

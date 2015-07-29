@@ -1,0 +1,929 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="GlymaCommonResources" RootWebOnly="true" Url="Style Library/Glyma/Common">
+    <File Path="GlymaCommonResources\Glyma\Common\favicon.ico" Type="GhostableInLibrary" Url="favicon.ico" >
+      <Property Name="Title" Value="favicon" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\glyma-minimal.css" Type="GhostableInLibrary" Url="glyma-minimal.css" >
+      <Property Name="Title" Value="glyma-minimal" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\glyma-minimal-relatedcontentpanels.css" Type="GhostableInLibrary" Url="glyma-minimal-relatedcontentpanels.css" >
+      <Property Name="Title" Value="glyma-minimal-relatedcontentpanel" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\glyma-minimal-mappingtool.css" Type="GhostableInLibrary" Url="glyma-minimal-mappingtool.css">
+      <Property Name="Title" Value="glyma-minimal-mappingtool" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\toolbar_divider.png" Type="GhostableInLibrary" Url="toolbar_divider.png" >
+      <Property Name="Title" Value="toolbar_divider" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\toolbar_dropshadow.png" Type="GhostableInLibrary" Url="toolbar_dropshadow.png" >
+      <Property Name="Title" Value="toolbar_dropshadow" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\toolbar_glymalogo.png" Type="GhostableInLibrary" Url="toolbar_glymalogo.png" >
+      <Property Name="Title" Value="toolbar_glymalogo" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\toolbar_gradient.png" Type="GhostableInLibrary" Url="toolbar_gradient.png" >
+      <Property Name="Title" Value="toolbar_gradient" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\toolbar_home.png" Type="GhostableInLibrary" Url="toolbar_home.png" >
+      <Property Name="Title" Value="toolbar_home" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\toolbar_questionmark.png" Type="GhostableInLibrary" Url="toolbar_questionmark.png">
+      <Property Name="Title" Value="toolbar_questionmark" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\Silverlight.js" Type="GhostableInLibrary" Url="Silverlight.js">
+      <Property Name="Title" Value="Silverlight" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\SilverlightErrorHandler.js" Type="GhostableInLibrary" Url="SilverlightErrorHandler.js">
+      <Property Name="Title" Value="SilverlightErrorHandler" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\GlymaRedirector.js" Type="GhostableInLibrary" Url="GlymaRedirector.js">
+      <Property Name="Title" Value="GlymaRedirector" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\jquery-ui.js" Type="GhostableInLibrary" Url="jquery-ui.js" >
+      <Property Name="Title" Value="jquery-ui" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\xml2json.js" Type="GhostableInLibrary" Url="xml2json.js" >
+      <Property Name="Title" Value="xml2json" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\plugins.js" Type="GhostableInLibrary" Url="plugins.js" >
+      <Property Name="Title" Value="plugins" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\featherlight.js" Type="GhostableInLibrary" Url="featherlight.js" >
+      <Property Name="Title" Value="featherlight" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\jquery.mobile-1.4.2.min.js" Type="GhostableInLibrary" Url="jquery.mobile-1.4.2.min.js" >
+      <Property Name="Title" Value="jquery.mobile-1.4.2.min" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\jquery-1.10.2.min.js" Type="GhostableInLibrary" Url="jquery-1.10.2.min.js" >
+      <Property Name="Title" Value="jquery-1.10.2.min" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\modernizr-2.6.2.min.js" Type="GhostableInLibrary" Url="modernizr-2.6.2.min.js" >
+      <Property Name="Title" Value="modernizr-2.6.2.min" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\default.js" Type="GhostableInLibrary" Url="default.js" >
+      <Property Name="Title" Value="default" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\hammer.js" Type="GhostableInLibrary" Url="hammer.js" >
+      <Property Name="Title" Value="hammer" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\jquery.mousewheel.js" Type="GhostableInLibrary" Url="jquery.mousewheel.js" >
+      <Property Name="Title" Value="jquery.mousewheel" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\RTree.js" Type="GhostableInLibrary" Url="RTree.js" >
+      <Property Name="Title" Value="RTree" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\jquery-ui.css" Type="GhostableInLibrary" Url="jquery-ui.css" >
+      <Property Name="Title" Value="jquery-ui-css" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\glyma_api.js" Type="GhostableInLibrary"  Url="glyma_api.js">
+      <Property Name="Title" Value="glyma_api" />
+    </File>
+  </Module>
+
+  <Module Name="RobotoCondensedFontResources" RootWebOnly="true" Url="Style Library/Glyma/Common/fonts/RobotoCondensed">
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed.css" Type="GhostableInLibrary" Url="RobotoCondensed.css">
+      <Property Name="Title" Value="RobotoCondensed" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-LICENSE.txt" Type="GhostableInLibrary" Url="RobotoCondensed-LICENSE.txt">
+      <Property Name="Title" Value="RobotoCondensed-LICENSE" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-Light.ttf" Type="GhostableInLibrary" Url="RobotoCondensed-Light.ttf">
+      <Property Name="Title" Value="RobotoCondensed-Light" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-LightItalic.ttf" Type="GhostableInLibrary" Url="RobotoCondensed-LightItalic.ttf">
+      <Property Name="Title" Value="RobotoCondensed-LightItalic" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-Regular.ttf" Type="GhostableInLibrary" Url="RobotoCondensed-Regular.ttf">
+      <Property Name="Title" Value="RobotoCondensed-Regular" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-Italic.ttf" Type="GhostableInLibrary" Url="RobotoCondensed-Italic.ttf">
+      <Property Name="Title" Value="RobotoCondensed-Italic" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-Bold.ttf" Type="GhostableInLibrary" Url="RobotoCondensed-Bold.ttf">
+      <Property Name="Title" Value="RobotoCondensed-Bold" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensed-BoldItalic.ttf" Type="GhostableInLibrary" Url="RobotoCondensed-BoldItalic.ttf">
+      <Property Name="Title" Value="RobotoCondensed-BoldItalic" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedItalic300.woff" Type="GhostableInLibrary" Url="RobotoCondensedItalic300.woff">
+      <Property Name="Title" Value="RobotoCondensedItalic300" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedItalic400.woff" Type="GhostableInLibrary" Url="RobotoCondensedItalic400.woff">
+      <Property Name="Title" Value="RobotoCondensedItalic400" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedItalic700.woff" Type="GhostableInLibrary" Url="RobotoCondensedItalic700.woff">
+      <Property Name="Title" Value="RobotoCondensedItalic700" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedNormal300.woff" Type="GhostableInLibrary" Url="RobotoCondensedNormal300.woff">
+      <Property Name="Title" Value="RobotoCondensedNormal300" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedNormal400.woff" Type="GhostableInLibrary" Url="RobotoCondensedNormal400.woff">
+      <Property Name="Title" Value="RobotoCondensedNormal400" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Common\fonts\RobotoCondensed\RobotoCondensedNormal700.woff" Type="GhostableInLibrary" Url="RobotoCondensedNormal700.woff">
+      <Property Name="Title" Value="RobotoCondensedNormal700" />
+    </File>
+  </Module>
+
+  <Module Name="GlymaIconResourses" RootWebOnly="true" Url="Style Library/Glyma/Icons">
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\default.png" Url="leftsidebar/zoom/default.png">
+      <Property Name="Title" Value="default" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\default-hover.png" Url="leftsidebar/zoom/default-hover.png" >
+      <Property Name="Title" Value="default-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\view-reset.png" Url="leftsidebar/zoom/view-reset.png">
+      <Property Name="Title" Value="view-reset" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\view-reset-hover.png" Url="leftsidebar/zoom/view-reset-hover.png">
+      <Property Name="Title" Value="view-reset-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\zoom-in.png" Url="leftsidebar/zoom/zoom-in.png">
+      <Property Name="Title" Value="zoom-in" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\zoom-in-hover.png" Url="leftsidebar/zoom/zoom-in-hover.png" >
+      <Property Name="Title" Value="zoom-in-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\zoom-out.png" Url="leftsidebar/zoom/zoom-out.png">
+      <Property Name="Title" Value="zoom-out" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\zoom\zoom-out-hover.png" Url="leftsidebar/zoom/zoom-out-hover.png">
+      <Property Name="Title" Value="zoom-out-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\gl.png" Type="GhostableInLibrary" Url="gl.png" >
+      <Property Name="Title" Value="gl" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\sl.png" Type="GhostableInLibrary" Url="sl.png">
+      <Property Name="Title" Value="sl" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\ch.png" Type="GhostableInLibrary" Url="ch.png" >
+      <Property Name="Title" Value="ch" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\ff.png" Type="GhostableInLibrary" Url="ff.png" >
+      <Property Name="Title" Value="ff" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\ie.png" Type="GhostableInLibrary" Url="ie.png" >
+      <Property Name="Title" Value="ie" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\loader.gif" Type="GhostableInLibrary" Url="loader.gif" >
+      <Property Name="Title" Value="loader" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\cursor\drag.png" Type="GhostableInLibrary" Url="cursor/drag.png" >
+      <Property Name="Title" Value="drag" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\cursor\hand.png" Type="GhostableInLibrary" Url="cursor/hand.png" >
+      <Property Name="Title" Value="hand" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\activity-feed.png" Type="GhostableInLibrary" Url="activity-feed.png">
+      <Property Name="Title" Value="activity-feed" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\activity-feed-hover.png" Type="GhostableInLibrary" Url="activity-feed-hover.png">
+      <Property Name="Title" Value="activity-feed-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\activity-feed-unavailable.png" Type="GhostableInLibrary" Url="activity-feed-unavailable.png">
+      <Property Name="Title" Value="activity-feed-unavailable" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\arrow.png" Type="GhostableInLibrary" Url="arrow.png">
+      <Property Name="Title" Value="arrow" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\arrow-hover.png" Type="GhostableInLibrary" Url="arrow-hover.png">
+      <Property Name="Title" Value="arrow-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\arrow-left.png" Type="GhostableInLibrary" Url="arrow-left.png">
+      <Property Name="Title" Value="arrow-left" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\arrow-left-hover.png" Type="GhostableInLibrary" Url="arrow-left-hover.png">
+      <Property Name="Title" Value="arrow-left-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\button-content-transparent.png" Type="GhostableInLibrary" Url="button-content-transparent.png">
+      <Property Name="Title" Value="button-content-transparent" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\button-feed-transparent.png" Type="GhostableInLibrary" Url="button-feed-transparent.png">
+      <Property Name="Title" Value="button-feed-transparent" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\button-map-transparent.png" Type="GhostableInLibrary" Url="button-map-transparent.png">
+      <Property Name="Title" Value="button-map-transparent" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\button-pause-transparent.png" Type="GhostableInLibrary" Url="button-pause-transparent.png">
+      <Property Name="Title" Value="button-pause-transparent" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\button-play-transparent.png" Type="GhostableInLibrary" Url="button-play-transparent.png">
+      <Property Name="Title" Value="button-play-transparent" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\close-window.png" Type="GhostableInLibrary" Url="close-window.png">
+      <Property Name="Title" Value="close-window" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\close-window-hover.png" Type="GhostableInLibrary" Url="close-window-hover.png">
+      <Property Name="Title" Value="close-window-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\cons.png" Type="GhostableInLibrary" Url="cons.png">
+      <Property Name="Title" Value="cons" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\cons-21x21.png" Type="GhostableInLibrary" Url="cons-21x21.png">
+      <Property Name="Title" Value="cons-21x21" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\decision.png" Type="GhostableInLibrary" Url="decision.png">
+      <Property Name="Title" Value="decision" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\decision-21x21.png" Type="GhostableInLibrary" Url="decision-21x21.png">
+      <Property Name="Title" Value="decision-21x21" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\expander-background.png" Type="GhostableInLibrary" Url="expander-background.png">
+      <Property Name="Title" Value="expander-background" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\expansion-dots.png" Type="GhostableInLibrary" Url="expansion-dots.png">
+      <Property Name="Title" Value="expansion-dots" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\expansion-dots-hover.png" Type="GhostableInLibrary" Url="expansion-dots-hover.png">
+      <Property Name="Title" Value="expansion-dots-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\h-expansion-dots.png" Type="GhostableInLibrary" Url="h-expansion-dots.png">
+      <Property Name="Title" Value="h-expansion-dots" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\h-expansion-dots-hover.png" Type="GhostableInLibrary" Url="h-expansion-dots-hover.png">
+      <Property Name="Title" Value="h-expansion-dots-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\icon-panel-background-bottom.png" Type="GhostableInLibrary" Url="icon-panel-background-bottom.png">
+      <Property Name="Title" Value="icon-panel-background-bottom" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\icon-panel-background-top.png" Type="GhostableInLibrary" Url="icon-panel-background-top.png">
+      <Property Name="Title" Value="icon-panel-background-top" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\idea.png" Type="GhostableInLibrary" Url="idea.png">
+      <Property Name="Title" Value="idea" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\idea-21x21.png" Type="GhostableInLibrary" Url="idea-21x21.png">
+      <Property Name="Title" Value="idea-21x21" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\insights-feed.png" Type="GhostableInLibrary" Url="insights-feed.png">
+      <Property Name="Title" Value="insights-feed" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\insights-feed-hover.png" Type="GhostableInLibrary" Url="insights-feed-hover.png">
+      <Property Name="Title" Value="insights-feed-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\insights-feed-unavailable.png" Type="GhostableInLibrary" Url="insights-feed-unavailable.png" >
+      <Property Name="Title" Value="insights-feed-unavailable" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\locate.png" Type="GhostableInLibrary" Url="locate.png" >
+      <Property Name="Title" Value="locate" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\locate-hover.png" Type="GhostableInLibrary" Url="locate-hover.png" >
+      <Property Name="Title" Value="locate-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\locate-unavailable.png" Type="GhostableInLibrary" Url="locate-unavailable.png" >
+      <Property Name="Title" Value="locate-unavailable" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\map.png" Type="GhostableInLibrary" Url="map.png" >
+      <Property Name="Title" Value="map" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\map-21x21.png" Type="GhostableInLibrary" Url="map-21x21.png">
+      <Property Name="Title" Value="map-21x21" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\maps.png" Type="GhostableInLibrary" Url="maps.png">
+      <Property Name="Title" Value="maps" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\maps-hover.png" Type="GhostableInLibrary" Url="maps-hover.png">
+      <Property Name="Title" Value="maps-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\maps-unavailable.png" Type="GhostableInLibrary" Url="maps-unavailable.png" >
+      <Property Name="Title" Value="maps-unavailable" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\note.png" Type="GhostableInLibrary" Url="note.png" >
+      <Property Name="Title" Value="note" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\note-21x21.png" Type="GhostableInLibrary" Url="note-21x21.png">
+      <Property Name="Title" Value="note-21x21" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\pop-out-window.png" Type="GhostableInLibrary" Url="pop-out-window.png" >
+      <Property Name="Title" Value="pop-out-window" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\pop-out-window-hover.png" Type="GhostableInLibrary" Url="pop-out-window-hover.png" >
+      <Property Name="Title" Value="pop-out-window-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\pro.png" Type="GhostableInLibrary" Url="pro.png">
+      <Property Name="Title" Value="pro" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\pro-21x21.png" Type="GhostableInLibrary" Url="pro-21x21.png" >
+      <Property Name="Title" Value="pro-21x21" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\question.png" Type="GhostableInLibrary" Url="question.png">
+      <Property Name="Title" Value="question" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\question-21x21.png" Type="GhostableInLibrary" Url="question-21x21.png" >
+      <Property Name="Title" Value="question-21x21" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\related-content.png" Type="GhostableInLibrary" Url="related-content.png" >
+      <Property Name="Title" Value="related-content" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\related-content-hover.png" Type="GhostableInLibrary" Url="related-content-hover.png" >
+      <Property Name="Title" Value="related-content-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\related-content-unavailable.png" Type="GhostableInLibrary" Url="related-content-unavailable.png" >
+      <Property Name="Title" Value="related-content-unavailable" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\show-all.png" Type="GhostableInLibrary" Url="show-all.png">
+      <Property Name="Title" Value="show-all" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\show-all-hover.png" Type="GhostableInLibrary" Url="show-all-hover.png" >
+      <Property Name="Title" Value="show-all-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\show-all-unavailable.png" Type="GhostableInLibrary" Url="show-all-unavailable.png" >
+      <Property Name="Title" Value="show-all-unavailable" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\video.png" Type="GhostableInLibrary" Url="video.png">
+      <Property Name="Title" Value="video" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\video-hover.png" Type="GhostableInLibrary" Url="video-hover.png">
+      <Property Name="Title" Value="video-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\video-unavailable.png" Type="GhostableInLibrary" Url="video-unavailable.png">
+      <Property Name="Title" Value="video-unavailable" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\yammer.png" Type="GhostableInLibrary" Url="yammer.png">
+      <Property Name="Title" Value="yammer" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\yammer-hover.png" Type="GhostableInLibrary" Url="yammer-hover.png" >
+      <Property Name="Title" Value="yammer-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\yammer-unavailable.png" Type="GhostableInLibrary" Url="yammer-unavailable.png">
+      <Property Name="Title" Value="yammer-unavailable" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\youtube.png" Type="GhostableInLibrary" Url="youtube.png">
+      <Property Name="Title" Value="youtube" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\youtube-hover.png" Type="GhostableInLibrary" Url="youtube-hover.png" >
+      <Property Name="Title" Value="youtube-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\youtube-unavailable.png" Type="GhostableInLibrary" Url="youtube-unavailable.png">
+      <Property Name="Title" Value="youtube-unavailable" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\breadcrumb\Home.png" Type="GhostableInLibrary" Url="breadcrumb/Home.png" >
+      <Property Name="Title" Value="Home" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\breadcrumb\levels-collapsed.png" Type="GhostableInLibrary" Url="breadcrumb/levels-collapsed.png" >
+      <Property Name="Title" Value="levels-collapsed" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\breadcrumb\linebreak.png" Type="GhostableInLibrary" Url="breadcrumb/linebreak.png" >
+      <Property Name="Title" Value="linebreak" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\exit-full-screen.png" Type="GhostableInLibrary" Url="leftsidebar/exit-full-screen.png" >
+      <Property Name="Title" Value="exit-full-screen" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\exit-full-screen-hover.png" Type="GhostableInLibrary" Url="leftsidebar/exit-full-screen-hover.png" >
+      <Property Name="Title" Value="exit-full-screen-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\expansion-dots.png" Type="GhostableInLibrary" Url="leftsidebar/expansion-dots.png" >
+      <Property Name="Title" Value="expansion-dots" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\expansion-dots-hover.png" Type="GhostableInLibrary" Url="leftsidebar/expansion-dots-hover.png" >
+      <Property Name="Title" Value="expansion-dots-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\full-screen.png" Type="GhostableInLibrary" Url="leftsidebar/full-screen.png" >
+      <Property Name="Title" Value="full-screen" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\full-screen-hover.png" Type="GhostableInLibrary" Url="leftsidebar/full-screen-hover.png" >
+      <Property Name="Title" Value="full-screen-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\glymalogo.png" Type="GhostableInLibrary" Url="leftsidebar/glymalogo.png" >
+      <Property Name="Title" Value="glymalogo" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\h-expansion-dots.png" Type="GhostableInLibrary" Url="leftsidebar/h-expansion-dots.png" >
+      <Property Name="Title" Value="h-expansion-dots" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\h-expansion-dots-hover.png" Type="GhostableInLibrary" Url="leftsidebar/h-expansion-dots-hover.png" >
+      <Property Name="Title" Value="h-expansion-dots-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\map-filter.png" Type="GhostableInLibrary" Url="leftsidebar/map-filter.png" >
+      <Property Name="Title" Value="map-filter" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\map-filter-hover.png" Type="GhostableInLibrary" Url="leftsidebar/map-filter-hover.png" >
+      <Property Name="Title" Value="map-filter-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\Realign.png" Type="GhostableInLibrary" Url="leftsidebar/Realign.png" >
+      <Property Name="Title" Value="Realign" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\Realign-hover.png" Type="GhostableInLibrary" Url="leftsidebar/Realign-hover.png" >
+      <Property Name="Title" Value="Realign-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\refresh.png" Type="GhostableInLibrary" Url="leftsidebar/refresh.png" >
+      <Property Name="Title" Value="refresh" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\refresh-hover.png" Type="GhostableInLibrary" Url="leftsidebar/refresh-hover.png" >
+      <Property Name="Title" Value="refresh-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\switch-author.png" Type="GhostableInLibrary" Url="leftsidebar/switch-author.png" >
+      <Property Name="Title" Value="switch-author" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\switch-author-hover.png" Type="GhostableInLibrary" Url="leftsidebar/switch-author-hover.png" >
+      <Property Name="Title" Value="switch-author-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\switch-explorer.png" Type="GhostableInLibrary" Url="leftsidebar/switch-explorer.png" >
+      <Property Name="Title" Value="switch-explorer" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\leftsidebar\switch-explorer-hover.png" Type="GhostableInLibrary" Url="leftsidebar/switch-explorer-hover.png" >
+      <Property Name="Title" Value="switch-explorer-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-content-hover.png" Type="GhostableInLibrary" Url="nodemenu/button-content-hover.png" >
+      <Property Name="Title" Value="button-content-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-content-static.png" Type="GhostableInLibrary" Url="nodemenu/button-content-static.png" >
+      <Property Name="Title" Value="button-content-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-feed-hover.png" Type="GhostableInLibrary" Url="nodemenu/button-feed-hover.png" >
+      <Property Name="Title" Value="button-feed-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-feed-static.png" Type="GhostableInLibrary" Url="nodemenu/button-feed-static.png" >
+      <Property Name="Title" Value="button-feed-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-map-hover.png" Type="GhostableInLibrary" Url="nodemenu/button-map-hover.png" >
+      <Property Name="Title" Value="button-map-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-map-static.png" Type="GhostableInLibrary" Url="nodemenu/button-map-static.png" >
+      <Property Name="Title" Value="button-map-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-pause-hover.png" Type="GhostableInLibrary" Url="nodemenu/button-pause-hover.png" >
+      <Property Name="Title" Value="button-pause-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-pause-static.png" Type="GhostableInLibrary" Url="nodemenu/button-pause-static.png" >
+      <Property Name="Title" Value="button-pause-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-play-hover.png" Type="GhostableInLibrary" Url="nodemenu/button-play-hover.png" >
+      <Property Name="Title" Value="button-play-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\button-play-static.png" Type="GhostableInLibrary" Url="nodemenu/button-play-static.png" >
+      <Property Name="Title" Value="button-play-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\close-map-extension.png" Type="GhostableInLibrary" Url="nodemenu/close-map-extension.png" >
+      <Property Name="Title" Value="close-map-extension" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\collapsed.png" Type="GhostableInLibrary" Url="nodemenu/collapsed.png" >
+      <Property Name="Title" Value="collapsed" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\cons-selected.png" Type="GhostableInLibrary" Url="nodemenu/cons-selected.png" >
+      <Property Name="Title" Value="cons-selected" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\content-hover.png" Type="GhostableInLibrary" Url="nodemenu/content-hover.png" >
+      <Property Name="Title" Value="content-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\content-static.png" Type="GhostableInLibrary" Url="nodemenu/content-static.png" >
+      <Property Name="Title" Value="content-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\decision-selected.png" Type="GhostableInLibrary" Url="nodemenu/decision-selected.png" >
+      <Property Name="Title" Value="decision-selected" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\expanded.png" Type="GhostableInLibrary" Url="nodemenu/expanded.png" >
+      <Property Name="Title" Value="expanded" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\feed-hover.png" Type="GhostableInLibrary" Url="nodemenu/feed-hover.png" >
+      <Property Name="Title" Value="feed-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\feed-static.png" Type="GhostableInLibrary" Url="nodemenu/feed-static.png" >
+      <Property Name="Title" Value="feed-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\idea-selected.png" Type="GhostableInLibrary" Url="nodemenu/idea-selected.png" >
+      <Property Name="Title" Value="idea-selected" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\locate-hover.png" Type="GhostableInLibrary" Url="nodemenu/locate-hover.png" >
+      <Property Name="Title" Value="locate-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\locate-static.png" Type="GhostableInLibrary" Url="nodemenu/locate-static.png" >
+      <Property Name="Title" Value="locate-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\map-hover.png" Type="GhostableInLibrary" Url="nodemenu/map-hover.png" >
+      <Property Name="Title" Value="map-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\map-selected.png" Type="GhostableInLibrary" Url="nodemenu/map-selected.png" >
+      <Property Name="Title" Value="map-selected" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\map-static.png" Type="GhostableInLibrary" Url="nodemenu/map-static.png" >
+      <Property Name="Title" Value="map-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\menubutton-hover.png" Type="GhostableInLibrary" Url="nodemenu/menubutton-hover.png" >
+      <Property Name="Title" Value="menubutton-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\menubutton-static.png" Type="GhostableInLibrary" Url="nodemenu/menubutton-static.png" >
+      <Property Name="Title" Value="menubutton-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\note-selected.png" Type="GhostableInLibrary" Url="nodemenu/note-selected.png" >
+      <Property Name="Title" Value="note-selected" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\open-map-extension.png" Type="GhostableInLibrary" Url="nodemenu/open-map-extension.png" >
+      <Property Name="Title" Value="open-map-extension" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\pro-selected.png" Type="GhostableInLibrary" Url="nodemenu/pro-selected.png" >
+      <Property Name="Title" Value="pro-selected" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\question-selected.png" Type="GhostableInLibrary" Url="nodemenu/question-selected.png" >
+      <Property Name="Title" Value="question-selected" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\semicollapsed.png" Type="GhostableInLibrary" Url="nodemenu/semicollapsed.png" >
+      <Property Name="Title" Value="semicollapsed" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\showall-hover.png" Type="GhostableInLibrary" Url="nodemenu/showall-hover.png" >
+      <Property Name="Title" Value="showall-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\showall-static.png" Type="GhostableInLibrary" Url="nodemenu/showall-static.png" >
+      <Property Name="Title" Value="showall-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\video-hover.png" Type="GhostableInLibrary" Url="nodemenu/video-hover.png" >
+      <Property Name="Title" Value="video-hover" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\nodemenu\video-static.png" Type="GhostableInLibrary" Url="nodemenu/video-static.png" >
+      <Property Name="Title" Value="video-static" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\breadcrumb\collapsed-dots.png" Type="GhostableInLibrary" Url="breadcrumb/collapsed-dots.png" >
+      <Property Name="Title" Value="collapsed-dots" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\question.png" Type="GhostableInLibrary" Url="scaled/nodes1x/question.png">
+      <Property Name="Title" Value="question-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes1x/cons.png">
+      <Property Name="Title" Value="cons-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes1x/idea.png">
+      <Property Name="Title" Value="idea-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\map.png" Type="GhostableInLibrary" Url="scaled/nodes1x/map.png">
+      <Property Name="Title" Value="map-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\note.png" Type="GhostableInLibrary" Url="scaled/nodes1x/note.png">
+      <Property Name="Title" Value="note-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes1x/pro.png">
+      <Property Name="Title" Value="pro-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\question.png" Type="GhostableInLibrary" Url="scaled/nodes2x/question.png">
+      <Property Name="Title" Value="question-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes2x/cons.png">
+      <Property Name="Title" Value="cons-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes2x/idea.png">
+      <Property Name="Title" Value="idea-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\map.png" Type="GhostableInLibrary" Url="scaled/nodes2x/map.png">
+      <Property Name="Title" Value="map-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\note.png" Type="GhostableInLibrary" Url="scaled/nodes2x/note.png">
+      <Property Name="Title" Value="note-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes2x/pro.png">
+      <Property Name="Title" Value="pro-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\question.png" Type="GhostableInLibrary" Url="scaled/nodes3x/question.png">
+      <Property Name="Title" Value="question-3x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes3x/cons.png">
+      <Property Name="Title" Value="cons-3x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes3x/idea.png">
+      <Property Name="Title" Value="idea-3x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\map.png" Type="GhostableInLibrary" Url="scaled/nodes3x/map.png">
+      <Property Name="Title" Value="map-3x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\note.png" Type="GhostableInLibrary" Url="scaled/nodes3x/note.png">
+      <Property Name="Title" Value="note-3x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes3x/pro.png">
+      <Property Name="Title" Value="pro-3x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\question.png" Type="GhostableInLibrary" Url="scaled/nodes4x/question.png">
+      <Property Name="Title" Value="question-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes4x/cons.png">
+      <Property Name="Title" Value="cons-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes4x/idea.png">
+      <Property Name="Title" Value="idea-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\map.png" Type="GhostableInLibrary" Url="scaled/nodes4x/map.png">
+      <Property Name="Title" Value="map-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\note.png" Type="GhostableInLibrary" Url="scaled/nodes4x/note.png">
+      <Property Name="Title" Value="note-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes4x/pro.png">
+      <Property Name="Title" Value="pro-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\question.png" Type="GhostableInLibrary" Url="scaled/nodes5x/question.png">
+      <Property Name="Title" Value="question-5x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes5x/cons.png">
+      <Property Name="Title" Value="cons-5x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes5x/idea.png">
+      <Property Name="Title" Value="idea-5x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\map.png" Type="GhostableInLibrary" Url="scaled/nodes5x/map.png">
+      <Property Name="Title" Value="map-5x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\note.png" Type="GhostableInLibrary" Url="scaled/nodes5x/note.png">
+      <Property Name="Title" Value="note-5x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes5x/pro.png">
+      <Property Name="Title" Value="pro-5x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\question.png" Type="GhostableInLibrary" Url="scaled/nodes6x/question.png">
+      <Property Name="Title" Value="question-6x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes6x/cons.png">
+      <Property Name="Title" Value="cons-6x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes6x/idea.png">
+      <Property Name="Title" Value="idea-6x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\map.png" Type="GhostableInLibrary" Url="scaled/nodes6x/map.png">
+      <Property Name="Title" Value="map-6x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\note.png" Type="GhostableInLibrary" Url="scaled/nodes6x/note.png">
+      <Property Name="Title" Value="note-6x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes6x/pro.png">
+      <Property Name="Title" Value="pro-6x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\question.png" Type="GhostableInLibrary" Url="scaled/nodes7x/question.png">
+      <Property Name="Title" Value="question-7x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes7x/cons.png">
+      <Property Name="Title" Value="cons-7x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes7x/idea.png">
+      <Property Name="Title" Value="idea-7x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\map.png" Type="GhostableInLibrary" Url="scaled/nodes7x/map.png">
+      <Property Name="Title" Value="map-7x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\note.png" Type="GhostableInLibrary" Url="scaled/nodes7x/note.png">
+      <Property Name="Title" Value="note-7x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes7x/pro.png">
+      <Property Name="Title" Value="pro-7x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\question.png" Type="GhostableInLibrary" Url="scaled/nodes8x/question.png">
+      <Property Name="Title" Value="question-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes8x/cons.png">
+      <Property Name="Title" Value="cons-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes8x/idea.png">
+      <Property Name="Title" Value="idea-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\map.png" Type="GhostableInLibrary" Url="scaled/nodes8x/map.png">
+      <Property Name="Title" Value="map-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\note.png" Type="GhostableInLibrary" Url="scaled/nodes8x/note.png">
+      <Property Name="Title" Value="note-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes8x/pro.png">
+      <Property Name="Title" Value="pro-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\question.png" Type="GhostableInLibrary" Url="scaled/nodes9x/question.png">
+      <Property Name="Title" Value="question-9x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes9x/cons.png">
+      <Property Name="Title" Value="cons-9x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes9x/idea.png">
+      <Property Name="Title" Value="idea-9x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\map.png" Type="GhostableInLibrary" Url="scaled/nodes9x/map.png">
+      <Property Name="Title" Value="map-9x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\note.png" Type="GhostableInLibrary" Url="scaled/nodes9x/note.png">
+      <Property Name="Title" Value="note-9x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes9x/pro.png">
+      <Property Name="Title" Value="pro-9x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\question.png" Type="GhostableInLibrary" Url="scaled/nodes10x/question.png">
+      <Property Name="Title" Value="question-10x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\cons.png" Type="GhostableInLibrary" Url="scaled/nodes10x/cons.png">
+      <Property Name="Title" Value="cons-10x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\idea.png" Type="GhostableInLibrary" Url="scaled/nodes10x/idea.png">
+      <Property Name="Title" Value="idea-10x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\map.png" Type="GhostableInLibrary" Url="scaled/nodes10x/map.png">
+      <Property Name="Title" Value="map-10x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\note.png" Type="GhostableInLibrary" Url="scaled/nodes10x/note.png">
+      <Property Name="Title" Value="note-10x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\pro.png" Type="GhostableInLibrary" Url="scaled/nodes10x/pro.png">
+      <Property Name="Title" Value="pro-10x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes10x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes10x/decision.png" >
+      <Property Name="Title" Value="decision-10x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes1x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes1x/decision.png" >
+      <Property Name="Title" Value="decision-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes2x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes2x/decision.png" >
+      <Property Name="Title" Value="decision-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes3x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes3x/decision.png" >
+      <Property Name="Title" Value="decision-3x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes4x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes4x/decision.png" >
+      <Property Name="Title" Value="decision-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes5x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes5x/decision.png" >
+      <Property Name="Title" Value="decision-5x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes6x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes6x/decision.png" >
+      <Property Name="Title" Value="decision-6x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes7x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes7x/decision.png" >
+      <Property Name="Title" Value="decision-7x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes8x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes8x/decision.png" >
+      <Property Name="Title" Value="decision-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodes9x\decision.png" Type="GhostableInLibrary" Url="scaled/nodes9x/decision.png" >
+      <Property Name="Title" Value="decision-9x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-content-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-content-hover.png">
+      <Property Name="Title" Value="button-content-hover-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-content-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-content-static.png" >
+      <Property Name="Title" Value="button-content-static-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-feed-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-feed-hover.png" >
+      <Property Name="Title" Value="button-feed-hover-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-feed-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-feed-static.png" >
+      <Property Name="Title" Value="button-feed-static-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-map-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-map-hover.png" >
+      <Property Name="Title" Value="button-map-hover-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-map-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-map-static.png" >
+      <Property Name="Title" Value="button-map-static-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-pause-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-pause-hover.png">
+      <Property Name="Title" Value="button-pause-hover-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-pause-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-pause-static.png">
+      <Property Name="Title" Value="button-pause-static-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-play-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-play-hover.png">
+      <Property Name="Title" Value="button-play-hover-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\button-play-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/button-play-static.png">
+      <Property Name="Title" Value="button-play-static-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\collapsed.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/collapsed.png">
+      <Property Name="Title" Value="collapsed-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\expanded.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/expanded.png">
+      <Property Name="Title" Value="expanded-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\menubutton-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/menubutton-hover.png">
+      <Property Name="Title" Value="menubutton-hover-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\menubutton-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/menubutton-static.png">
+      <Property Name="Title" Value="menubutton-static-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu1x\semicollapsed.png" Type="GhostableInLibrary" Url="scaled/nodemenu1x/semicollapsed.png">
+      <Property Name="Title" Value="semicollapsed-1x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-content-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-content-hover.png">
+      <Property Name="Title" Value="button-content-hover-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-content-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-content-static.png">
+      <Property Name="Title" Value="button-content-static-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-feed-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-feed-hover.png">
+      <Property Name="Title" Value="button-feed-hover-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-feed-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-feed-static.png">
+      <Property Name="Title" Value="button-feed-static-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-map-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-map-hover.png">
+      <Property Name="Title" Value="button-map-hover-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-map-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-map-static.png">
+      <Property Name="Title" Value="button-map-static-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-pause-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-pause-hover.png">
+      <Property Name="Title" Value="button-pause-hover-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-pause-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-pause-static.png">
+      <Property Name="Title" Value="button-pause-static-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-play-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-play-hover.png">
+      <Property Name="Title" Value="button-play-hover-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\button-play-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/button-play-static.png">
+      <Property Name="Title" Value="button-play-static-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\collapsed.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/collapsed.png">
+      <Property Name="Title" Value="collapsed-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\expanded.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/expanded.png">
+      <Property Name="Title" Value="expanded-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\menubutton-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/menubutton-hover.png">
+      <Property Name="Title" Value="menubutton-hover-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\menubutton-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/menubutton-static.png">
+      <Property Name="Title" Value="menubutton-static-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu2x\semicollapsed.png" Type="GhostableInLibrary" Url="scaled/nodemenu2x/semicollapsed.png">
+      <Property Name="Title" Value="semicollapsed-2x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-content-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-content-hover.png">
+      <Property Name="Title" Value="button-content-hover-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-content-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-content-static.png">
+      <Property Name="Title" Value="button-content-static-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-feed-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-feed-hover.png">
+      <Property Name="Title" Value="button-feed-hover-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-feed-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-feed-static.png">
+      <Property Name="Title" Value="button-feed-static-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-map-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-map-hover.png">
+      <Property Name="Title" Value="button-map-hover-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-map-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-map-static.png">
+      <Property Name="Title" Value="button-map-static-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-pause-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-pause-hover.png">
+      <Property Name="Title" Value="button-pause-hover-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-pause-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-pause-static.png">
+      <Property Name="Title" Value="button-pause-static-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-play-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-play-hover.png">
+      <Property Name="Title" Value="button-play-hover-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\button-play-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/button-play-static.png">
+      <Property Name="Title" Value="button-play-static-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\collapsed.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/collapsed.png">
+      <Property Name="Title" Value="collapsed-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\expanded.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/expanded.png">
+      <Property Name="Title" Value="expanded-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\menubutton-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/menubutton-hover.png">
+      <Property Name="Title" Value="menubutton-hover-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\menubutton-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/menubutton-static.png">
+      <Property Name="Title" Value="menubutton-staticr-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu4x\semicollapsed.png" Type="GhostableInLibrary" Url="scaled/nodemenu4x/semicollapsed.png">
+      <Property Name="Title" Value="semicollapsed-4x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-content-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-content-hover.png">
+      <Property Name="Title" Value="button-content-hover-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-content-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-content-static.png">
+      <Property Name="Title" Value="button-content-static-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-feed-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-feed-hover.png">
+      <Property Name="Title" Value="button-feed-hover-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-feed-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-feed-static.png">
+      <Property Name="Title" Value="button-feed-static-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-map-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-map-hover.png">
+      <Property Name="Title" Value="button-map-hover-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-map-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-map-static.png">
+      <Property Name="Title" Value="button-map-static-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-pause-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-pause-hover.png">
+      <Property Name="Title" Value="button-pause-hover-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-pause-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-pause-static.png">
+      <Property Name="Title" Value="button-pause-static-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-play-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-play-hover.png">
+      <Property Name="Title" Value="button-play-hover-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\button-play-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/button-play-static.png">
+      <Property Name="Title" Value="button-play-static-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\collapsed.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/collapsed.png">
+      <Property Name="Title" Value="collapsed-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\expanded.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/expanded.png">
+      <Property Name="Title" Value="expanded-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\menubutton-hover.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/menubutton-hover.png">
+      <Property Name="Title" Value="menubutton-hover-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\menubutton-static.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/menubutton-static.png">
+      <Property Name="Title" Value="menubutton-static-8x" />
+    </File>
+    <File Path="GlymaCommonResources\Glyma\Icons\scaled\nodemenu8x\semicollapsed.png" Type="GhostableInLibrary" Url="scaled/nodemenu8x/semicollapsed.png">
+      <Property Name="Title" Value="semicollapsed-8x" />
+    </File>
+  </Module>
+</Elements>

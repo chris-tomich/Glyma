@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="788fa3a7-01fc-426a-927b-ef888ef62101" solutionId="788fa3a7-01fc-426a-927b-ef888ef62101" resetWebServer="false" sharePointProductVersion="" name="Glyma.SharePoint.Common" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="86d77e03-6f50-4866-8fdb-69e2237cc79a" />
+    <featureReference itemId="3ebb79fb-b884-48fd-94b5-9730724402d4" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="9064e27f-15c4-4f3b-8389-f0e9d554e823" />
+  </projectItems>
+</package>

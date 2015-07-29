@@ -1,0 +1,831 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:System="clr-namespace:System;assembly=mscorlib"
+    xmlns:controls="clr-namespace:SilverlightMappingToolBasic.Controls"
+    xmlns:SuperGraph="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View"
+    xmlns:controlsInputToolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit">
+
+    <!-- ArrowControl Template -->
+    <Style TargetType="SuperGraph:ArrowControl">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="SuperGraph:ArrowControl">
+                    <Canvas x:Name="ArrowCanvas" Canvas.ZIndex="-1">
+
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="MouseOver">
+                                    <Storyboard AutoReverse="True">
+                                        <ColorAnimation Storyboard.TargetName="ArrowPath"
+                                                        Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding MouseOverColor, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ColorAnimation Storyboard.TargetName="ArrowHead"
+                                                        Storyboard.TargetProperty="(Line.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding MouseOverColor, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetName="ArrowCanvas"
+                                            Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                            BeginTime="00:00:00"
+                                            Duration="00:00:00.3">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3" Value="100" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimation Storyboard.TargetName="ArrowPath"
+                                                        Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ColorAnimation Storyboard.TargetName="ArrowHead"
+                                                        Storyboard.TargetProperty="(Line.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToSelectionRectangle"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FromSelectionRectangle"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="NotSelected">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetName="ArrowCanvas"
+                                            Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                            BeginTime="00:00:00"
+                                            Duration="00:00:00.3">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="100"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimation Storyboard.TargetName="ArrowPath"
+                                                        Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ColorAnimation Storyboard.TargetName="ArrowHead"
+                                                        Storyboard.TargetProperty="(Line.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToSelectionRectangle"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FromSelectionRectangle"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <!--<vsm:VisualStateGroup x:Name="EditStates">
+                                <vsm:VisualState x:Name="Editting">
+                                    <Storyboard>
+                                        
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="NotEditting">
+                                    <Storyboard>
+                                        
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup> -->
+                        </vsm:VisualStateManager.VisualStateGroups>
+
+                        <Canvas.Effect>
+                            <DropShadowEffect x:Name="SelectionEffect" BlurRadius="0"  Direction="0"
+                                              ShadowDepth="0" Color="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Canvas.Effect>
+                        <Path x:Name="ArrowPath" Stroke="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Canvas.ZIndex="1" 
+                              StrokeEndLineCap="Triangle" StrokeThickness="1.25">
+                            <Path.Data>
+                                <PathGeometry x:Name="Arrow">
+                                    <PathGeometry.Figures>
+                                        <PathFigure x:Name="ArrowFigure">
+                                            <PathFigure.Segments>
+                                                <LineSegment x:Name="ArrowBody"/>
+                                            </PathFigure.Segments>
+                                        </PathFigure>
+                                    </PathGeometry.Figures>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                        <Path x:Name="ArrowPathClickArea" Stroke="White" Opacity="0.01" StrokeEndLineCap="Triangle" StrokeThickness="20" Canvas.ZIndex="-1">
+                            <Path.Data>
+                                <PathGeometry x:Name="ArrowClickArea">
+                                    <PathGeometry.Figures>
+                                        <PathFigure x:Name="ArrowFigureClickArea" StartPoint="{Binding ElementName=ArrowFigure, Path=StartPoint, Mode=OneWay}">
+                                            <PathFigure.Segments>
+                                                <LineSegment x:Name="ArrowBodyClickArea" Point="{Binding ElementName=ArrowBody, Path=Point, Mode=OneWay}" />
+                                            </PathFigure.Segments>
+                                        </PathFigure>
+                                    </PathGeometry.Figures>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                        <Line x:Name="ArrowHead" StrokeEndLineCap="Triangle" StrokeThickness="8"
+                              Stroke="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" />
+
+                        <!-- selection adorners -->
+                        <Rectangle x:Name="ToSelectionRectangle" Width="8" Height="8"
+                                   Stroke="Black" StrokeThickness="1" Opacity="0.7"
+                                   Fill="White" Visibility="Collapsed" />
+
+                        <Rectangle x:Name="FromSelectionRectangle" Width="8" Height="8"
+                                   Stroke="Black" StrokeThickness="1" Opacity="0.7"
+                                   Fill="White" Visibility="Collapsed" />
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- NodeControl Template -->
+    <Style TargetType="controls:NodeControl">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:NodeControl">
+                    <Canvas x:Name="NodeCanvas">
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="MouseOver">
+                                    <Storyboard AutoReverse="True">
+                                        <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetName="NodeImage"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)"
+                                            BeginTime="00:00:00"
+                                            Duration="00:00:00.3">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3" Value="1.05" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetName="NodeImage"
+                                            Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)"
+                                            BeginTime="00:00:00"
+                                            Duration="00:00:00.3">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="1"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3" Value="1.05" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetName="NodeCanvas"
+                                            Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                            BeginTime="00:00:00"
+                                            Duration="00:00:00.3">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3" Value="100" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="NotSelected">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetName="NodeCanvas"
+                                            Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                            BeginTime="00:00:00"
+                                            Duration="00:00:00.3">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="100"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="EditStates">
+                                <vsm:VisualState x:Name="Editting">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="OkButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="CancelButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="NodeTextBox" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="NodeTextBlock" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="NotEditting">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="OkButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="CancelButton" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="NodeTextBox" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="NodeTextBlock" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="MediaPlaybackStates">
+                                <vsm:VisualState x:Name="Playing">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="PlayMediaImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="PauseMediaImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="Idle">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="PlayMediaImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Duration="00:00:00.001" Storyboard.TargetName="PauseMediaImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                        </vsm:VisualStateManager.VisualStateGroups>
+
+                        <Rectangle x:Name="NodeImage" 
+                                   Fill="{Binding NodeImage, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   Width="{Binding NodeSkinWidth, RelativeSource={RelativeSource TemplatedParent}}" 
+                                   Height="{Binding NodeSkinHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                   RenderTransformOrigin="0.5,0.5">
+                            <Rectangle.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                                </TransformGroup>
+                            </Rectangle.RenderTransform>
+                        </Rectangle>
+
+                        <Rectangle x:Name="PlayMediaImage"
+                                   Canvas.Left="{Binding MediaIconLeftOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Canvas.Top="{Binding MediaIconTopOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Width="{Binding MediaIconWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Height="{Binding MediaIconHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                   RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                            <Rectangle.Fill>
+                                <ImageBrush Stretch="Fill" ImageSource="/Images/mediaIconPlay.png"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+                        <Rectangle x:Name="PauseMediaImage"
+                                   Canvas.Left="{Binding MediaIconLeftOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Canvas.Top="{Binding MediaIconTopOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Width="{Binding MediaIconWidth, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Height="{Binding MediaIconHeight, RelativeSource={RelativeSource TemplatedParent}}"
+                                   RenderTransformOrigin="0.5,0.5" Visibility="Collapsed">
+                            <Rectangle.Fill>
+                                <ImageBrush Stretch="Fill" ImageSource="/Images/mediaIconPause.png"/>
+                            </Rectangle.Fill>
+                        </Rectangle>
+
+                        <TextBlock x:Name="ChildCountTextBlock" 
+                                   Canvas.Left="{Binding ChildCountLeftOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Canvas.Top="{Binding ChildCountTopOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontSize="{Binding TextFontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontFamily="{Binding TextFontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Padding="0"
+                                   TextAlignment="Center"
+                                   Width="10"
+                                   Foreground="Navy" />
+
+                        <TextBlock x:Name="TransclusionCountTextBlock" 
+                                   Canvas.Left="{Binding TransclusionCountLeftOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Canvas.Top="{Binding TransclusionCountTopOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontSize="{Binding TextFontSize, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontFamily="{Binding TextFontFamily, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Padding="0"
+                                   TextAlignment="Center"
+                                   Width="10"
+                                   Foreground="Navy" 
+                                   Text="{Binding Path=TransclusionCount, Mode=OneWay}"/>
+
+                        <TextBlock x:Name="NoteTextBlock"
+                                   Canvas.Left="{Binding NoteLeftOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   Canvas.Top="{Binding NoteTopOffset, RelativeSource={RelativeSource TemplatedParent}}"
+                                   FontSize="12"
+                                   Padding="0"
+                                   TextAlignment="Center"
+                                   Width="10"
+                                   Foreground="Navy" 
+                                   Text="*"
+                                   Visibility="Collapsed"
+                                   ToolTipService.ToolTip="" />
+
+                        <!-- The TextBlock is within a border so that when the Text property equals string.Empty it's still double clickable -->
+                        <Border x:Name="TextBlockBorder" Width="100" BorderBrush="#000000" BorderThickness="0" 
+                                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Padding="0">
+                            <TextBlock x:Name="NodeTextBlock" 
+                                 FontSize="{Binding TextFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+                                 FontFamily="{Binding TextFontFamily, RelativeSource={RelativeSource TemplatedParent}}" 
+                                 HorizontalAlignment="Stretch"
+                                 Padding="0"
+                                 IsHitTestVisible="True"
+                                 TextAlignment="Center"
+                                 TextWrapping="Wrap"
+                                 Text="{Binding Path=Name, Mode=TwoWay}" />
+                        </Border>
+                        <TextBox x:Name="NodeTextBox" 
+                                 FontSize="{Binding TextFontSize, RelativeSource={RelativeSource TemplatedParent}}" 
+                                 FontFamily="{Binding TextFontFamily, RelativeSource={RelativeSource TemplatedParent}}" 
+                                 BorderBrush="Transparent"
+                                 Padding="0"
+                                 TextWrapping="Wrap"
+                                 Visibility="Collapsed"
+                                 Text="{Binding Path=Name, Mode=OneWay}" />
+                        <Button x:Name="OkButton" Visibility="Collapsed"
+                                Content="Ok" Height="20" Width="50" Margin="0,2,0,0" />
+                        <Button x:Name="CancelButton" Visibility="Collapsed"
+                                Content="Cancel" Height="20" Width="50" Margin="0,2,0,0" />
+
+                        <Canvas.Effect>
+                            <DropShadowEffect ShadowDepth="0" Direction="0" 
+                                              Color="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" BlurRadius="0" />
+                        </Canvas.Effect>
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- ArrowControl Template -->
+    <Style TargetType="controls:ArrowControl">
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="controls:ArrowControl">
+                    <Canvas x:Name="ArrowCanvas" Canvas.ZIndex="-1">
+
+                        <vsm:VisualStateManager.VisualStateGroups>
+                            <vsm:VisualStateGroup x:Name="CommonStates">
+                                <vsm:VisualState x:Name="Normal" />
+                                <vsm:VisualState x:Name="MouseOver">
+                                    <Storyboard AutoReverse="True">
+                                        <ColorAnimation Storyboard.TargetName="ArrowPath"
+                                                        Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding MouseOverColor, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ColorAnimation Storyboard.TargetName="ArrowHead"
+                                                        Storyboard.TargetProperty="(Line.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding MouseOverColor, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <vsm:VisualStateGroup x:Name="FocusStates">
+                                <vsm:VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetName="ArrowCanvas"
+                                            Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                            BeginTime="00:00:00"
+                                            Duration="00:00:00.3">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3" Value="100" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimation Storyboard.TargetName="ArrowPath"
+                                                        Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ColorAnimation Storyboard.TargetName="ArrowHead"
+                                                        Storyboard.TargetProperty="(Line.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToSelectionRectangle"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FromSelectionRectangle"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Visible</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="NotSelected">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames
+                                            Storyboard.TargetName="ArrowCanvas"
+                                            Storyboard.TargetProperty="(UIElement.Effect).(DropShadowEffect.BlurRadius)"
+                                            BeginTime="00:00:00"
+                                            Duration="00:00:00.3">
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00" Value="100"/>
+                                            <SplineDoubleKeyFrame KeyTime="00:00:00.3" Value="0" />
+                                        </DoubleAnimationUsingKeyFrames>
+                                        <ColorAnimation Storyboard.TargetName="ArrowPath"
+                                                        Storyboard.TargetProperty="(Path.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ColorAnimation Storyboard.TargetName="ArrowHead"
+                                                        Storyboard.TargetProperty="(Line.Stroke).(SolidColorBrush.Color)"
+                                                        From="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" 
+                                                        To="{Binding Foreground.(SolidColorBrush.Color), RelativeSource={RelativeSource TemplatedParent}}" Duration="0:0:0" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ToSelectionRectangle"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="FromSelectionRectangle"
+                                                                       Storyboard.TargetProperty="(UIElement.Visibility)">
+                                            <ObjectAnimationUsingKeyFrames.KeyFrames>
+                                                <DiscreteObjectKeyFrame KeyTime="00:00:00">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <Visibility>Collapsed</Visibility>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames.KeyFrames>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup>
+                            <!--<vsm:VisualStateGroup x:Name="EditStates">
+                                <vsm:VisualState x:Name="Editting">
+                                    <Storyboard>
+                                        
+                                    </Storyboard>
+                                </vsm:VisualState>
+                                <vsm:VisualState x:Name="NotEditting">
+                                    <Storyboard>
+                                        
+                                    </Storyboard>
+                                </vsm:VisualState>
+                            </vsm:VisualStateGroup> -->
+                        </vsm:VisualStateManager.VisualStateGroups>
+
+                        <Canvas.Effect>
+                            <DropShadowEffect x:Name="SelectionEffect" BlurRadius="0"  Direction="0"
+                                              ShadowDepth="0" Color="{Binding GlowColor, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Canvas.Effect>
+                        <Path x:Name="ArrowPath" Stroke="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Canvas.ZIndex="1" 
+                              StrokeEndLineCap="Triangle" StrokeThickness="1.25">
+                            <Path.Data>
+                                <PathGeometry x:Name="Arrow">
+                                    <PathGeometry.Figures>
+                                        <PathFigure x:Name="ArrowFigure">
+                                            <PathFigure.Segments>
+                                                <LineSegment x:Name="ArrowBody"/>
+                                            </PathFigure.Segments>
+                                        </PathFigure>
+                                    </PathGeometry.Figures>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                        <Path x:Name="ArrowPathClickArea" Stroke="White" Opacity="0.01" StrokeEndLineCap="Triangle" StrokeThickness="20" Canvas.ZIndex="-1">
+                            <Path.Data>
+                                <PathGeometry x:Name="ArrowClickArea">
+                                    <PathGeometry.Figures>
+                                        <PathFigure x:Name="ArrowFigureClickArea" StartPoint="{Binding ElementName=ArrowFigure, Path=StartPoint, Mode=OneWay}">
+                                            <PathFigure.Segments>
+                                                <LineSegment x:Name="ArrowBodyClickArea" Point="{Binding ElementName=ArrowBody, Path=Point, Mode=OneWay}" />
+                                            </PathFigure.Segments>
+                                        </PathFigure>
+                                    </PathGeometry.Figures>
+                                </PathGeometry>
+                            </Path.Data>
+                        </Path>
+                        <Line x:Name="ArrowHead" StrokeEndLineCap="Triangle" StrokeThickness="8"
+                              Stroke="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" />
+                        
+                        <!-- selection adorners -->
+                        <Rectangle x:Name="ToSelectionRectangle" Width="8" Height="8"
+                                   Stroke="Black" StrokeThickness="1" Opacity="0.7"
+                                   Fill="White" Visibility="Collapsed" />
+
+                        <Rectangle x:Name="FromSelectionRectangle" Width="8" Height="8"
+                                   Stroke="Black" StrokeThickness="1" Opacity="0.7"
+                                   Fill="White" Visibility="Collapsed" />
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Default style for BreadcrumbBar -->
+    <DataTemplate x:Key="BreadcrumbBarItemTemplate">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Border BorderBrush="#FF547ABD" BorderThickness="1,1,0,1" CornerRadius="2,0,0,2">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.497,1.059" StartPoint="0.497,-0.072">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStopCollection>
+                                <GradientStop Color="#F9F9F9" Offset="0.0"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.1"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.47"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.47"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.70"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.85"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.95"/>
+                                <GradientStop Color="#F9F9F9" Offset="1.0"/>
+                            </GradientStopCollection>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <TextBlock Text="{Binding Name}" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="2,0,0,0" HorizontalAlignment="Left" MinWidth="35"/>
+            </Border>
+            <Path Stretch="Fill" Stroke="#FF547ABD" Grid.Column="1" Data="M-0.48804048,5.656126 L0.92895943,5.656126 C2.03353,5.656126 11.511935,15.0728 11.511935,15.0728 C10.886935,15.656133 2.4085298,24.65613 1.3039595,24.65613 L-0.52937388,24.65612" UseLayoutRounding="False" RenderTransformOrigin="0.5,0.5" Margin="-0.5,0,0,0">
+                <Path.Fill>
+                    <LinearGradientBrush EndPoint="0.489,1.029" StartPoint="0.517,-0.031">
+                        <LinearGradientBrush.GradientStops>
+                            <GradientStopCollection>
+                                <GradientStop Color="#F9F9F9" Offset="0.0"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.1"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.47"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.47"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.70"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.85"/>
+                                <GradientStop Color="#F9F9F9" Offset="0.95"/>
+                                <GradientStop Color="#F9F9F9" Offset="1.0"/>
+                            </GradientStopCollection>
+                        </LinearGradientBrush.GradientStops>
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
+        </Grid>
+    </DataTemplate>
+    
+    <Style x:Key="BreadcrumbBarItemContainerStyle" TargetType="ListBoxItem">
+        <Setter Property="Padding" Value="3"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="TabNavigation" Value="Local"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBoxItem">
+                    <Grid Background="{TemplateBinding Background}">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal"/>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="mouseOverFillColor" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value=".35"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="contentPresenter" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value=".55"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="SelectionStates">
+                                <VisualState x:Name="Unselected"/>
+                                <VisualState x:Name="Selected">
+                                    <Storyboard>
+                                        <DoubleAnimationUsingKeyFrames Storyboard.TargetName="selectedFillColor" Storyboard.TargetProperty="Opacity">
+                                            <SplineDoubleKeyFrame KeyTime="0" Value=".75"/>
+                                        </DoubleAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="FocusStates">
+                                <VisualState x:Name="Focused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetName="FocusVisualElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="Unfocused"/>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Rectangle x:Name="mouseOverFillColor" Fill="#FFBADDE9" RadiusX="1" RadiusY="1" IsHitTestVisible="False" Opacity="0"/>
+                        <Rectangle x:Name="selectedFillColor" RadiusX="1" RadiusY="1" IsHitTestVisible="False" Opacity="0"/>
+                        <ContentPresenter x:Name="contentPresenter" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}"/>
+                        <Rectangle x:Name="FocusVisualElement" Stroke="#FF7C7C7C" Visibility="Collapsed" StrokeThickness="1" RadiusX="1" RadiusY="1" StrokeDashArray="1 0 0 1"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style TargetType="controls:BreadcrumbBar">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFFFFF" Offset="0"/>
+                    <GradientStop Color="#E3E8F4" Offset="0.5"/>
+                    <GradientStop Color="#CFD7EB" Offset="0.5"/>
+                    <GradientStop Color="#E9ECFA" Offset="1.0"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="#FF000000"/>
+        <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="TabNavigation" Value="Once"/>
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="BorderBrush" Value="#FFE2E6F4"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListBox">
+                    <Grid>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="ValidationStates">
+                                <VisualState x:Name="Valid"/>
+                                <VisualState x:Name="InvalidUnfocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="InvalidFocused">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ValidationErrorElement" Storyboard.TargetProperty="Visibility">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <Visibility>Visible</Visibility>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="validationTooltip" Storyboard.TargetProperty="IsOpen">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <System:Boolean>True</System:Boolean>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2">
+                            <ScrollViewer x:Name="ScrollViewer" Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="0" Padding="{TemplateBinding Padding}" TabNavigation="{TemplateBinding TabNavigation}">
+                                <ItemsPresenter/>
+                            </ScrollViewer>
+                        </Border>
+                        <Border x:Name="ValidationErrorElement" Visibility="Collapsed" BorderBrush="#FFDB000C" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2">
+                            <ToolTipService.ToolTip>
+                                <ToolTip x:Name="validationTooltip" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}"
+                                         Placement="Right" PlacementTarget="{Binding RelativeSource={RelativeSource TemplatedParent}}">
+                                    <!--Template="{StaticResource ValidationToolTipTemplate}"-->
+                                    <ToolTip.Template>
+                                        <ControlTemplate x:Name="ValidationToolTipTemplate">
+                                            <Grid x:Name="Root" Margin="5,0" Opacity="0" RenderTransformOrigin="0,0">
+                                                <VisualStateManager.VisualStateGroups>
+                                                    <VisualStateGroup x:Name="OpenStates">
+                                                        <VisualStateGroup.Transitions>
+                                                            <VisualTransition GeneratedDuration="0"/>
+                                                            <VisualTransition GeneratedDuration="0:0:0.2" To="Open">
+                                                                <Storyboard>
+                                                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="xform" Storyboard.TargetProperty="X">
+                                                                        <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+                                                                    </DoubleAnimationUsingKeyFrames>
+                                                                    <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity">
+                                                                        <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+                                                                    </DoubleAnimationUsingKeyFrames>
+                                                                </Storyboard>
+                                                            </VisualTransition>
+                                                        </VisualStateGroup.Transitions>
+                                                        <VisualState x:Name="Closed">
+                                                            <Storyboard>
+                                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity">
+                                                                    <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+                                                                </DoubleAnimationUsingKeyFrames>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                        <VisualState x:Name="Open">
+                                                            <Storyboard>
+                                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="xform" Storyboard.TargetProperty="X">
+                                                                    <SplineDoubleKeyFrame KeyTime="0" Value="0"/>
+                                                                </DoubleAnimationUsingKeyFrames>
+                                                                <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity">
+                                                                    <SplineDoubleKeyFrame KeyTime="0" Value="1"/>
+                                                                </DoubleAnimationUsingKeyFrames>
+                                                            </Storyboard>
+                                                        </VisualState>
+                                                    </VisualStateGroup>
+                                                </VisualStateManager.VisualStateGroups>
+                                                <Grid.RenderTransform>
+                                                    <TranslateTransform x:Name="xform" X="-25"/>
+                                                </Grid.RenderTransform>
+                                                <Border Margin="4,4,-4,-4" Background="#052A2E31" CornerRadius="5"/>
+                                                <Border Margin="3,3,-3,-3" Background="#152A2E31" CornerRadius="4"/>
+                                                <Border Margin="2,2,-2,-2" Background="#252A2E31" CornerRadius="3"/>
+                                                <Border Margin="1,1,-1,-1" Background="#352A2E31" CornerRadius="2"/>
+                                                <Border Background="#FFDC000C" CornerRadius="2"/>
+                                                <Border CornerRadius="2">
+                                                    <TextBlock Margin="8,4,8,4" MaxWidth="250" UseLayoutRounding="false" Foreground="White" Text="{Binding (Validation.Errors)[0].ErrorContent}" TextWrapping="Wrap"/>
+                                                </Border>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </ToolTip.Template>
+                                    <ToolTip.Triggers>
+                                        <EventTrigger RoutedEvent="Canvas.Loaded">
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ObjectAnimationUsingKeyFrames Storyboard.TargetName="validationTooltip" Storyboard.TargetProperty="IsHitTestVisible">
+                                                        <DiscreteObjectKeyFrame KeyTime="0">
+                                                            <DiscreteObjectKeyFrame.Value>
+                                                                <System:Boolean>true</System:Boolean>
+                                                            </DiscreteObjectKeyFrame.Value>
+                                                        </DiscreteObjectKeyFrame>
+                                                    </ObjectAnimationUsingKeyFrames>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger>
+                                    </ToolTip.Triggers>
+                                </ToolTip>
+                            </ToolTipService.ToolTip>
+                            <Grid Height="10" HorizontalAlignment="Right" Margin="0,-4,-4,0" VerticalAlignment="Top" Width="10" Background="Transparent">
+                                <Path Fill="#FFDC000C" Margin="-1,3,0,0" Data="M 1,0 L6,0 A 2,2 90 0 1 8,2 L8,7 z"/>
+                                <Path Fill="#ffffff" Margin="-1,3,0,0" Data="M 0,0 L2,0 L 8,6 L8,8"/>
+                            </Grid>
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate" Value="{StaticResource BreadcrumbBarItemTemplate}"/>
+        <Setter Property="ItemContainerStyle" Value="{StaticResource BreadcrumbBarItemContainerStyle}"/>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,76 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.ManagementConsole.UI.ManagementConsoleTabControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:ui="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.ManagementConsole.UI"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+    mc:Ignorable="d"
+    d:DesignHeight="510" d:DesignWidth="630" Width="630" Height="510" DataContextChanged="NodeManagementTabControl_OnDataContextChanged">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
+        </Grid.RowDefinitions>
+        <sdk:TabControl  Grid.Row="0" Grid.RowSpan="2" Width="630" MinHeight="450" MaxHeight="450" x:Name="RadTabControl"
+				DisplayMemberPath="Content"
+                               BorderThickness="0" TabStripPlacement="Top" Style="{StaticResource SuperTabControlStyle}" Canvas.ZIndex="0" SelectionChanged="RadTabControl_SelectionChanged">
+            <sdk:TabItem Header="General" Style="{StaticResource SuperTabItemStyle}" FontSize="12" Padding="10,14,10,14">
+                <StackPanel >
+                    <ui:GeneralSettingControl x:Name="GeneralSettingControl">
+                        
+                    </ui:GeneralSettingControl>
+                </StackPanel>
+            </sdk:TabItem>
+            <sdk:TabItem Header="Permissions" x:Name="PermissionsTab" Style="{StaticResource SuperTabItemStyle}" FontSize="12" Padding="10,14,10,14">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="60"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <ui:SecurityManagementControl  Grid.Row="0" x:Name="SecurityManagementControl"></ui:SecurityManagementControl>
+                    <Border Grid.Row="1" Background="Transparent" Margin="0,0,0,0" CornerRadius="0,0,5,5" Padding="0,0,20,0">
+                        <StackPanel Height="60" Orientation="Horizontal" HorizontalAlignment="Right">
+                            <StackPanel Height="60" x:Name="PermissionManagementButtons" Visibility="Collapsed">
+                                <StackPanel Height="60" Orientation="Horizontal" Visibility="{Binding Path=RootMapOnlyControlVisibility}"  HorizontalAlignment="Right">
+                                    <telerik:RadButton x:Name="BreakInheritanceButton" Content="Break Inheritance" Visibility="{Binding Path=BreakInheritanceButtonVisibility}"
+                                   Width="150" Cursor="Hand"  Style="{StaticResource SuperButtonStyle}"
+                                   FontFamily="Trebuchet MS" FontSize="14" Foreground="White"
+                                           HorizontalAlignment="left" Margin="0,10,10,10" Click="BreakInheritanceButton_Click"/>
+                                    <telerik:RadButton x:Name="RestoreInheritanceButton" Content="Restore Inheritance" Visibility="{Binding Path=RestoreInheritanceButtonVisibility}"
+                                   Width="150" Cursor="Hand"  Style="{StaticResource SuperButtonStyle}"
+                                   FontFamily="Trebuchet MS" FontSize="14" Foreground="White"
+                                           HorizontalAlignment="left" Margin="0,10,10,10" Click="RestoreInheritanceButton_Click"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                
+            </sdk:TabItem>
+            <sdk:TabItem Header="Export" x:Name="ExportTab" Style="{StaticResource SuperTabItemStyle}" FontSize="12" Padding="10,14,10,14" IsEnabled="{Binding Path=IsRootMap}"  Visibility="{Binding Path=ExportControlVisibility}">
+                <Grid Margin="0">
+                    <ui:ExportTab Grid.Row="0" x:Name="ExportTabControl" Margin="0,0,10,0"></ui:ExportTab>
+                </Grid>
+            </sdk:TabItem>
+        </sdk:TabControl>
+        
+        <StackPanel Grid.Row="1" Background="White"  Margin="10,0,10,0"></StackPanel>
+        <Border Grid.Row="2" Background="Transparent" Margin="0,0,20,0" CornerRadius="0,0,5,5">
+            <StackPanel Height="60" Orientation="Horizontal" HorizontalAlignment="Right">
+                <telerik:RadButton x:Name="LoadMapButton" Visibility="{Binding Path=RootMapOnlyControlVisibility}"
+                                   Width="100" Cursor="Hand" Content="Load Map" 
+                                   FontFamily="Trebuchet MS" FontSize="14" Foreground="White"
+                                   Margin="0,10,10,10" Style="{StaticResource SuperButtonStyle}"
+                                   Click="LoadMap_Click"/>
+
+                <telerik:RadButton x:Name="ApplyButton" IsEnabled="False" Content="Apply" Click="ApplyButton_Click"  Width="80" Cursor="Hand" FontFamily="Trebuchet MS" FontSize="14" Foreground="White"
+                                   HorizontalAlignment="Right" Margin="0,10,0,10" Style="{StaticResource SuperButtonStyle}" />
+            </StackPanel>
+        </Border>
+        
+    </Grid>
+</UserControl>

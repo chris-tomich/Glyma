@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Development-Security-GlymaDB" Class="SecurityDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=glyma2010;Initial Catalog=Development-Security-GlymaDB;Integrated Security=True" SettingsObjectName="Glyma.Powershell.SharePoint.Properties.Settings" SettingsPropertyName="Development_Security_GlymaDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.GroupAssociations" Member="GroupAssociations">
+    <Type Name="GroupAssociation">
+      <Column Name="GroupAssociationId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SecurableParentUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SecurableObjectUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SecurableContextId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SecurableObject_GroupAssociation" Member="SecurableObject" ThisKey="SecurableObjectUid" OtherKey="SecurableObjectUid" Type="SecurableObject" IsForeignKey="true" />
+      <Association Name="Group_GroupAssociation" Member="Group" ThisKey="GroupId" OtherKey="GroupId" Type="Group" IsForeignKey="true" />
+      <Association Name="SecurableContext_GroupAssociation" Member="SecurableContext" ThisKey="SecurableContextId" OtherKey="SecurableContextId" Type="SecurableContext" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SecurableObjects" Member="SecurableObjects">
+    <Type Name="SecurableObject">
+      <Column Name="SecurableObjectUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SecurableContextId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BreaksInheritance" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="SecurableObject_GroupAssociation" Member="GroupAssociations" ThisKey="SecurableObjectUid" OtherKey="SecurableObjectUid" Type="GroupAssociation" />
+      <Association Name="SecurableContext_SecurableObject" Member="SecurableContext" ThisKey="SecurableContextId" OtherKey="SecurableContextId" Type="SecurableContext" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Groups" Member="Groups">
+    <Type Name="Group">
+      <Column Name="GroupId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SecurableContextId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GroupSPID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="WebSPID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Group_GroupAssociation" Member="GroupAssociations" ThisKey="GroupId" OtherKey="GroupId" Type="GroupAssociation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SecurableContextDatabases" Member="SecurableContextDatabases">
+    <Type Name="SecurableContextDatabase">
+      <Column Name="SecurableContextId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DatabaseName" Type="System.String" DbType="NVarChar(100) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="SecurableContext_SecurableContextDatabase" Member="SecurableContext" ThisKey="SecurableContextId" OtherKey="SecurableContextId" Type="SecurableContext" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SecurableContexts" Member="SecurableContexts">
+    <Type Name="SecurableContext">
+      <Column Name="SecurableContextId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SecurableContextName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SecurableContextUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="SiteSPID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="SecurableContext_GroupAssociation" Member="GroupAssociations" ThisKey="SecurableContextId" OtherKey="SecurableContextId" Type="GroupAssociation" />
+      <Association Name="SecurableContext_SecurableObject" Member="SecurableObjects" ThisKey="SecurableContextId" OtherKey="SecurableContextId" Type="SecurableObject" />
+      <Association Name="SecurableContext_SecurableContextDatabase" Member="SecurableContextDatabases" ThisKey="SecurableContextId" OtherKey="SecurableContextId" Type="SecurableContextDatabase" />
+    </Type>
+  </Table>
+</Database>

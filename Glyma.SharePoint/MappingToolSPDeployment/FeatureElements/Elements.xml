@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Field ID="{5F5EC0A7-939B-4C48-A21E-F7F53F60501B}"
+         Name="MarkedForImport"
+         DisplayName="Marked For Import"
+         Type="Boolean"
+         Required="TRUE"
+         Group="Compendium Map Document Columns">
+    <Default>0</Default>
+  </Field>
+  <Field ID="{5999E10E-7728-40E0-9A67-4E7A595D239A}"
+         Name="ProjectName"
+         DisplayName="Project Name"
+         Type="Text"
+         Required="FALSE"
+         Group="Compendium Map Document Columns" />
+  <Field ID="{DD5A0EC8-37A7-4FF3-B276-6A8E36AA25FE}"
+         Name="ProjectID"
+         DisplayName="Project ID"
+         Description="The Glyma project (domain) ID to import the Compendium map into."
+         Type="Guid"
+         Required="FALSE"
+         Group="Compendium Map Document Columns" />
+  <Field ID="{CAA8299C-5CDE-4D59-8FC5-9A722403FAEE}"
+         Name="MapName"
+         DisplayName="Map Name"
+         Description="The name of the Glyma map to import the Compendium map into."
+         Type="Text"
+         Required="FALSE"
+         Group="Compendium Map Document Columns" />
+  <Field ID="{780FB9F7-4D51-49D4-B164-216DF75444CF}"
+         Name="MapID"
+         DisplayName="Map ID"
+         Description="The ID of the Glyma map to import the map into (if it's blank it's a new map)."
+         Type="Guid"
+         Required="FALSE"
+         Group="Compendium Map Document Columns" />
+  <!-- If Defining the content type in XML this is how it would be done -->
+  <!-- Parent: Document (0x0101) -->
+  <ContentType ID="0x010100B08A713B7933442BB3D174085CB6EAC6"
+               Name="Compendium Map Document"
+               Group="Knowledge Management Mapping Content Types"
+               Description="Compendium map document content type"
+               Version="0">
+    <FieldRefs>
+      <FieldRef ID="{5F5EC0A7-939B-4C48-A21E-F7F53F60501B}" Name="MarkedForImport" ShowInDisplayForm="FALSE" ShowInFileDlg="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInListSettings="TRUE" />
+      <FieldRef ID="{5999E10E-7728-40E0-9A67-4E7A595D239A}" Name="ProjectName" ShowInDisplayForm="FALSE" ShowInFileDlg="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInListSettings="TRUE" />
+      <FieldRef ID="{DD5A0EC8-37A7-4FF3-B276-6A8E36AA25FE}" Name="ProjectID" ShowInDisplayForm="FALSE" ShowInFileDlg="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInListSettings="TRUE" />
+      <FieldRef ID="{CAA8299C-5CDE-4D59-8FC5-9A722403FAEE}" Name="MapName" ShowInDisplayForm="FALSE" ShowInFileDlg="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInListSettings="TRUE" />
+      <FieldRef ID="{780FB9F7-4D51-49D4-B164-216DF75444CF}" Name="MapID" ShowInDisplayForm="FALSE" ShowInFileDlg="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInListSettings="TRUE" />
+    </FieldRefs>
+  </ContentType>
+
+  <ContentType ID="0x0101009B3F552B2BB7459C981FC6E30A6FF191"
+               Name="Video Map Document"
+               Group="Knowledge Management Mapping Content Types"
+               Description="Video for mapping document content type"
+               Version="0">
+    <FieldRefs>
+      <FieldRef ID="{5999E10E-7728-40E0-9A67-4E7A595D239A}" Name="ProjectName" ShowInDisplayForm="FALSE" ShowInFileDlg="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInListSettings="TRUE" />
+      <FieldRef ID="{DD5A0EC8-37A7-4FF3-B276-6A8E36AA25FE}" Name="ProjectID" ShowInDisplayForm="FALSE" ShowInFileDlg="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInListSettings="TRUE" />
+      <FieldRef ID="{CAA8299C-5CDE-4D59-8FC5-9A722403FAEE}" Name="MapName" ShowInDisplayForm="FALSE" ShowInFileDlg="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInListSettings="TRUE" />
+      <FieldRef ID="{780FB9F7-4D51-49D4-B164-216DF75444CF}" Name="MapID" ShowInDisplayForm="FALSE" ShowInFileDlg="FALSE" ShowInEditForm="FALSE" ShowInNewForm="FALSE" ShowInListSettings="TRUE" />
+    </FieldRefs>
+  </ContentType>
+  
+  <CustomAction Id="CompendiumMapImportAction"
+                RegistrationType="ContentType"
+                RegistrationId="0x010100B08A713B7933442BB3D174085CB6EAC6"
+                Location="EditControlBlock"
+                Title="Import Map"
+                Description="Imports a Compendium Map XML Export"
+                Rights="EditListItems">
+    <UrlAction Url="~site/_layouts/SevenSigma/ImportCompendiumMap.aspx?List={ListId}&amp;Item={ItemId}" />
+  </CustomAction>
+
+  <CustomAction Id="VideoMapCreateAction"
+                RegistrationType="ContentType"
+                RegistrationId="0x0101009B3F552B2BB7459C981FC6E30A6FF191"
+                Location="EditControlBlock"
+                Title="View/Create Video Map"
+                Description="View or Create a map for a video"
+                Rights="EditListItems">
+    <UrlAction Url="javascript:redirectToGlyma('{ListId}', {ItemId});" />
+  </CustomAction>
+  
+  <Module Name="GlymaMappingToolWebPart" List="113" Url="_catalogs/wp">
+    <File Path="GlymaMappingToolWebPart\MappingToolWebPart.webpart" Url="MappingToolWebPart.webpart" Type="GhostableInLibrary">
+      <Property Name="Group" Value="Glyma" />
+    </File>
+  </Module>
+</Elements>

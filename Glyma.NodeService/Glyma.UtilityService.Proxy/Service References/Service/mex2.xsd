@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" elementFormDefault="qualified" targetNamespace="http://sevensigma.com.au/GlymaUtilityService/ExportObjects" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ExportJobsResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExportJobs" nillable="true" type="q1:ArrayOfKeyValueOfguidExportJobEQONpZfC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExportJobsResponse" nillable="true" type="tns:ExportJobsResponse" />
+  <xs:complexType name="ExportJob">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Created" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="tns:GlymaUser" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExportProperties" nillable="true" type="q2:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsCurrent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Link" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MapType" type="tns:MapType" />
+      <xs:element minOccurs="0" name="PercentageComplete" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SelectedNodes" nillable="true" type="q3:ArrayOfguid" />
+      <xs:element minOccurs="0" name="Status" type="tns:ExportStatus" />
+      <xs:element minOccurs="0" name="Type" type="tns:ExportType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExportJob" nillable="true" type="tns:ExportJob" />
+  <xs:complexType name="GlymaUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DisplayName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GlymaUser" nillable="true" type="tns:GlymaUser" />
+  <xs:simpleType name="MapType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IBIS" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MapType" nillable="true" type="tns:MapType" />
+  <xs:simpleType name="ExportStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Scheduled" />
+      <xs:enumeration value="Processing" />
+      <xs:enumeration value="Completed" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExportStatus" nillable="true" type="tns:ExportStatus" />
+  <xs:simpleType name="ExportType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Compendium" />
+      <xs:enumeration value="PDF" />
+      <xs:enumeration value="Word" />
+      <xs:enumeration value="GlymaXml" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ExportType" nillable="true" type="tns:ExportType" />
+  <xs:complexType name="ExportJobResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExportJob" nillable="true" type="tns:ExportJob" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExportJobResponse" nillable="true" type="tns:ExportJobResponse" />
+  <xs:complexType name="ExportAvailabilityResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IsAvailable" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExportAvailabilityResponse" nillable="true" type="tns:ExportAvailabilityResponse" />
+</xs:schema>

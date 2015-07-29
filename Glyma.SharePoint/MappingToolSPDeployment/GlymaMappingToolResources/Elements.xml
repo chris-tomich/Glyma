@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="GlymaMappingToolResources" RootWebOnly="true" Url="Style Library/Glyma/MappingTool">
+    <File Url="GlymaMappingWebPart.css" Type="GhostableInLibrary" Path="GlymaMappingToolResources\Glyma\MappingTool\GlymaMappingWebPart.css">
+      <Property Name="Title" Value="GlymaMappingWebPart" />
+    </File>
+    <File Path="GlymaMappingToolResources\Glyma\MappingTool\html5mappingtool.js" Type="GhostableInLibrary" Url="html5mappingtool.js" >
+      <Property Name="Title" Value="html5mappingtool" />
+    </File>
+  </Module>
+</Elements>

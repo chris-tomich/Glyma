@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Conditions>
+    <!-- stopConditionRules -->
+	<Condition Action="Stop">
+		<Match Included="TRUE">
+			<Type BaseType="NodeType" Operator="Equals" Name="MapNode" Id="B8C354CB-C7D0-4982-9A0F-6C4368FAB749" />
+			<Type BaseType="DescriptorType" Operator="Equals" Name="FromDescriptor" Id="96DA1782-058C-4F9B-BB1A-31B048F8C75A" />
+		</Match>
+	</Condition>
+	
+	<!-- continueConditonRules -->
+	<Condition Action="Continue">
+		<Match Included="TRUE">
+			<Type BaseType="NodeType" Operator="NOT_EQUAL" Name="MapNode" Id="B8C354CB-C7D0-4982-9A0F-6C4368FAB749" />
+		</Match>
+	</Condition>
+	
+	<!-- mapContinueConditions -->
+	<Condition Action="Continue">
+		<Match Included="FALSE">
+			<Type BaseType="NodeType" Operator="Equals" Name="MapNode" Id="B8C354CB-C7D0-4982-9A0F-6C4368FAB749"  />
+      <Type BaseType="DescriptorType" Operator="Equals" Name="ToDescriptor" Id="07C91D35-4DAC-431B-966B-64C924B8CDAB" />
+		</Match>
+	</Condition>
+</Conditions>	

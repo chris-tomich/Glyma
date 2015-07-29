@@ -1,0 +1,1 @@
+exec sp_addrolemember N'[ROLE]', N'[ACCOUNT_NAME]'

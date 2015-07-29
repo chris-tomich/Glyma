@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2CFDF04D-733E-4AAF-8C22-40BF15B7E061}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Glyma.Powershell</RootNamespace>
+    <AssemblyName>Glyma.Powershell</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GlymaAssemblyKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_ACSRelyingPartyRelayAddress.cs" />
+    <Compile Include="Base\Add_ACSRelyingPartyRelayAddressBase.cs" />
+    <Compile Include="Base\New_GLMapSecurityDatabaseBase.cs" />
+    <Compile Include="Base\Copy_GLMapBase.cs" />
+    <Compile Include="Base\Get_ACSRelyingPartiesBase.cs" />
+    <Compile Include="Base\Get_ACSRelyingPartyRelayAddressesBase.cs" />
+    <Compile Include="Base\Get_GLDomainBase.cs" />
+    <Compile Include="Base\Get_GLMapBase.cs" />
+    <Compile Include="Base\IGLCmdletBase.cs" />
+    <Compile Include="Base\New_GLMapDatabaseBase.cs" />
+    <Compile Include="Base\New_GLSecurityDatabaseBase.cs" />
+    <Compile Include="Base\New_GLTransactionsDatabaseBase.cs" />
+    <Compile Include="Base\Remove_GLDomainBase.cs" />
+    <Compile Include="Base\Remove_GLMapBase.cs" />
+    <Compile Include="Base\Repair_GLDatabaseIntegrityBase.cs" />
+    <Compile Include="Base\Test_GLDatabaseIntegrityBase.cs" />
+    <Compile Include="Copy_GLMap.cs" />
+    <Compile Include="Get_ACSRelyingParties.cs" />
+    <Compile Include="Get_GLDomain.cs" />
+    <Compile Include="Get_GLMap.cs" />
+    <Compile Include="MappingToolDatabase.cs">
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="MappingToolDatabase.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Domain.cs" />
+    <Compile Include="Model\IDatabaseInfo.cs" />
+    <Compile Include="Model\Map.cs" />
+    <Compile Include="New_GLDatabase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repair_GLDatabaseIntegrity.cs" />
+    <Compile Include="Service References\ACSManagementService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.datasvcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Smo\EmbeddedSqlScript.cs" />
+    <Compile Include="Get_ACSRelyingPartyRelayAddresses.cs" />
+    <Compile Include="Smo\SqlAssemblies.cs" />
+    <Compile Include="Smo\SmoDatabase.cs" />
+    <Compile Include="Smo\SmoDataFile.cs" />
+    <Compile Include="Smo\SmoFileGroup.cs" />
+    <Compile Include="Smo\SmoLogFile.cs" />
+    <Compile Include="Smo\SmoObjectBase.cs" />
+    <Compile Include="Smo\SmoServer.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="GlymaAssemblyKey.pfx" />
+    <None Include="MappingToolDatabase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MappingToolDatabase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ACSManagementService\service.edmx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MappingToolDatabase.dbml.layout">
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateConstraints.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateContainsUserDefinedFunction.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateFreeTextUserDefinedFunction.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateFullTextCatalog.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateStoredProcedures.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateTables.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateUser.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\InsertTypesData.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\New_GLMapTransactionsDB\CreateOperationsTable.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapTransactionsDB\CreateParametersTable.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapTransactionsDB\CreateTransactionsTable.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapTransactionsDB\CreateUser.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapTransactionsDB\InsertOperations.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateBasicSearchSP.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateQueryMapSP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateGetGlymaDbVersion.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\New_GLMapTransactionsDB\CreateGetGlymaDbVersion.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateNodesListTableType.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateQueryNodesSP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ServiceReferenceMetadataStorage Include="Service References\ACSManagementService\">
+      <Type>datasvcmap</Type>
+    </ServiceReferenceMetadataStorage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ACSManagementService\Reference.datasvcmap">
+      <Generator>DataServicesCoreClientGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\New_GLMapSecurityDB\CreateTablesAndConstraints.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapSecurityDB\GrantUserRole.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapSecurityDB\CreateUser.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapSecurityDB\GrantSearchPermissions.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapTransactionsDB\GrantUserRole.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\GrantSearchPermissions.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateGetChildNodesSP.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateGetNodeInMapDetailsSP.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateGetNodesInMapSP.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateGetParentNodesSP.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateGetRootMapsSP.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapDB\GrantUserRole.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapSecurityDB\CreateGetSiteCollectionAssociationsSP.sql" />
+    <EmbeddedResource Include="Resources\New_GLMapSecurityDB\CreateGetAllowedGroupsSP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\New_GLMapDB\CreateAuditLogsTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glyma.TransactionalNodeService.Proxy.Universal\Glyma.TransactionalNodeService.Proxy.Universal.csproj">
+      <Project>{8bb8c672-cf64-4890-bc11-176ab36d262a}</Project>
+      <Name>Glyma.TransactionalNodeService.Proxy.Universal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glyma.UtilityService.Common\Glyma.UtilityService.Common.csproj">
+      <Project>{ba39fc2a-2ae8-4d53-ace9-bc079af045cf}</Project>
+      <Name>Glyma.UtilityService.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glyma.UtilityService.Export\Glyma.UtilityService.Export.csproj">
+      <Project>{58a6b16d-f170-41e6-94de-a07575d52a1e}</Project>
+      <Name>Glyma.UtilityService.Export</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)Glyma.NodeServiceApp\Assemblies\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

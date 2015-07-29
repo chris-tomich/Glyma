@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="TransactionDatabase">
+  <DataContextMoniker Name="/TransactionDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2ff14e82-c063-45a8-be85-56b4a9306017" absoluteBounds="3.5, 2.5, 2, 4.2708154296875">
+      <DataClassMoniker Name="/TransactionDatabaseDataContext/Transaction" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8cb6c44d-c56f-4104-9907-85b9aedaf94f" absoluteBounds="3.515, 2.96, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="38ed5558-761a-4d7f-a4ca-2f126890107f" absoluteBounds="0.75, 4, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/TransactionDatabaseDataContext/Operation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c778db1-9697-4266-b549-b635f73676af" absoluteBounds="0.765, 4.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9b34da6e-f556-4f17-ae38-23f898ada668" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/TransactionDatabaseDataContext/Parameter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d899f0a7-6b5b-4597-a38a-bf2f0889100b" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 4.59699625651042); (3.5 : 4.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TransactionDatabaseDataContext/Operation/Operation_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="38ed5558-761a-4d7f-a4ca-2f126890107f" />
+        <classShapeMoniker Id="2ff14e82-c063-45a8-be85-56b4a9306017" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 1.6249995); (4.5 : 1.6249995); (4.5 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/TransactionDatabaseDataContext/Parameter/Parameter_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="9b34da6e-f556-4f17-ae38-23f898ada668" />
+        <classShapeMoniker Id="2ff14e82-c063-45a8-be85-56b4a9306017" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

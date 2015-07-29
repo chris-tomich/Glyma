@@ -1,0 +1,86 @@
+﻿<controls:ChildWindow xmlns:my="clr-namespace:SilverlightMappingToolBasic.Controls"  x:Class="SilverlightMappingToolBasic.Controls.NodePropertiesDialog"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+           Width="568" Height="450" 
+           Title="{Binding Path=Name, Mode=OneWay}" Loaded="NodePropertiesDialog_Loaded" >
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="300" />
+            <RowDefinition x:Name="ReferenceLocationRow" Height="0" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Row="0">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox Name="NodeNameTextBox" Text="{Binding Path=Name, Mode=TwoWay}" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" VerticalScrollBarVisibility="Auto" Height="48" Width="541" />
+                    <toolkit:ContextMenuService.ContextMenu>
+                        <toolkit:ContextMenu Name="NodeNameCm">
+                            <toolkit:MenuItem Header="Cut" Click="NodeNameCmMenuItem_Click"/>
+                            <toolkit:MenuItem Header="Copy" Click="NodeNameCmMenuItem_Click"/>
+                            <toolkit:Separator/>
+                            <toolkit:MenuItem Header="Paste" Click="NodeNameCmMenuItem_Click"/>
+                        </toolkit:ContextMenu>
+                    </toolkit:ContextMenuService.ContextMenu>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Height="30">
+                    <StackPanel Orientation="Horizontal" Width="280">
+                        <TextBlock Name="CreatedByLabelTextBlock" Margin="5,0,0,0" Height="15" VerticalAlignment="Center">Spoken By:</TextBlock>
+                        <TextBox Height="23" Width="210" Name="CreatedByTextBox" Text="{Binding Path=CreatedBy, Mode=TwoWay}" Margin="0,0,0,0"/>
+                        <toolkit:ContextMenuService.ContextMenu>
+                            <toolkit:ContextMenu Name="spokenByCm">
+                                <toolkit:MenuItem Header="Cut" Click="SpokenByCmMenuItem_Click"/>
+                                <toolkit:MenuItem Header="Copy" Click="SpokenByCmMenuItem_Click"/>
+                                <toolkit:Separator/>
+                                <toolkit:MenuItem Header="Paste" Click="SpokenByCmMenuItem_Click"/>
+                            </toolkit:ContextMenu>
+                        </toolkit:ContextMenuService.ContextMenu>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBlock Name="CreatedTimeLabelTextBlock" Margin="5,0,0,0" Height="15" VerticalAlignment="Top">Created Time:</TextBlock>
+                        <TextBlock Height="15" Name="CreatedTimeTextBlock" VerticalAlignment="Top" Text="" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal" Width="250">
+                        <TextBlock Name="ModifiedByLabelTextBlock" Margin="5,0,0,0" Height="15" VerticalAlignment="Top">Modified By:</TextBlock>
+                        <TextBlock Height="15" Name="ModifiedByTextBlock" Text="{Binding Path=ModifiedBy, Mode=OneWay}" VerticalAlignment="Top" Margin="0,0,0,0"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Name="ModifiedTimeLabelTextBlock" Margin="5,0,0,0" Height="15" VerticalAlignment="Top">Modified Time:</TextBlock>
+                        <TextBlock Height="15" Name="ModifiedTimeTextBlock" VerticalAlignment="Top" Text="" Margin="0,0,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+        <sdk:TabControl Grid.Row="1">
+            <sdk:TabItem x:Name="Notes" Header="Notes">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,0" >
+                    <TextBlock Margin="5,5,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Top">Notes:</TextBlock>
+                    <TextBox Name="NodeNotesTextBlock" AcceptsReturn="True" Width="492" TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5" VerticalScrollBarVisibility="Visible" />
+                    <toolkit:ContextMenuService.ContextMenu>
+                        <toolkit:ContextMenu Name="cm">
+                            <toolkit:MenuItem Header="Cut" Click="NoteCmMenuItem_Click" />
+                            <toolkit:MenuItem Header="Copy" Click="NoteCmMenuItem_Click" />
+                            <toolkit:Separator />
+                            <toolkit:MenuItem Header="Paste" Click="NoteCmMenuItem_Click" />
+                        </toolkit:ContextMenu>
+                    </toolkit:ContextMenuService.ContextMenu>
+                </StackPanel>
+            </sdk:TabItem>
+            <sdk:TabItem x:Name="Properties" Header="Properties">
+               <my:PropertiesEditor x:Name="PropertyEditGrid" Grid.Row="0" DataContext="{Binding}" Height="265" />
+            </sdk:TabItem>
+        </sdk:TabControl>
+            
+        
+        <StackPanel x:Name="ReferenceNodeInfoPanel" Orientation="Horizontal" Grid.Row="2" Visibility="Collapsed">
+            <TextBlock Margin="5,5,2,5" VerticalAlignment="Center">Reference:</TextBlock>
+            <TextBox Name="ReferenceFileLocationTextBox" IsReadOnly="True" VerticalAlignment="Center" Height="23" HorizontalAlignment="Stretch" Width="475" Margin="0,5,0,5"></TextBox>
+        </StackPanel>
+        <Button x:Name="CancelButton" Content="Cancel" Click="CancelButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,0,0,5" Grid.Row="3" />
+        <Button x:Name="OKButton" Content="OK" Click="OKButton_Click" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,0,80,5" Grid.Row="3" />
+    </Grid>
+</controls:ChildWindow>

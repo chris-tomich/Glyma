@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" DefaultFile="Elements.xml" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="GlymaRelatedContentPanelWebPart\" Type="ElementManifest" />
+    <ProjectItemFile Source="RelatedContentPanelWebPart.webpart" Target="GlymaRelatedContentPanelWebPart\" Type="ElementFile" />
+    <ProjectOutputFile ProjectId="3646a1c3-8f2e-4282-8022-0b1aa33563a3" ProjectPath="..\VideoPlayer\VideoPlayer.csproj" Target="LAYOUTS\ClientBin\Glyma\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="VideoPlayerSPDeploy.RelatedContentPanelWebPart" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

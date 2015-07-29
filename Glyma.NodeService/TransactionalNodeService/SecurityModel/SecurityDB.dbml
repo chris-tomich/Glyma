@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Development-Security-GlymaDB" Class="SecurityDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=GLYMA2013;Initial Catalog=Development-Security-GlymaDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Development_Security_GlymaDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.GroupAssociations" Member="GroupAssociations">
+    <Type Name="GroupAssociation">
+      <Column Name="GroupAssociationId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GroupId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SecurableParentUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SecurableObjectUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SecurableContextId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BreakInheritance" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Group_GroupAssociation" Member="Group" ThisKey="GroupId" OtherKey="GroupId" Type="Group" IsForeignKey="true" />
+      <Association Name="SecurableContext_GroupAssociation" Member="SecurableContext" ThisKey="SecurableContextId" OtherKey="SecurableContextId" Type="SecurableContext" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Groups" Member="Groups">
+    <Type Name="Group">
+      <Column Name="GroupId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DisplayName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SecurableContextId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GroupSPID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Group_GroupAssociation" Member="GroupAssociations" ThisKey="GroupId" OtherKey="GroupId" Type="GroupAssociation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SecurableContexts" Member="SecurableContexts">
+    <Type Name="SecurableContext">
+      <Column Name="SecurableContextId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SecurableContextName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SecurableContextUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="SecurableContext_GroupAssociation" Member="GroupAssociations" ThisKey="SecurableContextId" OtherKey="SecurableContextId" Type="GroupAssociation" />
+    </Type>
+  </Table>
+</Database>

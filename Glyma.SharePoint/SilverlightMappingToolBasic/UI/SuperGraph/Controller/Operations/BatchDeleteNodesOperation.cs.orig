@@ -1,0 +1,115 @@
+﻿using System;
+using System.Net;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
+using System.Windows.Ink;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
+using System.Windows.Shapes;
+using System.Collections.Generic;
+using SilverlightMappingToolBasic.UI.SuperGraph.ViewModel;
+using TransactionalNodeService.Service;
+using Proxy = TransactionalNodeService.Proxy;
+using TransactionFramework = TransactionalNodeService.Soap.TransactionFramework;
+
+namespace SilverlightMappingToolBasic.UI.SuperGraph.Controller.Operations
+{
+    public class BatchDeleteNodesOperation : ISuperGraphOperation
+    {
+        private Queue<IBatchOperation> _operations;
+        private TransactionFramework.InProcessTransactionResponse _response;
+        private List<KeyValuePair<Node, ModelOperationType>> _nodes; 
+
+        public BatchDeleteNodesOperation()
+        {
+        }
+
+        private Queue<IBatchOperation> Operations
+        {
+            get
+            {
+                if (_operations == null)
+                {
+                    _operations = new Queue<IBatchOperation>();
+                }
+
+                return _operations;
+            }
+        }
+
+        public TransactionFramework.InProcessTransactionResponse Response
+        {
+            get { return _response; }
+            set { _response = value; }
+        }
+
+        public Proxy.IMapManager MapManager
+        {
+            get;
+            set;
+        }
+
+        public List<KeyValuePair<Node, ModelOperationType>> Nodes
+        {
+            get
+            {
+                if (_nodes == null)
+                {
+                    _nodes = new List<KeyValuePair<Node, ModelOperationType>>();
+                }
+                return _nodes;
+            }
+            set
+            {
+                _nodes = value;
+            }
+        }
+
+        public void AddDeleteNodeOperation(ISuperGraphOperation operation)
+        {
+            if (operation is IBatchOperation && (operation is DeleteTranscludedNodeOperation || operation is DeleteNodeOperation))
+            {
+                Operations.Enqueue((IBatchOperation)operation);
+            }
+            else
+            {
+                throw new NotSupportedException("This type of operation is not supported by the batch operation manager. Only delete operations are supported.");
+            }
+        }
+
+<<<<<<< HEAD
+        public event EventHandler<NodeOperationCompletedArgs> OperationCompleted;
+=======
+        public TransactionFramework.InProcessTransactionResponse ExecuteOperation()
+        {
+            TransactionFramework.InProcessTransactionResponse response = new TransactionFramework.InProcessTransactionResponse();
+>>>>>>> master
+
+        public void ExecuteOperation()
+        {
+            _response = new TransactionFramework.InProcessTransactionResponse();
+
+            var chain = new TransactionFramework.TransactionChain();
+            chain.TransactionCompleted += ChainOnTransactionCompleted;
+            while (Operations.Count > 0)
+            {
+                IBatchOperation operation = Operations.Dequeue();
+
+                TransactionFramework.InProcessTransactionResponse newResponse = operation.BuildTransactionChain(ref chain);
+
+                _response.Add(newResponse);
+            }
+            MapManager.ExecuteTransaction(chain);
+        }
+
+        private void ChainOnTransactionCompleted(object sender, CompleteTransactionCompletedEventArgs completeTransactionCompletedEventArgs)
+        {
+            if (OperationCompleted != null)
+            {
+                OperationCompleted(sender, new NodeOperationCompletedArgs{Response = _response, Nodes = Nodes});
+            }
+        }
+    }
+}

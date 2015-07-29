@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SP2013_Map_GlymaDB" Class="MappingToolDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=GLYMA\SQL2012;Initial Catalog=SP2013_Map_GlymaDB;Integrated Security=True" SettingsObjectName="Glyma.Powershell.Update.Properties.Settings" SettingsPropertyName="SP2013_Map_GlymaDBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.GetGlymaDbVersion" Method="GetGlymaDbVersion">
+    <ElementType Name="GetGlymaDbVersionResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

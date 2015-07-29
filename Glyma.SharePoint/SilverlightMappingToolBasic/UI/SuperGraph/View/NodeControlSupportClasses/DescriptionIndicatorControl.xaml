@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.NodeControlSupportClasses.DescriptionIndicatorControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid x:Name="LayoutRoot" Margin="20">
+        <Border x:Name="PopupBorder" BorderBrush="#FFFFFFFF" BorderThickness="0" CornerRadius="3" HorizontalAlignment="Stretch" Background="#FFFFFFFF" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="10" Color="Black"
+							            Direction="135" Opacity="0.5" ShadowDepth="2">
+                </DropShadowEffect>
+            </Border.Effect>
+         
+                <StackPanel Orientation="Vertical">
+                    <TextBlock>111111111111111111111111</TextBlock>
+                    <TextBlock>111111111111111111111111</TextBlock>
+                    <TextBlock>111111111111111111111111</TextBlock>
+                </StackPanel>
+        </Border>
+
+
+    </Grid>
+</UserControl>

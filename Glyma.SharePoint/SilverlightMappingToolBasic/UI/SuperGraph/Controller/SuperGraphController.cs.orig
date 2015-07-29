@@ -1,0 +1,782 @@
+﻿using System;
+using System.Windows;
+using SilverlightMappingToolBasic.UI.SuperGraph.View;
+using SilverlightMappingToolBasic.UI.SuperGraph.ViewModel;
+using Proxy = TransactionalNodeService.Proxy;
+using SilverlightMappingToolBasic.UI.ViewModel;
+using System.Linq;
+using System.Collections.Generic;
+using TransactionFramework = TransactionalNodeService.Soap.TransactionFramework;
+using SilverlightMappingToolBasic.UI.SuperGraph.Controller.Operations;
+using System.ComponentModel;
+using SilverlightMappingToolBasic.UI.Extensions.VideoWebPart;
+
+namespace SilverlightMappingToolBasic.UI.SuperGraph.Controller
+{
+    public class SuperGraphController : CommonSuperGraphBase, IMapController<Node, Relationship>, ISuperGraphNodeFactory, ISuperGraphRelationshipFactory, ISuperGraphNodeBatchOperations
+    {
+        
+        private VideoController _videoController;
+
+        private Dictionary<Guid, Node> _nodeCache;
+        private Dictionary<Guid, Relationship> _relationshipCache;
+
+        public SuperGraphController(Proxy.IMapManager mapManager, ThemeManager themeManager, string videoSource): base(mapManager)
+        {
+            ThemeManager = themeManager;
+            CurrentVideoSource = videoSource;
+        }
+
+        public event EventHandler<ModelChangedEventArgs<Node, Relationship>> ModelChanged;
+        public event EventHandler<ModelChangedEventArgs<Node, Relationship>> NodeProgressCompleted;
+        public event EventHandler MapLoadCompleted;
+
+        private string CurrentVideoSource
+        {
+            get;
+            set;
+        }
+
+        public INode Context
+        {
+            get;
+            private set;
+        }
+
+        public ThemeManager ThemeManager
+        {
+            get;
+            private set;
+        }
+
+        public IMap ActiveModel
+        {
+            get;
+            private set;
+        }
+
+        public VideoController VideoController
+        {
+            get
+            {
+                if (_videoController == null)
+                {
+                    _videoController = new VideoController();
+
+                    if (!string.IsNullOrEmpty(CurrentVideoSource))
+                    {
+                        _videoController.VideoSource = CurrentVideoSource;
+                        _videoController.DefaultVideoSource = CurrentVideoSource;
+                        _videoController.SendSetSourceCommand(Context.Proxy);
+                    }
+                }
+
+                return _videoController;
+            }
+        }
+
+        private Dictionary<Guid, Node> NodeCache
+        {
+            get
+            {
+                if (_nodeCache == null)
+                {
+                    _nodeCache = new Dictionary<Guid, Node>();
+                }
+
+                return _nodeCache;
+            }
+        }
+
+        private Dictionary<Guid, Relationship> RelationshipCache
+        {
+            get
+            {
+                if (_relationshipCache == null)
+                {
+                    _relationshipCache = new Dictionary<Guid, Relationship>();
+                }
+
+                return _relationshipCache;
+            }
+        }
+
+        public void RefreshAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ChangeContextAsync(IMapObject mapObject)
+        {
+            if (mapObject is INode)
+            {
+                var node = (INode)mapObject;
+
+                Context = node;
+                ActiveModel = new Map();
+
+                Proxy.NodeType nodeType = MapManager.NodeTypes[node.MapObjectType];
+
+                if (nodeType == MapManager.NodeTypes["CompendiumMapNode"])
+                {
+                    MapManager.QueryMapByNodeCompleted.RegisterEvent(Context.Proxy, LoadNodesCompleted, Context.Proxy);
+                    MapManager.QueryMapByNodeAsync(Context.Proxy, 1);
+                }
+
+                VideoController.Clear();
+            }
+        }
+
+        
+
+        public void ChangeContextAsync(Proxy.INode mapObject)
+        {
+            var node = new Node(MapManager);
+            node.LoadNode(null, mapObject);
+
+            node.PropertyChanged += ViewModelNode_PropertyChanged;
+
+            Context = node;
+            ActiveModel = new Map();
+
+            var nodeType = MapManager.NodeTypes[node.MapObjectType];
+
+            if (nodeType == MapManager.NodeTypes["CompendiumMapNode"])
+            {
+                MapManager.QueryMapByNodeCompleted.RegisterEvent(Context.Proxy, LoadNodesCompleted, Context.Proxy);
+                MapManager.QueryMapByNodeAsync(Context.Proxy, 1);
+            }
+
+            VideoController.Clear();
+        }
+
+        private void LoadNodesCompleted(object sender, Proxy.NodesEventArgs eventArgs)
+        {
+            if (eventArgs.State != Context.Proxy)
+            {
+                throw new UnexpectedMapException("The state of the event doesn't match with this controller.");
+            }
+
+            Proxy.RelationshipSet contextRelationships = Context.Proxy.Relationships;
+
+            if (Context.Proxy.Status != Proxy.LoadState.Full)
+            {
+                throw new UnexpectedMapException("The relationships were not loaded for the context of this map.");
+            }
+
+            IEnumerable<Proxy.IRelationship> mapChildrenRelationships = contextRelationships.FindRelationships(MapManager.ConnectionTypes["To"], MapManager.RelationshipTypes["MapContainerRelationship"]);
+
+            foreach (Proxy.IRelationship relationship in mapChildrenRelationships)
+            {
+                Proxy.NodeSet allRelationshipNodes = relationship.Nodes;
+
+                IEnumerable<Proxy.INode> connectedNodes = allRelationshipNodes.FindNodes(MapManager.ConnectionTypes["From"]);
+
+                if (connectedNodes == null)
+                {
+                    continue;
+                }
+
+                foreach (Proxy.INode modelNode in connectedNodes)
+                {
+                    ViewModel.Node viewModelNode = new ViewModel.Node(MapManager);
+                    viewModelNode.LoadNode(relationship, modelNode);
+                    ThemeManager.DressNode(viewModelNode);
+
+                    viewModelNode.PropertyChanged += ViewModelNode_PropertyChanged;
+                    viewModelNode.LocationChanged += ViewModelNode_LocationChanged;
+
+                    viewModelNode.VideoInfo = VideoController.CreateVideoInfoViewModel(viewModelNode);
+
+                    if (ModelChanged != null && NodeProgressCompleted != null)
+                    {
+                        
+                        IEnumerable<KeyValuePair<Proxy.ConnectionType, Proxy.IRelationship>> fromToRelationships = modelNode.Relationships.FindRelationships(MapManager.RelationshipTypes["FromToRelationship"]);
+                        IEnumerable<KeyValuePair<Proxy.ConnectionType, Proxy.IRelationship>> transclusionRelationships = modelNode.Relationships.FindRelationships(MapManager.RelationshipTypes["TransclusionFromToRelationship"]);
+
+                        var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+
+                        foreach (KeyValuePair<Proxy.ConnectionType, Proxy.IRelationship> modelRelationshipPair in fromToRelationships)
+                        {
+                            var viewModelRelationship = new Relationship();
+                            viewModelRelationship.LoadRelationship(modelRelationshipPair.Value);
+
+                            modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(viewModelRelationship, ModelOperationType.New));
+                        }
+
+                        foreach (KeyValuePair<Proxy.ConnectionType, Proxy.IRelationship> transclusionRelationshipPair in transclusionRelationships)
+                        {
+                            IEnumerable<Proxy.INode> nodes = transclusionRelationshipPair.Value.Nodes.FindNodes(MapManager.ConnectionTypes["TransclusionMap"]);
+
+                            if (nodes != null)
+                            {
+                                foreach (Proxy.INode node in nodes)
+                                {
+                                    if (node.Id == Context.Proxy.Id)
+                                    {
+                                        var viewModelRelationship = new Relationship();
+                                        viewModelRelationship.LoadRelationship(transclusionRelationshipPair.Value);
+
+                                        modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(viewModelRelationship, ModelOperationType.New));
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        modelChangedEventArgs.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(viewModelNode, ModelOperationType.New));
+                        ModelChanged(this, modelChangedEventArgs);
+                        NodeProgressCompleted(this, modelChangedEventArgs);
+                    }
+
+                    ActiveModel.Nodes[viewModelNode.Id] = viewModelNode;
+                }
+            }
+            if (MapLoadCompleted != null)
+            {
+                MapLoadCompleted(this, new EventArgs());
+            }
+        }
+
+        private void ViewModelNode_LocationChanged(object sender, View.NodeControlSupportClasses.LocationChangedEventArgs e)
+        {
+            var node = sender as Node;
+
+            if (node != null)
+            {
+                var chain = new TransactionFramework.TransactionChain();
+
+                CommitLocation(node, e.Location, ref chain);
+
+                MapManager.ExecuteTransaction(chain);
+            }
+        }
+
+        private void CommitLocation(Node node, Point location, ref TransactionFramework.TransactionChain chain)
+        {
+            var relationships = node.Proxy.Relationships.FindRelationships(FromConnectionType, MapContainerRelationshipType);
+
+            var isComplete = false;
+
+            foreach (Proxy.IRelationship relationship in relationships)
+            {
+                var potentialMapNodes = relationship.Nodes.FindNodes(ToConnectionType);
+
+                foreach (Proxy.INode mapNode in potentialMapNodes)
+                {
+                    if (mapNode.Id == Context.Proxy.Id)
+                    {
+                        isComplete = true;
+
+                        node.Proxy.Metadata.Add(relationship, FromConnectionType, "XPosition", location.X.ToString(), ref chain);
+                        node.Proxy.Metadata.Add(relationship, FromConnectionType, "YPosition", location.Y.ToString(), ref chain);
+
+                        break;
+                    }
+                }
+
+                if (isComplete)
+                {
+                    break;
+                }
+            }
+        }
+
+        private void ViewModelNode_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+<<<<<<< HEAD
+            ViewModel.Node node = sender as ViewModel.Node;
+
+            /// TODO: This needs to be changed.
+            if (node != null)
+            {
+                TransactionFramework.TransactionChain chain = new TransactionFramework.TransactionChain();
+
+                switch (e.PropertyName)
+                {
+                    case "Name":
+                        node.Proxy.Metadata.Add(null, null, "Name", node.Name, ref chain);
+                        break;
+                    case "Description":
+                        node.Proxy.Metadata.Add(null, null, "Description", node.Description, ref chain);
+                        break;
+                    case "IsSelected":
+                        if (node.VideoInfo != null && node.VideoInfo.HasVideo && !string.IsNullOrEmpty(node.VideoInfo.VideoSource))
+                        {
+                            VideoController.VideoSource = node.VideoInfo.VideoSource;
+                            VideoController.SendSetSourceCommand(Context.Proxy);
+                        }
+                        break;
+
+                    default:
+                        break;
+                }
+
+                MapManager.ExecuteTransaction(chain);
+            }
+=======
+            
+>>>>>>> master
+        }
+
+
+        #region ISuperGraphNodeFactory Implementation
+        void ISuperGraphNodeFactory.AddMap(Point location)
+        {
+            var mapNodeOperation = new AddMapNodeOperation(MapManager, Context.Proxy, location);
+            mapNodeOperation.OperationCompleted += AddNodeCompleted;
+            mapNodeOperation.ExecuteOperation();
+            AddNode(mapNodeOperation.Response);
+        }
+
+        void ISuperGraphNodeFactory.AddQuestion(Point location)
+        {
+            var questionNodeOperation = new AddQuestionNodeOperation(MapManager, Context.Proxy, location);
+            questionNodeOperation.OperationCompleted += AddNodeCompleted;
+            questionNodeOperation.ExecuteOperation();
+            AddNode(questionNodeOperation.Response);
+        }
+
+        void ISuperGraphNodeFactory.AddIdea(Point location)
+        {
+            var ideaNodeOperation = new AddIdeaNodeOperation(MapManager, Context.Proxy, location);
+            ideaNodeOperation.OperationCompleted += AddNodeCompleted;
+            ideaNodeOperation.ExecuteOperation();
+            AddNode(ideaNodeOperation.Response);
+        }
+
+        void ISuperGraphNodeFactory.AddPro(Point location)
+        {
+            var proNodeOperation = new AddProNodeOperation(MapManager, Context.Proxy, location);
+            proNodeOperation.OperationCompleted += AddNodeCompleted;
+            proNodeOperation.ExecuteOperation();
+            AddNode(proNodeOperation.Response);
+        }
+
+        void ISuperGraphNodeFactory.AddCon(Point location)
+        {
+            var conNodeOperation = new AddConNodeOperation(MapManager, Context.Proxy, location);
+            conNodeOperation.OperationCompleted += AddNodeCompleted;
+            conNodeOperation.ExecuteOperation();
+            AddNode(conNodeOperation.Response);
+        }
+
+        private void AddNode(TransactionFramework.InProcessTransactionResponse response)
+        {
+            foreach (Proxy.INode modelNode in response.Nodes)
+            {
+                var viewModelNode = new Node(MapManager);
+                viewModelNode.LoadNode(null, modelNode);
+                ThemeManager.DressNode(viewModelNode);
+
+                viewModelNode.IsFocused = true;
+                viewModelNode.VideoInfo = VideoController.CreateVideoInfoViewModel(viewModelNode);
+
+                viewModelNode.PropertyChanged += ViewModelNode_PropertyChanged;
+
+                var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+                modelChangedEventArgs.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(viewModelNode, ModelOperationType.New));
+                ModelChanged(this, modelChangedEventArgs);
+            }
+        }
+
+        private void AddNodeCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            var response = e.Response;
+            foreach (Proxy.INode modelNode in response.Nodes)
+            {
+                var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+                modelChangedEventArgs.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(new Node(modelNode), ModelOperationType.New));
+                ModelChanged(this, modelChangedEventArgs);
+                NodeProgressCompleted(this, modelChangedEventArgs);
+            }
+        }
+
+        void ISuperGraphNodeFactory.DeleteNode(Node viewModelNode)
+        {
+            var deleteNodeOperation = new DeleteNodeOperation(viewModelNode, MapManager);
+            deleteNodeOperation.OperationCompleted += OnDeleteNodeOperationCompleted;
+            deleteNodeOperation.ExecuteOperation();
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            modelChangedEventArgs.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(viewModelNode, ModelOperationType.Deleted));
+            ModelChanged(this, modelChangedEventArgs);
+        }
+
+        private void OnDeleteNodeOperationCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+
+        }
+
+        UpdateNodeTypeOperation _updateNodeType;
+
+        void ISuperGraphNodeFactory.UpdateNode(ViewModel.Node viewModelNode, ViewModel.ChangeNodeTypeEnum changedTo)
+        {
+            //Proxy.NodeType nodeTypeToChangeTo;
+
+            //switch (changedTo)
+            //{
+            //    case ViewModel.ChangeNodeTypeEnum.Question:
+            //        nodeTypeToChangeTo = MapManager.NodeTypes["CompendiumQuestionNode"];
+            //        break;
+
+            //    case ViewModel.ChangeNodeTypeEnum.Idea:
+            //        nodeTypeToChangeTo = MapManager.NodeTypes["CompendiumIdeaNode"];
+            //        break;
+
+            //    case ViewModel.ChangeNodeTypeEnum.Pro:
+            //        nodeTypeToChangeTo = MapManager.NodeTypes["CompendiumProNode"];
+            //        break;
+
+            //    case ViewModel.ChangeNodeTypeEnum.Con:
+            //        nodeTypeToChangeTo = MapManager.NodeTypes["CompendiumConNode"];
+            //        break;
+
+            //    case ViewModel.ChangeNodeTypeEnum.Map:
+            //        nodeTypeToChangeTo = MapManager.NodeTypes["CompendiumMapNode"];
+            //        break;
+
+            //    default:
+            //        return;
+            //}
+
+            //TransactionFramework.TransactionChain chain = new TransactionFramework.TransactionChain();
+
+            //viewModelNode.Proxy.Update(nodeTypeToChangeTo, ref chain);
+
+            //MapManager.ExecuteTransaction(chain);
+
+            //ThemeManager.DressNode(viewModelNode);
+
+            _updateNodeType = new UpdateNodeTypeOperation(MapManager);
+            _updateNodeType.Context = Context.Proxy;
+            _updateNodeType.Node = viewModelNode;
+            _updateNodeType.ChangedTo = changedTo;
+
+            _updateNodeType.InitialisationCompleted += new EventHandler(updateNodeType_InitialisationCompleted);
+            _updateNodeType.InitialiseAsync();
+        }
+
+        void updateNodeType_InitialisationCompleted(object sender, EventArgs e)
+        {
+            _updateNodeType.ExecuteOperation();
+
+            ThemeManager.DressNode(_updateNodeType.Node);
+
+            ModelChangedEventArgs<ViewModel.Node, ViewModel.Relationship> modelChangedEventArgs = new ModelChangedEventArgs<ViewModel.Node, ViewModel.Relationship>();
+            modelChangedEventArgs.Nodes.Add(new KeyValuePair<ViewModel.Node, ModelOperationType>(_updateNodeType.Node, ModelOperationType.Modified));
+
+            ModelChanged(this, modelChangedEventArgs);
+        }
+
+
+        #endregion
+
+        #region ISuperGraphRelationshipFactory Implementation
+        void ISuperGraphRelationshipFactory.ConnectNodes(Node from, Node to)
+        {
+            var connectNodesOperation = new ConnectNodesOperation(MapManager);
+            connectNodesOperation.From = from.Proxy;
+            connectNodesOperation.To = to.Proxy;
+            connectNodesOperation.OperationCompleted += ConnectNodesCompleted;
+            connectNodesOperation.ExecuteOperation();
+
+            
+        }
+
+        private void ConnectNodesCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            var response = e.Response;
+            foreach (Proxy.IRelationship modelRelationship in response.Relationships)
+            {
+                var viewModelRelationship = new Relationship();
+                viewModelRelationship.LoadRelationship(modelRelationship);
+
+                var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+                modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(viewModelRelationship, ModelOperationType.New));
+
+                ModelChanged(this, modelChangedEventArgs);
+            }
+        }
+
+        void ISuperGraphRelationshipFactory.TranscludeNode(NodeOperationDetails details, Point newLocation)
+        {
+            var transcludeNodeOperation = new TranscludeNodesOperation(MapManager);
+            transcludeNodeOperation.NewMap = Context.Proxy;
+            transcludeNodeOperation.OriginalMap = details.Map.Proxy;
+            transcludeNodeOperation.ViewModelNode = details.Node;
+            transcludeNodeOperation.Location = newLocation;
+            details.Node.IsTranscluded = true;
+            details.Node.NumTranclusions++;
+            transcludeNodeOperation.OperationCompleted += TranscludeNodeCompleted;
+            
+            var newNodeViewModel = new Node(details.Node);
+            newNodeViewModel.Location = newLocation;
+            newNodeViewModel.CommitLocation();
+            newNodeViewModel.PropertyChanged += ViewModelNode_PropertyChanged;
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            modelChangedEventArgs.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(newNodeViewModel, ModelOperationType.New));
+            ModelChanged(this, modelChangedEventArgs);
+
+            transcludeNodeOperation.ExecuteOperation();
+        }
+
+        private void TranscludeNodeCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            modelChangedEventArgs.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(e.ViewModeNode,ModelOperationType.Modified));
+            NodeProgressCompleted(this, modelChangedEventArgs);
+        }
+
+        void ISuperGraphRelationshipFactory.DeleteTranscludedNode(NodeOperationDetails details, bool isQuiet)
+        {
+            var deleteTranscludedNodesOperation = new DeleteTranscludedNodeOperation(MapManager);
+            deleteTranscludedNodesOperation.Context = details.Map.Proxy;
+            deleteTranscludedNodesOperation.Node = details.Node.Proxy;
+            deleteTranscludedNodesOperation.ViewModeNode = details.Node;
+            if (!isQuiet)
+            {
+                deleteTranscludedNodesOperation.OperationCompleted += DeleteTranscludedNodeCompleted;
+                deleteTranscludedNodesOperation.ExecuteOperation();
+            }
+            else
+            {
+                deleteTranscludedNodesOperation.ExecuteOperation();
+                var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+                modelChangedEventArgs.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(details.Node, ModelOperationType.Deleted));
+
+                foreach (Proxy.IRelationship modelRelationship in deleteTranscludedNodesOperation.Response.Relationships)
+                {
+                    var viewModelRelationship = new Relationship();
+                    viewModelRelationship.LoadRelationship(modelRelationship);
+
+                    modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(viewModelRelationship, ModelOperationType.Deleted));
+                }
+                ModelChanged(this, modelChangedEventArgs);
+            }
+        }
+
+        private void DeleteTranscludedNodeCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            var response = e.Response;
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            modelChangedEventArgs.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(e.ViewModeNode, ModelOperationType.Deleted));
+
+            foreach (Proxy.IRelationship modelRelationship in response.Relationships)
+            {
+                var viewModelRelationship = new Relationship();
+                viewModelRelationship.LoadRelationship(modelRelationship);
+
+                modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(viewModelRelationship, ModelOperationType.Deleted));
+            }
+
+            ModelChanged(this, modelChangedEventArgs);
+        }
+
+        void ISuperGraphRelationshipFactory.ConnectTranscludedNodes(Node from, Node to)
+        {
+            var connectTranscludedNodesOperation = new ConnectTranscludedNodesOperation(MapManager);
+            connectTranscludedNodesOperation.Context = Context.Proxy;
+            connectTranscludedNodesOperation.From = from.Proxy;
+            connectTranscludedNodesOperation.To = to.Proxy;
+            connectTranscludedNodesOperation.OperationCompleted += ConnectTranscludedNodesCompleted;
+            connectTranscludedNodesOperation.ExecuteOperation();
+        }
+
+        private void ConnectTranscludedNodesCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            var response = e.Response;
+            foreach (Proxy.IRelationship modelRelationship in response.Relationships)
+            {
+                var viewModelRelationship = new Relationship();
+                viewModelRelationship.LoadRelationship(modelRelationship);
+
+                var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+                modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(viewModelRelationship, ModelOperationType.New));
+
+                ModelChanged(this, modelChangedEventArgs);
+            }
+        }
+
+        void ISuperGraphRelationshipFactory.DeleteRelationship(Relationship viewModelRelationship)
+        {
+            var deleteRelationshipOperation = new DeleteRelationshipOperation(MapManager);
+            deleteRelationshipOperation.ViewModeRelationship = viewModelRelationship;
+            deleteRelationshipOperation.OperationCompleted += DeleteRelationshipCompleted;
+            deleteRelationshipOperation.ExecuteOperation();
+
+            
+        }
+
+        private void DeleteRelationshipCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(e.ViewModeRelationship, ModelOperationType.Deleted));
+            ModelChanged(this, modelChangedEventArgs);
+        }
+
+        #endregion
+
+        #region ISuperGraphNodeBatchOperations Implementation
+        public void CommitLocations(IEnumerable<Node> nodesToBeCommitted)
+        {
+            var moveNodesOperation = new BatchMoveNodesOperation(MapManager);
+            moveNodesOperation.Map = Context.Proxy;
+            moveNodesOperation.Nodes = nodesToBeCommitted;
+            moveNodesOperation.OperationCompleted += CommitLocationsCompleted;
+            moveNodesOperation.ExecuteOperation();
+        }
+
+        private void CommitLocationsCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            if (e.Nodes == null)
+            {
+                return;
+            }
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            modelChangedEventArgs.Nodes = e.Nodes;
+            NodeProgressCompleted(this, modelChangedEventArgs);
+        }
+
+
+        public void TranscludeNodes(NodeOperationDetails details)
+        {
+            var batchTransclusions = new BatchTranscludeNodesOperation(MapManager);
+            foreach (var node in details.Nodes)
+            {
+                var newOperation = new TranscludeNodesOperation(MapManager);
+                newOperation.NewMap = Context.Proxy;
+                newOperation.OriginalMap = details.Map.Proxy;
+                newOperation.ViewModelNode = node;
+                newOperation.Location = node.Location;
+                node.IsTranscluded = true;
+                node.NumTranclusions++;
+                batchTransclusions.AddTranscludeNodeOperation(newOperation);
+
+                var newNodeViewModel = new Node(node);
+                newNodeViewModel.Location = node.Location;
+                newNodeViewModel.CommitLocation();
+
+                newNodeViewModel.PropertyChanged += ViewModelNode_PropertyChanged;
+
+                batchTransclusions.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(newNodeViewModel, ModelOperationType.New));
+            }
+            batchTransclusions.OperationCompleted += TranscludeNodesCompleted;
+            batchTransclusions.ExecuteOperation();
+
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            modelChangedEventArgs.Nodes = batchTransclusions.Nodes;
+            foreach (Proxy.IRelationship modelRelationship in batchTransclusions.Response.Relationships)
+            {
+                if (modelRelationship.RelationshipType != modelRelationship.MapManager.RelationshipTypes["MapContainerRelationship"])
+                {
+                    var viewModelRelationship = new Relationship();
+                    viewModelRelationship.LoadRelationship(modelRelationship);
+                    modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(viewModelRelationship, ModelOperationType.New));
+                }
+            }
+            ModelChanged(this, modelChangedEventArgs);
+        }
+
+        private void TranscludeNodesCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            modelChangedEventArgs.Nodes = e.Nodes;
+            NodeProgressCompleted(this, modelChangedEventArgs);
+        }
+
+        public void ConnectMultipleTranscludedNodes(NodeOperationDetails details)
+        {
+            var batchTransclusionConnections = new BatchConnectTranscludedNodesOperation(MapManager);
+            foreach (var viewModelRelationship in details.Relationships)
+            {
+                var from = details.Nodes.FirstOrDefault(q => q.Id == viewModelRelationship.From);
+                var to = details.Nodes.FirstOrDefault(q => q.Id == viewModelRelationship.To);
+
+                if (from != null && to != null)
+                {
+                    var operation = new ConnectTranscludedNodesOperation(MapManager);
+                    operation.Context = Context.Proxy;
+                    operation.From = from.Proxy;
+                    operation.To = to.Proxy;
+
+                    batchTransclusionConnections.AddConnectTranscludedNodesOperation(operation);
+                }
+            }
+            batchTransclusionConnections.OperationCompleted += ConnectMultipleTranscludedNodesCompleted;
+            batchTransclusionConnections.ExecuteOperation();
+
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            var response = batchTransclusionConnections.Response;
+            foreach (Proxy.IRelationship modelRelationship in response.Relationships)
+            {
+                if (modelRelationship.RelationshipType != modelRelationship.MapManager.RelationshipTypes["MapContainerRelationship"])
+                {
+                    var viewModelRelationship = new Relationship();
+                    viewModelRelationship.LoadRelationship(modelRelationship);
+
+                    modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(viewModelRelationship, ModelOperationType.New));
+                }
+            }
+
+            ModelChanged(this, modelChangedEventArgs);
+        }
+
+        private void ConnectMultipleTranscludedNodesCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            
+        }
+
+        public void DeleteNodes(NodeOperationDetails details, bool isSameMap)
+        {
+            var batchTransclusionDeletions = new BatchDeleteNodesOperation(MapManager);
+            if (isSameMap)
+            {
+                batchTransclusionDeletions.OperationCompleted += DeleteNodesCompleted;
+            }
+            
+
+            foreach (var node in details.Nodes)
+            {
+                batchTransclusionDeletions.Nodes.Add(new KeyValuePair<Node, ModelOperationType>(node, ModelOperationType.Deleted));
+
+                if (node.IsTranscluded && node.NumTranclusions > 1)
+                {
+                    var deleteTranscludedNodesOperation = new DeleteTranscludedNodeOperation(MapManager);
+                    deleteTranscludedNodesOperation.Context = details.Map.Proxy;
+                    deleteTranscludedNodesOperation.Node = node.Proxy;
+
+                    batchTransclusionDeletions.AddDeleteNodeOperation(deleteTranscludedNodesOperation);
+                }
+                else
+                {
+                    var deleteNodesOperation = new DeleteNodeOperation(node, MapManager);
+
+                    batchTransclusionDeletions.AddDeleteNodeOperation(deleteNodesOperation);
+                }
+            }
+
+            batchTransclusionDeletions.ExecuteOperation();
+
+            var modelChangedEventArgs = new ModelChangedEventArgs<Node, Relationship>();
+            var response = batchTransclusionDeletions.Response;
+            modelChangedEventArgs.Nodes = batchTransclusionDeletions.Nodes;
+            foreach (Proxy.IRelationship modelRelationship in response.Relationships)
+            {
+                var viewModelRelationship = new Relationship();
+                viewModelRelationship.LoadRelationship(modelRelationship);
+
+                modelChangedEventArgs.Relationships.Add(new KeyValuePair<Relationship, ModelOperationType>(viewModelRelationship, ModelOperationType.Deleted));
+            }
+            ModelChanged(this, modelChangedEventArgs);
+
+            
+        }
+
+        private void DeleteNodesCompleted(object sender, NodeOperationCompletedArgs e)
+        {
+            
+        }
+
+        #endregion
+    }
+}

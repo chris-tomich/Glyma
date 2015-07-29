@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.ManagementConsole.UI.ProjectListViewControlPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    mc:Ignorable="d"
+    d:DesignHeight="50" d:DesignWidth="280" Width="280" Height="50" DataContextChanged="ProjectListViewControlPanelDataContextChanged">
+    <StackPanel x:Name="LayoutRoot" Background="White" Orientation="Horizontal">
+        <telerik:RadButton x:Name="NewProjectButton" Content="New Project" Click="OnNewProjectClicked"  
+                           Width="80" Cursor="Hand" FontFamily="Trebuchet MS" FontSize="12" Foreground="White"
+                           HorizontalAlignment="Left" Margin="10,10,0,10" Style="{StaticResource SuperButtonStyle}" />
+        <telerik:RadButton x:Name="NewMapButton" IsEnabled="False" Content="New Map" Click="OnNewMapClicked"  
+                           Width="80" Cursor="Hand" FontFamily="Trebuchet MS" FontSize="12" Foreground="White"
+                           HorizontalAlignment="Left" Margin="10,10,0,10" Style="{StaticResource SuperButtonStyle}" />
+        <telerik:RadButton x:Name="DeleteButton" IsEnabled="False" Content="Delete" Click="OnDeleteClicked"
+                           Width="80" Cursor="Hand" FontFamily="Trebuchet MS" FontSize="12" Foreground="White"
+                           HorizontalAlignment="Left" Margin="10,10,0,10" Style="{StaticResource SuperButtonStyle}" />
+    </StackPanel>
+</UserControl>

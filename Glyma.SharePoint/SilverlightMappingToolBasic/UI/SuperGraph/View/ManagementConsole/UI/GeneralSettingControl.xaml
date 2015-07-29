@@ -1,0 +1,99 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.ManagementConsole.UI.GeneralSettingControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:richTextSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.RichTextSupportClasses"
+    mc:Ignorable="d"
+    d:DesignHeight="400" d:DesignWidth="600" DataContextChanged="UserControl_DataContextChanged">
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Foreground="{Binding Path=FontColor}"  Width="100" TextAlignment="Right" Text="Name:" Margin="10,10,10,0" VerticalAlignment="Top"></TextBlock>
+                <richTextSupportClasses:SpellCheckTextBox x:Name="ObjectNameBox" Height="60" Width="450" Margin="0,5,10,5" IsEnabled="{Binding Path=IsEditable}" Text="{Binding Path=UIName, Mode=TwoWay}" DocumentContentChanged="OnTextChanged"></richTextSupportClasses:SpellCheckTextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                <TextBlock Width="100" TextAlignment="Right" Text="Created By:" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Height="20" Width="150" Margin="0,5,10,5"></TextBox>
+                <TextBlock TextAlignment="Right" Text="At:" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Height="20" Width="150" Margin="0,5,10,5"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                <TextBlock Width="100" TextAlignment="Right" Text="Last Modified By:" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Height="20" Width="150" Margin="0,5,10,5"></TextBox>
+                <TextBlock TextAlignment="Right" Text="At:" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                <TextBox Height="20" Width="150" Margin="0,5,10,5"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Visibility="{Binding Path=RootMapOnlyControlVisibility}">
+                <TextBlock Width="100" TextAlignment="Right" Text="" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                <CheckBox Height="20" Foreground="{Binding Path=FontColor}" IsEnabled="{Binding Path=IsEditable}" Margin="0,5,10,5" 
+                          IsChecked="{Binding Path=DisableAutoRealign, Mode=TwoWay}" 
+                          ToolTipService.ToolTip="Enable/Disable the map's nodes automatically aligning themselves when in Explorer mode.">Disable auto map alignment</CheckBox>
+            </StackPanel>
+            <StackPanel  x:Name="YammerOptions">
+                <StackPanel Visibility="{Binding Path=RootMapOnlyControlVisibility}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100" TextAlignment="Right" Text="" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                        <CheckBox Foreground="{Binding Path=FontColor}" Margin="0,5,10,5" IsEnabled="{Binding Path=IsEditable}" x:Name="EnableYammerFeed" IsChecked="{Binding Path=YammerEnabled, Mode=TwoWay}" 
+                              Content="Enable Yammer Feed" ToolTipService.ToolTip="Enable/Disable the Yammer Feed panel for the map."></CheckBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100" TextAlignment="Right" Text="" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Foreground="{Binding Path=FontColor}" Width="100" TextAlignment="Right" Margin="10,0,10,0" VerticalAlignment="Center">Feed Type:</TextBlock>
+                        <telerik:RadComboBox telerik:StyleManager.Theme="Windows8" Width="100" Height="20" Margin="0,5,10,5" 
+                                         IsEnabled="{Binding ElementName=EnableYammerFeed, Path=IsChecked}" x:Name="YammerFeedType" 
+                                         SelectedValue="{Binding Path=YammerFeedType, Mode=TwoWay}" 
+                                         ItemsSource="{Binding Path=YammerFeedTypes}" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100" TextAlignment="Right" Text="" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Foreground="{Binding Path=FontColor}" Width="100" TextAlignment="Right" Margin="10,0,10,0" VerticalAlignment="Center">Network ID:</TextBlock>
+                        <TextBox telerik:StyleManager.Theme="Windows8" Height="20" Width="185" Margin="0,5,10,5" IsEnabled="{Binding ElementName=EnableYammerFeed, Path=IsChecked}"
+                                                              Text="{Binding Path=YammerNetwork, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                              ToolTipService.ToolTip="Which Yammer network to use, leave it blank to default to the users home network."></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="YammerOpenGraphStackPanel" Orientation="Horizontal" Visibility="{Binding Path=YammerOpenGraphControlVisibility}">
+                        <TextBlock Width="100" TextAlignment="Right" Text="" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Foreground="{Binding Path=FontColor}" Width="100" TextAlignment="Right" Margin="10,0,10,0" VerticalAlignment="Center">Object URL:</TextBlock>
+                        <TextBox telerik:StyleManager.Theme="Windows8"  Height="20" Width="330" Margin="0,5,10,5" 
+                                                              IsEnabled="{Binding ElementName=EnableYammerFeed, Path=IsChecked}" 
+                                                              Text="{Binding Path=YammerObjectUrl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                              ToolTipService.ToolTip="The URL for the open-graph conversation, leave it blank to default to the map's URL."></TextBox>
+                    </StackPanel>
+                    <StackPanel x:Name="YammerGroupStackPanel" Orientation="Horizontal" Visibility="{Binding Path=YammerGroupControlVisibility}">
+                        <TextBlock Width="100" TextAlignment="Right" Text="" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Foreground="{Binding Path=FontColor}" Width="100" TextAlignment="Right" Margin="10,0,10,0" VerticalAlignment="Center">Feed ID:</TextBlock>
+                        <TextBox telerik:StyleManager.Theme="Windows8" Height="20" Width="100" Margin="0,5,10,5" 
+                                                              IsEnabled="{Binding ElementName=EnableYammerFeed, Path=IsChecked}" 
+                                                              Text="{Binding Path=YammerFeedID, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                              ToolTipService.ToolTip="The Yammer Feed ID, this will be a number that you can retrieve from the Yammer web application."></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Width="100" TextAlignment="Right" Text="" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Foreground="{Binding Path=FontColor}" Width="100" TextAlignment="Right" Margin="10,0,10,0" VerticalAlignment="Center">Prompt Text:</TextBlock>
+                        <TextBox telerik:StyleManager.Theme="Windows8" Height="20" Width="330" Margin="0,5,10,5" 
+                                                              IsEnabled="{Binding ElementName=EnableYammerFeed, Path=IsChecked}" 
+                                                              Text="{Binding Path=YammerPromptText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                              ToolTipService.ToolTip="Set a custom Yammer publisher message, leave it blank to default to 'Say something about this map'."></TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+            
+            
+            <StackPanel Orientation="Horizontal" Visibility="{Binding Path=RootMapOnlyControlVisibility}">
+                <TextBlock Width="100" TextAlignment="Right" Text="" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                <CheckBox Foreground="{Binding Path=FontColor}" Height="20" IsEnabled="{Binding Path=IsEditable}" Margin="0,5,10,5" 
+                          ToolTipService.ToolTip="Enable/Disable the Insights Feed panel automatically displaying when the map loads." 
+                          IsChecked="{Binding Path=DisableInsightsFeed, Mode=TwoWay}">Disable auto display of Insight Feed</CheckBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Visibility="{Binding Path=RootMapOnlyControlVisibility}">
+                <TextBlock Width="100" TextAlignment="Right" Text="" Margin="10,0,10,0" VerticalAlignment="Center"></TextBlock>
+                <CheckBox Foreground="{Binding Path=FontColor}" Height="20" IsEnabled="{Binding Path=IsEditable}" Margin="0,5,10,5" 
+                          ToolTipService.ToolTip="Enable/Disable the Activity Feed panel automatically displaying when the map loads." 
+                          IsChecked="{Binding Path=DisableActivityFeed, Mode=TwoWay}">Disable auto display of Activity Feed</CheckBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

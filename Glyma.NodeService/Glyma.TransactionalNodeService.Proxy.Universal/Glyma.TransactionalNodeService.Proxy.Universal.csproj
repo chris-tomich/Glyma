@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8BB8C672-CF64-4890-BC11-176AB36D262A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransactionalNodeService.Proxy.Universal</RootNamespace>
+    <AssemblyName>TransactionalNodeService.Proxy.Universal</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GlymaAssemblyKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SP2010</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;SP2010</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zlib, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Ionic.Zlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CallingUrl.cs" />
+    <Compile Include="Collections\ConnectionSet.cs" />
+    <Compile Include="Collections\ConnectionSetFactory.cs" />
+    <Compile Include="Collections\INodeTuple.cs" />
+    <Compile Include="Collections\IRelationshipTuple.cs" />
+    <Compile Include="Collections\MetadataCollection\FacadeMetadataSet.cs" />
+    <Compile Include="Collections\MetadataCollection\IMetadataSet.cs" />
+    <Compile Include="Collections\MetadataCollection\IMetadataSetManager.cs" />
+    <Compile Include="Collections\MetadataCollection\IUpdatableMetadataSet.cs" />
+    <Compile Include="Collections\MetadataCollection\MetadataCollection.cs" />
+    <Compile Include="Collections\MetadataCollection\MetadataSet.cs" />
+    <Compile Include="Collections\MetadataCollection\MetadataSetComparer.cs" />
+    <Compile Include="Collections\MetadataCollection\MetadataSetFactory.cs" />
+    <Compile Include="Collections\MetadataCollection\NodeMetadataCollection.cs" />
+    <Compile Include="Collections\MetadataCollection\RelationshipMetadataCollection.cs" />
+    <Compile Include="Collections\NodeContainers\NodeCollection.cs" />
+    <Compile Include="Collections\NodeContainers\NodeSet.cs" />
+    <Compile Include="Collections\NodeContainers\NodeTriple.cs" />
+    <Compile Include="Collections\NodeContainers\NodeTuple.cs" />
+    <Compile Include="Collections\RelationshipContainers\EqualityComparer1.cs" />
+    <Compile Include="Collections\RelationshipContainers\EqualityComparer2.cs" />
+    <Compile Include="Collections\RelationshipContainers\RelationshipCollection.cs" />
+    <Compile Include="Collections\RelationshipContainers\RelationshipSet.cs" />
+    <Compile Include="Collections\RelationshipContainers\RelationshipTuple.cs" />
+    <Compile Include="HeaderHandler\ForceWindowsAuthHeaderBehaviour.cs" />
+    <Compile Include="HeaderHandler\ForceWindowsAuthMessageInspector.cs" />
+    <Compile Include="DebugLogger.cs" />
+    <Compile Include="EventArgs\ActivityStatusEnum.cs" />
+    <Compile Include="EventArgs\DomainEventArgs.cs" />
+    <Compile Include="EventArgs\EventRegisterEventArgs.cs" />
+    <Compile Include="EventArgs\InitialiseMapManagerEventArgs.cs" />
+    <Compile Include="EventArgs\MapManagerActivityEventArgs.cs" />
+    <Compile Include="EventArgs\MetadataChangedEventArgs.cs" />
+    <Compile Include="EventArgs\MetadataEventArgs.cs" />
+    <Compile Include="EventArgs\NodeMetadataEventArgs.cs" />
+    <Compile Include="EventArgs\NodesEventArgs.cs" />
+    <Compile Include="EventArgs\NodeTriplesEventArgs.cs" />
+    <Compile Include="EventArgs\RelationshipMetadataEventArgs.cs" />
+    <Compile Include="EventRegisters\AssignMetadataEventRegister.cs" />
+    <Compile Include="EventRegisters\CreateDomainEventRegister.cs" />
+    <Compile Include="EventRegisters\CreateRootMapEventRegister.cs" />
+    <Compile Include="EventRegisters\DeleteEventRegister.cs" />
+    <Compile Include="EventRegisters\EventRegister.cs" />
+    <Compile Include="EventRegisters\NodeSetMetadataEventRegister.cs" />
+    <Compile Include="EventRegisters\QueryDomainsEventRegister.cs" />
+    <Compile Include="EventRegisters\QueryMapByDomainEventRegister.cs" />
+    <Compile Include="EventRegisters\QueryMapByIdEventRegister.cs" />
+    <Compile Include="EventRegisters\QueryMapByNodeEventRegister.cs" />
+    <Compile Include="EventRegisters\RelationshipSetMetadataEventRegister.cs" />
+    <Compile Include="Exceptions\NodeNotFoundException.cs" />
+    <Compile Include="GlymaClientVersion.cs" />
+    <Compile Include="GraphBuilder\InMemoryGraph.cs" />
+    <Compile Include="IAsyncMapObject.cs" />
+    <Compile Include="IFacade.cs" />
+    <Compile Include="IMapManager.cs" />
+    <Compile Include="INode.cs" />
+    <Compile Include="INodeFactory.cs" />
+    <Compile Include="INodeManager.cs" />
+    <Compile Include="INodeQueryable.cs" />
+    <Compile Include="InProcess\DelayedMetadataAction.cs" />
+    <Compile Include="InProcess\DelayedMetadataActions.cs" />
+    <Compile Include="InProcess\DelayedNodeAction.cs" />
+    <Compile Include="InProcess\DelayedNodeActions.cs" />
+    <Compile Include="InProcess\DelayedRelationshipAction.cs" />
+    <Compile Include="InProcess\DelayedRelationshipActions.cs" />
+    <Compile Include="InProcess\IInProcess.cs" />
+    <Compile Include="InProcess\InProcessMetadata.cs" />
+    <Compile Include="InProcess\InProcessNode.cs" />
+    <Compile Include="InProcess\InProcessRelationship.cs" />
+    <Compile Include="IRelationship.cs" />
+    <Compile Include="IRelationshipFactory.cs" />
+    <Compile Include="IRelationshipManager.cs" />
+    <Compile Include="IRelationshipQueryable.cs" />
+    <Compile Include="LoadState.cs" />
+    <Compile Include="Node.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Relationship.cs" />
+    <Compile Include="ServerObjects\Descriptor.cs" />
+    <Compile Include="ServerObjects\Metadata.cs" />
+    <Compile Include="ServerObjects\MetadataContext.cs" />
+    <Compile Include="ServerObjects\MetadataContextType.cs" />
+    <Compile Include="ServerObjects\Node.cs" />
+    <Compile Include="ServerObjects\QueryResponse.cs" />
+    <Compile Include="ServerObjects\Relationship.cs" />
+    <Compile Include="Service References\Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceExtensions\BOCCompletedEventArgs.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceExtensions\CompressedResponseTuple.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceExtensions\QueryResponse.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServiceExtensions\TransactionalMappingToolServiceClient.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Soap\FacadeNode.cs" />
+    <Compile Include="Soap\FacadeRelationship.cs" />
+    <Compile Include="Soap\QueryMapResponseStateInfo.cs" />
+    <Compile Include="Soap\QueryMapResponseStateType.cs" />
+    <Compile Include="Soap\SoapMapManager.cs" />
+    <Compile Include="Soap\SoapMetadataSet.cs" />
+    <Compile Include="Soap\SoapNode.cs" />
+    <Compile Include="Soap\SoapNodeManager.cs" />
+    <Compile Include="Soap\SoapRelationship.cs" />
+    <Compile Include="Soap\SoapRelationshipManager.cs" />
+    <Compile Include="Soap\SoapToServerObjectConverter.cs" />
+    <Compile Include="Soap\SoapTypeManager.cs" />
+    <Compile Include="Soap\TransactionFramework\AddMetadataTransactionLink.cs" />
+    <Compile Include="Soap\TransactionFramework\AddNodeTransactionLink.cs" />
+    <Compile Include="Soap\TransactionFramework\AddRelationshipTransactionLink.cs" />
+    <Compile Include="Soap\TransactionFramework\DeleteMetadataTransactionLink.cs" />
+    <Compile Include="Soap\TransactionFramework\DeleteNodeTransactionLink.cs" />
+    <Compile Include="Soap\TransactionFramework\DeleteRelationshipTransactionLink.cs" />
+    <Compile Include="Soap\TransactionFramework\DependencyCollection.cs" />
+    <Compile Include="Soap\TransactionFramework\InProcessTransactionResponse.cs" />
+    <Compile Include="Soap\TransactionFramework\ISoapTransactionLink.cs" />
+    <Compile Include="Soap\TransactionFramework\ISoapTransactionLinkExecutor.cs" />
+    <Compile Include="Soap\TransactionFramework\NodeChangedTuple.cs" />
+    <Compile Include="Soap\TransactionFramework\RelationshipChangedTuple.cs" />
+    <Compile Include="Soap\TransactionFramework\ServerStatus.cs" />
+    <Compile Include="Soap\TransactionFramework\SoapTransactionCompletedEventArgs.cs" />
+    <Compile Include="Soap\TransactionFramework\SoapTransactionLinkParameter.cs" />
+    <Compile Include="Soap\TransactionFramework\TransactionChain.cs" />
+    <Compile Include="Soap\TransactionFramework\TransactionChainEnd.cs" />
+    <Compile Include="Soap\TransactionFramework\TransactionChainStart.cs" />
+    <Compile Include="Soap\TransactionFramework\UpdateMetadataTransactionLink.cs" />
+    <Compile Include="Soap\TransactionFramework\UpdateNodeTransactionLink.cs" />
+    <Compile Include="Soap\TransactionFramework\UpdateRelationshipTransactionLink.cs" />
+    <Compile Include="Storage\QueueSerializationWrapper.cs" />
+    <Compile Include="Storage\TransactionStore.cs" />
+    <Compile Include="TransactionAction.cs" />
+    <Compile Include="TypeManagers\ConnectionTypeManager.cs" />
+    <Compile Include="TypeManagers\ITypeManager.cs" />
+    <Compile Include="TypeManagers\MetadataTypeManager.cs" />
+    <Compile Include="TypeManagers\NodeTypeManager.cs" />
+    <Compile Include="TypeManagers\RelationshipTypeManager.cs" />
+    <Compile Include="TypeManagers\TypeManager.cs" />
+    <Compile Include="Types\ConnectionType.cs" />
+    <Compile Include="Types\Generic\IMapType.cs" />
+    <Compile Include="Types\IMapType.cs" />
+    <Compile Include="Types\MetadataType.cs" />
+    <Compile Include="Types\NodeType.cs" />
+    <Compile Include="Types\RelationshipType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="GlymaAssemblyKey.pfx" />
+    <None Include="Service References\Service\configuration91.svcinfo" />
+    <None Include="Service References\Service\configuration.svcinfo" />
+    <None Include="Service References\Service\mex.wsdl" />
+    <None Include="Service References\Service\mex.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service\mex1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service\mex2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service\mex3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service\mex4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service\mex5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="ServiceReferences.ClientConfig" />
+    <None Include="Service References\Service\TransactionalMappingToolService.wsdl" />
+    <None Include="Service References\Service\TransactionalMappingToolService1.wsdl" />
+    <None Include="Service References\Service\TransactionalMappingToolService2.wsdl" />
+    <None Include="Service References\Service\TransactionalNodeService.Proxy.Universal.Service.BOR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\TransactionalNodeService.Proxy.Universal.Service.GlymaVersion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\TransactionalNodeService.Proxy.Universal.Service.MP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\TransactionalNodeService.Proxy.Universal.Service.QueryResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\TransactionalNodeService.Proxy.Universal.Service.RS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\TransactionalNodeService.Proxy.Universal.Service.SearchMapResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\Service\TransactionalNodeService.Proxy.Universal.Service.TypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\Service\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)..\Glyma.NodeService\Glyma.NodeServiceApp\Assemblies\$(TargetFileName)"
+copy "$(TargetPath)" "$(SolutionDir)..\Glyma.NodeService\Glyma.UtilityService.Export\Assemblies\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

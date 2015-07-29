@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MappingToolDatabase" Class="GlymaDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=glyma-dev;Initial Catalog=MappingToolDatabase;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="MappingToolDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Nodes" Member="Nodes">
+    <Type Name="Node">
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NodeOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NodeTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="Node_Metadata" Member="Metadatas" ThisKey="NodeUid" OtherKey="NodeUid" Type="Metadata" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Metadata" Member="Metadatas">
+    <Type Name="Metadata">
+      <Column Name="MetadataId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetadataTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MetadataName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MetadataValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Node_Metadata" Member="Node" ThisKey="NodeUid" OtherKey="NodeUid" Type="Node" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.BasicSearch" Method="BasicSearch">
+    <Parameter Name="DomainId" Parameter="domainId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="SearchTerms" Parameter="searchTerms" Type="System.String" DbType="NVarChar(200)" />
+    <ElementType Name="BasicSearchResult">
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="NodeOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NodeTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

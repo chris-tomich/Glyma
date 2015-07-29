@@ -1,0 +1,1327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug - SharePoint 2010</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C32A7AC2-7487-4002-B6E9-3CAB8B7B4304}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SilverlightMappingToolBasic</RootNamespace>
+    <AssemblyName>SilverlightMappingToolBasic</AssemblyName>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>SilverlightMappingToolBasic.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>SilverlightMappingToolBasic.App</SilverlightAppEntry>
+    <TestPageFileName>TestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>false</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>true</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SignManifests>false</SignManifests>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>A465C5D6E09767652362DE4677FF29AB93D07A7B</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SilverlightMappingToolBasic_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - SharePoint 2010\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - SharePoint 2013\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'">
+    <OutputPath>bin\Release - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'">
+    <OutputPath>bin\Release - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>pdbonly</DebugType>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FJ.Core">
+      <HintPath>Assemblies\FJ.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glyma.UtilityService.Proxy">
+      <HintPath>Assemblies\Glyma.UtilityService.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>Assemblies\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zlib">
+      <HintPath>Assemblies\Ionic.Zlib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.Composition, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.Composition.Initialization, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.Services.Client, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Json, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.DomainServices.Client, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.DomainServices.Client.Web, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=2c5c654d367bf4a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\System.Windows.Controls.Input.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=5.0.5.0, Culture=neutral, PublicKeyToken=2c5c654d367bf4a7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Toolkit.Internals, Version=4.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Data, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="System.Xml.XPath, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.Windows.Controls, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Data, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.GridView, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Assemblies\Telerik.Windows.Controls.GridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.ImageEditor, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Controls.ImageEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Input, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Controls.Input.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.Navigation, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Controls.Navigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RibbonView, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Controls.RibbonView.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Controls.RichTextBoxUI, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Controls.RichTextBoxUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Data, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Documents.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Core, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Documents.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Flow, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Documents.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.Html, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Documents.FormatProviders.Html.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Documents.FormatProviders.MsRichTextBoxXaml.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Documents.Proofing.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Documents.Proofing.Dictionaries.En-US, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Documents.Proofing.Dictionaries.En-US.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Themes.Windows8, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Themes.Windows8.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Windows.Zip, Version=2014.2.729.1050, Culture=neutral, PublicKeyToken=5803cfa389c90ce7, processorArchitecture=MSIL">
+      <HintPath>Assemblies\Telerik.Windows.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="TransactionalNodeService.Proxy">
+      <HintPath>Assemblies\TransactionalNodeService.Proxy.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\ColorsManagement\ColorConverter.cs" />
+    <Compile Include="Code\Controls\ArrowControl.cs" />
+    <Compile Include="Code\Controls\AssignVideoDialog.xaml.cs">
+      <DependentUpon>AssignVideoDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Controls\AvailableDomainsEventArgs.cs" />
+    <Compile Include="Code\Controls\AvailableMapEventArgs.cs" />
+    <Compile Include="Code\Controls\BreadcrumbBar.cs" />
+    <Compile Include="Code\Controls\CanvasContextMenu.cs" />
+    <Compile Include="CompendiumMapProcessor\FileProcessorCompletedEventArgs.cs" />
+    <Compile Include="SoapEndPointFactory.cs" />
+    <Compile Include="UI\Extensions\EnumHelper.cs" />
+    <Compile Include="UI\Extensions\JavascriptCallback\CustomContextMenuItemObject.cs" />
+    <Compile Include="UI\Extensions\JavascriptCallback\JavascriptCallbackRegister.cs" />
+    <Compile Include="UI\Extensions\Json\JsonSerializationHelper.cs" />
+    <Compile Include="UI\Extensions\ObservableDictionary.cs" />
+    <Compile Include="GlymaParameters.cs" />
+    <Compile Include="ISuperGraphControllerContainer.cs" />
+    <Compile Include="JavaScriptBridge.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="RelatedContentPanelUtil.cs" />
+    <Compile Include="RootMapProperties.cs" />
+    <Compile Include="UI\Extensions\ScreenCapture\ScreenCaptureType.cs" />
+    <Compile Include="UI\Extensions\ScreenCapture\ScreenCaptureUtility.cs" />
+    <Compile Include="Service References\GlymaSecurityService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Extensions\CookieManagement\CookieManager.cs" />
+    <Compile Include="UI\Extensions\CookieManagement\MapInformation.cs" />
+    <Compile Include="UI\Extensions\CookieManagement\MapLoadParamsManager.cs" />
+    <Compile Include="UI\Extensions\CookieManagement\SuperCookies.cs" />
+    <Compile Include="UI\Extensions\IMarginAnimationControl.cs" />
+    <Compile Include="UI\Extensions\MarginAnimation.cs" />
+    <Compile Include="UI\Extensions\StringExtension.cs" />
+    <Compile Include="UI\Extensions\VideoWebPart\VideoSize.cs" />
+    <Compile Include="UI\PointExtension.cs" />
+    <Compile Include="UI\SuperGraph\Controller\ISuperGraphNodeOperations.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\AddNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\TransclusionLoadEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\BreadcrumbItem.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\BreadcrumbItemBase.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\BreadcrumbMapItem.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\NodeActionOptions.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\NodeClickOptions.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\NodeCornerButtonViewModel.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\NodeJson.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\SidebarModel.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\IArrowControl.cs" />
+    <Compile Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbClickedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbCombobox.xaml.cs">
+      <DependentUpon>BreadcrumbCombobox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbTextBlock.xaml.cs">
+      <DependentUpon>BreadcrumbTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ContextMenu\Base\ContextMenuBase.xaml.cs">
+      <DependentUpon>ContextMenuBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ContextMenu\Base\ContextMenuType.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\Base\NodeContextMenuBase.xaml.cs">
+      <DependentUpon>NodeContextMenuBase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ContextMenu\ContextMenuContainer.xaml.cs">
+      <DependentUpon>ContextMenuContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ContextMenu\ContextMenuOpenType.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\CreateNewNodeClickedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\ExportClickedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\IContextMenuParent.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\RatingControl\SuperRating.xaml.cs">
+      <DependentUpon>SuperRating.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ContextMenu\SubContextMenu.xaml.cs">
+      <DependentUpon>SubContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ContextMenu\SuperContextMenuItem.xaml.cs">
+      <DependentUpon>SuperContextMenuItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Interface\IRelatedContentOperationsHandler.cs" />
+    <Compile Include="UI\SuperGraph\View\Loading\Loader.xaml.cs">
+      <DependentUpon>Loader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\DictionaryPropertyHelper.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\ExportOptionSelectedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\ConditionalDataTemplateSelector.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\ExportJobDownloadConverter.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\ExportOptionDialog.xaml.cs">
+      <DependentUpon>ExportOptionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\ExportTypeConveter.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\ExportTab.xaml.cs">
+      <DependentUpon>ExportTab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\ExportStatusConveter.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\ViewModel\ExportOption.cs" />
+    <Compile Include="UI\SuperGraph\View\MessageBox\MessageBoxContentControl.xaml.cs">
+      <DependentUpon>MessageBoxContentControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\MessageBox\MessageBoxType.cs" />
+    <Compile Include="UI\SuperGraph\View\MessageBox\SuperMessageBox.xaml.cs">
+      <DependentUpon>SuperMessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\MessageBox\SuperMessageBoxService.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\Interface\IArrowDependent.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\Interface\ICutableNode.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\Interface\INodeCornerButton.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\Interface\ISelectableNode.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\Interface\IViewNode.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeCornerButtonLoader.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeCornerMultipleButtonIndicator.xaml.cs">
+      <DependentUpon>NodeCornerMultipleButtonIndicator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeDetailIndicatorButton.xaml.cs">
+      <DependentUpon>NodeDetailIndicatorButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeDetailsControl.xaml.cs">
+      <DependentUpon>NodeDetailsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeSelectedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeCornerButton.xaml.cs">
+      <DependentUpon>NodeCornerButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeCornerControl.xaml.cs">
+      <DependentUpon>NodeCornerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\TextBlockProperties.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\IsSingleNodeContextConverter.cs" />
+    <Compile Include="UI\SuperGraph\View\RichTextSupportClasses\TextFilledEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\ViewModel\IManagementConsoleObject.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\MasterDetailTemplateSelector.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\MetadataChangedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\ManagementConsoleTabControl.xaml.cs">
+      <DependentUpon>ManagementConsoleTabControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\ObservableCollectionEx.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\PermissionGroup.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\ManagementConsoleDialog.xaml.cs">
+      <DependentUpon>ManagementConsoleDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\PermissionValueChangedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\ViewModel\Project.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\ProjectListViewControlPanel.xaml.cs">
+      <DependentUpon>ProjectListViewControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\ViewModel\RootMap.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\PermissionGroupCollection.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\GeneralSettingControl.xaml.cs">
+      <DependentUpon>GeneralSettingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\SecurityManagementControl.xaml.cs">
+      <DependentUpon>SecurityManagementControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\ViewModel\ManagementConsoleObject.cs" />
+    <Compile Include="UI\Extensions\Security\SecurityManager.cs" />
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UpdateValue.cs" />
+    <Compile Include="UI\SuperGraph\View\Sidebar\SubMenu\MapFilterSubMenu.xaml.cs">
+      <DependentUpon>MapFilterSubMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Sidebar\SuperSidebarButton.xaml.cs">
+      <DependentUpon>SuperSidebarButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\StatusBar\StatusBar.xaml.cs">
+      <DependentUpon>StatusBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ZoomingControl\ZoomButton.xaml.cs">
+      <DependentUpon>ZoomButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ZoomingControl\Zooming.xaml.cs">
+      <DependentUpon>Zooming.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewModel\IBreadcrumbItem.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\MultiBreadcrumbItem.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\NodeProperties.cs" />
+    <Compile Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbChangedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbContainer.xaml.cs">
+      <DependentUpon>BreadcrumbContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbTrail.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\CommitCollapseStatesEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\DomainAndMapSelection\DomainSelectionDialog.xaml.cs">
+      <DependentUpon>DomainSelectionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Controls\EditMetadataDialog.xaml.cs">
+      <DependentUpon>EditMetadataDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\NewDomainDialog.xaml.cs">
+      <DependentUpon>NewDomainDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ManagementConsole\UI\NewMapDialog.xaml.cs">
+      <DependentUpon>NewMapDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Controls\NodeContextMenu.cs" />
+    <Compile Include="Code\Controls\NodePropertiesDialog.xaml.cs">
+      <DependentUpon>NodePropertiesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Controls\PropertiesEditor.xaml.cs">
+      <DependentUpon>PropertiesEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Controls\RelationshipContextMenu.cs" />
+    <Compile Include="Code\Controls\Toolbar.xaml.cs">
+      <DependentUpon>Toolbar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\IoC\CyclicInjectionException.cs" />
+    <Compile Include="Code\IoC\IIoCContainer.cs" />
+    <Compile Include="Code\IoC\IoCContainer.cs" />
+    <Compile Include="Code\IoC\RegisteredComponent.cs" />
+    <Compile Include="Code\IoC\RegisteredParameter.cs" />
+    <Compile Include="Code\IoC\RegisteredParameters.cs" />
+    <Compile Include="Code\Logging\LoggingService.cs" />
+    <Compile Include="Code\NodeModel\Descriptor\DescriptorCollection.cs" />
+    <Compile Include="Code\NodeModel\Metadata\MetadataViewModel.cs" />
+    <Compile Include="Code\NodeModel\Node\NodeXml.cs" />
+    <Compile Include="Code\NodeModel\Types\IMetadataTypeProxy.cs" />
+    <Compile Include="Code\NodeModel\Types\MetadataTypeProxy.cs" />
+    <Compile Include="Code\NodeModel\Types\TypeManager.cs" />
+    <Compile Include="Code\NodeNavigator\Filters\DoubleFilter.cs" />
+    <Compile Include="Code\NodeNavigator\Filters\StringFilter.cs" />
+    <Compile Include="Code\NodeNavigator\Filters\TimeSpanFilter.cs" />
+    <Compile Include="Code\NodeNavigator\MapDepth\MapDepthNavigator.cs" />
+    <Compile Include="Code\NodeNavigator\Filters\MetadataFilter.cs" />
+    <Compile Include="Code\NodeNavigator\NavigationHistory.cs" />
+    <Compile Include="Code\NodeNavigator\NodeNavigator.cs" />
+    <Compile Include="Code\NodeService\MappingService\DatabaseMappingService.cs" />
+    <Compile Include="CompendiumMapProcessor\CompendiumXmlFileProcessor.cs" />
+    <Compile Include="CompendiumMapProcessor\CompendiumXmlFileProcessor.TransactionBuilder.cs" />
+    <Compile Include="CompendiumMapProcessor\SuperFileProcessor.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\CompendiumStorage.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\Descriptors\CompendiumRelationshipDescriptor.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\DescriptorTypes\CompendiumFromDescriptor.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\DescriptorTypes\CompendiumToDescriptor.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\DescriptorTypes\CompendiumTransclusionMapDescriptor.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\DescriptorTypes\CompendiumTransclusionNodeDescriptor.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\IDescriptor.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\IDescriptorType.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\INode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\INodesReader.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\INodeType.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\IRelationship.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\IRelationshipType.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\IStorageElement.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\ITypeElement.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\Nodes\XmlCompendiumNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\ArgumentNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\ConNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\DecisionNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\DomainNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\IdeaNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\ListNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\MapNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\NoteNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\ProNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\QuestionNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\NodeTypes\ReferenceNode.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\Relationships\CompendiumLinkRelationship.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\Relationships\CompendiumMapRelationship.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\Relationships\CompendiumTransclusionRelationship.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\Relationships\CompendiumViewRelationship.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\RelationshipTypes\CompendiumMapRelationshipBaseType.cs" />
+    <Compile Include="CompendiumMapProcessor\XmlModel\RelationshipTypes\CompendiumNodeRelationshipBaseType.cs" />
+    <Compile Include="UI\Extensions\Security\IPermissionQuery.cs" />
+    <Compile Include="UI\Extensions\Security\UserPermissionEventArgs.cs" />
+    <Compile Include="UI\Extensions\Security\PermissionLevel.cs" />
+    <Compile Include="UI\Extensions\ThicknessAnimation.cs" />
+    <Compile Include="UI\Extensions\VideoWebPart\VideoControl.xaml.cs">
+      <DependentUpon>VideoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Extensions\VideoWebPart\VideoController.cs" />
+    <Compile Include="UI\Extensions\VideoWebPart\VideoInfo.cs" />
+    <Compile Include="UI\Extensions\VideoWebPart\VideoState.cs" />
+    <Compile Include="UI\IMapController.cs" />
+    <Compile Include="Code\Renderers\IMapControl.cs" />
+    <Compile Include="UI\Loading.xaml.cs">
+      <DependentUpon>Loading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\Controller\CommonSuperGraphBase.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\BatchCloneNodesOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\BatchSaveCollapseStatesOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\AddNoteNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\AddDecisionNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\CloneNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\DeleteRelationships.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\ArrowCreationSet.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\SingleNodeContextMenu.xaml.cs">
+      <DependentUpon>SingleNodeContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ContextMenu\ShareWithType.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\ShareWithUrlFactory.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\ViewerNodeControlContextMenu.xaml.cs">
+      <DependentUpon>ViewerNodeControlContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\ContextMenu\Interface\IAuthorNodeContextMenu.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\Interface\INodeContextMenu.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\Interface\IViewerNodeContextMenu.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\IArrowContainerControl.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\IArrowControlContainerControl.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\IBreadcrumbOperationHandler.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\IMainpageControl.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\IMapControl.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\IMapMoveControl.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\IMouseStyleControl.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\INodeContainerControl.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\IOperationHandler.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\BatchConnectTranscludedNodesOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\CommonOperationBase.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\UpdateNodeTypeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\BatchMoveNodesOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\NodeOperationCompletedArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\Direction.cs" />
+    <Compile Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbEllipsis.xaml.cs">
+      <DependentUpon>BreadcrumbEllipsis.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\CollapseSupportClasses\ChildrenControlCollection.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\BatchDeleteNodesOperation.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\INodeProperiesControl.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\ISidebarOperationHandler.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\IZoomControl.cs" />
+    <Compile Include="UI\SuperGraph\View\MouseCursor\SuperCursor.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\IMouseManager.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\MouseButtonManager.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\MouseManager.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\MouseManagerBase.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\MouseManagerEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\MouseStateProperties.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\MouseStateManager.cs" />
+    <Compile Include="UI\SuperGraph\Controller\ArrowControlFactorySet.cs" />
+    <Compile Include="UI\SuperGraph\Controller\ArrowController.cs" />
+    <Compile Include="UI\SuperGraph\Controller\ArrowControlFactory.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\BatchTranscludeNodesOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\IBatchOperation.cs" />
+    <Compile Include="UI\SuperGraph\View\Interface\ISelectorControl.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\Edit\NameChangedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\Edit\UpdateMetadataDetail.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\Edit\UpdateMetadataType.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\InsertImageEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\InsertPictureDialog.xaml.cs">
+      <DependentUpon>InsertPictureDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\NodeDescriptionType.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\NodePropertyDataGridSource.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\UIMetadata.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\UIMetadataCollection.cs" />
+    <Compile Include="UI\SuperGraph\View\Selector\MoveTransformEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\CollapseSupportClasses\CollapseStateChangedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\DescriptionIndicatorControl.xaml.cs">
+      <DependentUpon>DescriptionIndicatorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\ViewModel\ChangeNodeTypeEnum.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\ChangeNodeTypeEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\ShareWithTypeEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeTextInput.xaml.cs">
+      <DependentUpon>NodeTextInput.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeTextInputContextMenuBuilder.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\VisibilityChangedEventArgs.cs" />
+    <Compile Include="UI\ViewModel\INodeProperties.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\MetadataDeleteClickedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\MultipleNodeMetadata.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\MultipleNodesProperties.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\NodePropertiesDialog.xaml.cs">
+      <DependentUpon>NodePropertiesDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Interface\IRealignControl.cs" />
+    <Compile Include="UI\SuperGraph\View\Realign\Interface\IRealignObject.cs" />
+    <Compile Include="UI\SuperGraph\View\Realign\RealignFactoryBase.cs" />
+    <Compile Include="UI\SuperGraph\View\CollapseSupportClasses\CollapseControl.xaml.cs">
+      <DependentUpon>CollapseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\CollapseSupportClasses\CollapseState.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\UserStyle.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\SuperMouseManager.cs" />
+    <Compile Include="UI\SuperGraph\View\Mouse\TransactionalMouseManagerEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\Selector\INodesSelector.cs" />
+    <Compile Include="UI\SuperGraph\View\Selector\MathExtension.cs" />
+    <Compile Include="UI\SuperGraph\View\Selector\SelectedNodesCollection.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\FacadeNodeMotionHandler.cs" />
+    <Compile Include="UI\SuperGraph\Controller\ISuperGraphNodeBatchOperations.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\LocationChangedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\MultipleNodeMotionHandler.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\DataGridPropertyCollection.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\NewDataGridPropertyPlaceholder.cs" />
+    <Compile Include="UI\SuperGraph\View\Realign\RealignMap.cs" />
+    <Compile Include="UI\SuperGraph\View\Realign\RealignObject.cs" />
+    <Compile Include="UI\SuperGraph\View\Realign\RealignStyle.cs" />
+    <Compile Include="UI\SuperGraph\View\RichTextSupportClasses\SpellCheckTextBox.cs" />
+    <Compile Include="UI\SuperGraph\View\RichTextSupportClasses\TelerikRichTextEditor.xaml.cs">
+      <DependentUpon>TelerikRichTextEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Sidebar\Interface\ISubMenu.cs" />
+    <Compile Include="UI\SuperGraph\View\Sidebar\SubMenu\ZoomSubMenu.xaml.cs">
+      <DependentUpon>ZoomSubMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Sidebar\ISidebarButton.cs" />
+    <Compile Include="UI\SuperGraph\View\Sidebar\SidebarButtonBase.cs" />
+    <Compile Include="UI\SuperGraph\View\Sidebar\SidebarControl.xaml.cs">
+      <DependentUpon>SidebarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Sidebar\SidebarButton.xaml.cs">
+      <DependentUpon>SidebarButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Sidebar\SubMenu\RealignSubMenu.xaml.cs">
+      <DependentUpon>RealignSubMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Sidebar\SubMenu\SidebarSubMenuButton.xaml.cs">
+      <DependentUpon>SidebarSubMenuButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewModel\IViewModelMetadataFactory.cs" />
+    <Compile Include="UI\SuperGraph\Controller\ISuperGraphNodeFactory.cs" />
+    <Compile Include="UI\SuperGraph\Controller\ISuperGraphRelationshipFactory.cs" />
+    <Compile Include="UI\SuperGraph\Controller\NodeControlFactory.cs" />
+    <Compile Include="UI\SuperGraph\Controller\NodeControlFactorySet.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\AddConNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\AddIdeaNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\AddMapNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\AddNodeOperationBase.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\AddProNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\AddQuestionNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\ConnectNodesOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\ConnectTranscludedNodesOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\DeleteNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\DeleteRelationshipOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\DeleteTranscludedNodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\ISuperGraphOperation.cs" />
+    <Compile Include="UI\ModelOperationType.cs" />
+    <Compile Include="UI\SuperGraph\Controller\Operations\TranscludeNodesOperation.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\Map.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\Metadata.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\RelationshipEqualityComparer.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\SuperGraphProperties.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\ArrowCreationManager.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\ArrowControl.xaml.cs">
+      <DependentUpon>ArrowControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Arrow\ArrowContextMenu.xaml.cs">
+      <DependentUpon>ArrowContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Arrow\ArrowNodeSurrogate.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\ArrowViewModel.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\EllipseEquation.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\ILinearEquation.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\IPolymorphicShape.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\IShapeEquation.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\RectEquation.cs" />
+    <Compile Include="UI\ShapeExtensionMethods.cs" />
+    <Compile Include="UI\SuperGraph\View\Arrow\ShapeMovedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbBarControl.xaml.cs">
+      <DependentUpon>BreadcrumbBarControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbControl.xaml.cs">
+      <DependentUpon>BreadcrumbControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CompendiumMapProcessor\FilesDroppedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\Selector\NodesSelector.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\MultiNodesContextMenu.xaml.cs">
+      <DependentUpon>MultiNodesContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeOperationEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\Controller\NodeOperation.cs" />
+    <Compile Include="UI\SuperGraph\Controller\NodeOperationDetails.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\INodeMotionHandler.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NewNodeEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeClickedEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\AuthorNodeControlContextMenu.xaml.cs">
+      <DependentUpon>AuthorNodeControlContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeMotionHandler.cs" />
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeMotionHandlerEventArgs.cs" />
+    <Compile Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\PropertiesEditor.xaml.cs">
+      <DependentUpon>PropertiesEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\Realign\HorizontalRealignFactory.cs" />
+    <Compile Include="UI\SuperGraph\View\Realign\Interface\IRealignFactory.cs" />
+    <Compile Include="UI\SuperGraph\View\Realign\RealignFactory.cs" />
+    <Compile Include="UI\SuperGraph\View\Realign\RealignNode.cs" />
+    <Compile Include="UI\SuperGraph\View\Realign\VerticalRealignFactory.cs" />
+    <Compile Include="UI\SuperGraph\View\ContextMenu\SuperGraphControlContextMenu.xaml.cs">
+      <DependentUpon>SuperGraphControlContextMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UnexpectedMapException.cs" />
+    <Compile Include="UI\ViewModel\IMap.cs" />
+    <Compile Include="UI\ViewModel\IMapObject.cs" />
+    <Compile Include="UI\ViewModel\IMetadata.cs" />
+    <Compile Include="UI\ViewModel\INode.cs" />
+    <Compile Include="UI\ViewModel\IRelationship.cs" />
+    <Compile Include="Code\Renderers\MapDepth\CompendiumMapDepthMap.xaml.cs">
+      <DependentUpon>CompendiumMapDepthMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Code\Renderers\MapDepth\MapDepthNodeRenderer.cs" />
+    <Compile Include="Code\Renderers\MapDepth\TreeNodeGroup.cs" />
+    <Compile Include="Code\Renderers\MapDepth\TreeRenderer.cs" />
+    <Compile Include="UI\SuperGraph\Controller\SuperGraphController.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\Node.cs" />
+    <Compile Include="UI\SuperGraph\ViewModel\Relationship.cs" />
+    <Compile Include="Code\Renderers\MouseClickManager.cs" />
+    <Compile Include="Code\Renderers\IRenderer.cs" />
+    <Compile Include="Code\Renderers\RendererActions.cs" />
+    <Compile Include="Code\Renderers\NodeRenderer\INodeRenderer.cs" />
+    <Compile Include="Code\NodeModel\Node\INodeProxy.cs" />
+    <Compile Include="Code\Renderers\NodeRenderer\NodeRelationshipHelper.cs" />
+    <Compile Include="Code\Renderers\NodeRenderer\NodeRenderer.cs" />
+    <Compile Include="Code\Renderers\RelationshipRenderer\RelationshipRenderer.cs" />
+    <Compile Include="Code\Renderers\Skin\INodeSkin.cs" />
+    <Compile Include="Code\Renderers\RelationshipRenderer\IRelationshipRenderer.cs" />
+    <Compile Include="Code\Renderers\NodeRenderer\NodeClickedArgs.cs" />
+    <Compile Include="Code\NodeModel\Node\NodeProxy.cs" />
+    <Compile Include="Code\Renderers\NodeRenderer\NodeRenderersCollection.cs" />
+    <Compile Include="Code\Renderers\RelationshipRenderer\RelationshipRendererCollection.cs" />
+    <Compile Include="Code\NodeNavigator\RenderingContextInfo.cs" />
+    <Compile Include="Code\Controls\NodeControl.cs" />
+    <Compile Include="Code\Renderers\Skin\SimpleNodeSkin.cs" />
+    <Compile Include="Code\NodeNavigator\INodeNavigator.cs" />
+    <Compile Include="Code\NodeNavigator\NavigatorView.cs" />
+    <Compile Include="Code\NodeNavigator\NavigatorViewCollection.cs" />
+    <Compile Include="Code\NodeService\INodeService.cs" />
+    <Compile Include="Code\NodeModel\Descriptor\IDescriptorProxy.cs" />
+    <Compile Include="Code\NodeModel\Types\IDescriptorTypeProxy.cs" />
+    <Compile Include="Code\NodeModel\Node\INodeAttachment.cs" />
+    <Compile Include="Code\NodeModel\Node\INodeNote.cs" />
+    <Compile Include="Code\NodeModel\Types\INodeTypeProxy.cs" />
+    <Compile Include="Code\NodeModel\Relationship\IRelationshipProxy.cs" />
+    <Compile Include="Code\NodeModel\Types\IRelationshipTypeProxy.cs" />
+    <Compile Include="Code\NodeModel\Base\IStorageElement.cs" />
+    <Compile Include="Code\NodeModel\Base\ITypeElement.cs" />
+    <Compile Include="Code\NodeModel\Descriptor\DescriptorProxy.cs" />
+    <Compile Include="Code\NodeModel\Types\DescriptorTypeProxy.cs" />
+    <Compile Include="Code\NodeModel\Types\NodeTypeProxy.cs" />
+    <Compile Include="Code\NodeModel\Relationship\RelationshipProxy.cs" />
+    <Compile Include="Code\NodeModel\Types\RelationshipTypeProxy.cs" />
+    <Compile Include="Code\ThemeManager\IThemeManager.cs" />
+    <Compile Include="Code\ThemeManager\ThemeManager.cs" />
+    <Compile Include="Code\ThemeManager\ThemePropertyAttribute.cs" />
+    <Compile Include="Code\ThemeManager\ThemeStyleAttribute.cs" />
+    <Compile Include="Code\ViewManagers\MapDepth\MapDepthViewManager.cs" />
+    <Compile Include="UI\ModelChangedEventArgs.cs" />
+    <Compile Include="CompendiumXmlMap.cs" />
+    <Compile Include="FindClosestPointExtensionMethod.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\MappingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ThemeService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeControl.xaml.cs">
+      <DependentUpon>NodeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SuperGraph\View\SuperGraphControl.xaml.cs">
+      <DependentUpon>SuperGraphControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ViewModelBase.cs" />
+    <Compile Include="UI\ViewModel\ISkinnableNode.cs" />
+    <Compile Include="CompendiumMapProcessor\CompendiumArchiveProcessor.cs" />
+    <Compile Include="CompendiumMapProcessor\DroppedFileProcessor.cs" />
+    <Compile Include="CompendiumMapProcessor\FilePackage.cs" />
+    <Compile Include="CompendiumMapProcessor\FileProcessorFactory.cs" />
+    <Compile Include="CompendiumMapProcessor\IFileProcessor.cs" />
+    <Compile Include="CompendiumMapProcessor\LargeFileUpload.cs" />
+    <Compile Include="CompendiumMapProcessor\ZipFile.cs" />
+    <Compile Include="UI\ViewModel\MetadataCollection.cs" />
+    <Compile Include="UI\View\IMapPreloader.cs" />
+    <Compile Include="UI\View\MapExtensionMethods.cs" />
+    <Compile Include="UI\View\MapLoader\BreadcrumbLoader.cs" />
+    <Compile Include="UI\View\MapLoader\IBreadcrumbLoader.cs" />
+    <Compile Include="UI\View\MapLoader\IMapLoader.cs" />
+    <Compile Include="UI\View\MapLoader\MapLoaderBase.cs" />
+    <Compile Include="UI\View\MapLoader\MapLoaderByMapUid.cs" />
+    <Compile Include="UI\View\MapLoader\MapLoaderByNodeUid.cs" />
+    <Compile Include="UI\View\MapLoader\MapLoaderFactory.cs" />
+    <Compile Include="UI\View\MapPreloader.cs" />
+    <Compile Include="UI\View\UnhandledExceptionDialog.xaml.cs">
+      <DependentUpon>UnhandledExceptionDialog.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Assets\CompendiumNodeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Code\Controls\AssignVideoDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbCombobox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbTextBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\Base\ContextMenuBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\Base\NodeContextMenuBase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\ContextMenuContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\RatingControl\SuperRating.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\SubContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\SuperContextMenuItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\DomainAndMapSelection\DomainSelectionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Code\Controls\EditMetadataDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Loading\Loader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ManagementConsole\UI\ExportOptionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ManagementConsole\UI\ExportTab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ManagementConsole\UI\NewDomainDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ManagementConsole\UI\NewMapDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Code\Controls\NodePropertiesDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Code\Controls\PropertiesEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Code\Controls\Toolbar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Code\Renderers\MapDepth\CompendiumMapDepthMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Extensions\Security\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Extensions\VideoWebPart\VideoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Loading.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Arrow\ArrowControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Arrow\ArrowContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbBarControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\BreadcrumbSupportClasses\BreadcrumbEllipsis.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\CollapseSupportClasses\CollapseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\SingleNodeContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\ViewerNodeControlContextMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\MultiNodesContextMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\MessageBox\MessageBoxContentControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\MessageBox\SuperMessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\NodeControlSupportClasses\DescriptionIndicatorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\AuthorNodeControlContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeCornerButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeCornerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeCornerMultipleButtonIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeDetailIndicatorButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeDetailsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\NodeControlSupportClasses\NodeTextInput.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\InsertPictureDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\PropertiesEditor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\PropertiesEditorSupportClasses\NodePropertiesDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\RichTextSupportClasses\TelerikRichTextEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ManagementConsole\UI\ManagementConsoleTabControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ManagementConsole\UI\ManagementConsoleDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ManagementConsole\UI\GeneralSettingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ManagementConsole\UI\ProjectListViewControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ManagementConsole\UI\SecurityManagementControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Sidebar\SubMenu\MapFilterSubMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Sidebar\SubMenu\ZoomSubMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Sidebar\SidebarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Sidebar\SidebarButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Sidebar\SubMenu\RealignSubMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Sidebar\SubMenu\SidebarSubMenuButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\Sidebar\SuperSidebarButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\StatusBar\StatusBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\SuperGraphControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ContextMenu\SuperGraphControlContextMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ZoomingControl\ZoomButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SuperGraph\View\ZoomingControl\Zooming.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\View\UnhandledExceptionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Service References\GlymaSecurityService\GlymaSecurityService.wsdl" />
+    <None Include="Service References\GlymaSecurityService\GlymaSecurityService1.wsdl" />
+    <None Include="Service References\GlymaSecurityService\mex1.wsdl" />
+    <None Include="Service References\GlymaSecurityService\mex4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GlymaSecurityService\mex41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GlymaSecurityService\mex42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GlymaSecurityService\mex43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GlymaSecurityService\SilverlightMappingToolBasic.GlymaSecurityService.GetAllSecurityGroupsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GlymaSecurityService\SilverlightMappingToolBasic.GlymaSecurityService.GetPermissionLevelResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GlymaSecurityService\SilverlightMappingToolBasic.GlymaSecurityService.GetPermissionNameResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GlymaSecurityService\SilverlightMappingToolBasic.GlymaSecurityService.GetSecurableContextIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GlymaSecurityService\SilverlightMappingToolBasic.GlymaSecurityService.GetSecurityAssociationsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\GlymaSecurityService\SilverlightMappingToolBasic.GlymaSecurityService.ResponseObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MappingService\MappingToolService.wsdl" />
+    <None Include="Service References\MappingService\MappingToolService2.wsdl" />
+    <None Include="Service References\MappingService\mex1.wsdl" />
+    <None Include="Service References\MappingService\mex4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MappingService\mex41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MappingService\mex42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MappingService\mex43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MappingService\SilverlightMappingToolBasic.MappingService.ConnectedNodesResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MappingService\SilverlightMappingToolBasic.MappingService.DeleteResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MappingService\SilverlightMappingToolBasic.MappingService.RelatedNodesSearchResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MappingService\SilverlightMappingToolBasic.MappingService.SoapNode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\MappingService\SilverlightMappingToolBasic.MappingService.SoapTypeElement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ThemeService\mex1.wsdl" />
+    <None Include="Service References\ThemeService\mex3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ThemeService\mex31.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ThemeService\mex32.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ThemeService\SilverlightMappingToolBasic.ThemeService.ThemeResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ThemeService\ThemeService1.wsdl" />
+    <None Include="SilverlightMappingToolBasic_TemporaryKey.pfx" />
+    <Resource Include="Images\exclamation.png" />
+    <Resource Include="Images\generic.png" />
+    <Resource Include="Images\minus.png" />
+    <Resource Include="Images\network.png" />
+    <Resource Include="Images\plus.png" />
+    <Resource Include="Images\question.png" />
+    <Resource Include="Images\mediaIconPlay2.png" />
+    <Resource Include="Images\mediaIconPause2.png" />
+    <Resource Include="Images\icon-collapse-minus.png" />
+    <Resource Include="Images\icon-collapse-plus.png" />
+    <Resource Include="Images\icon-semicollapse-square.png" />
+    <Resource Include="Images\informationIcon.png" />
+    <Resource Include="Images\CornerIcon\menubutton-hover.png" />
+    <Resource Include="Images\CornerIcon\menubutton-static.png" />
+    <Resource Include="Images\CornerIcon\button-content-hover.png" />
+    <Resource Include="Images\CornerIcon\button-content-static.png" />
+    <Resource Include="Images\CornerIcon\button-feed-hover.png" />
+    <Resource Include="Images\CornerIcon\button-feed-static.png" />
+    <Resource Include="Images\CornerIcon\button-map-hover.png" />
+    <Resource Include="Images\CornerIcon\button-map-static.png" />
+    <Resource Include="Images\CornerIcon\button-pause-hover.png" />
+    <Resource Include="Images\CornerIcon\button-pause-static.png" />
+    <Resource Include="Images\CornerIcon\button-play-hover.png" />
+    <Resource Include="Images\CornerIcon\button-play-static.png" />
+    <Content Include="Images\mediaIcon.png" />
+    <None Include="Service References\ThemeService\configuration91.svcinfo" />
+    <None Include="Service References\ThemeService\configuration.svcinfo" />
+    <None Include="Service References\ThemeService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\MappingService\configuration91.svcinfo" />
+    <None Include="Service References\MappingService\configuration.svcinfo">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\MappingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Images\mediaIconPause.png" />
+    <Content Include="Images\mediaIconPlay.png" />
+    <Resource Include="Images\properties-gear.png" />
+    <Resource Include="Images\SidebarIcon\exit-full-screen-hover.png" />
+    <Resource Include="Images\SidebarIcon\exit-full-screen.png" />
+    <Resource Include="Images\SidebarIcon\expansion-dots.png" />
+    <Resource Include="Images\SidebarIcon\full-screen-hover.png" />
+    <Resource Include="Images\SidebarIcon\full-screen.png" />
+    <Resource Include="Images\SidebarIcon\glymalogo.png" />
+    <Resource Include="Images\SidebarIcon\map-filter-hover.png" />
+    <Resource Include="Images\SidebarIcon\map-filter.png" />
+    <Resource Include="Images\SidebarIcon\Realign-hover.png" />
+    <Resource Include="Images\SidebarIcon\Realign.png" />
+    <Resource Include="Images\SidebarIcon\refresh-hover.png" />
+    <Resource Include="Images\SidebarIcon\refresh.png" />
+    <Resource Include="Images\SidebarIcon\switch-author-hover.png" />
+    <Resource Include="Images\SidebarIcon\switch-author.png" />
+    <Resource Include="Images\SidebarIcon\switch-explorer-hover.png" />
+    <Resource Include="Images\SidebarIcon\switch-explorer.png" />
+    <Resource Include="Images\SidebarIcon\RealignMenu\realign-horizontally-hover.png" />
+    <Resource Include="Images\SidebarIcon\RealignMenu\realign-horizontally.png" />
+    <Resource Include="Images\SidebarIcon\RealignMenu\realign-vertically-hover.png" />
+    <Resource Include="Images\SidebarIcon\RealignMenu\realign-vertically.png" />
+    <Resource Include="Images\StatusBar\base-green.png" />
+    <Resource Include="Images\StatusBar\base-red.png" />
+    <Resource Include="Images\StatusBar\clock-ring.png" />
+    <Resource Include="Images\StatusBar\idle.png" />
+    <Resource Include="Images\NodeControl\CollapseControl\close-map-extension.png" />
+    <Resource Include="Images\NodeControl\CollapseControl\open-map-extension.png" />
+    <Resource Include="Images\NodeControl\CollapseControl\map-extension.png" />
+    <Resource Include="Images\SidebarIcon\ZoomMenu\zoom-in-hover.png" />
+    <Resource Include="Images\SidebarIcon\ZoomMenu\zoom-in.png" />
+    <Resource Include="Images\SidebarIcon\ZoomMenu\zoom-out-hover.png" />
+    <Resource Include="Images\SidebarIcon\ZoomMenu\zoom-out.png" />
+    <Resource Include="Images\SidebarIcon\zoombutton-hover.png" />
+    <Resource Include="Images\SidebarIcon\zoombutton.png" />
+    <Resource Include="Images\SidebarIcon\ZoomMenu\100percent-hover.png" />
+    <Resource Include="Images\SidebarIcon\ZoomMenu\100percent.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\content-hover.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\content-static.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\feed-hover.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\feed-static.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\locate-hover.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\locate-static.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\map-hover.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\map-static.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\showall-hover.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\showall-static.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\video-hover.png" />
+    <Resource Include="Images\NodeControl\NodeDetailIndicator\video-static.png" />
+    <Resource Include="Images\SidebarIcon\ZoomMenu\view-reset-hover.png" />
+    <Resource Include="Images\SidebarIcon\ZoomMenu\view-reset.png" />
+    <None Include="Service References\GlymaSecurityService\configuration91.svcinfo" />
+    <None Include="Service References\GlymaSecurityService\configuration.svcinfo" />
+    <None Include="Service References\GlymaSecurityService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Resource Include="Images\project.png" />
+    <Resource Include="Images\SidebarIcon\glymalogo-author.png" />
+    <Resource Include="Images\SidebarIcon\full-screen-author.png" />
+    <Resource Include="Images\SidebarIcon\exit-full-screen-author.png" />
+    <Resource Include="Images\SidebarIcon\map-filter-author.png" />
+    <Resource Include="Images\SidebarIcon\Realign-author.png" />
+    <Resource Include="Images\SidebarIcon\refresh-author.png" />
+    <Resource Include="Images\SidebarIcon\switch-author-author.png" />
+    <Resource Include="Images\SidebarIcon\switch-explorer-author.png" />
+    <Resource Include="Images\SidebarIcon\zoombutton-author.png" />
+    <Content Include="ServiceReferences.ClientConfig">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\h_exclamation.png" />
+    <Resource Include="Images\h_minus.png" />
+    <Resource Include="Images\h_plus.png" />
+    <Resource Include="Images\h_question.png" />
+    <Resource Include="Images\v_exclamation.png" />
+    <Resource Include="Images\v_minus.png" />
+    <Resource Include="Images\v_plus.png" />
+    <Resource Include="Images\v_question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\h_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\h_purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\v_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\v_purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\GlymaSecurityService\" />
+    <WCFMetadataStorage Include="Service References\MappingService\" />
+    <WCFMetadataStorage Include="Service References\ThemeService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Code\Converters\" />
+    <Folder Include="UI\Controller\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glyma.Debug\Glyma.Debug.csproj">
+      <Project>{99D179D6-5DD4-47EE-AD06-02EF378B487C}</Project>
+      <Name>Glyma.Debug</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Glyma.Plugin\Glyma.Plugin.csproj">
+      <Project>{7D4FB683-1D0E-4555-9946-C55C7DE83DED}</Project>
+      <Name>Glyma.Plugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SimpleIoC\SimpleIoC.csproj">
+      <Project>{968AE49F-2EB1-4705-B8ED-16D924697774}</Project>
+      <Name>SimpleIoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoPlayerSharedLib\VideoPlayerSharedLib.csproj">
+      <Project>{F6E9D2DD-6707-46E3-8A27-A6C3455AFBE3}</Project>
+      <Name>VideoPlayerSharedLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

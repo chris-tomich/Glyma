@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.PropertiesEditorSupportClasses.PropertiesEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+             xmlns:toolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit"
+             DataContextChanged="OnDataContextChanged">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <sdk:DataGrid
+                Height="Auto" Width="Auto" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                          Name="NodeMetadataDataGrid"
+                          AutoGenerateColumns="False"
+                          HorizontalScrollBarVisibility="Disabled"
+                          GridLinesVisibility="All"
+                          SelectionMode="Single"
+                          ItemsSource="{Binding}"
+                          PreparingCellForEdit="OnPreparingCellForEdit"
+                          RowEditEnded="OnRowEditEnded" 
+                          MouseRightButtonDown="NodeMetadataDataGrid_MouseRightButtonDown"
+                Style="{StaticResource SuperDataGridStyle}">
+            <toolkit:ContextMenuService.ContextMenu>
+                <toolkit:ContextMenu>
+                    <toolkit:MenuItem Name="BtnDelete" Header="Delete" Click="BtnDelete_Click" />
+                </toolkit:ContextMenu>
+            </toolkit:ContextMenuService.ContextMenu>
+            <sdk:DataGrid.Columns>
+                <sdk:DataGridTextColumn HeaderStyle="{StaticResource SuperDataGridColumnHeaderStyle}" Binding="{Binding Path=Name, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}"  CanUserReorder="True" Width="100" CanUserResize="True" IsReadOnly="False" CanUserSort="True" Header="Name" />
+                <sdk:DataGridTextColumn HeaderStyle="{StaticResource SuperDataGridColumnHeaderStyle}" Binding="{Binding Path=Value, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" CanUserReorder="True" Width="*"  CanUserResize="True" IsReadOnly="False" CanUserSort="True" Header="Value" />
+                </sdk:DataGrid.Columns>
+            </sdk:DataGrid>
+    </Grid>
+</UserControl>

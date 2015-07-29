@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Windows;
+<<<<<<< HEAD
+using SilverlightMappingToolBasic.GlymaSecurityService;
+=======
+using SilverlightMappingToolBasic.GlymaSharePointSecurityService;
+using SilverlightMappingToolBasic.UI.Extensions.Security;
+using SilverlightMappingToolBasic.UI.SuperGraph.ViewModel;
+>>>>>>> origin/projectmapmanagement-feature
+using TransactionalNodeService.Proxy;
+
+namespace SilverlightMappingToolBasic.UI.SuperGraph.View.SecurityManagement
+{
+    public interface ISecurityObject : INotifyPropertyChanged
+    {
+        event EventHandler<MetadataChangedEventArgs> MetadataChanged; 
+        event EventHandler<PermissionValueChangedEventArgs> PermissionChanged;
+        event EventHandler LoadCompleted;
+
+        bool IsLoaded { get; }
+
+        bool IsInherited { get; }
+
+        bool IsSelected { get; set; }
+
+        string Name { get; set; }
+
+        PermissionLevel CurrentUserPermissionLevel { get; set; }
+
+        string DisplayName { get; }
+
+        INode Node { get; }
+
+        Guid Id { get; }
+
+        Guid ParentId { get; }
+
+        PermissionGroupCollection Gpm { get; }
+
+        PermissionGroupCollection Gmm { get; }
+
+        PermissionGroupCollection Gma { get; }
+
+        PermissionGroupCollection Gmr { get; }
+
+        void Load(SecurityAssociations data, bool isInherited);
+
+        void LoadValue(GlymaSecurityGroup group, bool value);
+
+        bool GetValue(GlymaSecurityGroup group);
+
+        void ResetChange(GlymaSecurityGroup group);
+
+        GlymaSecurityAssociation CommitChange(GlymaSecurityGroup group, bool value);
+
+    }
+}

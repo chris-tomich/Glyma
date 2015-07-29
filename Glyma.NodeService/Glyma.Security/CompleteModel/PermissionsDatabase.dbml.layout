@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 10.125" name="PermissionsDatabase">
+  <DataContextMoniker Name="/PermissionsDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="f0ac934f-5e4f-4c41-95b9-5b9425df30c5" absoluteBounds="9, 2.125, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/PermissionsDatabaseDataContext/GroupAssociation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4833ff68-828b-4a13-87a5-b60c8743c8dd" absoluteBounds="9.015, 2.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5449ecfa-579f-446f-9a53-bc995bdb9bf3" absoluteBounds="3.5, 6.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PermissionsDatabaseDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b5717b60-cffe-4fb7-9a5c-7740763c5d23" absoluteBounds="3.515, 6.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3bc18b8d-c7c8-4c68-9e94-035afd9d4f69" absoluteBounds="6.25, 3.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PermissionsDatabaseDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51c9fcda-2fe9-4e3a-84f0-84618285a224" absoluteBounds="6.265, 4.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1a4cf3d-ad82-4033-80de-16018f91ecda" absoluteBounds="9, 5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PermissionsDatabaseDataContext/Membership" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bb1d86f9-dc37-46f8-8f63-8db58d425898" absoluteBounds="9.015, 5.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4f9850f-a49c-48a2-a248-4da0746debdb" absoluteBounds="6.25, 6.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/PermissionsDatabaseDataContext/RightAssociation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9280f0d9-799b-43c7-b9f3-022051cc88c9" absoluteBounds="6.265, 6.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ca32d42-e50f-40b7-bde9-3245f01f5c02" absoluteBounds="3.5, 8.625, 2, 1.1939925130208344">
+      <DataClassMoniker Name="/PermissionsDatabaseDataContext/Right" />
+      <nestedChildShapes>
+        <elementListCompartment Id="089134d9-5138-4004-9b06-d94a8f74aedd" absoluteBounds="3.515, 9.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="393ca438-2c96-4b33-bfda-e24a1739fc1d" absoluteBounds="3.5, 3.875, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PermissionsDatabaseDataContext/Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97bfc379-6e5f-4860-addd-40f926ba72cc" absoluteBounds="3.515, 4.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e3b6407-ea2e-4b2e-a823-c4132de04d74" absoluteBounds="0.75, 5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/PermissionsDatabaseDataContext/SecurableContext" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcf72619-59b6-473a-ad88-825842e06a03" absoluteBounds="0.765, 5.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.25 : 3.75); (7.25 : 2.9374995); (9 : 2.9374995)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/Group/Group_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="3bc18b8d-c7c8-4c68-9e94-035afd9d4f69" />
+        <classShapeMoniker Id="f0ac934f-5e4f-4c41-95b9-5b9425df30c5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 5.16429768880208); (9 : 5.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/Group/Group_Membership" />
+      <nodes>
+        <classShapeMoniker Id="3bc18b8d-c7c8-4c68-9e94-035afd9d4f69" />
+        <classShapeMoniker Id="d1a4cf3d-ad82-4033-80de-16018f91ecda" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 6.21875); (5.79166666666667 : 6.21875 : JumpStart); (5.95833333333333 : 6.21875 : JumpEnd); (9 : 6.21875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/User/User_Membership" />
+      <nodes>
+        <classShapeMoniker Id="5449ecfa-579f-446f-9a53-bc995bdb9bf3" />
+        <classShapeMoniker Id="d1a4cf3d-ad82-4033-80de-16018f91ecda" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 9.22199625651042); (7.25 : 9.22199625651042); (7.25 : 7.95359537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/Right/Right_RightAssociation" />
+      <nodes>
+        <classShapeMoniker Id="5ca32d42-e50f-40b7-bde9-3245f01f5c02" />
+        <classShapeMoniker Id="f4f9850f-a49c-48a2-a248-4da0746debdb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.56814697265625); (6.25 : 4.56814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/Role/Role_Group" />
+      <nodes>
+        <classShapeMoniker Id="393ca438-2c96-4b33-bfda-e24a1739fc1d" />
+        <classShapeMoniker Id="3bc18b8d-c7c8-4c68-9e94-035afd9d4f69" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.2612939453125); (5.875 : 5.6362939453125); (5.875 : 7.16429768880208); (6.25 : 7.16429768880208)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/Role/Role_RightAssociation" />
+      <nodes>
+        <classShapeMoniker Id="393ca438-2c96-4b33-bfda-e24a1739fc1d" />
+        <classShapeMoniker Id="f4f9850f-a49c-48a2-a248-4da0746debdb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 5); (1.75 : 2.49999725); (9 : 2.49999725)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/SecurableContext/SecurableContext_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="9e3b6407-ea2e-4b2e-a823-c4132de04d74" />
+        <classShapeMoniker Id="f0ac934f-5e4f-4c41-95b9-5b9425df30c5" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 6.3862939453125); (1.75 : 7.04494516145833); (2.19791916666667 : 7.04494516145833 : JumpStart); (2.36458583333333 : 7.04494516145833 : JumpEnd); (3.5 : 7.04494516145833)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/SecurableContext/SecurableContext_User" />
+      <nodes>
+        <classShapeMoniker Id="9e3b6407-ea2e-4b2e-a823-c4132de04d74" />
+        <classShapeMoniker Id="5449ecfa-579f-446f-9a53-bc995bdb9bf3" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.72679768880208); (5.79166666666667 : 5.72679768880208 : JumpStart); (5.95833333333333 : 5.72679768880208 : JumpEnd); (9 : 5.72679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/SecurableContext/SecurableContext_Membership" />
+      <nodes>
+        <classShapeMoniker Id="9e3b6407-ea2e-4b2e-a823-c4132de04d74" />
+        <classShapeMoniker Id="d1a4cf3d-ad82-4033-80de-16018f91ecda" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 6.3862939453125); (2.2812525 : 7.85984537760417); (6.25 : 7.85984537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/SecurableContext/SecurableContext_RightAssociation" />
+      <nodes>
+        <classShapeMoniker Id="9e3b6407-ea2e-4b2e-a823-c4132de04d74" />
+        <classShapeMoniker Id="f4f9850f-a49c-48a2-a248-4da0746debdb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 5); (2.2812525 : 4.4062475); (3.5 : 4.4062475)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PermissionsDatabaseDataContext/SecurableContext/SecurableContext_Role" />
+      <nodes>
+        <classShapeMoniker Id="9e3b6407-ea2e-4b2e-a823-c4132de04d74" />
+        <classShapeMoniker Id="393ca438-2c96-4b33-bfda-e24a1739fc1d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

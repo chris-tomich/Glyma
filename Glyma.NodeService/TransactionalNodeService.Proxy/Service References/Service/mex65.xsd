@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" />
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd3" namespace="http://sevensigma.com.au/TransactionalNodeService/OpObjects" />
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfKeyValueOfMetadataContextDAIemz4FG4">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfMetadataContextDAIemz4FG4">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" name="Key" nillable="true" type="q1:MetadataContext" />
+            <xs:element xmlns:q2="http://sevensigma.com.au/TransactionalNodeService/OpObjects" name="Value" nillable="true" type="q2:DA" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfMetadataContextDAIemz4FG4" nillable="true" type="tns:ArrayOfKeyValueOfMetadataContextDAIemz4FG4" />
+  <xs:complexType name="ArrayOfKeyValueOfguidguid">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfguidguid">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="ser:guid" />
+            <xs:element name="Value" type="ser:guid" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfguidguid" nillable="true" type="tns:ArrayOfKeyValueOfguidguid" />
+  <xs:complexType name="ArrayOfKeyValueOfguidNO_PXWaIWIQ">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfguidNO_PXWaIWIQ">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="ser:guid" />
+            <xs:element xmlns:q3="http://sevensigma.com.au/TransactionalNodeService/OpObjects" name="Value" nillable="true" type="q3:NO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfguidNO_PXWaIWIQ" nillable="true" type="tns:ArrayOfKeyValueOfguidNO_PXWaIWIQ" />
+  <xs:complexType name="ArrayOfKeyValueOfguidRE_PXWaIWIQ">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfguidRE_PXWaIWIQ">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="ser:guid" />
+            <xs:element xmlns:q4="http://sevensigma.com.au/TransactionalNodeService/OpObjects" name="Value" nillable="true" type="q4:RE" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfguidRE_PXWaIWIQ" nillable="true" type="tns:ArrayOfKeyValueOfguidRE_PXWaIWIQ" />
+  <xs:complexType name="ArrayOfKeyValueOfstringDTKM_S83Y6U">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringDTKM_S83Y6U">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q5="http://sevensigma.com.au/TransactionalNodeService/OpObjects" name="Value" nillable="true" type="q5:DT" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringDTKM_S83Y6U" nillable="true" type="tns:ArrayOfKeyValueOfstringDTKM_S83Y6U" />
+  <xs:complexType name="ArrayOfKeyValueOfstringMetadataTypeKM_S83Y6U">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringMetadataTypeKM_S83Y6U">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q6="http://sevensigma.com.au/TransactionalNodeService/OpObjects" name="Value" nillable="true" type="q6:MetadataType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringMetadataTypeKM_S83Y6U" nillable="true" type="tns:ArrayOfKeyValueOfstringMetadataTypeKM_S83Y6U" />
+  <xs:complexType name="ArrayOfKeyValueOfstringNTKM_S83Y6U">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringNTKM_S83Y6U">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q7="http://sevensigma.com.au/TransactionalNodeService/OpObjects" name="Value" nillable="true" type="q7:NT" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringNTKM_S83Y6U" nillable="true" type="tns:ArrayOfKeyValueOfstringNTKM_S83Y6U" />
+  <xs:complexType name="ArrayOfKeyValueOfstringRTKM_S83Y6U">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringRTKM_S83Y6U">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element xmlns:q8="http://sevensigma.com.au/TransactionalNodeService/OpObjects" name="Value" nillable="true" type="q8:RT" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringRTKM_S83Y6U" nillable="true" type="tns:ArrayOfKeyValueOfstringRTKM_S83Y6U" />
+  <xs:complexType name="ArrayOfKeyValueOfguidQueryResponsee3vVGuLX">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfguidQueryResponsee3vVGuLX">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="ser:guid" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" name="Value" nillable="true" type="q9:QueryResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfguidQueryResponsee3vVGuLX" nillable="true" type="tns:ArrayOfKeyValueOfguidQueryResponsee3vVGuLX" />
+  <xs:complexType name="ArrayOfanyType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfanyType" nillable="true" type="tns:ArrayOfanyType" />
+  <xs:complexType name="ArrayOfKeyValueOfguidSearchedNodee3vVGuLX">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfguidSearchedNodee3vVGuLX">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" type="ser:guid" />
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" name="Value" nillable="true" type="q10:SearchedNode" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfguidSearchedNodee3vVGuLX" nillable="true" type="tns:ArrayOfKeyValueOfguidSearchedNodee3vVGuLX" />
+  <xs:complexType name="ArrayOfKeyValueOfstringstring">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfstringstring">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Key" nillable="true" type="xs:string" />
+            <xs:element name="Value" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfstringstring" nillable="true" type="tns:ArrayOfKeyValueOfstringstring" />
+  <xs:complexType name="ArrayOfKeyValueOfDTMP3qsds8mH">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfDTMP3qsds8mH">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://sevensigma.com.au/TransactionalNodeService/OpObjects" name="Key" nillable="true" type="q11:DT" />
+            <xs:element xmlns:q12="http://sevensigma.com.au/TransactionalNodeService/OpObjects" name="Value" nillable="true" type="q12:MP" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfDTMP3qsds8mH" nillable="true" type="tns:ArrayOfKeyValueOfDTMP3qsds8mH" />
+</xs:schema>

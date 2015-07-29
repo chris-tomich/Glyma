@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="E:\SevenSigma\Code\SevenSigma\SilverlightMappingTool\PublishedServices" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Node Service" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/NodeService.pdb" publishTime="06/10/2012 20:32:54" />
+    <file relUrl="bin/NodeService.dll" publishTime="06/10/2012 20:32:54" />
+    <file relUrl="Search/SearchQuery.xml" publishTime="06/10/2012 13:14:28" />
+    <file relUrl="Web.config" publishTime="06/10/2012 20:32:56" />
+    <file relUrl="MappingToolService.svc" publishTime="06/10/2012 13:14:26" />
+  </publishProfile>
+</publishData>

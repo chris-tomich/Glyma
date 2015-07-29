@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SP2013_Map_GlymaDB_2" Class="MappingToolDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=GLYMA\SQL2012;Initial Catalog=SP2013_Map_GlymaDB_2;Integrated Security=True" SettingsObjectName="Glyma.Powershell.Update.Properties.Settings" SettingsPropertyName="SP2013_Map_GlymaDB_2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="" Member="QueryMapMultiDepthResults">
+    <Type Name="QueryMapMultiDepthResult">
+      <Column Name="MetadataId" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MetadataTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MetadataName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MetadataValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RelationshipOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RelationshipTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DescriptorUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NodeTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Origin" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="QueryMapDescriptors">
+    <Type Name="QueryMapDescriptor">
+      <Column Name="DescriptorUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="QueryMapMetadatas">
+    <Type Name="QueryMapMetadata">
+      <Column Name="MetadataId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetadataTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MetadataName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MetadataValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="QueryMapNodes">
+    <Type Name="QueryMapNode">
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NodeOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NodeTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="" Member="QueryMapRelationships">
+    <Type Name="QueryMapRelationship">
+      <Column Name="RelationshipUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RelationshipOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RelationshipTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Descriptors" Member="Descriptors">
+    <Type Name="Descriptor">
+      <Column Name="DescriptorUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Association Name="DescriptorType_Descriptor" Member="DescriptorType" ThisKey="DescriptorTypeUid" OtherKey="DescriptorTypeUid" Type="DescriptorType" IsForeignKey="true" />
+      <Association Name="Node_Descriptor" Member="Node" ThisKey="NodeUid" OtherKey="NodeUid" Type="Node" IsForeignKey="true" />
+      <Association Name="Relationship_Descriptor" Member="Relationship" ThisKey="RelationshipUid" OtherKey="RelationshipUid" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RelationshipTypes" Member="RelationshipTypes">
+    <Type Name="RelationshipType">
+      <Column Name="RelationshipTypeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RelationshipTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="RelationshipType_RelationshipDescriptorPair" Member="RelationshipDescriptorPairs" ThisKey="RelationshipTypeUid" OtherKey="RelationshipTypeUid" Type="RelationshipDescriptorPair" />
+      <Association Name="RelationshipType_Relationship" Member="Relationships" ThisKey="RelationshipTypeUid" OtherKey="RelationshipTypeUid" Type="Relationship" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DescriptorTypes" Member="DescriptorTypes">
+    <Type Name="DescriptorType">
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DescriptorTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DescriptorType_Descriptor" Member="Descriptors" ThisKey="DescriptorTypeUid" OtherKey="DescriptorTypeUid" Type="Descriptor" />
+      <Association Name="DescriptorType_Metadata" Member="Metadatas" ThisKey="DescriptorTypeUid" OtherKey="DescriptorTypeUid" Type="Metadata" />
+      <Association Name="DescriptorType_RelationshipDescriptorPair" Member="RelationshipDescriptorPairs" ThisKey="DescriptorTypeUid" OtherKey="DescriptorTypeUid" Type="RelationshipDescriptorPair" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Domains" Member="Domains">
+    <Type Name="Domain">
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DomainOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Domain_Metadata" Member="Metadatas" ThisKey="DomainUid" OtherKey="DomainUid" Type="Metadata" />
+      <Association Name="Domain_Node" Member="Nodes" ThisKey="DomainUid" OtherKey="DomainUid" Type="Node" />
+      <Association Name="Domain_Relationship" Member="Relationships" ThisKey="DomainUid" OtherKey="DomainUid" Type="Relationship" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Metadata" Member="Metadatas">
+    <Type Name="Metadata">
+      <Column Name="MetadataId" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetadataTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MetadataName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MetadataValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RootMapUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Modified" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="DescriptorType_Metadata" Member="DescriptorType" ThisKey="DescriptorTypeUid" OtherKey="DescriptorTypeUid" Type="DescriptorType" IsForeignKey="true" />
+      <Association Name="Domain_Metadata" Member="Domain" ThisKey="DomainUid" OtherKey="DomainUid" Type="Domain" IsForeignKey="true" />
+      <Association Name="MetadataType_Metadata" Member="MetadataType" ThisKey="MetadataTypeUid" OtherKey="MetadataTypeUid" Type="MetadataType" IsForeignKey="true" />
+      <Association Name="Node_Metadata" Member="Node" ThisKey="NodeUid" OtherKey="NodeUid" Type="Node" IsForeignKey="true" />
+      <Association Name="Node_Metadata1" Member="Node1" ThisKey="RootMapUid" OtherKey="NodeUid" Type="Node" IsForeignKey="true" />
+      <Association Name="Relationship_Metadata" Member="Relationship" ThisKey="RelationshipUid" OtherKey="RelationshipUid" Type="Relationship" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MetadataTypes" Member="MetadataTypes">
+    <Type Name="MetadataType">
+      <Column Name="MetadataTypeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MetadataTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="MetadataType_Metadata" Member="Metadatas" ThisKey="MetadataTypeUid" OtherKey="MetadataTypeUid" Type="Metadata" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nodes" Member="Nodes">
+    <Type Name="Node">
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NodeOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NodeTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RootMapUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Modified" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="Node_Descriptor" Member="Descriptors" ThisKey="NodeUid" OtherKey="NodeUid" Type="Descriptor" />
+      <Association Name="Node_Metadata" Member="Metadatas" ThisKey="NodeUid" OtherKey="NodeUid" Type="Metadata" />
+      <Association Name="Node_Metadata1" Member="Metadatas1" ThisKey="NodeUid" OtherKey="RootMapUid" Type="Metadata" />
+      <Association Name="Node_Node" Member="Nodes" ThisKey="NodeUid" OtherKey="RootMapUid" Type="Node" />
+      <Association Name="Node_Relationship" Member="Relationships" ThisKey="NodeUid" OtherKey="RootMapUid" Type="Relationship" />
+      <Association Name="Domain_Node" Member="Domain" ThisKey="DomainUid" OtherKey="DomainUid" Type="Domain" IsForeignKey="true" />
+      <Association Name="Node_Node" Member="Node1" ThisKey="RootMapUid" OtherKey="NodeUid" Type="Node" IsForeignKey="true" />
+      <Association Name="NodeType_Node" Member="NodeType" ThisKey="NodeTypeUid" OtherKey="NodeTypeUid" Type="NodeType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.NodeTypes" Member="NodeTypes">
+    <Type Name="NodeType">
+      <Column Name="NodeTypeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NodeTypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="NodeType_Node" Member="Nodes" ThisKey="NodeTypeUid" OtherKey="NodeTypeUid" Type="Node" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RelationshipDescriptorPairs" Member="RelationshipDescriptorPairs">
+    <Type Name="RelationshipDescriptorPair">
+      <Column Name="PairId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RelationshipTypeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="DescriptorType_RelationshipDescriptorPair" Member="DescriptorType" ThisKey="DescriptorTypeUid" OtherKey="DescriptorTypeUid" Type="DescriptorType" IsForeignKey="true" />
+      <Association Name="RelationshipType_RelationshipDescriptorPair" Member="RelationshipType" ThisKey="RelationshipTypeUid" OtherKey="RelationshipTypeUid" Type="RelationshipType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Relationships" Member="Relationships">
+    <Type Name="Relationship">
+      <Column Name="RelationshipUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RelationshipOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RelationshipTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RootMapUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Created" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="Modified" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="Relationship_Descriptor" Member="Descriptors" ThisKey="RelationshipUid" OtherKey="RelationshipUid" Type="Descriptor" />
+      <Association Name="Relationship_Metadata" Member="Metadatas" ThisKey="RelationshipUid" OtherKey="RelationshipUid" Type="Metadata" />
+      <Association Name="Domain_Relationship" Member="Domain" ThisKey="DomainUid" OtherKey="DomainUid" Type="Domain" IsForeignKey="true" />
+      <Association Name="RelationshipType_Relationship" Member="RelationshipType" ThisKey="RelationshipTypeUid" OtherKey="RelationshipTypeUid" Type="RelationshipType" IsForeignKey="true" />
+      <Association Name="Node_Relationship" Member="Node" ThisKey="RootMapUid" OtherKey="NodeUid" Type="Node" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.QueryMap" Method="QueryMap">
+    <Parameter Name="DomainId" Parameter="domainId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="NodeId" Parameter="nodeId" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="Depth" Parameter="depth" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FullDomain" Parameter="fullDomain" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="QueryMapResult">
+      <Column Name="[Level]" Member="Level" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Origin" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeOriginalId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NodeTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

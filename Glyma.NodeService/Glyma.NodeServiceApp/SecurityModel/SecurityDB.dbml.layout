@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SecurityDB">
+  <DataContextMoniker Name="/SecurityDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8d72d60b-52c7-41b0-859b-88ee2db5907f" absoluteBounds="3.5, 0.875, 2, 1.9631982421875003">
+      <DataClassMoniker Name="/SecurityDBDataContext/GroupAssociation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="631ec633-6eab-44d4-b3b1-ee67c5efd1b1" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fc7514e9-9144-437f-bb1a-69da667ae1bc" absoluteBounds="0.75, 1.125, 2, 1.5785953776041664">
+      <DataClassMoniker Name="/SecurityDBDataContext/SecurableContext" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e67f2c10-970e-4fbe-bf95-553c1c7e772d" absoluteBounds="0.765, 1.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81d30dd7-f9f4-4077-bbd3-053ad3d8dfda" absoluteBounds="0.75, 4, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/SecurityDBDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="320a5c11-2899-4b29-986c-1caa1fe7bf7a" absoluteBounds="0.765, 4.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.91429768880208); (3.5 : 1.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityDBDataContext/SecurableContext/SecurableContext_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="fc7514e9-9144-437f-bb1a-69da667ae1bc" />
+        <classShapeMoniker Id="8d72d60b-52c7-41b0-859b-88ee2db5907f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.88544840494792); (4.5 : 4.88544840494792); (4.5 : 2.8381982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityDBDataContext/Group/Group_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="81d30dd7-f9f4-4077-bbd3-053ad3d8dfda" />
+        <classShapeMoniker Id="8d72d60b-52c7-41b0-859b-88ee2db5907f" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

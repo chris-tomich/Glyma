@@ -1,0 +1,272 @@
+﻿<!-- ------------------------------------------------
+Copyright © Microsoft Corporation. All rights reserved
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+------------------------------------------------ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+        <title></title>
+        <link rel="stylesheet" href="font/RobotoCondensed.css" />
+        <link rel="stylesheet" href="css/html5mappingtool.css">
+        <link rel="stylesheet" href="css/topbar.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+        <script src="js/vendor/jquery.mobile-1.4.2.min.js"></script>
+        <script src="lib/rtree.js"></script>
+        <script src="lib/rbush.js"></script>
+        <script src="js/plugins.js"></script>
+        <style type="text/css">
+            #pinchzoom {
+                touch-action: none;
+                -ms-touch-action: none;
+            }
+
+            .nodedetailbutton {
+                position: absolute;
+            }
+        </style>
+    </head>
+<body style="padding: 0; margin: 0;">
+    <div id="loader"></div>
+    <div id="top-bar">
+        <div id="glyma-logo">
+            <a href="/" class="ui-link">
+                <img src="/Style Library/Glyma/Common/toolbar_glymalogo.png" alt="Back to Home">
+            </a>
+        </div>
+        <div id="top-bar-divider"></div>
+        <div id="logout-control">
+            <a id="ctl00_lnkSignOut" onclick="STSNavigate2(event,'/_layouts/SignOut.aspx')" class="ui-link">Logout</a>
+        </div>
+        <a href="/" class="ui-link">
+            <div id="home-link">
+                <div id="home-link-logo"></div>
+                <p id="home-link-text">HOME</p>
+            </div>
+        </a>
+        <div id="search-bar">
+            <div id="search-context"></div>
+            <div id="search-box">
+                <div class="ms-dialogHidden">
+
+                    <table class="s4-wpTopTable" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tbody>
+                            <tr>
+                                <td valign="top">
+                                    <div webpartid="00000000-0000-0000-0000-000000000000" haspers="true" id="WebPartWPQ1" width="100%" class="noindex" onlyformepart="true" allowdelete="false" style="">
+                                        <div id="SRSB">
+                                            <div>
+                                                <input name="ctl00$PlaceHolderSearchArea$ctl01$ctl00" type="hidden" id="ctl00_PlaceHolderSearchArea_ctl01_ctl00" value="http://svrsql01:28273"><table class="ms-sbtable ms-sbtable-ex s4-search" cellpadding="0" cellspacing="0" border="0">
+                                                                                                                                                                                                   <tbody>
+                                                                                                                                                                                                       <tr class="ms-sbrow">
+                                                                                                                                                                                                           <td class="ms-sbcell"><div class="ui-input-text ui-body-inherit ui-corner-all ui-shadow-inset"><input name="ctl00$PlaceHolderSearchArea$ctl01$S3031AEBB_InputKeywords" type="text" value="Search this site..." maxlength="200" id="ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_InputKeywords" accesskey="S" title="Search..." class="ms-sbplain s4-searchbox-QueryPrompt" alt="Search..." onkeypress="javascript: return S3031AEBB_OSBEK(event);" onfocus="if (document.getElementById('ctl00_PlaceHolderSearchArea_ctl01_ctl04').value =='0') {this.value=''; if (this.className == 's4-searchbox-QueryPrompt') this.className = ''; else this.className = this.className.replace(' s4-searchbox-QueryPrompt',''); document.getElementById('ctl00_PlaceHolderSearchArea_ctl01_ctl04').value=1;}" onblur="if (this.value =='') {this.value='Search this site...'; if (this.className.indexOf('s4-searchbox-QueryPrompt') == -1) this.className += this.className?' s4-searchbox-QueryPrompt':'s4-searchbox-QueryPrompt'; document.getElementById('ctl00_PlaceHolderSearchArea_ctl01_ctl04').value = '0'} else {document.getElementById('ctl00_PlaceHolderSearchArea_ctl01_ctl04').value='1';}" style="width:170px;"></div></td>
+                                                                                                                                                                                                           <td class="ms-sbgo ms-sbcell"><a id="ctl00_PlaceHolderSearchArea_ctl01_S3031AEBB_go" title="Search" href="javascript:S3031AEBB_Submit()" class="ui-link"><img title="Search" onmouseover="this.src='\u002f_layouts\u002fimages\u002fgosearchhover15.png'" onmouseout="this.src='\u002f_layouts\u002fimages\u002fgosearch15.png'" class="srch-gosearchimg" alt="Search" src="/_layouts/images/gosearch15.png" style="border-width:0px;"></a></td>
+                                                                                                                                                                                                           <td class="ms-sbLastcell"></td>
+                                                                                                                                                                                                       </tr>
+                                                                                                                                                                                                   </tbody>
+                                                                                                                                                                                               </table><input name="ctl00$PlaceHolderSearchArea$ctl01$ctl04" type="hidden" id="ctl00_PlaceHolderSearchArea_ctl01_ctl04" value="0">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+        <a href="http://www.glyma.co/About/GettingStarted" target="_new" class="ui-link">
+            <div id="help-link"></div>
+        </a>
+    </div>
+    <div id="top-bar-dropshadow"></div>
+    <div id="main" style="top: 50px; position: relative;">
+        <div id="pinchzoom" style="-webkit-transform: translate3d(0, 0, 0); overflow: hidden; position: fixed; display: block; height: 100%; width: 100%;">
+            <canvas id="mapCanvas" style="background-color: aliceblue;" ondragstart="return false;"></canvas>
+        </div>
+        <div id="left-sidebar-container" class="sidebar-container">
+            <div id="left-sidebar" class="sidebar">
+                <div id="sidebar-glyma-logo"></div>
+                <ul>
+                    <li id="sidebar-refresh" class="sidebar-button"><a href="#"></a></li>
+                    <li id="sidebar-realign" class="sidebar-button"><a href="#"></a></li>
+                    <li id="sidebar-fullscreen" class="sidebar-button"><a href="#" onclick="requestFullScreen(document);"></a></li>
+                </ul>
+
+            </div>
+            <div id="left-expender" class="expender"></div>
+            <div id="left-menuPanel" class="menuPanel"></div>
+        </div>
+        <div id="breadcrumbs">
+            <div id="breadcrumb-home"><a href="javascript:void(0);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+            <ul id="breadcrumb-container"></ul>
+
+        </div>
+        <div id="debug" style="position: fixed;width: 240px;bottom: 0;background: white; -ms-opacity: 0.8; opacity: 0.8;">
+            <button id="generateButton" onclick="generateMap('bigmap');">Generate Map</button>
+            <div>posX: <span id="posX"></span></div>
+            <div>posY: <span id="posY"></span></div>
+            <div>scale: <span id="scale"></span></div>
+            <div>mouseX: <span id="mouseX"></span></div>
+            <div>mouseY: <span id="mouseY"></span></div>
+            <div>touchX: <span id="touchX"></span></div>
+            <div>touchY: <span id="touchY"></span></div>
+            <div>offsetX: <span id="offsetX"></span></div>
+            <div>offsetY: <span id="offsetY"></span></div>
+            <div>ratioX: <span id="ratioX"></span></div>
+            <div>ratioY: <span id="ratioY"></span></div>
+            <div>scale: <span id="scaleText">1</span></div>
+            <div>lastScale: <span id="lastScaleText">1</span></div>
+        </div>
+        <div id="nodeDetailButtonContainer" style="position: absolute;z-index: 100;display: none;">
+            <img id="nodedetailshowall" class="nodedetailbutton" height="35" width="35" src="img/nodemenu/showall-static.png" />
+            <img id="nodedetailcontent" class="nodedetailbutton" height="35" width="35" src="img/nodemenu/content-static.png" />
+            <img id="nodedetailfeed" class="nodedetailbutton" height="35" width="35" src="img/nodemenu/feed-static.png" />
+            <img id="nodedetaillocate" class="nodedetailbutton" height="35" width="35" src="img/nodemenu/locate-static.png" />
+            <img id="nodedetailmap" class="nodedetailbutton" height="35" width="35" src="img/nodemenu/map-static.png" />
+            <img id="nodedetailvideo" class="nodedetailbutton" height="35" width="35" src="img/nodemenu/video-static.png" />
+        </div>
+        <div id="debugdiv" style="width: 400px; height: 500px; overflow: hidden; position: relative;display: none;">
+
+            <textarea id="dataText" style="width: 100%; height: 90%; margin-top: 10px; ">{"domain":"4d3db4cd-3f72-4048-ad4b-46bfd8ec45e6","rootMap":{"name":"Test Map","nodeType":"Map","uniqueId":"ad5938d8-1b63-4c8c-8960-591bdc9f1208"},"breadcrumbs":[{"uniqueId":"ad5938d8-1b63-4c8c-8960-591bdc9f1208","name":"Test Map"},{"uniqueId":"10e1a1f0-8046-4bb8-a796-3865db33e837","name":"Activity 7: Mapping unfamiliar territory"}],"nodes":[{"yPosition":1012,"name":"Apply jobbernole","xPosition":270,"nodeType":"Idea","uniqueId":"b6e5205d-f6ca-4492-b2b1-b3abbc9b90ca"},{"yPosition":416,"name":"What would Kelk demonstrate?","xPosition":630,"nodeType":"Question","uniqueId":"d889a67b-3368-47b0-a9a7-f063068f1753"},{"yPosition":1117,"name":"labascation","xPosition":450,"nodeType":"Con","uniqueId":"2c7652aa-4569-4bdc-9d1e-bfc3a1d77c4c"},{"yPosition":906,"name":"It is irrefragable, iqueme to everyone","xPosition":450,"nodeType":"Pro","uniqueId":"59f42753-245d-49ec-ac34-3223340a7e94"},{"yPosition":1047,"name":"Simple solution","xPosition":450,"nodeType":"Pro","uniqueId":"a73dcabb-f101-459e-9135-d687b4a38f85"},{"yPosition":766,"name":"It can be acclumsid","xPosition":450,"nodeType":"Con","uniqueId":"ba43f59d-eb97-4408-83ee-8ebd95d6a637"},{"yPosition":626,"name":"No flapdoodle","xPosition":450,"nodeType":"Pro","uniqueId":"ce973c6a-3c76-4bd0-a4e7-223a57dec5e6"},{"name":"We are ergophile and locupletative","yPosition":345,"Video":{"Source":"http://video.ch9.ms/ch9/4ba9/652bd5a8-4504-453e-a5fe-9273a2a84ba9/EdgeShow110PuppetonAzure.mp4","StartPosition":"00:00:20.1480000","EndPosition":"00:00:22.9080000"},"nodeType":"Idea","xPosition":810,"uniqueId":"49c69db9-21e6-4d1a-a69f-7563cc26a88f"},{"yPosition":556,"name":"What actions to take about latibule","xPosition":90,"nodeType":"Question","uniqueId":"587c4b78-1fef-408a-813a-602721cdacb9"},{"yPosition":65,"name":"Eliminate japers","xPosition":450,"nodeType":"Pro","uniqueId":"2ec27556-67ff-4008-841e-8af8612025aa"},{"yPosition":416,"name":"Could keak by branching out to kelk","xPosition":450,"nodeType":"Pro","uniqueId":"409a8aec-e3ab-4a29-add3-0bed5ebb1daf"},{"yPosition":486,"name":"We\u0027d be circumbilivagination","xPosition":810,"nodeType":"Con","uniqueId":"0f6d65e2-2dab-4549-a54c-4982a1d976b4"},{"yPosition":170,"name":"Matutolypea","xPosition":270,"nodeType":"Idea","uniqueId":"4504daaf-d95f-49e1-8f78-c7a9cf3efd5f"},{"DescriptionType":"None","name":"Would appear to be milking the pigeon","yPosition":275,"Video":{"StopPosition":"00:10:00.000","Source":"http://video.ch9.ms/ch9/4ba9/652bd5a8-4504-453e-a5fe-9273a2a84ba9/EdgeShow110PuppetonAzure.mp4","StartPosition":"00:00:00.000","EndPosition":"00:00:09.0540000"},"nodeType":"Con","xPosition":450,"uniqueId":"24f65b79-2c3e-4f70-9bed-f9cacded8f95"},{"yPosition":836,"name":"Can be cloakative","xPosition":450,"nodeType":"Con","uniqueId":"60a5d0aa-58e5-4664-b002-aa794d0f0aeb"},{"name":"No exlex","yPosition":556,"Video":{"Source":"http://video.ch9.ms/ch9/4ba9/652bd5a8-4504-453e-a5fe-9273a2a84ba9/EdgeShow110PuppetonAzure.mp4","StartPosition":"00:00:05.7690000","EndPosition":"00:00:09.3980000"},"nodeType":"Pro","xPosition":450,"uniqueId":"d2b9f2ac-7694-4096-81ea-3bd759e3f66f"},{"name":"Arsy varsey","yPosition":661,"Video":{"Source":"https://www.youtube.com/watch?v=XjJQBjWYDTs","StartPosition":"00:00:08.7650000","EndPosition":"00:00:09.6910000"},"nodeType":"Idea","xPosition":270,"uniqueId":"967b3fcc-09c5-4666-9946-b128d78b3743"},{"yPosition":486,"name":"It\u0027d be eudaemonism","xPosition":450,"nodeType":"Pro","uniqueId":"9bf169fa-0a8c-4401-a742-24c51d541cd7"},{"yPosition":416,"name":"It may be too eructation","xPosition":810,"nodeType":"Con","uniqueId":"e12bab1c-816d-4c48-af24-0d95394eabca"},{"yPosition":977,"name":"Definitely no kiaugh","xPosition":450,"nodeType":"Pro","uniqueId":"186d6b8f-f32a-4421-9663-16f630b4afad"},{"DescriptionType":"Iframe","Description":"http://www.sevensigma.com.au,600px,400px","name":"Eliminate jerry sneak","yPosition":135,"nodeType":"Pro","xPosition":450,"uniqueId":"ed95cafd-1c60-4761-8a15-e6c6f6f26bfe"},{"DescriptionType":"None","Description":"\u003cdiv id=\"GlymaNodeDescriptionDiv\"\u003e\u003cp style=\"margin-top: 0px;margin-bottom: 0px;line-height: 1.15;\"\u003e\u003cspan style=\"font-family: \u0027Verdana\u0027;font-size: 16px;\"\u003eTest Desciption\u003c/span\u003e\u003c/p\u003e\u003c/div\u003e","name":"Not to mention flag-fallen","yPosition":205,"nodeType":"Pro","xPosition":450,"uniqueId":"03b757ff-85f6-4448-bef2-555fccc3176f"},{"yPosition":345,"name":"Would gain a gadabout grimgribber","xPosition":450,"nodeType":"Pro","uniqueId":"5afb13ce-8b87-4629-97c8-ae6020d13dea"},{"yPosition":696,"name":"No hasenpfeffer","xPosition":450,"nodeType":"Pro","uniqueId":"c82d40f1-f440-44df-accf-c564961bb76c"},{"name":"Keak","yPosition":380,"Video":{"Source":"https://www.youtube.com/watch?v=XjJQBjWYDTs","StartPosition":"00:00:05.6580000","EndPosition":"00:00:09.6600000"},"nodeType":"Idea","xPosition":270,"uniqueId":"8b5e7600-a9e2-4f83-91f8-b8f1472e1b4b"}],"arrows":[{"from":3,"to":0},{"from":2,"to":0},{"from":19,"to":0},{"from":4,"to":0},{"from":0,"to":8},{"from":18,"to":1},{"from":11,"to":1},{"from":7,"to":1},{"from":1,"to":10},{"from":5,"to":16},{"from":6,"to":16},{"from":12,"to":8},{"from":24,"to":8},{"from":16,"to":8},{"from":9,"to":12},{"from":10,"to":24},{"from":21,"to":12},{"from":13,"to":12},{"from":20,"to":12},{"from":14,"to":16},{"from":15,"to":16},{"from":23,"to":16},{"from":17,"to":16},{"from":22,"to":24}]}</textarea>
+            <img id="proImage" src="img/scaled/nodes1x/pro.png" style="display: none;" />
+            <img id="conImage" src="img/scaled/nodes1x/cons.png" style="display: none;" />
+            <img id="ideaImage" src="img/scaled/nodes1x/idea.png" style="display: none;" />
+            <img id="questionImage" src="img/scaled/nodes1x/question.png" style="display: none;" />
+            <img id="noteImage" src="img/scaled/nodes1x/note.png" style="display: none;" />
+            <img id="mapImage" src="img/scaled/nodes1x/map.png" style="display: none;" />
+
+            <img id="proImage2x" src="img/scaled/nodes2x/pro.png" style="display: none;" />
+            <img id="conImage2x" src="img/scaled/nodes2x/cons.png" style="display: none;" />
+            <img id="ideaImage2x" src="img/scaled/nodes2x/idea.png" style="display: none;" />
+            <img id="questionImage2x" src="img/scaled/nodes2x/question.png" style="display: none;" />
+            <img id="noteImage2x" src="img/scaled/nodes2x/note.png" style="display: none;" />
+            <img id="mapImage2x" src="img/scaled/nodes2x/map.png" style="display: none;" />
+
+            <img id="proImage4x" src="img/scaled/nodes4x/pro.png" style="display: none;" />
+            <img id="conImage4x" src="img/scaled/nodes4x/cons.png" style="display: none;" />
+            <img id="ideaImage4x" src="img/scaled/nodes4x/idea.png" style="display: none;" />
+            <img id="questionImage4x" src="img/scaled/nodes4x/question.png" style="display: none;" />
+            <img id="noteImage4x" src="img/scaled/nodes4x/note.png" style="display: none;" />
+            <img id="mapImage4x" src="img/scaled/nodes4x/map.png" style="display: none;" />
+
+            <img id="proImage8x" src="img/scaled/nodes8x/pro.png" style="display: none;" />
+            <img id="conImage8x" src="img/scaled/nodes8x/cons.png" style="display: none;" />
+            <img id="ideaImage8x" src="img/scaled/nodes8x/idea.png" style="display: none;" />
+            <img id="questionImage8x" src="img/scaled/nodes8x/question.png" style="display: none;" />
+            <img id="noteImage8x" src="img/scaled/nodes8x/note.png" style="display: none;" />
+            <img id="mapImage8x" src="img/scaled/nodes8x/map.png" style="display: none;" />
+
+            <img id="proImage5x" src="img/scaled/nodes5x/pro.png" style="display: none;" />
+            <img id="conImage5x" src="img/scaled/nodes5x/cons.png" style="display: none;" />
+            <img id="ideaImage5x" src="img/scaled/nodes5x/idea.png" style="display: none;" />
+            <img id="questionImage5x" src="img/scaled/nodes5x/question.png" style="display: none;" />
+            <img id="noteImage5x" src="img/scaled/nodes5x/note.png" style="display: none;" />
+            <img id="mapImage5x" src="img/scaled/nodes5x/map.png" style="display: none;" />
+
+
+            <img id="proImage10x" src="img/scaled/nodes10x/pro.png" style="display: none;" />
+            <img id="conImage10x" src="img/scaled/nodes10x/cons.png" style="display: none;" />
+            <img id="ideaImage10x" src="img/scaled/nodes10x/idea.png" style="display: none;" />
+            <img id="questionImage10x" src="img/scaled/nodes10x/question.png" style="display: none;" />
+            <img id="noteImage10x" src="img/scaled/nodes10x/note.png" style="display: none;" />
+            <img id="mapImage10x" src="img/scaled/nodes10x/map.png" style="display: none;" />
+
+
+            <img id="button-content1x" src="img/scaled/nodemenu1x/button-content-static.png" style="display: none;" />
+            <img id="button-feed1x" src="img/scaled/nodemenu1x/button-feed-static.png" style="display: none;" />
+            <img id="button-map1x" src="img/scaled/nodemenu1x/button-map-static.png" style="display: none;" />
+            <img id="button-pause1x" src="img/scaled/nodemenu1x/button-pause-static.png" style="display: none;" />
+            <img id="button-play1x" src="img/scaled/nodemenu1x/button-play-static.png" style="display: none;" />
+
+            <img id="button-content2x" src="img/scaled/nodemenu2x/button-content-static.png" style="display: none;" />
+            <img id="button-feed2x" src="img/scaled/nodemenu2x/button-feed-static.png" style="display: none;" />
+            <img id="button-map2x" src="img/scaled/nodemenu2x/button-map-static.png" style="display: none;" />
+            <img id="button-pause2x" src="img/scaled/nodemenu2x/button-pause-static.png" style="display: none;" />
+            <img id="button-play2x" src="img/scaled/nodemenu2x/button-play-static.png" style="display: none;" />
+
+            <img id="button-content4x" src="img/scaled/nodemenu4x/button-content-static.png" style="display: none;" />
+            <img id="button-feed4x" src="img/scaled/nodemenu4x/button-feed-static.png" style="display: none;" />
+            <img id="button-map4x" src="img/scaled/nodemenu4x/button-map-static.png" style="display: none;" />
+            <img id="button-pause4x" src="img/scaled/nodemenu4x/button-pause-static.png" style="display: none;" />
+            <img id="button-play4x" src="img/scaled/nodemenu4x/button-play-static.png" style="display: none;" />
+
+            <img id="button-content8x" src="img/scaled/nodemenu8x/button-content-static.png" style="display: none;" />
+            <img id="button-feed8x" src="img/scaled/nodemenu8x/button-feed-static.png" style="display: none;" />
+            <img id="button-map8x" src="img/scaled/nodemenu8x/button-map-static.png" style="display: none;" />
+            <img id="button-pause8x" src="img/scaled/nodemenu8x/button-pause-static.png" style="display: none;" />
+            <img id="button-play8x" src="img/scaled/nodemenu8x/button-play-static.png" style="display: none;" />
+            <img id="button-content-hover" src="img/nodemenu/button-content-hover.png" style="display: none;" />
+            <img id="button-feed-hover" src="img/nodemenu/button-feed-hover.png" style="display: none;" />
+            <img id="button-map-hover" src="img/nodemenu/button-map-hover.png" style="display: none;" />
+            <img id="button-pause-hover" src="img/nodemenu/button-pause-hover.png" style="display: none;" />
+            <img id="button-play-hover" src="img/nodemenu/button-play-hover.png" style="display: none;" />
+            <img id="extendbutton-hover" src="img/nodemenu/menubutton-hover.png" style="display: none;" />
+            <img id="extendbutton-static" src="img/nodemenu/menubutton-static.png" style="display: none;" />
+            <img id="semicollapsed" src="img/nodemenu/semicollapsed.png" style="display: none;" />
+            <img id="collapsed" src="img/nodemenu/collapsed.png" style="display: none;" />
+            <img id="expanded" src="img/nodemenu/expanded.png" style="display: none;" />
+            <li class="breadcrumb-item" id="breadcrumb-template" map-id="" domain-id="" style="display: none;"><a href="#"></a></li>
+        </div>
+    </div>
+    
+    
+    <script>
+        var mapRenderer;
+        var touchManager;
+        var actionManager;
+        var nodeDetails;
+        var Hammer;
+
+        var canvas = document.getElementById('mapCanvas');
+        var pinchzoom = document.getElementById('pinchzoom');
+        var context = canvas.getContext("2d");
+
+        canvas.width = Glyma.SharedVariables.getMapWidth();
+        canvas.height = Glyma.SharedVariables.getMapHeight();
+
+        function generateMap() {
+            mapController.mapRenderer.drawMap(JSON.parse($("#dataText").val()));
+            var realign = new Glyma.RealignController(mapRenderer);
+            realign.horizontalRealign();
+            mapController.refresh();
+            $("#loader").fadeOut("slow");
+        }
+
+        function requestFullScreen() {
+            if (document.body.requestFullscreen) {
+                document.body.requestFullscreen();
+            } else if (document.body.msRequestFullscreen) {
+                document.body.msRequestFullscreen();
+            } else if (document.body.mozRequestFullScreen) {
+                document.body.mozRequestFullScreen();
+            } else if (document.body.webkitRequestFullscreen) {
+                document.body.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+            } else {
+                alert("Your browser does not support full screen mode.");
+            }
+        }
+    </script>
+    
+    <script src="lib/default.js"></script>
+    <script src="lib/jquery.mousewheel.js"></script>
+    <script src="html5mappingtool.js"></script>
+    <script src="lib/hammer.js"></script>
+    <!--<script src="lib/hammer.fakemultitouch.js"></script>
+        <script src="lib/hammer.showtouches.js"></script>-->
+    <script src="html5eventregister.js"></script>
+</body>
+</html>

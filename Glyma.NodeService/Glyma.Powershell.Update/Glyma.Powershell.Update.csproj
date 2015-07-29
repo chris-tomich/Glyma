@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{972AFD76-9199-4DEB-BB9B-8EFCB84D6E6A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Glyma.Powershell.Update</RootNamespace>
+    <AssemblyName>Glyma.Powershell.Update</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GlymaAssemblyKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Automation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0\System.Management.Automation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IUpdateGLDatabase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Update_GLDatabase.cs" />
+    <Compile Include="v1_5_0_r1\DbIntegrityUtilities.cs" />
+    <Compile Include="v1_5_0_r1\MappingToolDatabase.cs">
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="v1_5_0_r1\MappingToolDatabase.designer.cs">
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="v1_5_0_r1\QueryMapResultConsumer.cs" />
+    <Compile Include="v1_5_0_r1\Update_v1_5_0_r1Base.cs" />
+    <Compile Include="v1_5_0_r2\MappingTool\MappingToolDatabase.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="v1_5_0_r2\Transaction\TransactionDatabase.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionDatabase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="v1_5_0_r2\Update_v1_5_0_r2Base.cs" />
+    <None Include="v1_5_0_r4\MappingTool\MappingToolDatabase.dbml.layout">
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </None>
+    <None Include="v1_5_0_r4\Transaction\TransactionDatabase.dbml.layout">
+      <DependentUpon>TransactionDatabase.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="v1_5_0_r3\InsertTransactionOperations.sql" />
+    <Compile Include="v1_5_0_r4\DeleteMetadata.cs" />
+    <Compile Include="v1_5_0_r4\MappingTool\MappingToolDatabase.designer.cs">
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="v1_5_0_r4\Model\UpdatableNode.cs" />
+    <Compile Include="v1_5_0_r4\OldHtmlDescriptionUpdater.cs" />
+    <Compile Include="v1_5_0_r4\QueryMetadata.cs" />
+    <Compile Include="v1_5_0_r4\UpdateAllMetadata.cs" />
+    <Compile Include="v1_5_0_r4\QueryUpdatableNodes.cs" />
+    <Compile Include="v1_5_0_r4\Transaction\TransactionDatabase.designer.cs">
+      <DependentUpon>TransactionDatabase.dbml</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="v1_5_0_r4\InsertMetadata.cs" />
+    <Compile Include="v1_5_0_r4\UpdateMetadata.cs" />
+    <Compile Include="v1_5_0_r4\Update_v1_5_0_r4Base.cs" />
+    <Compile Include="v1_5_0_r3\MappingTool\MappingToolDatabase.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="v1_5_0_r3\Transaction\TransactionDatabase.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionDatabase.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="v1_5_0_r3\Update_v1_5_0_r3Base.cs" />
+    <EmbeddedResource Include="v1_5_0_r3\UpdateGlymaDbVersion.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="v1_5_0_r1\MapDbAddNewColumns.sql" />
+    <EmbeddedResource Include="v1_5_0_r1\MapDbAddNewColumnConstraints.sql" />
+    <None Include="v1_5_0_r2\Transaction\TransactionDatabase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TransactionDatabase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="v1_5_0_r4\MappingTool\MappingToolDatabase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MappingToolDatabase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="v1_5_0_r4\Transaction\TransactionDatabase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TransactionDatabase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="v1_5_0_r3\Transaction\TransactionDatabase.dbml.layout">
+      <DependentUpon>TransactionDatabase.dbml</DependentUpon>
+    </None>
+    <None Include="v1_5_0_r3\MappingTool\MappingToolDatabase.dbml.layout">
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </None>
+    <None Include="GlymaAssemblyKey.pfx" />
+    <None Include="v1_5_0_r2\MappingTool\MappingToolDatabase.dbml.layout">
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </None>
+    <None Include="v1_5_0_r3\MappingTool\MappingToolDatabase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MappingToolDatabase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="v1_5_0_r3\Transaction\TransactionDatabase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>TransactionDatabase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="v1_5_0_r1\MappingToolDatabase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MappingToolDatabase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="v1_5_0_r2\MappingTool\MappingToolDatabase.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>MappingToolDatabase.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="v1_5_0_r1\MappingToolDatabase.dbml.layout">
+      <DependentUpon>MappingToolDatabase.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="v1_5_0_r1\TransactionDbModifyColumns.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="v1_5_0_r1\CreateQueryMapSP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="v1_5_0_r1\ModifyQueryMapSP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="v1_5_0_r1\CreateGetGlymaDbVersion.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="v1_5_0_r1\CreateQueryNodesSP.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="v1_5_0_r1\CreateNodesListTableType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="v1_5_0_r2\CreateAuditLogsTable.sql" />
+    <None Include="v1_5_0_r2\Transaction\TransactionDatabase.dbml.layout">
+      <DependentUpon>TransactionDatabase.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="v1_5_0_r2\UpdateGlymaDbVersion.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="v1_5_0_r4\UpdateGlymaDbVersion.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glyma.Powershell\Glyma.Powershell.csproj">
+      <Project>{2cfdf04d-733e-4aaf-8c22-40bf15b7e061}</Project>
+      <Name>Glyma.Powershell</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(TargetPath)" "$(SolutionDir)Glyma.NodeServiceApp\Assemblies\$(TargetFileName)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-sp/_vti_bin/SevenSigma/GlymaSecurityService.svc/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Glyma.Security" />
+  <xs:complexType name="ArrayOfKeyValueOfGlymaPermissionLevelArrayOfGlymaSecurityGroupVPqgLoCD">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfGlymaPermissionLevelArrayOfGlymaSecurityGroupVPqgLoCD">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Glyma.Security" name="Key" type="q1:GlymaPermissionLevel" />
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Glyma.Security" name="Value" nillable="true" type="q2:ArrayOfGlymaSecurityGroup" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfGlymaPermissionLevelArrayOfGlymaSecurityGroupVPqgLoCD" nillable="true" type="tns:ArrayOfKeyValueOfGlymaPermissionLevelArrayOfGlymaSecurityGroupVPqgLoCD" />
+  <xs:complexType name="ArrayOfKeyValueOfGlymaSecurityGroupboolean8202CtMC">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsDictionary xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsDictionary>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeyValueOfGlymaSecurityGroupboolean8202CtMC">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Glyma.Security" name="Key" nillable="true" type="q3:GlymaSecurityGroup" />
+            <xs:element name="Value" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeyValueOfGlymaSecurityGroupboolean8202CtMC" nillable="true" type="tns:ArrayOfKeyValueOfGlymaSecurityGroupboolean8202CtMC" />
+</xs:schema>

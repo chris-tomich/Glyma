@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="aad33319-60a5-492d-8e53-0881d612011a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dev-sp/sites/testsite1/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mex1.wsdl" MetadataType="Wsdl" ID="279077c2-9191-42a2-bd3a-d99b7c59f70b" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?wsdl=wsdl0" />
+    <MetadataFile FileName="TransactionalMappingToolService1.wsdl" MetadataType="Wsdl" ID="37a9e133-474f-4f36-a806-01282a870998" SourceId="1" SourceUrl="http://dev-sp/sites/testsite1/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex" />
+    <MetadataFile FileName="mex6.xsd" MetadataType="Schema" ID="06a9f413-c29d-4428-94e1-246ed6af1607" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd3" />
+    <MetadataFile FileName="mex61.xsd" MetadataType="Schema" ID="b1405fe0-383e-4f99-9f47-2f30e777656e" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd2" />
+    <MetadataFile FileName="mex62.xsd" MetadataType="Schema" ID="2e662a66-1e60-4be0-81dd-31c2864e7e40" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd1" />
+    <MetadataFile FileName="mex63.xsd" MetadataType="Schema" ID="a89ad7f4-412b-43fe-ba75-664ebfbb4a8f" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd0" />
+    <MetadataFile FileName="mex64.xsd" MetadataType="Schema" ID="96ea7554-f242-4342-ace6-8fd3ed50a2c2" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd5" />
+    <MetadataFile FileName="TransactionalMappingToolService11.wsdl" MetadataType="Wsdl" ID="30410de0-c0e3-49cd-9597-e3cdd655afd3" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?wsdl" />
+    <MetadataFile FileName="mex65.xsd" MetadataType="Schema" ID="86b98992-cfa0-45b4-b6e2-3269bc0cc40e" SourceId="1" SourceUrl="http://dev-sp/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

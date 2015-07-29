@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://sevensigma.com.au/TransactionalNodeService" elementFormDefault="qualified" targetNamespace="http://sevensigma.com.au/TransactionalNodeService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common.Model" />
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd3" namespace="http://sevensigma.com.au/TransactionalNodeService/OpObjects" />
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" />
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetApplicationVersion">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetApplicationVersionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common.Model" minOccurs="0" name="GetApplicationVersionResult" nillable="true" type="q1:GlymaVersion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="CreateDomainResult" nillable="true" type="q2:RS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRootMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainId" type="q3:guid" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element xmlns:q4="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="nodeType" nillable="true" type="q4:NT" />
+        <xs:element minOccurs="0" name="originalId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRootMapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="CreateRootMapResult" nillable="true" type="q5:QueryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainId" type="q6:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteDomainResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRootMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainId" type="q7:guid" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="rootMapId" type="q8:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRootMapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRootMapResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BeginTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="BeginTransactionResult" type="q9:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteTransaction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q10:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CompleteTransactionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="CompleteTransactionResult" nillable="true" type="q11:RS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMapTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllMapTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="GetAllMapTypesResult" nillable="true" type="q12:TypeResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDomains">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryDomainsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="QueryDomainsResult" nillable="true" type="q13:ArrayOfKeyValueOfguidQueryResponsee3vVGuLX" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q14="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainId" type="q14:guid" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="nodeId" type="q15:guid" />
+        <xs:element minOccurs="0" name="maxDepth" type="xs:int" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="edgeConditions" nillable="true" type="q16:EdgeConditions" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="filterConditions" nillable="true" type="q17:FilterConditions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryMapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="QueryMapResult" nillable="true" type="q18:QueryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryMapPaged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainId" type="q19:guid" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="nodeId" type="q20:guid" />
+        <xs:element minOccurs="0" name="maxDepth" type="xs:int" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="edgeConditions" nillable="true" type="q21:EdgeConditions" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="filterConditions" nillable="true" type="q22:FilterConditions" />
+        <xs:element minOccurs="0" name="objectIndex" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryMapPagedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="QueryMapPagedResult" nillable="true" type="q23:QueryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryMapByDomain">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainId" type="q24:guid" />
+        <xs:element minOccurs="0" name="maxDepth" type="xs:int" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="edgeConditions" nillable="true" type="q25:EdgeConditions" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="filterConditions" nillable="true" type="q26:FilterConditions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="QueryMapByDomainResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="QueryMapByDomainResult" nillable="true" type="q27:QueryResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMap">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="domainId" type="q28:guid" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="rootMapUid" type="q29:guid" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="conditions" nillable="true" type="q30:SearchConditions" />
+        <xs:element minOccurs="0" name="pageNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="pageSize" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchMapResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" minOccurs="0" name="SearchMapResult" nillable="true" type="q31:SearchMapResult" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q32:guid" />
+        <xs:element xmlns:q33="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q33:MP" />
+        <xs:element xmlns:q34="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="rootMapId" nillable="true" type="q34:MP" />
+        <xs:element xmlns:q35="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="nodeType" nillable="true" type="q35:NT" />
+        <xs:element minOccurs="0" name="originalId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="NAResult" nillable="true" type="q36:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BNA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q37:guid" />
+        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="responseParameter" type="q38:guid" />
+        <xs:element xmlns:q39="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q39:MP" />
+        <xs:element xmlns:q40="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="rootMapId" nillable="true" type="q40:MP" />
+        <xs:element xmlns:q41="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="nodeType" nillable="true" type="q41:NT" />
+        <xs:element minOccurs="0" name="originalId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BNAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BNAResult" nillable="true" type="q42:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ND">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q43:guid" />
+        <xs:element xmlns:q44="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q44:MP" />
+        <xs:element xmlns:q45="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="nodeId" nillable="true" type="q45:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="NDResult" nillable="true" type="q46:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BND">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q47:guid" />
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="responseParameter" type="q48:guid" />
+        <xs:element xmlns:q49="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q49:MP" />
+        <xs:element xmlns:q50="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="nodeId" nillable="true" type="q50:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BNDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BNDResult" nillable="true" type="q51:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q52:guid" />
+        <xs:element xmlns:q53="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q53:MP" />
+        <xs:element xmlns:q54="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="nodeId" nillable="true" type="q54:MP" />
+        <xs:element xmlns:q55="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="nodeType" nillable="true" type="q55:NT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q56="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="NUResult" nillable="true" type="q56:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BNU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q57="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q57:guid" />
+        <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="responseParameter" type="q58:guid" />
+        <xs:element xmlns:q59="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q59:MP" />
+        <xs:element xmlns:q60="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="nodeId" nillable="true" type="q60:MP" />
+        <xs:element xmlns:q61="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="nodeType" nillable="true" type="q61:NT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BNUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q62="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BNUResult" nillable="true" type="q62:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q63:guid" />
+        <xs:element xmlns:q64="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q64:MP" />
+        <xs:element xmlns:q65="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="rootMapId" nillable="true" type="q65:MP" />
+        <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="nodes" nillable="true" type="q66:ArrayOfKeyValueOfDTMP3qsds8mH" />
+        <xs:element xmlns:q67="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationshipType" nillable="true" type="q67:RT" />
+        <xs:element minOccurs="0" name="originalId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q68="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="RAResult" nillable="true" type="q68:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BRA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q69="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q69:guid" />
+        <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="responseParameter" type="q70:guid" />
+        <xs:element xmlns:q71="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q71:MP" />
+        <xs:element xmlns:q72="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="rootMapId" nillable="true" type="q72:MP" />
+        <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="nodes" nillable="true" type="q73:ArrayOfKeyValueOfDTMP3qsds8mH" />
+        <xs:element xmlns:q74="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationshipType" nillable="true" type="q74:RT" />
+        <xs:element minOccurs="0" name="originalId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BRAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q75="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BRAResult" nillable="true" type="q75:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q76:guid" />
+        <xs:element xmlns:q77="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q77:MP" />
+        <xs:element xmlns:q78="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationshipId" nillable="true" type="q78:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q79="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="RDResult" nillable="true" type="q79:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BRD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q80:guid" />
+        <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="responseParameter" type="q81:guid" />
+        <xs:element xmlns:q82="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q82:MP" />
+        <xs:element xmlns:q83="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationshipId" nillable="true" type="q83:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BRDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q84="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BRDResult" nillable="true" type="q84:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q85:guid" />
+        <xs:element xmlns:q86="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q86:MP" />
+        <xs:element xmlns:q87="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationshipId" nillable="true" type="q87:MP" />
+        <xs:element xmlns:q88="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="nodes" nillable="true" type="q88:ArrayOfKeyValueOfDTMP3qsds8mH" />
+        <xs:element xmlns:q89="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationshipType" nillable="true" type="q89:RT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q90="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="RUResult" nillable="true" type="q90:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BRU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q91="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q91:guid" />
+        <xs:element xmlns:q92="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="responseParameter" type="q92:guid" />
+        <xs:element xmlns:q93="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q93:MP" />
+        <xs:element xmlns:q94="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationshipId" nillable="true" type="q94:MP" />
+        <xs:element xmlns:q95="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="nodes" nillable="true" type="q95:ArrayOfKeyValueOfDTMP3qsds8mH" />
+        <xs:element xmlns:q96="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationshipType" nillable="true" type="q96:RT" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BRUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q97="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BRUResult" nillable="true" type="q97:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q98="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q98:guid" />
+        <xs:element xmlns:q99="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q99:MP" />
+        <xs:element xmlns:q100="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="rootMapId" nillable="true" type="q100:MP" />
+        <xs:element xmlns:q101="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="node" nillable="true" type="q101:MP" />
+        <xs:element xmlns:q102="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationship" nillable="true" type="q102:MP" />
+        <xs:element xmlns:q103="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="descriptorType" nillable="true" type="q103:DT" />
+        <xs:element xmlns:q104="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="metadataType" nillable="true" type="q104:MetadataType" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q105="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="MAResult" nillable="true" type="q105:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BMA">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q106="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q106:guid" />
+        <xs:element xmlns:q107="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="responseParameter" type="q107:guid" />
+        <xs:element xmlns:q108="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q108:MP" />
+        <xs:element xmlns:q109="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="rootMapId" nillable="true" type="q109:MP" />
+        <xs:element xmlns:q110="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="node" nillable="true" type="q110:MP" />
+        <xs:element xmlns:q111="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="relationship" nillable="true" type="q111:MP" />
+        <xs:element xmlns:q112="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="descriptorType" nillable="true" type="q112:DT" />
+        <xs:element xmlns:q113="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="metadataType" nillable="true" type="q113:MetadataType" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BMAResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q114="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BMAResult" nillable="true" type="q114:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q115="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q115:guid" />
+        <xs:element xmlns:q116="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q116:MP" />
+        <xs:element xmlns:q117="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="metadata" nillable="true" type="q117:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q118="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="MDResult" nillable="true" type="q118:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BMD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q119="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q119:guid" />
+        <xs:element xmlns:q120="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="responseParameter" type="q120:guid" />
+        <xs:element xmlns:q121="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q121:MP" />
+        <xs:element xmlns:q122="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="metadata" nillable="true" type="q122:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BMDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q123="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BMDResult" nillable="true" type="q123:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q124="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q124:guid" />
+        <xs:element xmlns:q125="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q125:MP" />
+        <xs:element xmlns:q126="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="metadata" nillable="true" type="q126:MP" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q127="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="MUResult" nillable="true" type="q127:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BMU">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q128="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q128:guid" />
+        <xs:element xmlns:q129="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="responseParameter" type="q129:guid" />
+        <xs:element xmlns:q130="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="domainId" nillable="true" type="q130:MP" />
+        <xs:element xmlns:q131="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="metadata" nillable="true" type="q131:MP" />
+        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BMUResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q132="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BMUResult" nillable="true" type="q132:MP" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BO">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q133="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q133:guid" />
+        <xs:element xmlns:q134="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="operations" nillable="true" type="q134:OPS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BOResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q135="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="BOResult" nillable="true" type="q135:ArrayOfBOR" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BOC">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q136="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q136:guid" />
+        <xs:element minOccurs="0" name="compressedOperations" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BOCResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="BOCResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsSessionCompleted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="callingUrl" nillable="true" type="xs:string" />
+        <xs:element xmlns:q137="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="sessionId" type="q137:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsSessionCompletedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="IsSessionCompletedResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

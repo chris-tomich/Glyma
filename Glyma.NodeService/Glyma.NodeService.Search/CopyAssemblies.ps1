@@ -1,0 +1,1 @@
+copy C:\git\Glyma\Glyma.NodeService\Glyma.NodeService.Search\bin\Glyma.NodeService.Search.dll C:\git\Glyma\Glyma.SharePoint\MappingToolSPDeployment\Assemblies\

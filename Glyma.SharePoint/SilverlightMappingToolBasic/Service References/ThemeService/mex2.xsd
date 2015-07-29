@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ThemeService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ThemeService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ThemeResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Success" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Theme" nillable="true" type="tns:Theme" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThemeResult" nillable="true" type="tns:ThemeResult" />
+  <xs:complexType name="Theme">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Assembly" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Skin" nillable="true" type="tns:ArrayOfThemeSkin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Theme" nillable="true" type="tns:Theme" />
+  <xs:complexType name="ArrayOfThemeSkin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeSkin" nillable="true" type="tns:ThemeSkin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThemeSkin" nillable="true" type="tns:ArrayOfThemeSkin" />
+  <xs:complexType name="ThemeSkin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Assembly" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Class" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeType" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Property" nillable="true" type="tns:ArrayOfThemeSkinProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThemeSkin" nillable="true" type="tns:ThemeSkin" />
+  <xs:complexType name="ArrayOfThemeSkinProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ThemeSkinProperty" nillable="true" type="tns:ThemeSkinProperty" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfThemeSkinProperty" nillable="true" type="tns:ArrayOfThemeSkinProperty" />
+  <xs:complexType name="ThemeSkinProperty">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ThemeSkinProperty" nillable="true" type="tns:ThemeSkinProperty" />
+</xs:schema>

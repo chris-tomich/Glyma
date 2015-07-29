@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e280ea1e-f2dc-416e-b5c0-74e92f6b2f6b" solutionId="e280ea1e-f2dc-416e-b5c0-74e92f6b2f6b" resetWebServer="false" sharePointProductVersion="" name="GlymaRelatedContentPanelsWebPart" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="VideoPlayerSPDeploy.dll" deploymentTarget="GlobalAssemblyCache">
+      <safeControls>
+        <safeControl assemblyName="VideoPlayerSPDeploy.dll" namespaceName="VideoPlayerSPDeploy.RelatedContentPanelWebPart" typeName="*" isSafeAgainstScript="false" />
+      </safeControls>
+    </projectOutputAssembly>
+  </assemblies>
+  <features>
+    <featureReference itemId="c45ffcd2-6f57-4023-976c-d51877ab6177" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="b298b62d-4d55-4fb8-acbe-cbac0f4e11b9" />
+    <projectItemReference itemId="bbe3ea30-2cbf-405e-afc7-5178f1aa271e" />
+  </projectItems>
+</package>

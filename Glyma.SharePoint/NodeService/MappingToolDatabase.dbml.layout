@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 12.625" name="MappingToolDatabase">
+  <DataContextMoniker Name="/MappingToolDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="e2f1bb0d-746f-4f39-97f0-c8667f8532e9" absoluteBounds="6.25, 4, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/Descriptor" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f9d79de-8834-4027-b843-2f9e2efc1adc" absoluteBounds="6.265, 4.46, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3049174e-82df-4aa2-90cd-4d44617cff29" absoluteBounds="0.75, 2.75, 2, 1.0961531575520831">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/RelationshipType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a611e72f-d5ed-4a75-9ece-90b2e89a1b73" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e93ed560-3481-4ed4-bbf9-77dee0bfa748" absoluteBounds="3.5, 11.25, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/DescriptorType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cc13c59f-3f01-442b-82e6-6fac1e0e2c9d" absoluteBounds="3.515, 11.71, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0670de1d-e4bb-467c-a8bf-4a341921fe5d" absoluteBounds="0.75, 5.75, 2, 1.0961531575520827">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/Domain" />
+      <nestedChildShapes>
+        <elementListCompartment Id="28acca0f-1d1a-4609-a3df-819ead541ace" absoluteBounds="0.765, 6.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59578688-660b-4001-ba12-166add52f8da" absoluteBounds="6.25, 0.75, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/Metadata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e26a1db-f6e4-457e-b255-e2de0f9fc8d9" absoluteBounds="6.265, 1.21, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9debef09-02d6-448e-9ab4-114f7aab5aba" absoluteBounds="3.5, 8.75, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/MetadataType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1b28ea93-cd65-42cd-9d9b-a6d8ff53f535" absoluteBounds="3.515, 9.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="76f9fea4-e40e-42d6-9272-96408c8d629c" absoluteBounds="3.5, 5.5, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/Node" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a538be7b-017c-4312-aade-7146779b11ae" absoluteBounds="3.515, 5.96, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="42b1b38a-7265-4103-9a3a-b0eae1ceae6b" absoluteBounds="0.75, 7.75, 2, 1.0961531575520844">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/NodeType" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3696d185-ec9d-480d-91b3-972bf072f21c" absoluteBounds="0.765, 8.21, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="df1fd672-893c-41f9-ac05-39833108e1cc" absoluteBounds="6.25, 6.875, 2, 1.2605004882812505">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/RelationshipDescriptorPair" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e22280dc-c80b-460e-a3fa-e85a3023e14f" absoluteBounds="6.265, 7.335, 1.9700000000000002, 0.70050048828125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aed4b1bd-3870-4847-98df-0267b15ae9d1" absoluteBounds="3.5, 2.5, 2, 1.424847819010417">
+      <DataClassMoniker Name="/MappingToolDatabaseDataContext/Relationship" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18ad5472-49ac-4bb4-96ec-c1c06ea451d4" absoluteBounds="3.515, 2.96, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 11.25); (5.875 : 10.875); (5.875 : 4.78929768880208); (5.94791666666667 : 4.78929768880208 : JumpStart); (6.11458333333333 : 4.78929768880208 : JumpEnd); (6.25 : 4.78929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/DescriptorType/DescriptorType_Descriptor" />
+      <nodes>
+        <classShapeMoniker Id="e93ed560-3481-4ed4-bbf9-77dee0bfa748" />
+        <classShapeMoniker Id="e2f1bb0d-746f-4f39-97f0-c8667f8532e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 8.78122649649439); (6.03125 : 8.24997649649439); (6.03125 : 1.82774983723958); (6.25 : 1.82774983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/MetadataType/MetadataType_Metadata" />
+      <nodes>
+        <classShapeMoniker Id="9debef09-02d6-448e-9ab4-114f7aab5aba" />
+        <classShapeMoniker Id="59578688-660b-4001-ba12-166add52f8da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.52671369100561); (5.6875 : 5.33921369100561); (5.6875 : 6.14109537760417); (6.25 : 5.57859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/Node/Node_Descriptor" />
+      <nodes>
+        <classShapeMoniker Id="76f9fea4-e40e-42d6-9272-96408c8d629c" />
+        <classShapeMoniker Id="e2f1bb0d-746f-4f39-97f0-c8667f8532e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.50485621654647); (5.81607443490112 : 5.18878178164536 : JumpStart); (5.93392556509888 : 5.0709306514476 : JumpEnd); (5.96875 : 5.03610621654648); (5.96875 : 2.39787675585937); (6.25 : 2.39787675585937)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/Node/Node_Metadata" />
+      <nodes>
+        <classShapeMoniker Id="76f9fea4-e40e-42d6-9272-96408c8d629c" />
+        <classShapeMoniker Id="59578688-660b-4001-ba12-166add52f8da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.34699625651042); (3.5 : 6.34699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/Domain/Domain_Node" />
+      <nodes>
+        <classShapeMoniker Id="0670de1d-e4bb-467c-a8bf-4a341921fe5d" />
+        <classShapeMoniker Id="76f9fea4-e40e-42d6-9272-96408c8d629c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.75); (3.125 : 7.375); (3.125 : 7.45480868174078); (3.50121330413662 : 7.07859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/NodeType/NodeType_Node" />
+      <nodes>
+        <classShapeMoniker Id="42b1b38a-7265-4103-9a3a-b0eae1ceae6b" />
+        <classShapeMoniker Id="76f9fea4-e40e-42d6-9272-96408c8d629c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 11.8782487565104); (7.25 : 11.8782487565104); (7.25 : 8.2612939453125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/DescriptorType/DescriptorType_RelationshipDescriptorPair" />
+      <nodes>
+        <classShapeMoniker Id="e93ed560-3481-4ed4-bbf9-77dee0bfa748" />
+        <classShapeMoniker Id="df1fd672-893c-41f9-ac05-39833108e1cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.91276401652644); (3.28125 : 4.44401401652644); (3.28125 : 7.70119416145833); (5.79166666666667 : 7.70119416145833 : JumpStart); (6.11458333333333 : 7.70119416145833 : JumpEnd); (6.25 : 7.70119416145833)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/RelationshipType/RelationshipType_RelationshipDescriptorPair" />
+      <nodes>
+        <classShapeMoniker Id="3049174e-82df-4aa2-90cd-4d44617cff29" />
+        <classShapeMoniker Id="df1fd672-893c-41f9-ac05-39833108e1cc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.07738007346755); (5.75 : 4.32738007346755); (5.75 : 3.5); (6.25 : 4)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/Relationship/Relationship_Descriptor" />
+      <nodes>
+        <classShapeMoniker Id="aed4b1bd-3870-4847-98df-0267b15ae9d1" />
+        <classShapeMoniker Id="e2f1bb0d-746f-4f39-97f0-c8667f8532e9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 2.70274983723958); (5.94791666666667 : 2.70274983723958 : JumpStart); (6.11458333333333 : 2.70274983723958 : JumpEnd); (6.25 : 2.70274983723958)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/Relationship/Relationship_Metadata" />
+      <nodes>
+        <classShapeMoniker Id="aed4b1bd-3870-4847-98df-0267b15ae9d1" />
+        <classShapeMoniker Id="59578688-660b-4001-ba12-166add52f8da" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.75091745577925); (3.125 : 5.37591745577925); (3.125 : 3.28929768880208); (3.5 : 3.28929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/Domain/Domain_Relationship" />
+      <nodes>
+        <classShapeMoniker Id="0670de1d-e4bb-467c-a8bf-4a341921fe5d" />
+        <classShapeMoniker Id="aed4b1bd-3870-4847-98df-0267b15ae9d1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.63227835266426); (3.5 : 3.63227835266426)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/MappingToolDatabaseDataContext/RelationshipType/RelationshipType_Relationship" />
+      <nodes>
+        <classShapeMoniker Id="3049174e-82df-4aa2-90cd-4d44617cff29" />
+        <classShapeMoniker Id="aed4b1bd-3870-4847-98df-0267b15ae9d1" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

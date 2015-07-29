@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="44c54c10-6ede-419c-a20d-02240698755c" solutionId="44c54c10-6ede-419c-a20d-02240698755c" resetWebServer="false" deploymentServerType="ApplicationServer" sharePointProductVersion="" name="Glyma.NodeServiceApp" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="Glyma.Powershell.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Assemblies\Glyma.Powershell.dll" />
+    <customAssembly location="Glyma.Powershell.SharePoint.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Assemblies\Glyma.Powershell.SharePoint.dll" />
+    <customAssembly location="Glyma.Powershell.Update.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Assemblies\Glyma.Powershell.Update.dll" />
+    <customAssembly location="TransactionalNodeService.Proxy.Universal.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Assemblies\TransactionalNodeService.Proxy.Universal.dll" />
+    <projectOutputAssembly location="TransactionalNodeService.Common.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\TransactionalNodeService.Common\TransactionalNodeService.Common.csproj" />
+    <projectOutputAssembly location="Glyma.Security.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Glyma.Security\Glyma.Security.csproj" />
+    <projectOutputAssembly location="TransactionalNodeService.SharePoint.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\TransactionalNodeService.SharePoint\TransactionalNodeService.SharePoint.csproj" />
+    <projectOutputAssembly location="Glyma.SharePoint.Security.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Glyma.SharePoint.Security\Glyma.SharePoint.Security.csproj" />
+    <customAssembly location="Ionic.Zlib.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Assemblies\Ionic.Zlib.dll" />
+    <customAssembly location="Glyma.UtilityService.Common.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Assemblies\Glyma.UtilityService.Common.dll" />
+    <customAssembly location="Glyma.UtilityService.Export.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="Assemblies\Glyma.UtilityService.Export.dll" />
+    <projectOutputAssembly location="Glyma.UtilityService.SharePoint.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\Glyma.UtilityService.SharePoint\Glyma.UtilityService.SharePoint.csproj" />
+  </assemblies>
+  <projectItems>
+    <projectItemReference itemId="a575f709-f41b-469b-9605-a59a6d5ae57d" />
+    <projectItemReference itemId="e662cdb7-98b0-4dae-9687-5377400e0442" />
+    <projectItemReference itemId="1cdcca90-1906-4069-bb90-c3334032fd5d" />
+    <projectItemReference itemId="8402a8b3-6f72-45c7-999c-00738ab15b0b" />
+    <projectItemReference itemId="d3fc2a3d-7ea6-4916-96ec-4fa989bf46a8" />
+    <projectItemReference itemId="6ad4c5b7-f218-4ea8-8132-a2aaa3c42baf" />
+  </projectItems>
+</package>

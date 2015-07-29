@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://sevensigma.com.au/NodeService" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:i0="http://tempuri.org/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MappingToolService" targetNamespace="http://sevensigma.com.au/NodeService" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:import namespace="http://tempuri.org/" location="http://glyma-dev/_vti_bin/sevensigma/mappingtoolservice.svc/mex?wsdl=wsdl0" />
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://sevensigma.com.au/NodeService/Imports">
+      <xsd:import schemaLocation="http://glyma-dev/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd0" namespace="http://sevensigma.com.au/NodeService" />
+      <xsd:import schemaLocation="http://glyma-dev/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://glyma-dev/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/NodeService" />
+      <xsd:import schemaLocation="http://glyma-dev/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMappingToolService_CreateNewDomain_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewDomain" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_CreateNewDomain_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_CreateNewMap_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewMap" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_CreateNewMap_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewMapResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_InsertNodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNodes" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_InsertNodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_AddNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNode" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_AddNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_RenameNodeMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:RenameNodeMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_RenameNodeMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RenameNodeMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_PasteNodeClone_InputMessage">
+    <wsdl:part name="parameters" element="tns:PasteNodeClone" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_PasteNodeClone_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PasteNodeCloneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteNode_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNode" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteNode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteNodePromoteTransclusion_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNodePromoteTransclusion" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteNodePromoteTransclusion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNodePromoteTransclusionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteNodeTransclusion_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNodeTransclusion" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteNodeTransclusion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNodeTransclusionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteRelationship_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRelationship" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteRelationship_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRelationshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_DeleteMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_ConnectNodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectNodes" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_ConnectNodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConnectNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_ConnectNodes_ConnectNodesFailureFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/NodeService" name="detail" element="q1:ConnectNodesFailureFault" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_UpdateNodeMetadata_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNodeMetadata" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_UpdateNodeMetadata_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNodeMetadataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetDomainNodeIds_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainNodeIds" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetDomainNodeIds_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainNodeIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetDomainNodeId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainNodeId" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetDomainNodeId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainNodeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetDomainMapNodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainMapNodes" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetDomainMapNodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainMapNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetDomainMapNodesPaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainMapNodesPaged" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetDomainMapNodesPaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDomainMapNodesPagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetAllSoapTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSoapTypes" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetAllSoapTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSoapTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetAllNodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNodes" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetAllNodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetNodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNodes" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetNodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetRelatedNodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedNodes" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetRelatedNodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetMapsNodes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMapsNodes" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetMapsNodes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMapsNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetContainerMapNodeId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetContainerMapNodeId" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetContainerMapNodeId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetContainerMapNodeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetNodesXmlQuery_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNodesXmlQuery" />
+  </wsdl:message>
+  <wsdl:message name="IMappingToolService_GetNodesXmlQuery_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNodesXmlQueryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMappingToolService">
+    <wsdl:operation name="CreateNewDomain">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/CreateNewDomain" message="tns:IMappingToolService_CreateNewDomain_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/CreateNewDomainResponse" message="tns:IMappingToolService_CreateNewDomain_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewMap">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/CreateNewMap" message="tns:IMappingToolService_CreateNewMap_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/CreateNewMapResponse" message="tns:IMappingToolService_CreateNewMap_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNodes">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/InsertNodes" message="tns:IMappingToolService_InsertNodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/InsertNodesResponse" message="tns:IMappingToolService_InsertNodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNode">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/AddNode" message="tns:IMappingToolService_AddNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/AddNodeResponse" message="tns:IMappingToolService_AddNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RenameNodeMetadata">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/RenameNodeMetadata" message="tns:IMappingToolService_RenameNodeMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/RenameNodeMetadataResponse" message="tns:IMappingToolService_RenameNodeMetadata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PasteNodeClone">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/PasteNodeClone" message="tns:IMappingToolService_PasteNodeClone_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/PasteNodeCloneResponse" message="tns:IMappingToolService_PasteNodeClone_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNode">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteNode" message="tns:IMappingToolService_DeleteNode_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteNodeResponse" message="tns:IMappingToolService_DeleteNode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNodePromoteTransclusion">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteNodePromoteTransclusion" message="tns:IMappingToolService_DeleteNodePromoteTransclusion_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteNodePromoteTransclusionResponse" message="tns:IMappingToolService_DeleteNodePromoteTransclusion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNodeTransclusion">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteNodeTransclusion" message="tns:IMappingToolService_DeleteNodeTransclusion_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteNodeTransclusionResponse" message="tns:IMappingToolService_DeleteNodeTransclusion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRelationship">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteRelationship" message="tns:IMappingToolService_DeleteRelationship_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteRelationshipResponse" message="tns:IMappingToolService_DeleteRelationship_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMetadata">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteMetadata" message="tns:IMappingToolService_DeleteMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/DeleteMetadataResponse" message="tns:IMappingToolService_DeleteMetadata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConnectNodes">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/ConnectNodes" message="tns:IMappingToolService_ConnectNodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/ConnectNodesResponse" message="tns:IMappingToolService_ConnectNodes_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/ConnectNodesConnectNodesFailureFaultFault" name="ConnectNodesFailureFaultFault" message="tns:IMappingToolService_ConnectNodes_ConnectNodesFailureFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNodeMetadata">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/UpdateNodeMetadata" message="tns:IMappingToolService_UpdateNodeMetadata_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/UpdateNodeMetadataResponse" message="tns:IMappingToolService_UpdateNodeMetadata_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainNodeIds">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetDomainNodeIds" message="tns:IMappingToolService_GetDomainNodeIds_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetDomainNodeIdsResponse" message="tns:IMappingToolService_GetDomainNodeIds_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainNodeId">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetDomainNodeId" message="tns:IMappingToolService_GetDomainNodeId_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetDomainNodeIdResponse" message="tns:IMappingToolService_GetDomainNodeId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainMapNodes">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetDomainMapNodes" message="tns:IMappingToolService_GetDomainMapNodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetDomainMapNodesResponse" message="tns:IMappingToolService_GetDomainMapNodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainMapNodesPaged">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetDomainMapNodesPaged" message="tns:IMappingToolService_GetDomainMapNodesPaged_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetDomainMapNodesPagedResponse" message="tns:IMappingToolService_GetDomainMapNodesPaged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSoapTypes">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetAllSoapTypes" message="tns:IMappingToolService_GetAllSoapTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetAllSoapTypesResponse" message="tns:IMappingToolService_GetAllSoapTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllNodes">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetAllNodes" message="tns:IMappingToolService_GetAllNodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetAllNodesResponse" message="tns:IMappingToolService_GetAllNodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNodes">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetNodes" message="tns:IMappingToolService_GetNodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetNodesResponse" message="tns:IMappingToolService_GetNodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatedNodes">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetRelatedNodes" message="tns:IMappingToolService_GetRelatedNodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetRelatedNodesResponse" message="tns:IMappingToolService_GetRelatedNodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMapsNodes">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetMapsNodes" message="tns:IMappingToolService_GetMapsNodes_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetMapsNodesResponse" message="tns:IMappingToolService_GetMapsNodes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetContainerMapNodeId">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetContainerMapNodeId" message="tns:IMappingToolService_GetContainerMapNodeId_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetContainerMapNodeIdResponse" message="tns:IMappingToolService_GetContainerMapNodeId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNodesXmlQuery">
+      <wsdl:input wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetNodesXmlQuery" message="tns:IMappingToolService_GetNodesXmlQuery_InputMessage" />
+      <wsdl:output wsaw:Action="http://sevensigma.com.au/NodeService/IMappingToolService/GetNodesXmlQueryResponse" message="tns:IMappingToolService_GetNodesXmlQuery_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:service name="MappingToolService">
+    <wsdl:port name="BasicHttpBinding_IMappingToolService" binding="i0:BasicHttpBinding_IMappingToolService">
+      <soap:address location="http://glyma-dev/_vti_bin/sevensigma/mappingtoolservice.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

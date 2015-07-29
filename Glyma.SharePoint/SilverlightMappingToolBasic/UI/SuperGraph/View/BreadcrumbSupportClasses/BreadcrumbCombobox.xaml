@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.BreadcrumbSupportClasses.BreadcrumbComboBox"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+    xmlns:breadcrumbSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.BreadcrumbSupportClasses"
+    mc:Ignorable="d"
+    d:DesignHeight="26" d:DesignWidth="98" DataContextChanged="UserControl_DataContextChanged">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="20"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <ComboBox Grid.Column="0" Grid.ColumnSpan="2" x:Name="MapList" Style="{StaticResource SuperComboBox}"
+                             FontFamily="Trebuchet MS" SelectedIndex="0" SelectionChanged="MapList_SelectionChanged"/>
+        <breadcrumbSupportClasses:BreadcrumbTextBlock Grid.Column="0" x:Name="TextBlock" PropertiesVisibility="{Binding PropertiesVisibility}"></breadcrumbSupportClasses:BreadcrumbTextBlock>
+    </Grid>
+</UserControl>

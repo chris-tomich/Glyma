@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.Sidebar.SubMenu.RealignSubMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sidebar="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Sidebar"
+    xmlns:subMenu="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Sidebar.SubMenu"
+    mc:Ignorable="d"
+    d:DesignHeight="80" d:DesignWidth="130" MouseLeave="UserControl_MouseLeave">
+    <Border BorderBrush="#ff848788" Background="#FFFFFFFF" BorderThickness="0" CornerRadius="3,3,3,3">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10" Color="Black"
+            Direction="135" Opacity="0.5" ShadowDepth="2">
+            </DropShadowEffect>
+        </Border.Effect>
+        <StackPanel Orientation="Vertical" Name="SubMenu" Background="White" Margin="3">
+            <subMenu:SidebarSubMenuButton x:Name="HorizontalRealign" Text="Horizontal Re-Align" Icon="/SilverlightMappingToolBasic;component/Images/SidebarIcon/RealignMenu/realign-horizontally.png" HoverIcon="/SilverlightMappingToolBasic;component/Images/SidebarIcon/RealignMenu/realign-horizontally-hover.png"></subMenu:SidebarSubMenuButton>
+            <subMenu:SidebarSubMenuButton x:Name="VerticalRealign" Text="Vertical Re-Align" Icon="/SilverlightMappingToolBasic;component/Images/SidebarIcon/RealignMenu/realign-vertically.png" HoverIcon="/SilverlightMappingToolBasic;component/Images/SidebarIcon/RealignMenu/realign-vertically-hover.png"></subMenu:SidebarSubMenuButton>
+        </StackPanel>
+    </Border>
+    
+</UserControl>

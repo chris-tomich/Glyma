@@ -1,0 +1,356 @@
+<<<<<<< HEAD
+﻿﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using SilverlightMappingToolBasic.UI.SuperGraph.View.Arrow;
+﻿using SilverlightMappingToolBasic.UI.SuperGraph.ViewModel;
+=======
+﻿using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using SilverlightMappingToolBasic.UI.SuperGraph.View.CollapseSupportClasses;
+>>>>>>> e4a9f409280b6ecfe6ac70e8845dc9a439549d58
+
+namespace SilverlightMappingToolBasic.UI.SuperGraph.View.Realign
+{
+    public abstract class RealignFactory : ChildFindingHelper, IRealignFactory
+    {
+        
+        public void Draw()
+        {
+
+            foreach (var visibleNodeControl in VisibleNodeControls)
+            {
+                var node = Map.AllChildNodes.FirstOrDefault(q => q.Id == visibleNodeControl.ViewModelNode.Id);
+                if (node != null)
+                {
+                    visibleNodeControl.Centre = new Point(node.Left, node.Top);
+                    visibleNodeControl.ViewModelNode.Location = visibleNodeControl.Centre;
+                }
+<<<<<<< HEAD
+                return new List<RealignNode>().OrderBy(q => q.OriginTop);
+            }
+        }
+
+        private List<RealignNode> _nodesNeedToBePlaced;
+        public List<RealignNode> NodesNeedToBePlaced
+        {
+            get { return _nodesNeedToBePlaced ?? (_nodesNeedToBePlaced = new List<RealignNode>()); }
+        }
+
+        private IEnumerable<NodeControl> _nodeControls;
+        public IEnumerable<NodeControl> NodeControls
+        {
+            get
+            {
+                return _nodeControls ?? (_nodeControls = UIElementCollection.OfType<NodeControl>().ToList().OrderBy(q => q.Centre.Y));
+            }
+        }
+
+        private List<Node> _nodeModels;
+        public List<Node> NodeModels
+        {
+            get { return _nodeModels ?? (_nodeModels = new List<Node>()); }
+        }
+
+        private IEnumerable<Relationship> _relationships;
+        public IEnumerable<Relationship> Relationships
+        {
+            get
+            {
+                return _relationships ?? (_relationships = UIElementCollection.OfType<ArrowControl>()
+                    .Select(arrowControl => arrowControl.DataContext)
+                    .OfType<ArrowViewModel>()
+                    .Select(arrowViewModel => arrowViewModel.ViewModelRelationship)
+                    .ToList());
+            }
+        }
+
+
+
+        public UIElementCollection UIElementCollection { get; private set; }
+
+        public List<ViewModel.Node> Draw()
+        {
+            List<ViewModel.Node> nodesToBeCommitted = new List<Node>();
+
+            foreach (var node in Map.AllChildNodes)
+            {
+                var nodeControl = NodeControls.FirstOrDefault(q => q.ViewModelNode.Id == node.Id);
+                if (nodeControl != null)
+                {
+                    nodeControl.Centre = new Point(node.Left, node.Top);
+                    nodeControl.ViewModelNode.Location = nodeControl.Centre;
+                    nodesToBeCommitted.Add(nodeControl.ViewModelNode);
+
+                    //nodeControl.ViewModelNode.Metadata["XPosition"].SetValue(nodeControl.Centre.X.ToString(), ref chain);
+                    //nodeControl.ViewModelNode.Metadata["YPosition"].SetValue(nodeControl.Centre.Y.ToString(), ref chain);
+                    //nodeControl.MoveNode();
+                    //Debug.WriteLine("Depth:{0} Stack:{1} Top:{2} Left:{3} Text:{4}", node.RootDepth, node.StackNumber, node.Top, node.Left, node.Text);
+                    //nodeControl.DebugText.Text = string.Format("{0}-{1}-{2}\r\n", node.RootDepth, node.StackNumber, node.HasMultiParents);
+                }
+            }
+
+            return nodesToBeCommitted;
+        }
+
+        public int MaxDepth
+        {
+            get
+            {
+                return Map.AllChildNodes.Max(q => q.RootDepth);
+            }
+        }
+
+        // ReSharper disable once UnusedMember.Local
+        private RealignFactory(List<RealignNode> nodes)
+        {
+            _nodes = nodes;
+        }
+
+        // Constraction
+        protected RealignFactory(UIElementCollection uiElementCollection)
+        {
+            UIElementCollection = uiElementCollection;
+            InitialiseNodes();
+        }
+
+        // Initialise Variables And Calculate Position of All Nodes
+        private void InitialiseNodes()
+        {
+            FindParentAndChildNodes();
+            CheckMultiParents();
+            PlaceNodesToMap();
+            ReCheckForIncorrectDepth();
+            CalculateStackNumber();
+            CalculateCoordinates();
+        }
+
+        // Find the left most node(s) -- parent nodes. Perpare all the child nodes for finding the relationships between them 
+        private void FindParentAndChildNodes()
+        {
+            if (_nodes == null) _nodes = new List<RealignNode>();
+            foreach (var nodeControl in NodeControls)
+            {
+                var viewModelNode = nodeControl.ViewModelNode;
+                NodeModels.Add(viewModelNode);
+                var allFromNodeIds = Relationships.Select(arrowModel => arrowModel.From);
+                if (!allFromNodeIds.Contains(viewModelNode.Id))
+                {
+                    _nodes.Add(new RealignNode
+                    {
+                        Id = viewModelNode.Id,
+                        TextHeight = nodeControl.NodeText.ActualHeight,
+                        RootDepth = 0,
+                        StackNumber = 0,
+                        OriginLeft = nodeControl.Centre.X,
+                        OriginTop = nodeControl.Centre.Y,
+                        Text = nodeControl.NodeText.Text
+                    });
+                }
+                else
+                {
+                    NodesNeedToBePlaced.Add(new RealignNode
+                    {
+                        Id = viewModelNode.Id,
+                        TextHeight = nodeControl.NodeText.ActualHeight,
+                        RootDepth = 0,
+                        StackNumber = 0,
+                        OriginLeft = nodeControl.Centre.X,
+                        OriginTop = nodeControl.Centre.Y,
+                        Text = nodeControl.NodeText.Text
+                    });
+                }
+            }
+
+            if (_nodes.Count == 0)
+            {
+                var parent = NodesNeedToBePlaced.OrderBy(q => q.OriginLeft).ThenBy(q => q.OriginTop).First();
+                if (parent != null)
+                {
+                    NodesNeedToBePlaced.Remove(parent);
+                    _nodes.Add(parent);
+                }
+                else
+                {
+                    throw new Exception("CANNOT REALIGN THIS STUPID MAP");
+                }
+            }
+        }
+
+        private void ReOrderChilds()
+        {
+            Nodes.OrderBy(q => q.OriginTop);
+            foreach (var node in Nodes)
+            {
+                while (node.HasChild)
+                {
+                    node.ChildNodes.OrderBy(q => q.OriginTop);
+                }
+            }
+        }
+
+        // find the depth of all child nodes, and place them in their parents
+        private void PlaceNodesToMap()
+        {
+            var maxTry = 1000;
+            var tryCount = 1;
+            while (NodesNeedToBePlaced.Count > 0 && tryCount <= maxTry)
+            {
+                var placedNodes = new List<RealignNode>();
+                foreach (var nodeToPlace in NodesNeedToBePlaced)
+                {
+                    
+                    var node = nodeToPlace;
+                    foreach (var arrowModel in Relationships.Where(q => q.From == node.Id))
+                    {
+                        foreach (var reDrawNode in _nodes)
+                        {
+                            if (!Map.AllChildNodes.Contains(nodeToPlace))
+                            {
+                                var findedParent = reDrawNode.GetChildNodeById(arrowModel.To);
+                                if (findedParent != null)
+                                {
+                                    nodeToPlace.RootDepth = findedParent.RootDepth + 1;
+                                    findedParent.AddChild(nodeToPlace);
+                                    placedNodes.Add(nodeToPlace);
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+
+                foreach (var node in placedNodes)
+                {
+                    _nodesNeedToBePlaced.Remove(node);
+                }
+                tryCount++;
+            }
+
+            if (NodesNeedToBePlaced.Count > 0)
+            {
+                var node = NodesNeedToBePlaced.OrderBy(q => q.OriginLeft).ThenBy(q => q.OriginTop).First();
+                Map.AddChild(node);
+                _nodesNeedToBePlaced.Remove(node);
+                PlaceNodesToMap();
+            }
+        }
+
+        // calculate the map verical stack 
+        private void CalculateStackNumber()
+        {
+            var maxDepth = Map.AllChildNodes.Max(q => q.RootDepth);
+            for (var i = maxDepth; i >= 0; i--)
+            {
+                var depth = i;
+                var loopNodes = Map.AllChildNodes.Where(q => q.RootDepth == depth);
+                var stackNum = 0;
+                foreach (var reDrawNode in loopNodes)
+                {
+                    reDrawNode.StackNumber = stackNum;
+                    stackNum++;
+                }
+            }
+        }
+
+        // Check if there is any relationship that from node and to node are in the same depth
+        private void ReCheckForIncorrectDepth()
+        {
+            var needToReCheck = true;
+            var changedNodes = new HashSet<RealignNode>();
+            while (needToReCheck)
+            {
+                var changedDepth = false;
+                
+                foreach (var relationship in Relationships)
+                {
+                    var from = Map.AllChildNodes.FirstOrDefault(q => q.Id == relationship.From);
+                    var to = Map.AllChildNodes.FirstOrDefault(q => q.Id == relationship.To);
+
+                    if (!changedNodes.Contains(from))
+                    {
+                        if (from != null && to != null)
+                        {
+                            if (from.RootDepth <= to.RootDepth)
+                            {
+                                changedDepth = true;
+                                from.AllNodes.ForEach(q => q.RootDepth = q.RootDepth + 1);
+                                changedNodes.Add(from);
+                            }
+                        }
+                    }
+                }
+                needToReCheck = changedDepth;
+            }
+        }
+
+        // Check multi parents nodes
+        private void CheckMultiParents()
+        {
+            var allFromNodeIds = Relationships.Select(arrowModel => arrowModel.From);
+            var hasMultiParentsNodes = (from x in allFromNodeIds
+                                        group x by x into grouped
+                                        where grouped.Count() > 1
+                                        select grouped.Key).ToList();
+
+            if (hasMultiParentsNodes.Count > 0)
+            {
+                foreach (var node in hasMultiParentsNodes.Select(guid => NodesNeedToBePlaced.FirstOrDefault(q => q.Id == guid)).Where(node => node != null))
+                {
+                    node.HasMultiParents = true;
+                    node.ParentCount = hasMultiParentsNodes.Count(q => q == node.Id);
+                }
+            }
+
+        }
+
+        protected abstract void CalculateCoordinates();
+    }
+}
+
+=======
+            }
+        }
+
+        public int MaxDepth
+        {
+            get
+            {
+                return Map.AllChildNodes.Max(q => q.RootDepth);
+            }
+        }
+
+
+        // Construction
+        protected RealignFactory(UIElementCollection uiElementCollection) : base(uiElementCollection)
+        {
+            CalculateNodes();
+        }
+
+        private void CalculateNodes()
+        {
+            CalculateCoordinates();
+        }
+
+       
+
+        private void ReOrderChilds()
+        {
+            Nodes.OrderBy(q => q.OriginTop);
+            foreach (var node in Nodes)
+            {
+                while (node.HasChild)
+                {
+                    node.ChildNodes.OrderBy(q => q.OriginTop);
+                }
+            }
+        }
+
+        protected abstract void CalculateCoordinates();
+    }
+}
+
+>>>>>>> e4a9f409280b6ecfe6ac70e8845dc9a439549d58

@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.Arrow.ArrowControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:customcontrols="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.Arrow"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="10" Loaded="OnLoaded" DataContextChanged="OnDataContextChanged" IsTabStop="True" KeyUp="OnKeyUp">
+
+    <Canvas>
+        <Canvas x:Name="LayoutRoot" Width="10" Height="{Binding ActualLength}" Background="#01000000" MouseRightButtonUp="OnMouseRightButtonUp" MouseRightButtonDown="LayoutRoot_MouseRightButtonDown" MouseLeftButtonDown="LayoutRoot_MouseLeftButtonDown" >
+
+            <Path Name="Arrow2" Data="M0,10 L10,10 L5,0 z" Fill="Black" Height="6" Canvas.Left="2.5" Stretch="Fill" Stroke="Black" Canvas.Top="3.5" UseLayoutRounding="False" Width="6"/>
+            <Path Name="Path2" Data="M0,10 L0,100" Fill="#FFF4F4F5" Height="{Binding ActualLength}" Canvas.Left="5" Stretch="Fill" Stroke="Black" StrokeThickness="0.5" Canvas.Top="7" UseLayoutRounding="False" Width="1"/>
+            <Canvas.RenderTransform>
+                <RotateTransform CenterX="{Binding CentreX}" CenterY="{Binding CentreY}" Angle="{Binding Angle}" />
+            </Canvas.RenderTransform>
+            <Canvas.Effect>
+                <DropShadowEffect ShadowDepth="1" Direction="0" Color="Transparent" BlurRadius="0" />
+            </Canvas.Effect>
+        </Canvas>
+    </Canvas>
+</UserControl>

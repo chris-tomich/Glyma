@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="GlymaRelatedContentPanelResources" RootWebOnly="true" Url="Style Library/Glyma/RelatedContentPanels">
+    <File Url="RelatedContentPanel.css" Type="GhostableInLibrary" Path="GlymaRelatedContentPanelResources\Glyma\RelatedContentPanels\RelatedContentPanel.css">
+      <Property Name="Title" Value="RelatedContentPanel" />
+    </File>
+    <File Url="GlymaRelatedContentPanels.js" Type="GhostableInLibrary" Path="GlymaRelatedContentPanelResources\Glyma\RelatedContentPanels\GlymaRelatedContentPanels.js">
+      <Property Name="Title" Value="GlymaRelatedContentPanels" />
+    </File>
+  </Module>
+</Elements>

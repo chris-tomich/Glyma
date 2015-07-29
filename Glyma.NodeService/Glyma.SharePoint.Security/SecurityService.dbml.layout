@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SecurityService">
+  <DataContextMoniker Name="/SecurityServiceDataContext" />
+  <nestedChildShapes>
+    <classShape Id="716f7055-ea5b-4054-8fcf-1736c679aa6e" absoluteBounds="3.25, 2.625, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SecurityServiceDataContext/GroupAssociation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d53921f4-7eae-40db-8fc3-175604fbfcb3" absoluteBounds="3.2649999999999997, 3.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="745cc7fa-b79d-4eae-acf1-c8615dbdf229" absoluteBounds="3.375, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SecurityServiceDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="74014388-6d93-4a47-8eac-d6b268517dc6" absoluteBounds="3.3900000000000006, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(4.3125 : 2.27089680989583); (4.3125 : 2.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityServiceDataContext/Group/Group_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="745cc7fa-b79d-4eae-acf1-c8615dbdf229" />
+        <classShapeMoniker Id="716f7055-ea5b-4054-8fcf-1736c679aa6e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="af524b91-e044-42e9-a5eb-0c1878e7f563" absoluteBounds="1.625, 5.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SecurityServiceDataContext/SecurableContext" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07d6a589-a0dd-4603-99bb-b561f967ba32" absoluteBounds="1.6400000000000001, 5.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.4375 : 5.25); (3.4375 : 4.39589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityServiceDataContext/SecurableContext/SecurableContext_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="af524b91-e044-42e9-a5eb-0c1878e7f563" />
+        <classShapeMoniker Id="716f7055-ea5b-4054-8fcf-1736c679aa6e" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c6c1a990-d220-4728-8c75-2adf2012e454" absoluteBounds="5.375, 5.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/SecurityServiceDataContext/SecurableObject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4892bf24-bade-4139-97d3-e2dee67be83a" absoluteBounds="5.3900000000000006, 5.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.375 : 5.5); (6.375 : 3.51044840494792); (5.25 : 3.51044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityServiceDataContext/SecurableObject/SecurableObject_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="c6c1a990-d220-4728-8c75-2adf2012e454" />
+        <classShapeMoniker Id="716f7055-ea5b-4054-8fcf-1736c679aa6e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.625 : 6.16429768880208); (5.375 : 6.16429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityServiceDataContext/SecurableContext/SecurableContext_SecurableObject" />
+      <nodes>
+        <classShapeMoniker Id="af524b91-e044-42e9-a5eb-0c1878e7f563" />
+        <classShapeMoniker Id="c6c1a990-d220-4728-8c75-2adf2012e454" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

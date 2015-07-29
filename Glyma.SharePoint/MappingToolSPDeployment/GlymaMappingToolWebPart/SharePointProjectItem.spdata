@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.VisualWebPart" SupportedTrustLevels="FullTrust" SupportedDeploymentScopes="Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="MappingToolWebPart.webpart" Target="GlymaMappingToolWebPart\" Type="ElementFile" />
+    <ProjectOutputFile ProjectId="c32a7ac2-7487-4002-b6e9-3cab8b7b4304" ProjectPath="..\SilverlightMappingToolBasic\SilverlightMappingToolBasic.csproj" Target="LAYOUTS\ClientBin\Glyma\" Type="TemplateFile" />
+  </Files>
+  <SafeControls>
+    <SafeControl Name="SafeControlEntry1" Assembly="$SharePoint.Project.AssemblyFullName$" Namespace="SevenSigma.MappingTool.MappingToolWebPart" TypeName="*" IsSafe="true" IsSafeAgainstScript="false" />
+  </SafeControls>
+</ProjectItem>

@@ -1,0 +1,223 @@
+<%@Master language="C#"%>
+<%@Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c"%>
+<%@ Register Tagprefix="SPSWC" Namespace="Microsoft.SharePoint.Portal.WebControls" Assembly="Microsoft.SharePoint.Portal, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@Register TagPrefix="wssucmui" TagName="MUISelector" Src="~/_controltemplates/15/MUISelector.ascx"%>
+<%@Register TagPrefix="wssuc" TagName="Welcome" Src="~/_controltemplates/15/Welcome.ascx"%>
+
+<!DOCTYPE HTML>
+<SharePoint:SPHtmlTag runat="server" id="SPHtmlTag" dir="&lt;%$Resources:wss,multipages_direction_dir_value%&gt;">
+    <head runat="server">
+        <meta http-equiv="X-UA-Compatible" content="IE=10" />
+        <meta charset="utf-8" />
+        <meta name="GENERATOR" content="Microsoft SharePoint" />
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Expires" content="0" />
+		
+        <!-- ===== STARTER: Robots  ======================================================================================================= -->
+        <SharePoint:RobotsMetaTag runat="server" />
+		
+		<!-- ===== STARTER: Favicon / Windows Tile ======================================================================================== -->	
+        <link rel="shortcut icon" href="<% $SPUrl:~SiteCollection/Style Library/Glyma/Common/favicon.ico %>" />
+		
+		<!-- ===== STARTER: Page Title loaded from page or page layout ==================================================================== -->
+		<SharePoint:PageTitle runat="server">
+            <asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server"><SharePoint:ProjectProperty Property="Title" runat="server" /></asp:ContentPlaceHolder>
+		</SharePoint:PageTitle>
+		
+		<!-- ===== STARTER: SP Scripts and CSS  =========================================================================================== -->
+		<SharePoint:StartScript runat="server" />
+		<SharePoint:CssLink runat="server" Version="15" />
+		<SharePoint:CacheManifestLink runat="server" />
+		<SharePoint:PageRenderMode runat="server" RenderModeType="MinimalDownload" />
+		<SharePoint:ScriptLink language="javascript" name="core.js" OnDemand="true" runat="server" Localizable="false" />
+		<SharePoint:ScriptLink language="javascript" name="menu.js" OnDemand="true" runat="server" Localizable="false" />
+		<SharePoint:ScriptLink language="javascript" name="callout.js" OnDemand="true" runat="server" Localizable="false" />
+		<SharePoint:ScriptLink language="javascript" name="sharing.js" OnDemand="true" runat="server" Localizable="false" />
+		<SharePoint:ScriptLink language="javascript" name="suitelinks.js" OnDemand="true" runat="server" Localizable="false" />
+		<SharePoint:CustomJSUrl runat="server" />
+		<SharePoint:SoapDiscoveryLink runat="server" />
+
+        <!-- ===== STARTER: Custom JS  ==================================================================================================== -->
+        <SharePoint:ScriptLink Language="javascript" name="~sitecollection/Style Library/Glyma/Common/jquery-1.10.2.min.js" runat="server" />
+        <SharePoint:ScriptLink Language="javascript" name="~sitecollection/Style Library/Glyma/Common/jquery-ui.js" runat="server" />
+        <SharePoint:ScriptLink Language="javascript" name="~sitecollection/Style Library/Glyma/Common/GlymaRedirector.js" runat="server" />
+        <SharePoint:ScriptLink Language="javascript" name="~sitecollection/Style Library/Glyma/Common/xml2json.js" runat="server" />
+        <SharePoint:ScriptLink Language="javascript" name="~sitecollection/Style Library/Glyma/Common/Silverlight.js" runat="server" />
+        <SharePoint:ScriptLink Language="javascript" name="~sitecollection/Style Library/Glyma/Common/SilverlightErrorHandler.js" runat="server" />
+        <SharePoint:ScriptLink Language="javascript" name="~sitecollection/Style Library/Glyma/Common/glyma_api.js" runat="server" />
+
+        <!-- Allows the drag & drop functionality to work with libraries -->
+        <script type="text/javascript">
+            SP.SOD.executeFunc('sp.js', 'SP.Utilities.Utility', function () { });
+            SP.SOD.executeFunc('sp.core.js', 'SP.Utilities.CommandBlock', function () { });
+        </script>
+	
+		<!-- ===== STARTER: Additional header placeholder - overridden by asp:content on pages or page layouts  =========================== -->
+		<SharePoint:AjaxDelta ID="DeltaPlaceHolderAdditionalPageHead" Container="false" runat="server">
+			<asp:ContentPlaceHolder ID="PlaceHolderAdditionalPageHead" runat="server" />
+			<SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true" />
+		</SharePoint:AjaxDelta>
+
+        <!-- ===== STARTER: Core SharePoint CSS =========================================================================================== -->
+		<SharePoint:CssRegistration Name="Themable/corev15.css" runat="server" />
+
+		<!-- ===== STARTER: Custom CSS  =================================================================================================== -->
+		<SharePoint:CssRegistration ID="GlymaMinimalCSSRegistration" name="<% $SPUrl:~sitecollection/Style Library/Glyma/Common/glyma-minimal.css %>" runat="server" 
+            after="Themable/corev15.css" />
+	</head>
+	
+	<body>
+		<!-- ===== STARTER: SP IDs / Prefetch SP images / SP Form  =========================================================================== -->
+		<SharePoint:SPClientIDGenerator runat="server" ServerControlID="DeltaPlaceHolderMain;DeltaPlaceHolderPageTitleInTitleArea;DeltaPlaceHolderUtilityContent" />
+		<SharePoint:ImageLink runat="server" />
+		<SharePoint:SharePointForm onsubmit="if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;}" runat="server">
+            <!-- ===== STARTER: SharePoint Reqs this for adding columns ===================================================== -->
+            <script type="text/javascript"> var submitHook = function () { return false; }; theForm._spOldSubmit = theForm.submit; theForm.submit = function () { if (!submitHook()) { this._spOldSubmit(); } }; </script>
+
+            <!-- ===== STARTER: Web Part Manager  ============================================================================================= -->
+            <SharePoint:AjaxDelta id="DeltaSPWebPartManager" runat="server"><WebPartPages:SPWebPartManager runat="server" /></SharePoint:AjaxDelta>
+		
+			<!-- ===== STARTER: ScriptManager ===================================================== -->
+			<asp:ScriptManager id="ScriptManager" runat="server" EnablePageMethods="false" EnablePartialRendering="true" EnableScriptGlobalization="false" EnableScriptLocalization="true" />
+            
+            <div id="glyma-body-area">
+                <!-- ===== GLYMA: Header Code Starts Here ======================================================================================== -->
+                <div id="top-bar">
+                    <div id="glyma-logo">
+                        <SharePoint:SPLinkButton runat="server" NavigateUrl="~sitecollection/">
+                            <img src="<asp:Literal runat="server" Text="<%$SPUrl:~sitecollection/Style Library/Glyma/Common/toolbar_glymalogo.png%>" />" alt="Back to Home" />
+                        </SharePoint:SPLinkButton>
+                    </div>
+                    <div id="top-bar-divider"></div>
+                    <div id="logout-control">
+                        <asp:Hyperlink Visible="true" onclick="STSNavigate2(event,'/_layouts/SignOut.aspx')" ID="lnkSignOut" runat="server">Logout</asp:Hyperlink>
+                    </div>
+                    <SharePoint:SPLinkButton runat="server" NavigateUrl="~sitecollection/">
+                        <div id="home-link">
+                            <div id="home-link-logo"></div>
+                            <p id="home-link-text">HOME</p>
+                        </div>
+                    </SharePoint:SPLinkButton>
+                    <div id="search-bar">
+                        <div id="search-context"></div>
+                        <div id="search-box">
+                            <div class="ms-dialogHidden">
+                                <SharePoint:AjaxDelta ID="DeltaSearch" BlockElement="true" runat="server">
+                                    <asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server">
+                                        <SharePoint:DelegateControl runat="server" ControlId="SmallSearchInputBox" /> 
+                                    </asp:ContentPlaceHolder>
+                                </SharePoint:AjaxDelta>	
+                            </div>
+                        </div>
+                    </div>
+                    <SharePoint:SPLinkButton runat="server" NavigateUrl="http://www.glyma.co/About/GettingStarted" Target="_new">
+                        <div id="help-link"></div>
+                    </SharePoint:SPLinkButton>
+                </div>
+                <div id="top-bar-dropshadow"></div>
+                <!-- ===== GLYMA: Header Code Ends Here ======================================================================================== -->
+                <!-- ===== STARTER: Main Content ========================================================================================== -->
+                <div id="s4-workspace">
+                    <div id="s4-bodyContainer">
+                        <div id="DeltaPlaceHolderMain" runat="server">
+                            <div class="customWidth">
+                                <div id="s4-titlerow">
+                                    <!-- ===== STARTER: Breadcrumbs ======================================================================================= -->
+                                    <div class="ms-dialogHidden">
+                                        <h1 id="pageTitle" class="ms-core-pageTitle">	
+                                            <!-- ===== STARTER: SP Reqs DeltaPlaceHolderPageTitleInTitleArea and PlaceHolderPageTitleInTitleArea for adding Apps in Site Content =================== -->
+                                            <SharePoint:AjaxDelta id="DeltaPlaceHolderPageTitleInTitleArea" runat="server">							
+                                                <asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea" runat="server">
+                                                    <SharePoint:SPTitleBreadcrumb runat="server" RenderCurrentNodeAsLink="true" SiteMapProvider="SPContentMapProvider" CentralAdminSiteMapProvider="SPXmlAdminContentMapProvider">
+                                                        <PATHSEPARATORTEMPLATE>
+                                                            <SharePoint:ClusteredDirectionalSeparatorArrow runat="server" />
+                                                        </PATHSEPARATORTEMPLATE>
+                                                    </SharePoint:SPTitleBreadcrumb>
+                                                </asp:ContentPlaceHolder>
+                                            </SharePoint:AjaxDelta>									
+
+                                            <div class="ms-displayInlineBlock ms-normalWrap">
+                                                <a href="javascript:;" id="ms-pageDescriptionDiv" style="display:none;">
+                                                    <span id="ms-pageDescriptionImage">&#160;</span>
+                                                </a>
+                                                <span class="ms-accessible" id="ms-pageDescription">
+                                                    <asp:ContentPlaceHolder id="PlaceHolderPageDescription" runat="server" />
+                                                </span>
+                                                <SharePoint:ScriptBlock runat="server">
+                                                    _spBodyOnLoadFunctionNames.push("setupPageDescriptionCallout");
+                                                </SharePoint:ScriptBlock>
+                                            </div>
+                                        </h1>
+                                    </div>
+                                </div>
+                                <!-- ===== STARTER: Current navigation =========================================================================================== -->
+                                <div id="sideNavBox" class="ms-dialogHidden ms-forceWrap ms-noList">
+                                    <div class="ms-core-navigation">
+                                        <!-- ===== STARTER: SP Reqs PlaceHolderLeftNavBar for adding Apps in Site Content =================== -->						
+                                        <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBar" runat="server">
+                                            <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBarTop" runat="server">
+                                                <!-- ===== STARTER: hide the quick launch for any page the doesn't override the PlaceHolderLeftNavBar ============ -->
+                                                <!-- ===== STARTER: if you want the navigation back you can add it from the collab master ============ -->
+                                                <style type="text/css">
+                                                    #contentBox { margin-left: 0; }
+                                                    #sideNavBox { display: none; }
+                                                </style>
+                                            </asp:ContentPlaceHolder>
+                                            <asp:ContentPlaceHolder ID="PlaceHolderQuickLaunchTop" runat="server" />
+                                            <asp:ContentPlaceHolder ID="PlaceHolderLeftNavBarDataSource" runat="server" />
+                                            <asp:ContentPlaceHolder ID="PlaceHolderCalendarNavigator" runat="server" />
+                                            <asp:ContentPlaceHolder ID="PlaceHolderLeftActions" runat="server" />
+                                            <asp:ContentPlaceHolder ID="PlaceHolderQuickLaunchBottom" runat="server" />
+                                        </asp:ContentPlaceHolder>
+                                    </div>
+                                </div>	
+                                <div id="contentBox">
+                                    <asp:ContentPlaceHolder ID="PlaceHolderMain" runat="server" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- ===== STARTER: Main Scrolling Body Ends Here ================================================================================= -->
+                
+                <!-- ===== STARTER: Needed for form stuff ========================================================================================= -->
+                
+                <SharePoint:AjaxDelta id="DeltaFormDigest" BlockElement="true" runat="server">
+                    <asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server">
+                        <SharePoint:formdigest runat="server" />
+                    </asp:ContentPlaceHolder>
+                </SharePoint:AjaxDelta>
+                
+            
+                <!-- ===== STARTER: Hidden Placeholders =========================================================================================== -->	
+                <asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderGlobalNavigationSiteMap" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderGlobalNavigation" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderHorizontalNav" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderTopNavBar" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderSiteName" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderPageImage" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderTitleLeftBorder" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderMiniConsole" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderTitleRightMargin" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderTitleAreaSeparator" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderNavSpacer" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderLeftNavBarBorder" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderBodyLeftBorder" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="PlaceHolderBodyRightMargin" Visible="False" runat="server" />
+                <asp:ContentPlaceHolder id="WSSDesignConsole" Visible="False" runat="server" />    
+                <asp:ContentPlaceHolder ID="SPNavigation" Visible="False" runat="server"></asp:ContentPlaceHolder>
+            </div>
+		</SharePoint:SharePointForm>
+	
+		<!-- ===== STARTER: Adds extra stuff like another form for Survey management ====================================================== -->	
+		<SharePoint:AjaxDelta id="DeltaPlaceHolderUtilityContent" runat="server">
+			<asp:ContentPlaceHolder id="PlaceHolderUtilityContent" runat="server"/>
+		</SharePoint:AjaxDelta>
+	</body>
+	<!-- Created from Starter SP2013 Master Page originally by Randy Drisgill (http://blog.drisgill.com) - April 21, 2013 -->
+</SharePoint:SPHtmlTag>

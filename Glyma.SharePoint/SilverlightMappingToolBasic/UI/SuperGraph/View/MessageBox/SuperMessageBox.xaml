@@ -1,0 +1,16 @@
+﻿<controls:ChildWindow x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.MessageBox.SuperMessageBox"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+                      xmlns:messageBox="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.MessageBox"
+           
+           Title="SuperMessageBox" HasCloseButton="False" Closed="ChildWindow_Closed" Style="{StaticResource SuperChildWindowStyle}" MouseRightButtonDown="SuperMessageBox_OnMouseRightButtonDown">
+    <Border Background="White" Margin="10" CornerRadius="10">
+        <Grid x:Name="LayoutRoot" >
+            <messageBox:MessageBoxContentControl x:Name="Content"></messageBox:MessageBoxContentControl>
+
+
+        </Grid>
+    </Border>
+    
+</controls:ChildWindow>

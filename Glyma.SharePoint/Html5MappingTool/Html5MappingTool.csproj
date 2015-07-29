@@ -1,0 +1,396 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BC6D1812-9E2E-4EAE-AA9A-D9B48CC9E1E5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Html5MappingTool</RootNamespace>
+    <AssemblyName>Html5MappingTool</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!--<Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />-->
+    <TypeScriptCompile Include="scripts\Breadcrumb.ts" />
+    <TypeScriptCompile Include="scripts\BreadcrumbControl.ts" />
+    <TypeScriptCompile Include="scripts\domain\Point.ts" />
+    <TypeScriptCompile Include="scripts\ElementLoader.ts" />
+    <TypeScriptCompile Include="scripts\Event.ts" />
+    <TypeScriptCompile Include="scripts\HistoryManager.ts" />
+    <TypeScriptCompile Include="scripts\MapController.ts" />
+    <TypeScriptCompile Include="scripts\MessageListener.ts" />
+    <TypeScriptCompile Include="scripts\NodeActionOptions.ts" />
+    <TypeScriptCompile Include="scripts\NodeClickOptions.ts" />
+    <TypeScriptCompile Include="scripts\NodeController.ts" />
+    <TypeScriptCompile Include="scripts\NodeCornerButton.ts" />
+    <TypeScriptCompile Include="scripts\NodeDetailButton.ts" />
+    <TypeScriptCompile Include="scripts\ArrowRenderer.ts" />
+    <TypeScriptCompile Include="scripts\Constants.ts" />
+    <TypeScriptCompile Include="scripts\MapRenderer.ts" />
+    <TypeScriptCompile Include="scripts\Math.ts" />
+    <TypeScriptCompile Include="scripts\Node.ts" />
+    <TypeScriptCompile Include="scripts\NodeDetailButtonController.ts" />
+    <TypeScriptCompile Include="scripts\NodeDetails.ts" />
+    <TypeScriptCompile Include="scripts\NodeRenderer.ts" />
+    <TypeScriptCompile Include="scripts\NodeTextBox.ts" />
+    <TypeScriptCompile Include="scripts\RealignController.ts" />
+    <TypeScriptCompile Include="scripts\RelatedContentPanelBridge.ts" />
+    <TypeScriptCompile Include="scripts\RTreeManager.ts" />
+    <TypeScriptCompile Include="scripts\SharedVariables.ts" />
+    <TypeScriptCompile Include="scripts\temp.ts" />
+    <TypeScriptCompile Include="scripts\TextMeasurer.ts" />
+    <TypeScriptCompile Include="scripts\TouchManager.ts" />
+    <TypeScriptCompile Include="scripts\typings\glyma_api\glyma_api.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\html5mappingtool\body.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery-mobile.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery-ui.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\jquery\jquery.eventobject.d.ts" />
+    <TypeScriptCompile Include="scripts\typings\relatedcontentpanel\GlymaRelatedContentPanels.d.ts" />
+    <TypeScriptCompile Include="scripts\Util.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\topbar.css" />
+    <Content Include="font\RobotoCondensed-LICENSE.txt" />
+    <Content Include="font\RobotoCondensed.css" />
+    <Content Include="img\.gitignore" />
+    <Content Include="img\breadcrumb\collapsed-dots.png" />
+    <Content Include="img\breadcrumb\Home.png" />
+    <Content Include="img\breadcrumb\levels-collapsed.png" />
+    <Content Include="img\breadcrumb\linebreak.png" />
+    <Content Include="img\cons.png" />
+    <Content Include="img\decision.png" />
+    <Content Include="img\idea.png" />
+    <Content Include="img\leftsidebar\exit-full-screen-hover.png" />
+    <Content Include="img\leftsidebar\exit-full-screen.png" />
+    <Content Include="img\leftsidebar\expansion-dots-hover.png" />
+    <Content Include="img\leftsidebar\expansion-dots.png" />
+    <Content Include="img\leftsidebar\full-screen-hover.png" />
+    <Content Include="img\leftsidebar\full-screen.png" />
+    <Content Include="img\leftsidebar\glymalogo.png" />
+    <Content Include="img\leftsidebar\h-expansion-dots-hover.png" />
+    <Content Include="img\leftsidebar\h-expansion-dots.png" />
+    <Content Include="img\leftsidebar\map-filter-hover.png" />
+    <Content Include="img\leftsidebar\map-filter.png" />
+    <Content Include="img\leftsidebar\Realign-hover.png" />
+    <Content Include="img\leftsidebar\Realign.png" />
+    <Content Include="img\leftsidebar\refresh-hover.png" />
+    <Content Include="img\leftsidebar\refresh.png" />
+    <Content Include="img\leftsidebar\switch-author-hover.png" />
+    <Content Include="img\leftsidebar\switch-author.png" />
+    <Content Include="img\leftsidebar\switch-explorer-hover.png" />
+    <Content Include="img\leftsidebar\switch-explorer.png" />
+    <Content Include="img\loader.gif" />
+    <Content Include="img\map.png" />
+    <Content Include="img\nodemenu\button-content-hover.png" />
+    <Content Include="img\nodemenu\button-content-static.png" />
+    <Content Include="img\nodemenu\button-feed-hover.png" />
+    <Content Include="img\nodemenu\button-feed-static.png" />
+    <Content Include="img\nodemenu\button-map-hover.png" />
+    <Content Include="img\nodemenu\button-map-static.png" />
+    <Content Include="img\nodemenu\button-pause-hover.png" />
+    <Content Include="img\nodemenu\button-pause-static.png" />
+    <Content Include="img\nodemenu\button-play-hover.png" />
+    <Content Include="img\nodemenu\button-play-static.png" />
+    <Content Include="img\nodemenu\close-map-extension.png" />
+    <Content Include="img\nodemenu\collapsed.png" />
+    <Content Include="img\nodemenu\cons-selected.png" />
+    <Content Include="img\nodemenu\content-hover.png" />
+    <Content Include="img\nodemenu\content-static.png" />
+    <Content Include="img\nodemenu\decision-selected.png" />
+    <Content Include="img\nodemenu\expanded.png" />
+    <Content Include="img\nodemenu\feed-hover.png" />
+    <Content Include="img\nodemenu\feed-static.png" />
+    <Content Include="img\nodemenu\idea-selected.png" />
+    <Content Include="img\nodemenu\locate-hover.png" />
+    <Content Include="img\nodemenu\locate-static.png" />
+    <Content Include="img\nodemenu\map-selected.png" />
+    <Content Include="img\nodemenu\note-selected.png" />
+    <Content Include="img\nodemenu\pro-selected.png" />
+    <Content Include="img\nodemenu\question-selected.png" />
+    <Content Include="img\nodemenu\semicollapsed.png" />
+    <Content Include="img\nodemenu\map-hover.png" />
+    <Content Include="img\nodemenu\map-static.png" />
+    <Content Include="img\nodemenu\menubutton-hover.png" />
+    <Content Include="img\nodemenu\menubutton-static.png" />
+    <Content Include="img\nodemenu\open-map-extension.png" />
+    <Content Include="img\nodemenu\showall-hover.png" />
+    <Content Include="img\nodemenu\showall-static.png" />
+    <Content Include="img\nodemenu\video-hover.png" />
+    <Content Include="img\nodemenu\video-static.png" />
+    <Content Include="img\note.png" />
+    <Content Include="img\pro.png" />
+    <Content Include="img\question.png" />
+    <Content Include="img\scaled\nodemenu1x\button-content-hover.png" />
+    <Content Include="img\scaled\nodemenu1x\button-content-static.png" />
+    <Content Include="img\scaled\nodemenu1x\button-feed-hover.png" />
+    <Content Include="img\scaled\nodemenu1x\button-feed-static.png" />
+    <Content Include="img\scaled\nodemenu1x\button-map-hover.png" />
+    <Content Include="img\scaled\nodemenu1x\button-map-static.png" />
+    <Content Include="img\scaled\nodemenu1x\button-pause-hover.png" />
+    <Content Include="img\scaled\nodemenu1x\button-pause-static.png" />
+    <Content Include="img\scaled\nodemenu1x\button-play-hover.png" />
+    <Content Include="img\scaled\nodemenu1x\button-play-static.png" />
+    <Content Include="img\scaled\nodemenu1x\collapsed.png" />
+    <Content Include="img\scaled\nodemenu1x\expanded.png" />
+    <Content Include="img\scaled\nodemenu1x\menubutton-hover.png" />
+    <Content Include="img\scaled\nodemenu1x\menubutton-static.png" />
+    <Content Include="img\scaled\nodemenu1x\semicollapsed.png" />
+    <Content Include="img\scaled\nodemenu2x\button-content-hover.png" />
+    <Content Include="img\scaled\nodemenu2x\button-content-static.png" />
+    <Content Include="img\scaled\nodemenu2x\button-feed-hover.png" />
+    <Content Include="img\scaled\nodemenu2x\button-feed-static.png" />
+    <Content Include="img\scaled\nodemenu2x\button-map-hover.png" />
+    <Content Include="img\scaled\nodemenu2x\button-map-static.png" />
+    <Content Include="img\scaled\nodemenu2x\button-pause-hover.png" />
+    <Content Include="img\scaled\nodemenu2x\button-pause-static.png" />
+    <Content Include="img\scaled\nodemenu2x\button-play-hover.png" />
+    <Content Include="img\scaled\nodemenu2x\button-play-static.png" />
+    <Content Include="img\scaled\nodemenu2x\collapsed.png" />
+    <Content Include="img\scaled\nodemenu2x\expanded.png" />
+    <Content Include="img\scaled\nodemenu2x\menubutton-hover.png" />
+    <Content Include="img\scaled\nodemenu2x\menubutton-static.png" />
+    <Content Include="img\scaled\nodemenu2x\semicollapsed.png" />
+    <Content Include="img\scaled\nodemenu4x\button-content-hover.png" />
+    <Content Include="img\scaled\nodemenu4x\button-content-static.png" />
+    <Content Include="img\scaled\nodemenu4x\button-feed-hover.png" />
+    <Content Include="img\scaled\nodemenu4x\button-feed-static.png" />
+    <Content Include="img\scaled\nodemenu4x\button-map-hover.png" />
+    <Content Include="img\scaled\nodemenu4x\button-map-static.png" />
+    <Content Include="img\scaled\nodemenu4x\button-pause-hover.png" />
+    <Content Include="img\scaled\nodemenu4x\button-pause-static.png" />
+    <Content Include="img\scaled\nodemenu4x\button-play-hover.png" />
+    <Content Include="img\scaled\nodemenu4x\button-play-static.png" />
+    <Content Include="img\scaled\nodemenu4x\collapsed.png" />
+    <Content Include="img\scaled\nodemenu4x\expanded.png" />
+    <Content Include="img\scaled\nodemenu4x\menubutton-hover.png" />
+    <Content Include="img\scaled\nodemenu4x\menubutton-static.png" />
+    <Content Include="img\scaled\nodemenu4x\semicollapsed.png" />
+    <Content Include="img\scaled\nodemenu8x\button-content-hover.png" />
+    <Content Include="img\scaled\nodemenu8x\button-content-static.png" />
+    <Content Include="img\scaled\nodemenu8x\button-feed-hover.png" />
+    <Content Include="img\scaled\nodemenu8x\button-feed-static.png" />
+    <Content Include="img\scaled\nodemenu8x\button-map-hover.png" />
+    <Content Include="img\scaled\nodemenu8x\button-map-static.png" />
+    <Content Include="img\scaled\nodemenu8x\button-pause-hover.png" />
+    <Content Include="img\scaled\nodemenu8x\button-pause-static.png" />
+    <Content Include="img\scaled\nodemenu8x\button-play-hover.png" />
+    <Content Include="img\scaled\nodemenu8x\button-play-static.png" />
+    <Content Include="img\scaled\nodemenu8x\collapsed.png" />
+    <Content Include="img\scaled\nodemenu8x\expanded.png" />
+    <Content Include="img\scaled\nodemenu8x\menubutton-hover.png" />
+    <Content Include="img\scaled\nodemenu8x\menubutton-static.png" />
+    <Content Include="img\scaled\nodemenu8x\semicollapsed.png" />
+    <Content Include="img\scaled\nodes10x\cons.png" />
+    <Content Include="img\scaled\nodes10x\idea.png" />
+    <Content Include="img\scaled\nodes10x\map.png" />
+    <Content Include="img\scaled\nodes10x\note.png" />
+    <Content Include="img\scaled\nodes10x\pro.png" />
+    <Content Include="img\scaled\nodes10x\question.png" />
+    <Content Include="img\scaled\nodes1x\cons.png" />
+    <Content Include="img\scaled\nodes1x\idea.png" />
+    <Content Include="img\scaled\nodes1x\map.png" />
+    <Content Include="img\scaled\nodes1x\note.png" />
+    <Content Include="img\scaled\nodes1x\pro.png" />
+    <Content Include="img\scaled\nodes1x\question.png" />
+    <Content Include="img\scaled\nodes2x\cons.png" />
+    <Content Include="img\scaled\nodes2x\idea.png" />
+    <Content Include="img\scaled\nodes2x\map.png" />
+    <Content Include="img\scaled\nodes2x\note.png" />
+    <Content Include="img\scaled\nodes2x\pro.png" />
+    <Content Include="img\scaled\nodes2x\question.png" />
+    <Content Include="img\scaled\nodes3x\cons.png" />
+    <Content Include="img\scaled\nodes3x\idea.png" />
+    <Content Include="img\scaled\nodes3x\map.png" />
+    <Content Include="img\scaled\nodes3x\note.png" />
+    <Content Include="img\scaled\nodes3x\pro.png" />
+    <Content Include="img\scaled\nodes3x\question.png" />
+    <Content Include="img\scaled\nodes4x\cons.png" />
+    <Content Include="img\scaled\nodes4x\idea.png" />
+    <Content Include="img\scaled\nodes4x\map.png" />
+    <Content Include="img\scaled\nodes4x\note.png" />
+    <Content Include="img\scaled\nodes4x\pro.png" />
+    <Content Include="img\scaled\nodes4x\question.png" />
+    <Content Include="img\scaled\nodes5x\cons.png" />
+    <Content Include="img\scaled\nodes5x\idea.png" />
+    <Content Include="img\scaled\nodes5x\map.png" />
+    <Content Include="img\scaled\nodes5x\note.png" />
+    <Content Include="img\scaled\nodes5x\pro.png" />
+    <Content Include="img\scaled\nodes5x\question.png" />
+    <Content Include="img\scaled\nodes6x\cons.png" />
+    <Content Include="img\scaled\nodes6x\idea.png" />
+    <Content Include="img\scaled\nodes6x\map.png" />
+    <Content Include="img\scaled\nodes6x\note.png" />
+    <Content Include="img\scaled\nodes6x\pro.png" />
+    <Content Include="img\scaled\nodes6x\question.png" />
+    <Content Include="img\scaled\nodes7x\cons.png" />
+    <Content Include="img\scaled\nodes7x\idea.png" />
+    <Content Include="img\scaled\nodes7x\map.png" />
+    <Content Include="img\scaled\nodes7x\note.png" />
+    <Content Include="img\scaled\nodes7x\pro.png" />
+    <Content Include="img\scaled\nodes7x\question.png" />
+    <Content Include="img\scaled\nodes8x\cons.png" />
+    <Content Include="img\scaled\nodes8x\idea.png" />
+    <Content Include="img\scaled\nodes8x\map.png" />
+    <Content Include="img\scaled\nodes8x\note.png" />
+    <Content Include="img\scaled\nodes8x\pro.png" />
+    <Content Include="img\scaled\nodes8x\question.png" />
+    <Content Include="img\scaled\nodes9x\cons.png" />
+    <Content Include="img\scaled\nodes9x\idea.png" />
+    <Content Include="img\scaled\nodes9x\map.png" />
+    <Content Include="img\scaled\nodes9x\note.png" />
+    <Content Include="img\scaled\nodes9x\pro.png" />
+    <Content Include="img\scaled\nodes9x\question.png" />
+    <Content Include="img\toolbar_divider.png" />
+    <Content Include="img\toolbar_dropshadow.png" />
+    <Content Include="img\toolbar_glymalogo.png" />
+    <Content Include="img\toolbar_gradient.png" />
+    <Content Include="img\toolbar_home.png" />
+    <Content Include="img\toolbar_questionmark.png" />
+    <Content Include="js\plugins.js" />
+    <Content Include="js\vendor\featherlight.js" />
+    <Content Include="js\vendor\jquery-1.10.2.min.js" />
+    <Content Include="js\vendor\jquery.mobile-1.4.2.min.js" />
+    <Content Include="js\vendor\modernizr-2.6.2.min.js" />
+    <Content Include="lib\geojson.js" />
+    <Content Include="lib\hammer.fakemultitouch.js" />
+    <Content Include="lib\hammer.js" />
+    <Content Include="lib\hammer.showtouches.js" />
+    <Content Include="lib\index.js" />
+    <Content Include="lib\jquery.mousewheel.js" />
+    <Content Include="lib\MagicTouch.js" />
+    <Content Include="html5eventregister.js" />
+    <Content Include="lib\rbush.js" />
+    <Content Include="lib\rectangle.js" />
+    <Content Include="lib\rtree.js" />
+    <Content Include="test.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="css\GlymaMappingWebPart.css" />
+    <Content Include="font\RobotoCondensed-Bold.ttf" />
+    <Content Include="font\RobotoCondensed-BoldItalic.ttf" />
+    <Content Include="font\RobotoCondensed-Italic.ttf" />
+    <Content Include="font\RobotoCondensed-Light.ttf" />
+    <Content Include="font\RobotoCondensed-LightItalic.ttf" />
+    <Content Include="font\RobotoCondensed-Regular.ttf" />
+    <Content Include="font\RobotoCondensedItalic300.woff" />
+    <Content Include="font\RobotoCondensedItalic400.woff" />
+    <Content Include="font\RobotoCondensedItalic700.woff" />
+    <Content Include="font\RobotoCondensedNormal300.woff" />
+    <Content Include="font\RobotoCondensedNormal400.woff" />
+    <Content Include="font\RobotoCondensedNormal700.woff" />
+    <None Include="lib\default.js" />
+    <None Include="index.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptOutFile>html5mappingtool.js</TypeScriptOutFile>
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
+    <TypeScriptRemoveComments>True</TypeScriptRemoveComments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptOutFile>html5mappingtool.js</TypeScriptOutFile>
+    <TypeScriptGeneratesDeclarations>True</TypeScriptGeneratesDeclarations>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11747</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:11747/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(VisualStudioVersion)' == ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.Sql.UnitTesting.targets" Condition="'$(VisualStudioVersion)' != ''" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

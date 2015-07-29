@@ -1,0 +1,23 @@
+﻿using SilverlightMappingToolBasic.UI.SuperGraph.View.CollapseSupportClasses;
+
+namespace SilverlightMappingToolBasic.UI.SuperGraph.View.Realign
+{
+    public interface IRealignFactory: IChildFindingHelper
+    {
+<<<<<<< HEAD
+        IOrderedEnumerable<RealignNode> Nodes { get; }
+        List<RealignNode> NodesNeedToBePlaced { get; }
+        List<Node> NodeModels { get; }
+        IEnumerable<NodeControl> NodeControls { get; }
+        IEnumerable<Relationship> Relationships { get; }
+        UIElementCollection UIElementCollection { get; }
+
+        List<ViewModel.Node> Draw();
+
+
+=======
+        void Draw();
+>>>>>>> e4a9f409280b6ecfe6ac70e8845dc9a439549d58
+        int MaxDepth { get; }
+    }
+}

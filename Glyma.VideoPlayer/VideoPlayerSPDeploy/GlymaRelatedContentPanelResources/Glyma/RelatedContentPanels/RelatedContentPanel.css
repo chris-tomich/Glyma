@@ -1,0 +1,825 @@
+﻿#RelatedContentPanelWrapper H1, #RelatedContentPanelWrapper H2, #RelatedContentPanelWrapper H3, #RelatedContentPanelWrapper H4, #RelatedContentPanelWrapper H5 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#ContentPanel H1, #ContentPanel H2, #ContentPanel H3, #ContentPanel H4, #ContentPanel H5 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#RelatedContentPanelWrapper 
+{
+    position:relative;
+    min-height: 650px;
+    /* min-width: 15px; */
+    /* display: inline-block; */
+    float: right;
+}
+
+#RelatedContentPanel
+{
+    height: 650px;
+    top: 0;
+    right: 0;
+    position: absolute;
+    margin-left: auto;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#RelatedContentPanel > div
+{
+    display:inline-block;
+}
+
+#ExpanderPanel 
+{
+    vertical-align: top;
+    width: 15px;
+    height: 45px;
+    background-image: url('../Icons/expander-background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: inline-block;
+    position: relative;
+}
+
+#Ellipsis 
+{
+    margin-top: 5px;
+    margin-left: 2px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../Icons/expansion-dots.png');
+    width:12px;
+    height:37px;
+}
+
+#Ellipsis:hover
+{
+    margin-top: 5px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../Icons/expansion-dots-hover.png');
+    width:12px;
+    height:37px;
+}
+
+#IconPanelBackground
+{
+    display: inline-block;
+    position: relative;
+}
+
+#IconPanelBackgroundTop 
+{
+    height: 10px;
+    background-image: url('../Icons/icon-panel-background-top.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-bottom: -1px;
+}
+
+#IconPanel 
+{
+    width: 70px;
+    margin: auto;
+    background-color: #003D64;
+    text-align: center;
+    display:none;
+}
+
+#IconPanelBackgroundBottom
+{
+    height: 10px;
+    background-image: url('../Icons/icon-panel-background-bottom.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-top: -1px;
+}
+
+#ContentPanel 
+{
+    position: relative;
+    float: right;
+    top: 0;
+    right: 85px;
+    color: Black;
+    margin-right: 8px;
+    /* display: inline-block; */
+    vertical-align: top;
+    height: 650px;
+    pointer-events: none;
+}
+
+#ContentPanels
+{
+    padding-top: 5px;
+    z-index: 5;
+    pointer-events: all;
+}
+
+#ContentPanels > div.content-panel
+{
+    margin-bottom: 10px;
+    border: 1px solid #58AED1;
+    background-color: white;
+}
+
+p.list-empty-message 
+{
+    margin: 5px 10px 5px 10px;
+    font-size:10pt;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003D64;
+}
+
+p.content-empty-message
+{
+    margin: 5px 10px 5px 10px;
+    font-size:10pt;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003D64;
+}
+
+p.content-error-message
+{
+    margin: 5px 10px 5px 10px;
+    font-size:10pt;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003D64;
+}
+
+p.no-silverlight-message
+{
+    margin: 5px 10px 5px 10px;
+    font-size:10pt;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #003D64;
+}
+
+div.no-silverlight-icon
+{
+    background-image: url('../Icons/sl.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    display:block;
+    margin: 0 auto;
+}
+
+div.no-silverlight-icon a {
+    display: block;
+    padding: 4px;
+    padding-top: 130px;
+    background-repeat: no-repeat;
+    background-position: center top;
+    text-decoration: none;
+    text-align: center;
+    width: 150px;
+}
+
+div.clear 
+{
+    clear: both;
+}
+
+div.close-icon
+{
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../Icons/close-window.png');
+    width: 20px;
+    height: 20px;
+    display:inline-block;
+}
+
+div.close-icon:hover
+{
+    background-image: url('../Icons/close-window-hover.png');
+}
+
+div.maximise-icon 
+{
+    background-color: #003D64;
+    height: 50px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+div.maximise-icon.hover
+{
+    background-color: #017EBA;
+}
+
+div.maximise-icon.disabled
+{
+    cursor: default;
+}
+
+#ShowAllIcon
+{
+    background-color: #003D64;
+    height: 50px;
+    padding-top: 4px;
+    cursor: pointer;
+}
+
+#ShowAllIcon.hover
+{
+    background-color: #017EBA;
+}
+
+#ShowAllIcon > div.icon
+{
+    background-image: url('../Icons/show-all.png');
+}
+
+#ShowAllIcon > div.icon.disabled
+{
+    background-image: url('../Icons/show-all-unavailable.png');
+}
+
+#ShowAllIcon > div.icon.hover
+{
+    background-image: url('../Icons/show-all-hover.png');
+}
+
+.icon
+{
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 70px;
+    height: 50px;
+}
+
+.side-panel-icon-text 
+{
+    display: none;
+}
+
+/* START: Related Content Panel specific CSS */
+#relatedcontent 
+{
+    overflow: auto;
+    width: 400px;
+}
+/* END: Related Content Panel specific CSS */
+
+div.related-content-header 
+{
+    height: 25px;
+    width: 400px;
+    color: White;
+    background-color: #003D64;
+    cursor: move;
+    text-align: center;
+}
+
+/* Content panels that can't be sorted need a default cursor */
+div.non-sort-item > div.related-content-header
+{
+    cursor: default;
+}
+
+/* The icon beside the panel header */
+div.related-content-header > img
+{
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 0px;
+    height: 25px;
+    width: 20px;
+    /* Note: now hidden */
+    display: none; 
+}
+
+/* The panel header */
+div.related-content-header h3
+{
+    display: inline;
+    position: relative;
+    top: 5px;
+    color: White;
+    font-size:10pt;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Min/Close icons in panel header are in this span */
+div.related-content-header span
+{
+    float: right;
+    margin-top: 0px;
+    margin-right: 0px;
+}
+
+div.related-content-header span div.pop-out-link 
+{
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../Icons/pop-out-window.png');
+    width: 20px;
+    height: 20px;
+    margin-right: 2px;
+    display:inline-block;
+}
+
+div.related-content-header span div.pop-out-link:hover 
+{
+   background-image: url('../Icons/pop-out-window-hover.png');
+}
+
+/* START: Generic List CSS */
+div.list-hidden-items 
+{
+    display: none;
+}
+
+div.list-item
+{
+    cursor: pointer;
+    position: relative;
+    height: auto;
+}
+
+div.list-item-hover-indicator 
+{
+    float: left;
+    position: absolute;
+    width: 6px;
+    background-color: transparent;
+    height: 100%;
+    display: inline-block;
+}
+
+div.list-item:hover > div.list-item-hover-indicator 
+{
+    background-color: #017EBA;
+}
+
+div.list-item:hover div.first-line 
+{
+    text-decoration: underline;
+}
+
+div.list-item > div.list-item-icon
+{
+    width:30px;
+    height:21px;
+    display: inline-block;
+    margin:5px 5px 5px 10px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+div.list-item-icon.map 
+{
+    background-image: url('../Icons/map-21x21.png');
+}
+
+div.list-item-icon.pro 
+{
+    background-image: url('../Icons/pro-21x21.png');
+}
+
+div.list-item-icon.con 
+{
+    background-image: url('../Icons/cons-21x21.png');
+}
+
+div.list-item-icon.decision 
+{
+    background-image: url('../Icons/decision-21x21.png');
+}
+
+div.list-item-icon.idea 
+{
+    background-image: url('../Icons/idea-21x21.png');
+}
+
+div.list-item-icon.note 
+{
+    background-image: url('../Icons/note-21x21.png');
+}
+
+div.list-item-icon.question 
+{
+    background-image: url('../Icons/question-21x21.png');
+}
+
+div.list-item-icon.reference 
+{
+    /*TODO: provide a reference icon */
+    background-image: url('../Icons/note-21x21.png');
+}
+
+div.list-item-icon.argument 
+{
+    /*TODO: provide an argument icon */
+    background-image: url('../Icons/note-21x21.png');
+}
+
+div.list-item-details
+{
+    color: #003D64;
+    font-size: 9pt;
+    font-family: Arial, Helvetica, sans-serif;
+    vertical-align: middle;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+div.first-line > H4
+{
+    color: #003D64;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+div.first-line > H4.node-name
+{
+    display:inline;
+}
+
+div.first-line > H4.action-start
+{
+    display:inline;
+    font-weight: normal;
+    font-style: italic;
+}
+
+div.first-line > H4.action-end
+{
+    display:inline;
+    font-weight: normal;
+    font-style: italic;
+}
+
+div.first-line > H4.user-display-name
+{
+    display:inline;
+}
+
+div.first-line > H4.map-label
+{
+    font-weight: normal;
+    font-style: italic;
+    display: inline;
+}
+
+div.first-line > H4.map-name
+{
+    font-weight: bold;
+    display: inline;
+}
+
+div.second-line
+{
+    font-size: 8pt;
+    font-style: italic;
+    font-weight: normal;
+    background-color: #58AED1;
+    color: White;
+    display: inline-block;
+    margin-bottom: 0;
+}
+
+div.second-line > H4
+{
+    padding-bottom: 0px;
+    padding-top: 0px;
+    margin: 1px 5px 1px 5px;
+    font-weight: bold;
+    color: White;
+}
+
+div.list-item-arrow 
+{
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 17px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../Icons/arrow.png');
+}
+
+div.list-show-more 
+{
+    text-align: center;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: #58AED1;
+    height: 30px;
+    vertical-align: middle;
+}
+
+div.list-paging 
+{
+    width: 60px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    display: table;
+}
+
+div.list-back-arrow 
+{
+    cursor: pointer;
+    margin-right: 0px;
+    margin-top: 8px;
+    vertical-align: middle;
+    text-align: left;
+    float: left;
+    display: inline-block;
+    width: 14px;
+    height: 17px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../Icons/arrow-left.png');
+}
+
+div.list-back-arrow:hover 
+{
+    background-image: url('../Icons/arrow-left-hover.png');
+}
+
+div.list-forward-arrow 
+{
+    cursor: pointer;
+    margin-left: 0px;
+    margin-top: 8px;
+    vertical-align: middle;
+    text-align: right;
+    float:right;
+    display: inline-block;
+    width: 14px;
+    height: 17px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('../Icons/arrow.png');
+}
+
+div.list-forward-arrow:hover 
+{
+    background-image: url('../Icons/arrow-hover.png');
+}
+
+div.list-page-number 
+{
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 14pt;
+    margin-top:4px;
+}
+
+div.list-item:hover > div.list-item-arrow 
+{
+    background-image: url('../Icons/arrow-hover.png');
+}
+/* END: Generic List CSS */
+
+/* START: Related Maps Specific CSS */
+#relatedmaps
+{
+    overflow-x: hidden;
+}
+
+#relatedmaps div.even-list-item
+{
+    background-color: #F0F8Fb;
+}
+
+#relatedmaps div.odd-list-item
+{
+    background-color: white;
+}
+/* END: Related Maps Specific CSS */
+
+/* START: Activity Feed Specific CSS */
+#activityfeed
+{
+    overflow-x: hidden;
+}
+
+#activityfeed div.even-list-item
+{
+    background-color: #F0F8Fb;
+}
+
+#activityfeed div.odd-list-item
+{
+    background-color: white;
+}
+/* END: Activity Feed Specific CSS */
+
+/* START: Key Filtered Feed Specific CSS */
+
+#filteredfeed
+{
+    overflow-x: hidden;
+}
+
+#filteredfeed div.even-list-item
+{
+    background-color: #FBF7F0;
+}
+
+#filteredfeed div.odd-list-item
+{
+    background-color: #F4E6E1;
+}
+
+div.filters-panel-header 
+{
+    cursor: pointer;
+    text-align: left;
+    background-color: #017EBA;
+    color: white;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    border-bottom: 1px dashed #003D64;
+}
+
+div.filters-panel-header > span
+{
+    vertical-align: middle;
+}
+
+span.filter-expand-label 
+{
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    margin-top: 1px;
+}
+
+div.filters-panel 
+{
+    display: none;
+    background-color: #F0F8Fb;
+    color: #003d64;
+    font-size: 10pt;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+table.filters-table {
+    width: 100%;
+}
+
+table.filters-table tr td {
+    max-width: 30%;
+    vertical-align: top;
+}
+
+span.filter-expand-indicator 
+{
+    margin-left: 5px;
+    font-size: 11pt;
+}
+
+div.filters-panel div.filter 
+{
+    display: inline;
+    margin-left: 10px;
+    max-width: 115px;
+}
+
+div.filters-panel div.filter div.filter-column-1 
+{
+    display: inline-block;
+    vertical-align: top;
+}
+
+div.filters-panel div.filter div.filter-column-2
+{
+    display: inline-block;
+    max-width: 94px;
+    overflow-x: hidden;
+}
+
+div.filters-panel div.filter input
+{
+    margin-right: 5px;
+}
+
+div.filters-panel div.filters-operation-type
+{
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+div.filters-panel div.filters-operation-type select.filters-operation-type-selector
+{
+    height: 20px;
+    margin-left: 5px;
+    vertical-align: top;
+}
+
+/* END: Key Filtered Feed Specific CSS */
+
+/* START: Locate Mapping Panel Specific CSS */
+#MapPanel 
+{
+    font-size: 9pt;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* END: Locate Mapping Panel Specific CSS */
+
+#YouTubeAddressBar 
+{
+    width: 100%;
+    height: 23px;
+    background-color: black;
+    overflow: hidden;
+}
+
+#YouTubeAddress 
+{
+    width: 100%;
+} 
+
+#YouTubeAddressLabel 
+{
+    float: left;
+    margin-top: 2px;
+    margin-left: 5px;
+    color: white;
+}
+#YouTubeAddressBar span
+{
+    display:block;
+    overflow: hidden;
+    padding: 0 2px;
+}
+
+#SetYouTubeAddressButton
+{
+    float: right;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 5px;
+    margin-right: 3px;
+    font-weight: bold;
+    color: white;
+    background-color: #CC181E; /* YouTube red */
+    border-color: #CC181E;
+    min-width: 12px;
+}
+
+#YouTubeSizeChoices 
+{
+    text-align: right;
+    background-color: black;
+    margin: 0;
+    margin-top: -4px;
+    padding: 0;
+}
+
+#YouTubeSizeChoices span.you-tube-videosize-label
+{
+    color: white;
+}
+
+#YouTubeSizeSelect 
+{
+    background-color: black;
+    border-color:black;
+    color:white;
+}
+
+.unselectable 
+{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+

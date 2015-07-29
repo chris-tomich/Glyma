@@ -1,0 +1,142 @@
+﻿<controls:ChildWindow x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.PropertiesEditorSupportClasses.NodePropertiesDialog"                       
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"
+           xmlns:richTextSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.RichTextSupportClasses"
+           xmlns:propertiesEditorSupportClasses="clr-namespace:SilverlightMappingToolBasic.UI.SuperGraph.View.PropertiesEditorSupportClasses"
+           xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+           Width="640" Height="600" 
+           DataContextChanged="OnDataContextChanged" Closed="ChildWindow_Closed" MinHeight="600" MinWidth="640" Style="{StaticResource SuperChildWindowStyle}">
+    <controls:ChildWindow.Title>
+        <Binding>
+            <Binding.Path>Title</Binding.Path>
+            <Binding.Mode>OneWay</Binding.Mode>
+        </Binding>
+    </controls:ChildWindow.Title>
+    <Grid x:Name="LayoutRoot">
+        <Grid.Resources>
+            <propertiesEditorSupportClasses:IsSingleNodeContextConverter x:Key="IsSingleNodeConverter" />
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <controls:TabControl Grid.RowSpan="2" Margin="10" x:Name="RadTabControl"
+				DisplayMemberPath="Content" 
+                               BorderThickness="0" TabStripPlacement="Top" Style="{StaticResource SuperTabControlStyle}">
+            <controls:TabItem x:Name="GeneralTab" Cursor="Hand"  Header="GENERAL" Style="{StaticResource SuperTabItemStyle}" FontSize="14">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Left">
+                            <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="5,0,0,0" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Height="15" Width="70" VerticalAlignment="Center">Name:</TextBlock>
+                            <richTextSupportClasses:SpellCheckTextBox x:Name="NodeNameTextBox" Text="{Binding Path=Name, Mode=TwoWay}" IsEnabled="{Binding Converter={StaticResource IsSingleNodeConverter}}" Margin="5,5,5,5" FontSize="12" Width="530" Height="48"></richTextSupportClasses:SpellCheckTextBox>
+                                <!--
+                                <TextBox Name="NodeNameTextBox" Text="{Binding Path=Name, Mode=TwoWay}" 
+                                TextWrapping="Wrap" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                Margin="5,5,5,5" VerticalScrollBarVisibility="Auto" Height="48" Width="458" />
+                                -->
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="CreatedByLabelTextBlock" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Width="70" Margin="5,0,0,0" Height="15" VerticalAlignment="Center">Spoken By:</TextBlock>
+                                <richTextSupportClasses:SpellCheckTextBox x:Name="SpokenByTextBox" Text="{Binding Path=SpokenBy, Mode=TwoWay}" Margin="5,5,5,5" FontSize="12" Width="210" Height="23"></richTextSupportClasses:SpellCheckTextBox>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBlock Margin="5,0,0,0" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Height="15" Width="70" VerticalAlignment="Center">Created Time:</TextBlock>
+                                <TextBlock Height="15" Name="CreatedTimeTextBlock" VerticalAlignment="Top" Text="" Margin="0,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBlock Margin="5,0,0,0" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Height="15" Width="70" VerticalAlignment="Center">Modified By:</TextBlock>
+                                <TextBlock Height="15" Name="ModifiedByTextBlock" VerticalAlignment="Top" Margin="0,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Visibility="Collapsed">
+                        <TextBlock Margin="5,0,0,0" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Height="15" Width="70" VerticalAlignment="Center">Modified Time:</TextBlock>
+                                <TextBlock Height="15" Name="ModifiedTimeTextBlock" VerticalAlignment="Top" Text="" Margin="0,0,0,0"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Margin="5,0,0,0" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Height="15" Width="70" VerticalAlignment="Center">Note:</TextBlock>
+                                <richTextSupportClasses:SpellCheckTextBox x:Name="NoteTextBox" Text="{Binding Path=Note, Mode=TwoWay}" VerticalScrollBarVisibility="Auto" Margin="5,5,5,5" FontSize="12" Width="530" Height="96"></richTextSupportClasses:SpellCheckTextBox>
+                            </StackPanel>
+                </StackPanel>
+            </controls:TabItem>
+
+            <controls:TabItem Cursor="Hand" x:Name="DescriptionTab" Header="DESCRIPTION" Style="{StaticResource SuperTabItemStyle}"  FontSize="14">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                        <TextBlock Text="Description Type:" Margin="2,0,0,0" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Height="15" Width="100" TextAlignment="Right"></TextBlock>
+                        <telerik:RadComboBox x:Name="DescriptionTypeSelector" Height="20" Width="132" Margin="2,0,0,0" Text="Please Select" SelectionChanged="RadComboBox_SelectionChanged">
+                            <telerik:RadComboBoxItem Content="Text"></telerik:RadComboBoxItem>
+                            <telerik:RadComboBoxItem Content="Embed Web Page"></telerik:RadComboBoxItem>
+                        </telerik:RadComboBox>
+                        <TextBlock x:Name="MultipleNodeTextWarning" Text="Warning: You are editing multiple nodes that have text description content, editting the description will overwrite all selected nodes." Margin="2,2,0,0" Width="375" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="#FFB40505" Visibility="Collapsed"/>
+                        <CheckBox x:Name="CbRichTextAdvanceMode" Height="16" Margin="3,0,0,0" Content="Advanced Mode" Visibility="Collapsed"></CheckBox>
+                        <StackPanel x:Name="WidthHeightPanels" Orientation="Horizontal" Margin="0" Visibility="Collapsed">
+                            <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                                <TextBlock Text="Width:" Margin="5,0,0,0" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Height="15" Width="40" TextAlignment="Right"></TextBlock>
+                                <telerik:RadNumericUpDown Height="20" Width="60" Margin="5" x:Name="WidthSelector" ValueFormat="Numeric"  Value="{Binding DescriptionWidth, Mode=TwoWay}" NullValue="Auto" NumberDecimalDigits="0" Minimum="400" Maximum="2000"></telerik:RadNumericUpDown>
+                                <TextBlock Text="px" Width="15" Margin="0,10,0,0"></TextBlock>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="5,0,5,0">
+                                <TextBlock Text="Height:" Margin="5,0,0,0" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Height="15" Width="40" TextAlignment="Right"></TextBlock>
+                                <telerik:RadNumericUpDown Height="20" Width="60" Margin="5" x:Name="HeightSelector" ValueFormat="Numeric" Value="{Binding DescriptionHeight, Mode=TwoWay}" NullValue="Auto" NumberDecimalDigits="0" Minimum="20" Maximum="2000"></telerik:RadNumericUpDown>
+                                <TextBlock Text="px" Width="15" Margin="0,10,0,0"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                    </StackPanel>
+                    <Grid  Grid.Row="1">
+                            <Grid Visibility="Collapsed" x:Name="IframePanel" Height="Auto">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                    <RowDefinition Height="50"></RowDefinition>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <StackPanel Orientation="Horizontal" Margin="5" Grid.Row="0">
+                                <TextBlock Text="URL:" Margin="5,0,0,0" FontFamily="Trebuchet MS" FontWeight="Bold" FontSize="12" Foreground="#FF58aed1" Height="15" Width="100" TextAlignment="Right"></TextBlock>
+                                <TextBox x:Name="UrlTextBox" Width="480" FontFamily="Trebuchet MS"  Margin="5" Height="24" BorderThickness="1" Text="{Binding DescriptionUrl, Mode=TwoWay, ValidatesOnExceptions=True, NotifyOnValidationError=True}"></TextBox>
+                                </StackPanel>
+                                
+                            </Grid>
+                            <Grid  x:Name="RawPanel" Visibility="Collapsed" Height="Auto">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBox Grid.Row="0" x:Name="HtmlEditor" Text="{Binding Description}" Margin="5" Height="Auto"
+                         TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="1" AllowDrop="False" 
+                         VerticalScrollBarVisibility="Auto"></TextBox>
+                            </Grid>
+                            <Grid x:Name="DesignerPanel" Visibility="Collapsed" Height="Auto">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <richTextSupportClasses:TelerikRichTextEditor Grid.Row="0" x:Name="RichTextEditor"></richTextSupportClasses:TelerikRichTextEditor>
+                            </Grid>
+                            <Grid x:Name="DescriptionNotice">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="20" Grid.Row="0" Text="Please select the description type." Foreground="#FF6F6F6F"></TextBlock>
+                            </Grid>
+                        </Grid>
+
+                    </Grid>
+            </controls:TabItem>
+            <controls:TabItem Cursor="Hand" x:Name="PropertiesTab" Header="PROPERTIES" Style="{StaticResource SuperTabItemStyle}"  FontSize="14">
+                    <propertiesEditorSupportClasses:PropertiesEditor Width="Auto" x:Name="PropertyEditorGrid" VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+
+            </controls:TabItem>
+
+        </controls:TabControl>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <telerik:RadButton x:Name="SaveButton" Cursor="Hand"  Style="{StaticResource SuperButtonStyle}" FontFamily="Trebuchet MS" FontSize="14" Foreground="White" FontWeight="ExtraBold" BorderThickness="0" Content="Save" Width="100" HorizontalAlignment="Right" Margin="10" Click="OnSaveClicked"></telerik:RadButton>
+            <telerik:RadButton x:Name="CancelButton" Cursor="Hand"  Style="{StaticResource SuperButtonStyle}" FontFamily="Trebuchet MS"  FontSize="14"  Foreground="White" FontWeight="ExtraBold"  BorderThickness="0" Content="Cancel" Width="100" HorizontalAlignment="Right" Margin="10" Click="OnCancelClicked"></telerik:RadButton>
+        </StackPanel>
+        <!-- <Button x:Name="CancelButton" Content="Cancel" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,0,0,5" Grid.Row="3" /> -->
+    </Grid>
+</controls:ChildWindow>

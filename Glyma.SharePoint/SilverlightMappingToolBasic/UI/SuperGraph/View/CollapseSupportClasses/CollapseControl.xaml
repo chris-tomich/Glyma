@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.CollapseSupportClasses.CollapseControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="12" d:DesignWidth="12" Loaded="UserControl_Loaded">
+    <Canvas x:Name="LayoutRoot" Background="Transparent" Height="8" Width="8" MouseEnter="OnButtonMouseEnter" MouseLeave="OnButtonMouseLeave">
+        <Image x:Name="CollapseButton" Source="/SilverlightMappingToolBasic;component/Images/NodeControl/CollapseControl/close-map-extension.png" Width="12" Height="12" ToolTipService.ToolTip="Collapse all nodes, double click to expand all." Visibility="{Binding CollapseVisibility}" Canvas.ZIndex="99" />
+        <Image x:Name="ExpandButton" Source="/SilverlightMappingToolBasic;component/Images/NodeControl/CollapseControl/open-map-extension.png" Width="12" Height="12" ToolTipService.ToolTip="Expand one level, double click to expand all."  Visibility="{Binding ExpandVisibility}"  Canvas.ZIndex="99"/>
+        <Image x:Name="SemiCollapseButton" Source="/SilverlightMappingToolBasic;component/Images/NodeControl/CollapseControl/map-extension.png" Width="12" Height="12" ToolTipService.ToolTip="Expand one level, double click to expand all."  Visibility="{Binding SemiCollapseVisibility}"  Canvas.ZIndex="99" />
+    </Canvas>
+</UserControl>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="9acbd29a-a4d4-4a2e-a132-4dd16e78d093" solutionId="9acbd29a-a4d4-4a2e-a132-4dd16e78d093" resetWebServer="false" sharePointProductVersion="" name="GlymaMappingTool" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="NodeService.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\NodeService\NodeService.csproj">
+      <safeControls>
+        <safeControl assemblyName="NodeService.dll, Version=1.0.0.0,Culture=Neutral,PublicKeyToken=d11efae7dcee8237" namespaceName="NodeService" typeName="*" isSafeAgainstScript="false" />
+      </safeControls>
+    </projectOutputAssembly>
+    <projectOutputAssembly location="ThemeService.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\ThemeService\ThemeService.csproj">
+      <safeControls>
+        <safeControl assemblyName="ThemeService.dll, Version=1.0.0.0,Culture=Neutral,PublicKeyToken=c24dd24f9f916d45" namespaceName="ThemeService" typeName="*" isSafeAgainstScript="false" />
+      </safeControls>
+    </projectOutputAssembly>
+    <customAssembly location="ICSharpCode.SharpZipLib.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\NodeService\ICSharpCode.SharpZipLib.dll">
+      <safeControls>
+        <safeControl assemblyName="ICSharpCode.SharpZipLib.dll, Version=1.0.0.0,Culture=Neutral,PublicKeyToken=1b03e6acf1164f73" namespaceName="ICSharpCode.SharpZipLib.Zip" typeName="*" isSafeAgainstScript="false" />
+      </safeControls>
+    </customAssembly>
+    <projectOutputAssembly location="SevenSigma.Logging.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\SevenSigma.Logging\SevenSigma.Logging.csproj" />
+  </assemblies>
+  <features>
+    <featureReference itemId="2c88bc36-7449-4ca8-8ca5-770108849d54" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="f13af8f8-8169-4199-86d0-b425aa253a09" />
+    <projectItemReference itemId="e4e3e699-b4e3-4678-8293-b0b42bc09626" />
+    <projectItemReference itemId="c151ef72-d98d-439e-8e14-91026d0ccedc" />
+    <projectItemReference itemId="cceac5bf-d079-4c8c-ae42-92c0fbabd0be" />
+    <projectItemReference itemId="c7f59ebc-1363-4bbe-9aec-7d328a7794e7" />
+    <projectItemReference itemId="ad09c42f-8b20-46a2-b716-350ee0947027" />
+  </projectItems>
+</package>

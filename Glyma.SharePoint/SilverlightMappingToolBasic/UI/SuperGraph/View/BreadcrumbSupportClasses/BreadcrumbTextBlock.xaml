@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.BreadcrumbSupportClasses.BreadcrumbTextBlock"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="26" d:DesignWidth="100">
+    <Grid >
+        <StackPanel Orientation="Horizontal" Cursor="Hand" Background="#FF57afcf">
+            <TextBlock Margin="20,6,8,6" x:Name="Breadcrumb" Text="{Binding BreadcrumbText}" UseLayoutRounding="false" Foreground="White" TextWrapping="Wrap" MouseLeftButtonUp="TextBlock_MouseLeftButtonUp" FontFamily="Trebuchet MS" ></TextBlock>
+            <Image Margin="0,7,8,7" x:Name="PropertiesImage" Height="12" Source="/SilverlightMappingToolBasic;component/Images/properties-gear.png" Visibility="{Binding PropertiesVisibility}" MouseLeftButtonUp="Image_MouseLeftButtonUp" />
+        </StackPanel>
+    </Grid>
+    
+</UserControl>

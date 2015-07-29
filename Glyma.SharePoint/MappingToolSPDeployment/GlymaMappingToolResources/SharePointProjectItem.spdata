@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="GlymaMappingToolResources\" Type="ElementManifest" />
+    <ProjectItemFile Source="Glyma\MappingTool\GlymaMappingWebPart.css" Target="GlymaMappingToolResources\Glyma\MappingTool\" Type="ElementFile" />
+    <ProjectItemFile Source="Glyma\MappingTool\html5mappingtool.js" Target="GlymaMappingToolResources\Glyma\MappingTool\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

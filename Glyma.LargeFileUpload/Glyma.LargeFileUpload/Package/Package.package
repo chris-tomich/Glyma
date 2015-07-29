@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="84acdb59-938d-44d7-accc-2c01b54cbafa" solutionId="84acdb59-938d-44d7-accc-2c01b54cbafa" resetWebServer="false" sharePointProductVersion="" name="Glyma.LargeFileUpload" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <projectItems>
+    <projectItemReference itemId="fda593c4-aa54-4d5d-8c80-64825fb1f643" />
+  </projectItems>
+</package>

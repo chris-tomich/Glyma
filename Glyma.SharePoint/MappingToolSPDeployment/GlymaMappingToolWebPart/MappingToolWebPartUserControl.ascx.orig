@@ -1,0 +1,119 @@
+﻿<%@ Assembly Name="$SharePoint.Project.AssemblyFullName$" %>
+<%@ Assembly Name="Microsoft.Web.CommandUI, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls"
+    Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="asp" Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
+<%@ Import Namespace="Microsoft.SharePoint" %>
+<%@ Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages"
+    Assembly="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="MappingToolWebPartUserControl.ascx.cs"
+    Inherits="SevenSigma.MappingTool.MappingToolWebPart.MappingToolWebPartUserControl" %>
+<style type="text/css">
+    html, body
+    {
+        height: 100%;
+        overflow: auto;
+    }
+    body
+    {
+        padding: 0;
+        margin: 0;
+    }
+    #silverlightControlHost
+    {
+        height: 100%;
+        text-align: center;
+    }
+</style>
+<script type="text/javascript">
+    var glymaJSBridge = null;
+
+    function getThemeSvcUrl() {
+        return "<%=ThemeServiceUrl %>";
+    }
+
+    function getMappingToolSvcUrl() {
+        return "<%=MappingToolServiceUrl %>";
+    }
+
+    function getLoggingSvcUrl() {
+        return "<%=LoggingServiceUrl %>";
+    }
+
+    function getCurrentUserName() {
+        return "<%=CurrentUserName %>";
+    }
+
+    function displayServiceErrorDialog() {
+        alert("Unable to connect to web services at:\n<%=MappingToolServiceUrl %>");
+    }
+
+    function openDocument(documentUrl) {
+        params = 'width=' + screen.width;
+        params += ', height=' + screen.height;
+        params += ', top=0, left=0';
+        params += ', location=no';
+        params += ', toolbar=no';
+        params += ', status=yes';
+        params += ', menubar=no';
+        params += ', directories=no';
+        params += ', scrollbars=yes';
+        params += ', resizable=yes';
+
+        newwin = window.open(documentUrl, 'mapDocWindow', params);
+        if (window.focus) {
+            newwin.focus()
+        }
+        return false;
+    }
+
+    function hasRelatedContentPanels() {
+        // Check for the existence of functions that are called via HtmlPage.Window.Invoke
+        if ((typeof (ResetAndHidePanels) === "function") &&
+            (typeof (LoadRelatedContent) === "function") &&
+            (typeof (ShowRelatedMaps) === "function") &&
+            (typeof (ClearRelatedMaps) === "function") &&
+            (typeof (SetAuthorMode) === "function") &&
+            (typeof (SetReaderMode) === "function")) {
+            return true;
+        }
+        else {
+            return false; //the related content panel web part isn't added
+        }
+    }
+
+    function onSilverlightLoaded(sender, args) {
+        var slCtl = sender.getHost();
+        glymaJSBridge = slCtl.Content.glymaMapCanvas;
+    }
+
+
+    function SendGlymaMessage(message) {
+        if (glymaJSBridge != null) {
+            glymaJSBridge.ReceiveGlymaMessage(message);
+        }
+    }
+</script>
+<asp:Panel ID="SilverlightPanel" runat="server">
+    <div id="silverlightControlHost" style="width: 100%; height: 650px;">
+        <object id="SLMappingTool" data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="100%" height="650">
+            <param name="source" value="/_layouts/ClientBin/Glyma/SilverlightMappingToolBasic.xap" />
+            <param name="onLoad" value="onSilverlightLoaded" />
+            <param name="onError" value="onSilverlightError" />
+            <param name="background" value="white" />
+            <param name="minRuntimeVersion" value="5.0.61118.0" />
+<<<<<<< HEAD
+            <param name="initParams" value="<%=InitParameters %>" />
+            <param id="instanceId" name="instanceId" value="" />
+=======
+>>>>>>> master
+            <param name="autoUpgrade" value="true" />
+            <param id="glymaWebPartCurrentSpSiteUrl" name="currentSpSiteUrl" value="<%=CurrentSiteUrl %>" />
+            <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.61118.0" style="text-decoration: none">
+                <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style: none" />
+            </a>
+        </object>
+        <iframe id="_sl_historyFrame" style="visibility: hidden; height: 0px; width: 0px; border: 0px"></iframe>
+    </div>
+</asp:Panel>

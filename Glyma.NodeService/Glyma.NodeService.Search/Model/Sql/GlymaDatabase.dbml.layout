@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="GlymaDatabase">
+  <DataContextMoniker Name="/GlymaDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b223485b-2c2b-4d1a-8c2d-864332b9adf8" absoluteBounds="3.375, 2.75, 2, 1.4248478190104166">
+      <DataClassMoniker Name="/GlymaDatabaseDataContext/Node" />
+      <nestedChildShapes>
+        <elementListCompartment Id="81f94bed-e796-4681-b94c-e581b67bdb7f" absoluteBounds="3.39, 3.21, 1.9700000000000002, 0.86484781901041674" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fb84c620-f8ae-4be6-9544-71449269c80e" absoluteBounds="6.125, 2.5, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/GlymaDatabaseDataContext/Metadata" />
+      <nestedChildShapes>
+        <elementListCompartment Id="846c2291-5246-4aeb-b6ca-f2b9cdfcc7b1" absoluteBounds="6.1400000000000006, 2.96, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.375 : 3.46242390950521); (6.125 : 3.46242390950521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/GlymaDatabaseDataContext/Node/Node_Metadata" />
+      <nodes>
+        <classShapeMoniker Id="b223485b-2c2b-4d1a-8c2d-864332b9adf8" />
+        <classShapeMoniker Id="fb84c620-f8ae-4be6-9544-71449269c80e" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

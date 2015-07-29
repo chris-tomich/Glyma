@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="97407b43-7f71-404a-8e30-457cef78b284" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://danwin2k8-sp/_vti_bin/SevenSigma/MappingToolService.svc/mex" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mex.xsd" MetadataType="Schema" ID="d67bdeec-e7b9-4eb7-ad25-e6bebf88c50b" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd1" />
+    <MetadataFile FileName="mex1.xsd" MetadataType="Schema" ID="2f16e634-8850-4868-ab0f-ab1048f503ef" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd0" />
+    <MetadataFile FileName="MappingToolService2.wsdl" MetadataType="Wsdl" ID="2bdf5103-46d4-4a9c-b64b-596d4f4381cf" SourceId="1" SourceUrl="http://danwin2k8-sp/_vti_bin/SevenSigma/MappingToolService.svc/mex" />
+    <MetadataFile FileName="mex2.xsd" MetadataType="Schema" ID="8f34b7f9-1c92-43cf-a74f-2553831ebe60" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd2" />
+    <MetadataFile FileName="mex3.xsd" MetadataType="Schema" ID="0270658c-aec2-454a-8ee6-18c17f973445" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc/mex?xsd=xsd3" />
+    <MetadataFile FileName="MappingToolService.wsdl" MetadataType="Wsdl" ID="07499cae-ff24-4556-8078-3967d23b27e5" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc/mex?wsdl" />
+    <MetadataFile FileName="mex.wsdl" MetadataType="Wsdl" ID="977e202e-94df-4131-a4c4-335bc11495ce" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/mappingtoolservice.svc/mex?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

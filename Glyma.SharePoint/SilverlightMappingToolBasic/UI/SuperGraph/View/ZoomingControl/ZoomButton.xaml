@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="SilverlightMappingToolBasic.UI.SuperGraph.View.ZoomingControl.ZoomButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="30" d:DesignWidth="30" MouseEnter="UserControl_MouseEnter" MouseLeave="UserControl_MouseLeave">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="ButtonStates">
+            <VisualState x:Name="Over">
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ButtonStackPanel" Storyboard.TargetProperty="Background">
+                        <DiscreteObjectKeyFrame  KeyTime="0" Value="#ff848788" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ButtonText" Storyboard.TargetProperty="Foreground">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="#ffffffff" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="IconImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="HoverIconImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                    </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+
+            <VisualState x:Name="Clicked">
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ButtonStackPanel" Storyboard.TargetProperty="Background">
+                        <DiscreteObjectKeyFrame  KeyTime="0" Value="#ff848788" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ButtonText" Storyboard.TargetProperty="Foreground">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="#ffffffff" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="IconImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="HoverIconImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                    </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+
+            <VisualState x:Name="Out">
+                <Storyboard>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ButtonStackPanel" Storyboard.TargetProperty="Background">
+                        <DiscreteObjectKeyFrame  KeyTime="0" Value="#ffffffff" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="ButtonText" Storyboard.TargetProperty="Foreground">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="#ff848788" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="IconImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Visible" />
+                    </ObjectAnimationUsingKeyFrames>
+                    <ObjectAnimationUsingKeyFrames Duration="00:00:00" Storyboard.TargetName="HoverIconImage" Storyboard.TargetProperty="(UIElement.Visibility)">
+                        <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
+                    </ObjectAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+    <Border Height="30" Width="30" Name="ButtonStackPanel" ToolTipService.ToolTip="{Binding Text}" Background="#ffffffff" Cursor="Hand" CornerRadius="15">
+        <StackPanel  HorizontalAlignment="Stretch" Orientation="Horizontal" Margin="2">
+            <Image VerticalAlignment="Center" HorizontalAlignment="Center" x:Name="IconImage" Source="{Binding Icon}" Height="24" Width="24"></Image>
+            <Image VerticalAlignment="Center" HorizontalAlignment="Center"  x:Name="HoverIconImage" Source="{Binding HoverIcon}" Visibility="Collapsed" Height="24" Width="24"></Image>
+        </StackPanel>
+    </Border>
+
+</UserControl>

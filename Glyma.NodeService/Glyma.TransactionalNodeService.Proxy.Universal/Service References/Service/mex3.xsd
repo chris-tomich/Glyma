@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common.Model" />
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd3" namespace="http://sevensigma.com.au/TransactionalNodeService/OpObjects" />
+  <xs:import schemaLocation="http://svrsp2013/_vti_bin/SevenSigma/TransactionalMappingToolservice.svc/mex?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="MetadataContext">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DescriptorTypeUid" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="MetadataId" type="ser:guid" />
+      <xs:element minOccurs="0" name="MetadataName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeUid" nillable="true" type="ser:guid" />
+      <xs:element minOccurs="0" name="RelationshipUid" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MetadataContext" nillable="true" type="tns:MetadataContext" />
+  <xs:simpleType name="TransactionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Undefined" />
+      <xs:enumeration value="BeginSession" />
+      <xs:enumeration value="CompleteSession" />
+      <xs:enumeration value="CreateNode" />
+      <xs:enumeration value="DeleteNode" />
+      <xs:enumeration value="CreateRelationship" />
+      <xs:enumeration value="DeleteRelationship" />
+      <xs:enumeration value="CreateDescriptor" />
+      <xs:enumeration value="CreateMetadata" />
+      <xs:enumeration value="UpdateMetadata" />
+      <xs:enumeration value="DeleteMetadata" />
+      <xs:enumeration value="UpdateNode" />
+      <xs:enumeration value="UpdateRelationship" />
+      <xs:enumeration value="UpdateDescriptor" />
+      <xs:enumeration value="CreateDomain" />
+      <xs:enumeration value="CreateRootMap" />
+      <xs:enumeration value="DeleteDomain" />
+      <xs:enumeration value="DeleteRootMap" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionType" nillable="true" type="tns:TransactionType" />
+  <xs:complexType name="QueryResponse">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/TransactionalNodeService.Common.Model" minOccurs="0" name="Domain" nillable="true" type="q1:Domain" />
+      <xs:element minOccurs="0" name="ErrorId" type="xs:int" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FinalObjectIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="LastObjectIndex" type="xs:int" />
+      <xs:element xmlns:q2="http://sevensigma.com.au/TransactionalNodeService/OpObjects" minOccurs="0" name="NodeContext" nillable="true" type="q2:NO" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Nodes" nillable="true" type="q3:ArrayOfKeyValueOfguidNO_PXWaIWIQ" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Relationships" nillable="true" type="q4:ArrayOfKeyValueOfguidRE_PXWaIWIQ" />
+      <xs:element minOccurs="0" name="StartingObjectIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="ZNO" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueryResponse" nillable="true" type="tns:QueryResponse" />
+  <xs:complexType name="TypeResponse">
+    <xs:sequence>
+      <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DescriptorTypes" nillable="true" type="q5:ArrayOfKeyValueOfstringDTKM_S83Y6U" />
+      <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="MetadataTypes" nillable="true" type="q6:ArrayOfKeyValueOfstringMetadataTypeKM_S83Y6U" />
+      <xs:element xmlns:q7="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NodeTypes" nillable="true" type="q7:ArrayOfKeyValueOfstringNTKM_S83Y6U" />
+      <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="RelationshipTypes" nillable="true" type="q8:ArrayOfKeyValueOfstringRTKM_S83Y6U" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TypeResponse" nillable="true" type="tns:TypeResponse" />
+  <xs:complexType name="EdgeConditions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EdgeCondition" nillable="true" type="xs:anyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EdgeConditions" nillable="true" type="tns:EdgeConditions" />
+  <xs:complexType name="AndEdgeCondOp">
+    <xs:sequence>
+      <xs:element xmlns:q9="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConditionOperations" nillable="true" type="q9:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AndEdgeCondOp" nillable="true" type="tns:AndEdgeCondOp" />
+  <xs:complexType name="OrEdgeCondOp">
+    <xs:sequence>
+      <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ConditionOperations" nillable="true" type="q10:ArrayOfanyType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="OrEdgeCondOp" nillable="true" type="tns:OrEdgeCondOp" />
+  <xs:complexType name="NotEqualEdgeCondOp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Condition" nillable="true" type="tns:EdgeConditionTest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NotEqualEdgeCondOp" nillable="true" type="tns:NotEqualEdgeCondOp" />
+  <xs:complexType name="EdgeConditionTest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ComponentValue" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="EdgeComponent" type="tns:EdgeComponentType" />
+      <xs:element minOccurs="0" name="EdgeElement" type="tns:EdgeElementType" />
+      <xs:element minOccurs="0" name="IsIncluded" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EdgeConditionTest" nillable="true" type="tns:EdgeConditionTest" />
+  <xs:simpleType name="EdgeComponentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Id" />
+      <xs:enumeration value="OriginalId" />
+      <xs:enumeration value="Type" />
+      <xs:enumeration value="Metadata" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EdgeComponentType" nillable="true" type="tns:EdgeComponentType" />
+  <xs:simpleType name="EdgeElementType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Node" />
+      <xs:enumeration value="Relationship" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EdgeElementType" nillable="true" type="tns:EdgeElementType" />
+  <xs:complexType name="EqualEdgeCondOp">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Condition" nillable="true" type="tns:EdgeConditionTest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EqualEdgeCondOp" nillable="true" type="tns:EqualEdgeCondOp" />
+  <xs:complexType name="FilterConditions">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="FilterConditions" nillable="true" type="tns:FilterConditions" />
+  <xs:complexType name="SearchConditions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MetadataFilters" nillable="true" type="tns:ArrayOfSearchCondition" />
+      <xs:element minOccurs="0" name="SearchOperation" type="tns:SearchOperation" />
+      <xs:element minOccurs="0" name="SortOrder" type="tns:SortOrderOptions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchConditions" nillable="true" type="tns:SearchConditions" />
+  <xs:complexType name="ArrayOfSearchCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SearchCondition" nillable="true" type="tns:SearchCondition" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSearchCondition" nillable="true" type="tns:ArrayOfSearchCondition" />
+  <xs:complexType name="SearchCondition">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ConditionValue" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MetadataName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SearchType" type="tns:SearchType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchCondition" nillable="true" type="tns:SearchCondition" />
+  <xs:simpleType name="SearchType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Exact" />
+      <xs:enumeration value="Wildcard" />
+      <xs:enumeration value="FreeText" />
+      <xs:enumeration value="Contains" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchType" nillable="true" type="tns:SearchType" />
+  <xs:simpleType name="SearchOperation">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AND" />
+      <xs:enumeration value="OR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SearchOperation" nillable="true" type="tns:SearchOperation" />
+  <xs:simpleType name="SortOrderOptions">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CreatedAscending" />
+      <xs:enumeration value="ModifiedAscending" />
+      <xs:enumeration value="CreatedDescending" />
+      <xs:enumeration value="ModifiedDescending" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="SortOrderOptions" nillable="true" type="tns:SortOrderOptions" />
+  <xs:complexType name="SearchMapResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Count" type="xs:int" />
+      <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SearchedNodes" nillable="true" type="q11:ArrayOfKeyValueOfguidSearchedNodee3vVGuLX" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchMapResult" nillable="true" type="tns:SearchMapResult" />
+  <xs:complexType name="SearchedNode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Created" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreatedByLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DomainUid" type="ser:guid" />
+      <xs:element minOccurs="0" name="MapNodeName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MapNodeUid" type="ser:guid" />
+      <xs:element xmlns:q12="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Metadata" nillable="true" type="q12:ArrayOfKeyValueOfstringstring" />
+      <xs:element minOccurs="0" name="Modified" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ModifiedByLogin" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeOriginalId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NodeTypeUid" type="ser:guid" />
+      <xs:element minOccurs="0" name="NodeUid" type="ser:guid" />
+      <xs:element minOccurs="0" name="RootMapUid" nillable="true" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchedNode" nillable="true" type="tns:SearchedNode" />
+  <xs:simpleType name="MapParameterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Empty" />
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="Domain" />
+      <xs:enumeration value="Node" />
+      <xs:enumeration value="Relationship" />
+      <xs:enumeration value="Descriptor" />
+      <xs:enumeration value="Metadata" />
+      <xs:enumeration value="RootMap" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="MapParameterType" nillable="true" type="tns:MapParameterType" />
+</xs:schema>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Development-Transaction-GlymaDB" Class="TransactionDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=GLYMA2013;Initial Catalog=Development-Transaction-GlymaDB;Integrated Security=True" SettingsObjectName="Glyma.Powershell.Update.Properties.Settings" SettingsPropertyName="Development_Transaction_GlymaDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Transactions" Member="Transactions">
+    <Type Name="Transaction">
+      <Column Name="TransactionId" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransactionTimestamp" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="[User]" Member="User" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SessionUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="OperationId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ResponseParameterUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DomainParameterUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RootMapParameterUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeParameterUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DescriptorParameterUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipParameterUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MetadataParameterUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="NodeTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="DescriptorTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="RelationshipTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MetadataTypeUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MetadataName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MetadataValue" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="Operation_Transaction" Member="Operation" ThisKey="OperationId" OtherKey="OperationId" Type="Operation" IsForeignKey="true" />
+      <Association Name="Parameter_Transaction" Member="Parameter" ThisKey="ResponseParameterUid" OtherKey="ParameterUid" Type="Parameter" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Operations" Member="Operations">
+    <Type Name="Operation">
+      <Column Name="OperationId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Association Name="Operation_Transaction" Member="Transactions" ThisKey="OperationId" OtherKey="OperationId" Type="Transaction" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Parameters" Member="Parameters">
+    <Type Name="Parameter">
+      <Column Name="ParameterUid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Value" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="SessionUid" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="IsDelayed" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ParameterType" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Parameter_Transaction" Member="Transactions" ThisKey="ParameterUid" OtherKey="ResponseParameterUid" Type="Transaction" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetGlymaDbVersion" Method="GetGlymaDbVersion">
+    <ElementType Name="GetGlymaDbVersionResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

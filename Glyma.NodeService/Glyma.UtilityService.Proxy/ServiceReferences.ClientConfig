@@ -1,0 +1,20 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="BasicHttpBinding_IUtilityServiceManager" maxBufferSize="2147483647"
+                    maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IUtilityServiceManager"
+                contract="Service.IUtilityServiceManager" name="BasicHttpBinding_IUtilityServiceManager" />
+            <endpoint address="http://dev-sp/_vti_bin/SevenSigma/GlymaUtilityService.svc"
+                binding="basicHttpBinding" bindingConfiguration="BasicHttpBinding_IUtilityServiceManager"
+                contract="Service.IUtilityServiceManager" name="BasicHttpBinding_IUtilityServiceManager1" />
+        </client>
+    </system.serviceModel>
+</configuration>

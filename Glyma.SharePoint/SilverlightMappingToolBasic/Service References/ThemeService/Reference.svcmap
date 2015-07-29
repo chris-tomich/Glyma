@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="50b6a6d3-9315-4f53-94ce-ae82e9e316c0" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://danwin2k8-sp/_vti_bin/SevenSigma/ThemeService.svc/mex" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="mex3.xsd" MetadataType="Schema" ID="51263b21-098f-4700-9772-09c21cc97977" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/themeservice.svc/mex?xsd=xsd1" />
+    <MetadataFile FileName="ThemeService1.wsdl" MetadataType="Wsdl" ID="e4c7fd3c-c7b5-4b2d-a81b-5c1f9ee10b50" SourceId="1" SourceUrl="http://danwin2k8-sp/_vti_bin/SevenSigma/ThemeService.svc/mex" />
+    <MetadataFile FileName="mex1.wsdl" MetadataType="Wsdl" ID="cfcfeb37-c353-43e2-8c98-5675ca0aa727" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/themeservice.svc/mex?wsdl=wsdl0" />
+    <MetadataFile FileName="mex31.xsd" MetadataType="Schema" ID="3fcbe104-fb2c-4a3c-aaa3-a1b68c69ae25" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/themeservice.svc/mex?xsd=xsd0" />
+    <MetadataFile FileName="mex32.xsd" MetadataType="Schema" ID="548291ae-4290-4127-8c31-93ff862109b8" SourceId="1" SourceUrl="http://danwin2k8-sp.utilibiz.local/_vti_bin/sevensigma/themeservice.svc/mex?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

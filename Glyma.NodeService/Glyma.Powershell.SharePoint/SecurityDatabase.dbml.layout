@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.625" name="SecurityDatabase">
+  <DataContextMoniker Name="/SecurityDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="afff0e78-58a0-4d5a-a8b3-dfd7db4fdf17" absoluteBounds="6.25, 3.625, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/SecurityDatabaseDataContext/GroupAssociation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b827f7e-e82b-4aa1-884f-7ff3a76a868d" absoluteBounds="6.265, 4.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a62ccc46-8de3-49ed-babc-b46b5591eec0" absoluteBounds="3.5, 4.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/SecurityDatabaseDataContext/SecurableObject" />
+      <nestedChildShapes>
+        <elementListCompartment Id="126cc066-9f71-4c37-b2f0-d7373ef5aeae" absoluteBounds="3.515, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c85dce38-3b56-41f6-8649-85e6275f52bc" absoluteBounds="3.5, 6.625, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/SecurityDatabaseDataContext/Group" />
+      <nestedChildShapes>
+        <elementListCompartment Id="678d79f1-e796-43c0-96ca-9ac2a5e396cf" absoluteBounds="3.515, 7.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5028abdd-598c-44c6-9635-2c7bf17fe1c0" absoluteBounds="3.5, 2.375, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/SecurityDatabaseDataContext/SecurableContextDatabase" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f4fe9de3-bdb1-4417-aaf4-2eaf949f6d49" absoluteBounds="3.515, 2.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="329c3875-360d-4f63-beb0-6c4dadc89829" absoluteBounds="0.75, 3.25, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/SecurityDatabaseDataContext/SecurableContext" />
+      <nestedChildShapes>
+        <elementListCompartment Id="96c88141-fe40-4eb5-b077-a0d8f74b6557" absoluteBounds="0.765, 3.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 4.88544840494792); (6.25 : 4.88544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityDatabaseDataContext/SecurableObject/SecurableObject_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="a62ccc46-8de3-49ed-babc-b46b5591eec0" />
+        <classShapeMoniker Id="afff0e78-58a0-4d5a-a8b3-dfd7db4fdf17" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 7.51044840494792); (7.25 : 7.51044840494792); (7.25 : 5.39589680989583)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityDatabaseDataContext/Group/Group_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="c85dce38-3b56-41f6-8649-85e6275f52bc" />
+        <classShapeMoniker Id="afff0e78-58a0-4d5a-a8b3-dfd7db4fdf17" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.96875); (6.25 : 3.96875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityDatabaseDataContext/SecurableContext/SecurableContext_GroupAssociation" />
+      <nodes>
+        <classShapeMoniker Id="329c3875-360d-4f63-beb0-6c4dadc89829" />
+        <classShapeMoniker Id="afff0e78-58a0-4d5a-a8b3-dfd7db4fdf17" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.60179768880208); (3.5 : 4.60179768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityDatabaseDataContext/SecurableContext/SecurableContext_SecurableObject" />
+      <nodes>
+        <classShapeMoniker Id="329c3875-360d-4f63-beb0-6c4dadc89829" />
+        <classShapeMoniker Id="a62ccc46-8de3-49ed-babc-b46b5591eec0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 3.40949625651042); (3.5 : 3.40949625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SecurityDatabaseDataContext/SecurableContext/SecurableContext_SecurableContextDatabase" />
+      <nodes>
+        <classShapeMoniker Id="329c3875-360d-4f63-beb0-6c4dadc89829" />
+        <classShapeMoniker Id="5028abdd-598c-44c6-9635-2c7bf17fe1c0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
