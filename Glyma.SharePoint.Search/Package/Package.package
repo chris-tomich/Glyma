@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="7bf4dd90-94f5-4db4-84e3-d09af7a98e63" solutionId="7bf4dd90-94f5-4db4-84e3-d09af7a98e63" resetWebServer="false" sharePointProductVersion="" name="Glyma.SharePoint.Search" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="c6ce64a6-c5fb-4db4-a602-0257ef081fdd" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="12463d06-bd09-4780-b1a1-595e35d7eaf0" />
+  </projectItems>
+</package>

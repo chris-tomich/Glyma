@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Search UI Resources\" Type="ElementManifest" />
+    <ProjectItemFile Source="Style Library\Glyma\Search\Css\GlymaSearchResults.css" Target="Search UI Resources\Style Library\Glyma\Search\Css\" Type="ElementFile" />
+    <ProjectItemFile Source="Style Library\Glyma\Search\Js\GlymaSearchResults.js" Target="Search UI Resources\Style Library\Glyma\Search\Js\" Type="ElementFile" />
+    <ProjectItemFile Source="Display Templates\Search\Glyma\Item_Glyma.html" Target="Search UI Resources\Display Templates\Search\Glyma\" Type="ElementFile" />
+    <ProjectItemFile Source="Display Templates\Search\Glyma\Item_Glyma.js" Target="Search UI Resources\Display Templates\Search\Glyma\" Type="ElementFile" />
+    <ProjectItemFile Source="Display Templates\Search\Glyma\Item_Glyma_HoverPanel.html" Target="Search UI Resources\Display Templates\Search\Glyma\" Type="ElementFile" />
+    <ProjectItemFile Source="Display Templates\Search\Glyma\Item_Glyma_HoverPanel.js" Target="Search UI Resources\Display Templates\Search\Glyma\" Type="ElementFile" />
+    <ProjectItemFile Source="Style Library\Glyma\Search\Js\GlymaSearchResultsConfig.js" Target="Search UI Resources\Style Library\Glyma\Search\Js\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

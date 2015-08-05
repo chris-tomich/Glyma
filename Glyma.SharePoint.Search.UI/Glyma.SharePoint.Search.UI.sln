@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyma.SharePoint.Search.UI", "Glyma.SharePoint.Search.UI.csproj", "{ACE913C6-73A5-416C-B957-234777C5C2CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Release|Mixed Platforms.Deploy.0 = Release|Any CPU
+		{ACE913C6-73A5-416C-B957-234777C5C2CC}.Release|x64.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

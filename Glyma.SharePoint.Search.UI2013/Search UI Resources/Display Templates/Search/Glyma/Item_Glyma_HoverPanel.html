@@ -1,0 +1,163 @@
+﻿<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"> 
+<head>
+<title>Glyma Hover Panel</title>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:TemplateHidden msdt:dt="string">0</mso:TemplateHidden>
+<mso:MasterPageDescription msdt:dt="string">Displays the Glyma hover panel template.</mso:MasterPageDescription>
+<mso:ContentTypeId msdt:dt="string">0x0101002039C03B61C64EC4A04F5361F385106603</mso:ContentTypeId>
+<mso:TargetControlType msdt:dt="string">;#SearchHoverPanel;#</mso:TargetControlType>
+<mso:HtmlDesignAssociated msdt:dt="string">1</mso:HtmlDesignAssociated>
+<mso:ManagedPropertyMapping msdt:dt="string">'Title':'Title','Path':'Path','Description':'Description','EditorOWSUSER':'EditorOWSUSER','LastModifiedTime':'LastModifiedTime','CollapsingStatus':'CollapsingStatus','DocId':'DocId','HitHighlightedSummary':'HitHighlightedSummary','HitHighlightedProperties':'HitHighlightedProperties','FileExtension':'FileExtension','ViewsLifeTime':'ViewsLifeTime','ParentLink':'ParentLink','FileType':'FileType','IsContainer':'IsContainer','SecondaryFileExtension':'SecondaryFileExtension','DisplayAuthor':'DisplayAuthor'</mso:ManagedPropertyMapping>
+<mso:CrawlerXSLFile msdt:dt="string"></mso:CrawlerXSLFile>
+<mso:HtmlDesignPreviewUrl msdt:dt="string"></mso:HtmlDesignPreviewUrl>
+
+<mso:HtmlDesignStatusAndPreview msdt:dt="string">http://sp2013/sites/Glyma2013/_catalogs/masterpage/Display Templates/Search/Glyma/Item_Glyma_HoverPanel.html, Conversion successful.</mso:HtmlDesignStatusAndPreview>
+<mso:HtmlDesignConversionSucceeded msdt:dt="string">True</mso:HtmlDesignConversionSucceeded>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+   <div id="Item_Glyma_HoverPanel">
+<!--#_
+   var i = 0;
+   var id = ctx.CurrentItem.csr_id;
+   ctx.CurrentItem.csr_ShowViewLibrary = !Srch.U.isWebPage(ctx.CurrentItem.FileExtension);
+   if(ctx.CurrentItem.IsContainer)
+   {
+      ctx.CurrentItem.csr_FileType = Srch.Res.ct_Folder;
+   }
+   
+   ctx.currentItem_ShowChangedBySnippet = true;
+   
+   var siteCollectionUrl = glyma.getSiteCollectionUrl();   
+   var nodeIconUrl = glyma.getNodeTypeIconUrl(ctx.CurrentItem.GlymaNodeType);
+   var mapIconUrl = glyma.getNodeTypeIconUrl("map");
+   var resultNodeIndentCssClass = "";
+   if (ctx.CurrentItem.GlymaParentNodes)
+   {
+      resultNodeIndentCssClass = "glymaSearchResultTwoLevelIndent";
+   }
+   else if (ctx.CurrentItem.GlymaMapName)
+   {
+      resultNodeIndentCssClass = "glymaSearchResultOneLevelIndent";   
+   }
+
+_#-->
+      <div class="ms-srch-hover-innerContainer ms-srch-hover-standardSize glyamSearchResultHover" id="_#= $htmlEncode(id + HP.ids.inner) =#_">
+         <div class="ms-srch-hover-arrowBorder" id="_#= $htmlEncode(id + HP.ids.arrowBorder) =#_"></div>
+         <div class="ms-srch-hover-arrow" id="_#= $htmlEncode(id + HP.ids.arrow) =#_"></div>
+         <div class="ms-srch-hover-content" id="_#= $htmlEncode(id + HP.ids.content) =#_" data-displaytemplate="GlymaHoverPanel">
+         
+            <div id="_#= $htmlEncode(id + HP.ids.header) =#_" class="ms-srch-hover-header">               
+               <div>
+                  <div class="ms-srch-hover-close">
+                      <a href="javascript:HP.Close()" id="_#= $htmlEncode(id + HP.ids.close) =#_" title="_#= $htmlEncode(Srch.Res.hp_Tooltip_Close) =#_">
+                          <img class="js-callout-closeButtonImage" src="_#= $urlHtmlEncode(GetThemedImageUrl('spcommon.png')) =#_" alt="_#= $htmlEncode(Srch.Res.hp_Tooltip_Close) =#_" />
+                      </a>
+                  </div>               
+                  <div class="ms-srch-hover-title ms-dlg-heading ms-srch-ellipsis" id="_#= $htmlEncode(id + HP.ids.title) =#_">
+                     Glyma Context
+                  </div>
+               </div>
+            </div>
+
+            <div id="_#= $htmlEncode(id + HP.ids.body) =#_" class="ms-srch-hover-body">
+               <div class="glymaSearchResultContext">
+                  <div class="glymaSearchResultParentNode glymaSearchResultParentDomainNode">
+                     <span class="glymaSearchResultMetadataLabel">Project: </span><span class="glymaSearchResultMetadataValue">_#= ctx.CurrentItem.GlymaDomainName =#_</span>
+                  </div>                     
+<!--#_ 
+   if (ctx.CurrentItem.GlymaMapName)
+   {   
+_#-->                    
+                  <div class="glymaSearchResultParentNode glymaSearchResultParentMapNode">
+                     <img class="glymaNodeIcon" src="_#= mapIconUrl =#_" alt="Map Node" />
+                     <div class="glymaNodeName">_#= ctx.CurrentItem.GlymaMapName =#_</div>                        
+                  </div>  
+<!--#_  
+   }
+   
+   var glymaViewerPageUrl = glyma.getViewerPageUrl(ctx.CurrentItem.GlymaRepositoryName);
+   var nodeQueryString = "";
+   
+   var currentNodeUrl = glymaViewerPageUrl;
+   nodeQueryString = glyma.getNodeQueryString(ctx.CurrentItem.GlymaDomainId, ctx.CurrentItem.GlymaMapId, ctx.CurrentItem.GlymaNodeId);
+   if (nodeQueryString) {
+      currentNodeUrl += "?" + nodeQueryString;
+   }
+
+   if (ctx.CurrentItem.GlymaParentNodes) 
+   {
+      var parentNodes = $.parseJSON(ctx.CurrentItem.GlymaParentNodes);
+      var parentNodeIconUrl = "";
+      var parentNodeName = "";
+      var parentNodeUrl = "";
+         
+      for (var nodeIndex = 0; nodeIndex < parentNodes.length; nodeIndex++) 
+      {
+         parentNodeIconUrl = glyma.getNodeTypeIconUrl(parentNodes[nodeIndex].NodeType);
+         parentNodeName = parentNodes[nodeIndex].Name;  
+         parentNodeUrl = glymaViewerPageUrl;      
+         nodeQueryString = glyma.getNodeQueryString(parentNodes[nodeIndex].DomainId, parentNodes[nodeIndex].MapId, parentNodes[nodeIndex].Id);
+         if (nodeQueryString) {
+            parentNodeUrl += "?" + nodeQueryString;
+         }
+_#-->       
+                  <div class="glymaSearchResultParentNode glymaSearchResultOneLevelIndent"> 
+                     <img class="glymaNodeIcon" src="_#= parentNodeIconUrl =#_" alt="Parent Node Type" /> 
+                     <div class="glymaNodeName"><a clicktype="Result" href="_#= $urlHtmlEncode(parentNodeUrl) =#_">_#= $htmlEncode(parentNodeName) =#_</a></div>
+                  </div>
+<!--#_                                
+      }
+   }
+_#-->                                   
+               </div>  
+               <div class="glymaSearchResultNode _#= resultNodeIndentCssClass =#_">
+                  <div class="glymaSearchResultHoverTitle">
+                     <img class="glymaNodeIcon" src="_#= nodeIconUrl =#_" alt="Node Type" />   
+                     <div class="glymaNodeName"> 
+                        <a clicktype="Result" href="_#= $urlHtmlEncode(currentNodeUrl) =#_">_#= $htmlEncode(ctx.CurrentItem.Title) =#_</a>
+                     </div>                         
+                  </div>
+<!--#_  
+   if (ctx.CurrentItem.GlymaChildNodes) 
+   {
+      var childNodes = $.parseJSON(ctx.CurrentItem.GlymaChildNodes);
+      var childNodeIconUrl = "";
+      var childNodeName = "";
+      var childNodeUrl = "";   
+      var additionalCssClass = "";
+_#-->       
+                  <div class="glymaSearchResultChildNodes">
+<!--#_      
+      for (var nodeIndex = 0; nodeIndex < childNodes.length; nodeIndex++) 
+      {
+         childNodeIconUrl = glyma.getNodeTypeIconUrl(childNodes[nodeIndex].NodeType);
+         childNodeName = childNodes[nodeIndex].Name;
+         additionalCssClass = nodeIndex % 2 == 0 ? "" : "glymaSearchResultAlternate";
+         childNodeUrl = glymaViewerPageUrl;      
+         nodeQueryString = glyma.getNodeQueryString(childNodes[nodeIndex].DomainId, childNodes[nodeIndex].MapId, childNodes[nodeIndex].Id);
+         if (nodeQueryString) {
+            childNodeUrl += "?" + nodeQueryString;
+         }                 
+_#-->                       
+                     <div class="glymaSearchResultChildNode _#= additionalCssClass=#_">
+                        <img class="glymaNodeIcon" src="_#= childNodeIconUrl =#_" alt="Child Node Type" />
+                        <div class="glymaNodeName"><a clicktype="Result" href="_#= $urlHtmlEncode(childNodeUrl) =#_">_#= $htmlEncode(childNodeName) =#_</a></div>  
+                     </div>               
+<!--#_                                
+      }
+_#-->       
+                  </div>
+<!--#_       
+   }
+_#-->         
+               </div>              
+            </div>			
+         </div> 
+      </div>
+   </div>
+</body>
+</html>

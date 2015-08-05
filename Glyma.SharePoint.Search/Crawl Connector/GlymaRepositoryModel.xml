@@ -1,0 +1,461 @@
+﻿<?xml version="1.0"?>
+<Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="GlymaRepositoryModel" xmlns="http://schemas.microsoft.com/windows/2007/BusinessDataCatalog">
+   <LobSystems>
+      <LobSystem Name="Glyma" Type="Custom">
+         <Properties>
+            <Property Name="SystemUtilityTypeName" Type="System.String">Glyma.SharePoint.Search.GlymaRepositoryUtility, Glyma.SharePoint.Search, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2704b4e62e725461</Property>
+            <Property Name="InputUriProcessor" Type="System.String">Glyma.SharePoint.Search.GlymaLobUri, Glyma.SharePoint.Search, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2704b4e62e725461</Property>
+            <Property Name="OutputUriProcessor" Type="System.String">Glyma.SharePoint.Search.GlymaNamingContainer, Glyma.SharePoint.Search, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2704b4e62e725461</Property>
+            <Property Name="DataAccessType" Type="System.String">Sql</Property>
+            <Property Name="SecurityConnectionString" Type="System.String">Server=sp1;Database=GlymaSecurity;Integrated Security=True;</Property>
+            <Property Name="EnableNodeAclCache" Type="System.Boolean">1</Property>
+            <Property Name="NodeAclType" Type="System.String">Windows</Property>
+            <Property Name="NodeAclCacheDuration" Type="System.Int32">600</Property>
+            <Property Name="NodeAclCacheAutoExpirePeriod" Type="System.Int32">600</Property>
+            <Property Name="NodeAclTaskWaitDuration" Type="System.Int32">60</Property>
+            <Property Name="ExcludeSimpleQuestions" Type="System.String"></Property>
+            <Property Name="ExcludeSpecifiedQuestions" Type="System.String"></Property>
+            <Property Name="IncludeParents" Type="System.String"></Property>
+            <Property Name="IncludeChildren" Type="System.String"></Property>
+         </Properties>
+         <LobSystemInstances>
+            <LobSystemInstance Name="Glyma">
+               <Properties>
+                  <Property Name="ShowInSearchUI" Type="System.String">True</Property>
+                  <Property Name="ConnectionString" Type="System.String">Server=sp1;Database=GlymaMap;Integrated Security=True;</Property>
+               </Properties>
+            </LobSystemInstance>
+         </LobSystemInstances>
+         <Entities>
+            <Entity Name="GlymaMap" Namespace="Glyma.SharePoint.Search" Version="1.0.0.0">
+               <Properties>
+                  <Property Name="Title" Type="System.String">Name</Property>
+                  <Property Name="__BdcLastModifiedTimestamp" Type="System.String">LastModified</Property>
+               </Properties>
+               <Identifiers>
+                  <Identifier Name="RepositoryName" TypeName="System.String" />
+                  <Identifier Name="DomainIdentifier" TypeName="System.Guid" />
+                  <Identifier Name="RootMapIdentifier" TypeName="System.Guid" />                  
+                  <Identifier Name="MapIdentifier" TypeName="System.Guid" />
+                  <Identifier Name="NodeIdentifier" TypeName="System.Guid" />
+               </Identifiers>
+               <Methods>
+                  <Method Name="GetRooMaps" LobName="GetRooMaps">
+                     <Parameters>
+                        <Parameter Name="GetRooMapsResult" Direction="Return">
+                           <TypeDescriptor Name="NodeCollection" TypeName="System.Collections.Generic.IEnumerable`1[[Microsoft.BusinessData.Runtime.DynamicType, Microsoft.BusinessData, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c]]" IsCollection="true">
+                              <TypeDescriptors>
+                                 <TypeDescriptor Name="GlymaMap" TypeName="Microsoft.BusinessData.Runtime.DynamicType">
+                                    <TypeDescriptors>
+                                       <TypeDescriptor Name="Id" TypeName="System.Guid" IdentifierName="NodeIdentifier" />
+                                       <TypeDescriptor Name="Name" TypeName="System.String" />
+                                       <TypeDescriptor Name="Note" TypeName="System.String" />
+                                       <TypeDescriptor Name="Description.Content" TypeName="System.String" />
+                                       <TypeDescriptor Name="Description.Type" TypeName="System.String" />
+                                       <TypeDescriptor Name="RepositoryName" TypeName="System.String" IdentifierName="RepositoryName" />
+                                       <TypeDescriptor Name="DomainId" TypeName="System.Guid" IdentifierName="DomainIdentifier" />
+                                       <TypeDescriptor Name="DomainName" TypeName="System.String" />
+                                       <TypeDescriptor Name="RootMapId" TypeName="System.Guid" IdentifierName="RootMapIdentifier" />
+                                       <TypeDescriptor Name="MapId" TypeName="System.Guid" IdentifierName="MapIdentifier" />
+                                       <TypeDescriptor Name="MapName" TypeName="System.String" />
+                                       <TypeDescriptor Name="NodeType" TypeName="System.String" />
+                                       <TypeDescriptor Name="LastModified" TypeName="System.DateTime">
+                                          <Interpretation>
+                                             <NormalizeDateTime LobDateTimeMode="UTC" />
+                                          </Interpretation>
+                                       </TypeDescriptor>
+                                       <TypeDescriptor Name="TotalDeletedNodes" TypeName="System.Int64" />
+                                       <TypeDescriptor Name="ParentNodes" TypeName="System.String" />
+                                       <TypeDescriptor Name="ChildNodes" TypeName="System.String" />
+                                       <TypeDescriptor Name="Content" TypeName="System.String" />
+                                    </TypeDescriptors>
+                                 </TypeDescriptor>
+                              </TypeDescriptors>
+                           </TypeDescriptor>
+                        </Parameter>
+                     </Parameters>
+                     <MethodInstances>
+                        <MethodInstance Name="GetRooMapsInstance" Type="Finder" ReturnParameterName="GetRooMapsResult">
+                           <Properties>
+                              <Property Name="RootFinder" Type="System.String"></Property>
+                              <Property Name="LastModifiedTimeStampField" Type="System.String">LastModified</Property>
+                              <Property Name="DeletedCountField" Type="System.String">TotalDeletedNodes</Property>
+                              <Property Name="UseClientCachingForSearch" Type="System.String"></Property>
+                           </Properties>
+                           <AccessControlList>
+                              <AccessControlEntry Principal="NT AUTHORITY\Authenticated Users">
+                                 <Right BdcRight="Execute" />
+                              </AccessControlEntry>
+                           </AccessControlList>
+                        </MethodInstance>
+                     </MethodInstances>
+                  </Method>
+                  <Method Name="GetMapNodesInMap" LobName="GetMapNodesInMap">
+                     <FilterDescriptors>
+                        <FilterDescriptor Name="LastModifiedFilter" Type="Input">
+                           <Properties>
+                              <Property Name="CrawlStartTime" Type="System.String"></Property>
+                           </Properties>
+                        </FilterDescriptor>
+                     </FilterDescriptors>
+                     <Parameters>
+                        <Parameter Name="RepositoryName" Direction="In">
+                           <TypeDescriptor Name="RepositoryNameType" TypeName="System.String" IdentifierName="RepositoryName" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetMapNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaMap" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>
+                        <Parameter Name="DomainId" Direction="In">
+                           <TypeDescriptor Name="DomainIdType" TypeName="System.Guid" IdentifierName="DomainIdentifier" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetMapNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaMap" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>
+                        <Parameter Name="RootMapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="RootMapIdentifier" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetMapNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaMap" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>
+                        <Parameter Name="MapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="MapIdentifier" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetMapNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaMap" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>
+                        <Parameter Name="NodeId" Direction="In">
+                           <TypeDescriptor Name="NodeIdType" TypeName="System.Guid" IdentifierName="NodeIdentifier" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetMapNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaMap" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>
+                        <Parameter Name="LastCrawlStartTime" Direction="In">
+                           <TypeDescriptor Name="LastCrawlStartTimeType" TypeName="System.DateTime" AssociatedFilter="LastModifiedFilter">
+                              <Interpretation>
+                                 <NormalizeDateTime LobDateTimeMode="Local" />
+                              </Interpretation>
+                           </TypeDescriptor>
+                        </Parameter>
+                        <Parameter Name="GetMapNodesInMapResult" Direction="Return">
+                           <TypeDescriptor Name="NodeCollection" TypeName="System.Collections.Generic.IEnumerable`1[[Microsoft.BusinessData.Runtime.DynamicType, Microsoft.BusinessData, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c]]" IsCollection="true">
+                              <TypeDescriptors>
+                                 <TypeDescriptor Name="GlymaMap" TypeName="Microsoft.BusinessData.Runtime.DynamicType">
+                                    <TypeDescriptors>
+                                       <TypeDescriptor Name="Id" TypeName="System.Guid" IdentifierName="NodeIdentifier" />
+                                       <TypeDescriptor Name="Name" TypeName="System.String" />
+                                       <TypeDescriptor Name="Note" TypeName="System.String" />
+                                       <TypeDescriptor Name="Description.Content" TypeName="System.String" />
+                                       <TypeDescriptor Name="Description.Type" TypeName="System.String" />
+                                       <TypeDescriptor Name="RepositoryName" TypeName="System.String" IdentifierName="RepositoryName" />
+                                       <TypeDescriptor Name="DomainId" TypeName="System.Guid" IdentifierName="DomainIdentifier" />
+                                       <TypeDescriptor Name="DomainName" TypeName="System.String" />
+                                       <TypeDescriptor Name="RootMapId" TypeName="System.Guid" IdentifierName="RootMapIdentifier" />
+                                       <TypeDescriptor Name="MapId" TypeName="System.Guid" IdentifierName="MapIdentifier" />
+                                       <TypeDescriptor Name="MapName" TypeName="System.String" />
+                                       <TypeDescriptor Name="NodeType" TypeName="System.String" />
+                                       <TypeDescriptor Name="LastModified" TypeName="System.DateTime">
+                                          <Interpretation>
+                                             <NormalizeDateTime LobDateTimeMode="UTC" />
+                                          </Interpretation>
+                                       </TypeDescriptor>
+                                       <TypeDescriptor Name="TotalDeletedNodes" TypeName="System.Int64" />
+                                       <TypeDescriptor Name="ParentNodes" TypeName="System.String" />
+                                       <TypeDescriptor Name="ChildNodes" TypeName="System.String" />
+                                       <TypeDescriptor Name="Content" TypeName="System.String" />
+                                    </TypeDescriptors>
+                                 </TypeDescriptor>
+                              </TypeDescriptors>
+                           </TypeDescriptor>
+                        </Parameter>
+                     </Parameters>
+                     <MethodInstances>
+                        <Association Name="GetMapNodesInMapInstance" Type="AssociationNavigator" ReturnParameterName="GetMapNodesInMapResult">
+                           <Properties>
+                              <Property Name="DirectoryLink" Type="System.String"></Property>
+                              <Property Name="LastModifiedTimeStampField" Type="System.String">LastModified</Property>
+                              <Property Name="DeletedCountField" Type="System.String">TotalDeletedNodes</Property>
+                              <Property Name="UseClientCachingForSearch" Type="System.String"></Property>
+                           </Properties>
+                           <AccessControlList>
+                              <AccessControlEntry Principal="NT AUTHORITY\Authenticated Users">
+                                 <Right BdcRight="Execute" />
+                              </AccessControlEntry>
+                           </AccessControlList>
+                           <SourceEntity Name="GlymaMap" Namespace="Glyma.SharePoint.Search" />
+                           <DestinationEntity Name="GlymaMap" Namespace="Glyma.SharePoint.Search" />
+                        </Association>
+                     </MethodInstances>
+                  </Method>
+                  <Method Name="GetMap" LobName="GetNode">
+                     <Parameters>
+                        <Parameter Name="RepositoryName" Direction="In">
+                           <TypeDescriptor Name="RepositoryNameType" TypeName="System.String" IdentifierName="RepositoryName" />
+                        </Parameter>
+                        <Parameter Name="DomainId" Direction="In">
+                           <TypeDescriptor Name="DomainIdType" TypeName="System.Guid" IdentifierName="DomainIdentifier" />
+                        </Parameter>
+                        <Parameter Name="RootMapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="RootMapIdentifier" />
+                        </Parameter>                        
+                        <Parameter Name="MapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="MapIdentifier" />
+                        </Parameter>
+                        <Parameter Name="NodeId" Direction="In">
+                           <TypeDescriptor Name="NodeIdType" TypeName="System.Guid" IdentifierName="NodeIdentifier" />
+                        </Parameter>
+                        <Parameter Name="GetMapResult" Direction="Return">
+                           <TypeDescriptor Name="GlymaMap" TypeName="Microsoft.BusinessData.Runtime.DynamicType">
+                              <TypeDescriptors>
+                                 <TypeDescriptor Name="Id" TypeName="System.Guid" IdentifierName="NodeIdentifier" />
+                                 <TypeDescriptor Name="Name" TypeName="System.String" />
+                                 <TypeDescriptor Name="Note" TypeName="System.String" />
+                                 <TypeDescriptor Name="Description.Content" TypeName="System.String" />
+                                 <TypeDescriptor Name="Description.Type" TypeName="System.String" />
+                                 <TypeDescriptor Name="RepositoryName" TypeName="System.String" IdentifierName="RepositoryName" />
+                                 <TypeDescriptor Name="DomainId" TypeName="System.Guid" IdentifierName="DomainIdentifier" />
+                                 <TypeDescriptor Name="DomainName" TypeName="System.String" />
+                                 <TypeDescriptor Name="RootMapId" TypeName="System.Guid" IdentifierName="RootMapIdentifier" />
+                                 <TypeDescriptor Name="MapId" TypeName="System.Guid" IdentifierName="MapIdentifier" />
+                                 <TypeDescriptor Name="MapName" TypeName="System.String" />
+                                 <TypeDescriptor Name="NodeType" TypeName="System.String" />
+                                 <TypeDescriptor Name="LastModified" TypeName="System.DateTime">
+                                    <Interpretation>
+                                       <NormalizeDateTime LobDateTimeMode="UTC" />
+                                    </Interpretation>
+                                 </TypeDescriptor>
+                                 <TypeDescriptor Name="TotalDeletedNodes" TypeName="System.Int64" />
+                                 <TypeDescriptor Name="ParentNodes" TypeName="System.String" />
+                                 <TypeDescriptor Name="ChildNodes" TypeName="System.String" />
+                                 <TypeDescriptor Name="Content" TypeName="System.String" />
+                              </TypeDescriptors>
+                           </TypeDescriptor>
+                        </Parameter>
+                     </Parameters>
+                     <MethodInstances>
+                        <MethodInstance Name="GetMapInstance" Type="SpecificFinder" ReturnParameterName="GetMapResult">
+                           <Properties>
+                              <Property Name="LastModifiedTimeStampField" Type="System.String">LastModified</Property>
+                              <Property Name="DeletedCountField" Type="System.String">TotalDeletedNodes</Property>
+                           </Properties>
+                           <AccessControlList>
+                              <AccessControlEntry Principal="NT AUTHORITY\Authenticated Users">
+                                 <Right BdcRight="Execute" />
+                              </AccessControlEntry>
+                           </AccessControlList>
+                        </MethodInstance>
+                     </MethodInstances>
+                  </Method>
+                  <Method Name="GetNodeAcl" LobName="GetNodeAcl">
+                     <Parameters>
+                        <Parameter Name="RepositoryName" Direction="In">
+                           <TypeDescriptor Name="RepositoryNameType" TypeName="System.String" IdentifierName="RepositoryName" />
+                        </Parameter>
+                        <Parameter Name="DomainId" Direction="In">
+                           <TypeDescriptor Name="DomainIdType" TypeName="System.Guid" IdentifierName="DomainIdentifier" />
+                        </Parameter>
+                        <Parameter Name="RootMapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="RootMapIdentifier" />
+                        </Parameter>                        
+                        <Parameter Name="MapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="MapIdentifier" />
+                        </Parameter>
+                        <Parameter Name="NodeId" Direction="In">
+                           <TypeDescriptor Name="NodeIdType" TypeName="System.Guid" IdentifierName="NodeIdentifier" />
+                        </Parameter>
+                        <Parameter Name="ItemSecurityDescriptor" Direction="Return">
+                           <TypeDescriptor Name="SecurityDescriptor" TypeName="System.Byte[]">
+                              <TypeDescriptors>
+                                 <TypeDescriptor Name="SecurityDescriptorByte" TypeName="System.Byte" />
+                              </TypeDescriptors>
+                           </TypeDescriptor>
+                        </Parameter>
+                     </Parameters>
+                     <MethodInstances>
+                        <MethodInstance Name="GetNodeAclInstance" Type="BinarySecurityDescriptorAccessor" ReturnParameterName="ItemSecurityDescriptor">
+                           <AccessControlList>
+                              <AccessControlEntry Principal="NT AUTHORITY\Authenticated Users">
+                                 <Right BdcRight="Execute" />
+                              </AccessControlEntry>
+                           </AccessControlList>
+                        </MethodInstance>
+                     </MethodInstances>
+                  </Method>                  
+               </Methods>
+            </Entity>
+            <Entity Name="GlymaNode" Namespace="Glyma.SharePoint.Search" Version="1.0.0.0">
+               <Properties>
+                  <Property Name="Title" Type="System.String">Name</Property>
+                  <Property Name="__BdcLastModifiedTimestamp" Type="System.String">LastModified</Property>
+               </Properties>
+               <Identifiers>
+                  <Identifier Name="RepositoryName" TypeName="System.String" />
+                  <Identifier Name="DomainIdentifier" TypeName="System.Guid" />
+                  <Identifier Name="RootMapIdentifier" TypeName="System.Guid" />
+                  <Identifier Name="MapIdentifier" TypeName="System.Guid" />
+                  <Identifier Name="NodeIdentifier" TypeName="System.Guid" />
+               </Identifiers>
+               <Methods>
+                  <Method Name="GetNodesInMap" LobName="GetNodesInMap">
+                     <FilterDescriptors>
+                        <FilterDescriptor Name="LastModifiedFilter" Type="Input">
+                           <Properties>
+                              <Property Name="CrawlStartTime" Type="System.String"></Property>
+                           </Properties>
+                        </FilterDescriptor>
+                     </FilterDescriptors>
+                     <Parameters>
+                        <Parameter Name="RepositoryName" Direction="In">
+                           <TypeDescriptor Name="RepositoryNameType" TypeName="System.String" IdentifierName="RepositoryName" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaNode" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>
+                        <Parameter Name="DomainId" Direction="In">
+                           <TypeDescriptor Name="DomainIdType" TypeName="System.Guid" IdentifierName="DomainIdentifier" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaNode" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>
+                        <Parameter Name="RootMapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="RootMapIdentifier" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaNode" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>                        
+                        <Parameter Name="MapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="MapIdentifier" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaNode" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>
+                        <Parameter Name="NodeId" Direction="In">
+                           <TypeDescriptor Name="NodeIdType" TypeName="System.Guid" IdentifierName="NodeIdentifier" IdentifierEntityName="GlymaMap" IdentifierEntityNamespace="Glyma.SharePoint.Search" ForeignIdentifierAssociationName="GetNodesInMapInstance" ForeignIdentifierAssociationEntityName="GlymaNode" ForeignIdentifierAssociationEntityNamespace="Glyma.SharePoint.Search" />
+                        </Parameter>
+                        <Parameter Name="LastCrawlStartTime" Direction="In">
+                           <TypeDescriptor Name="LastCrawlStartTimeType" TypeName="System.DateTime" AssociatedFilter="LastModifiedFilter">
+                              <Interpretation>
+                                 <NormalizeDateTime LobDateTimeMode="Local" />
+                              </Interpretation>
+                           </TypeDescriptor>
+                        </Parameter>
+                        <Parameter Name="GetNodesInMapResult" Direction="Return">
+                           <TypeDescriptor Name="NodeCollection" TypeName="Microsoft.BusinessData.Runtime.DynamicType[]" IsCollection="true">
+                              <TypeDescriptors>
+                                 <TypeDescriptor Name="GlymaNode" TypeName="Microsoft.BusinessData.Runtime.DynamicType">
+                                    <TypeDescriptors>
+                                       <TypeDescriptor Name="Id" TypeName="System.Guid" IdentifierName="NodeIdentifier" />
+                                       <TypeDescriptor Name="Name" TypeName="System.String" />
+                                       <TypeDescriptor Name="Note" TypeName="System.String" />
+                                       <TypeDescriptor Name="Description.Content" TypeName="System.String" />
+                                       <TypeDescriptor Name="Description.Type" TypeName="System.String" />
+                                       <TypeDescriptor Name="RepositoryName" TypeName="System.String" IdentifierName="RepositoryName" />
+                                       <TypeDescriptor Name="DomainId" TypeName="System.Guid" IdentifierName="DomainIdentifier" />
+                                       <TypeDescriptor Name="DomainName" TypeName="System.String" />
+                                       <TypeDescriptor Name="RootMapId" TypeName="System.Guid" IdentifierName="RootMapIdentifier" />
+                                       <TypeDescriptor Name="MapId" TypeName="System.Guid" IdentifierName="MapIdentifier" />
+                                       <TypeDescriptor Name="MapName" TypeName="System.String" />
+                                       <TypeDescriptor Name="NodeType" TypeName="System.String" />
+                                       <TypeDescriptor Name="LastModified" TypeName="System.DateTime">
+                                          <Interpretation>
+                                             <NormalizeDateTime LobDateTimeMode="UTC" />
+                                          </Interpretation>
+                                       </TypeDescriptor>
+                                       <TypeDescriptor Name="TotalDeletedNodes" TypeName="System.Int64" />
+                                       <TypeDescriptor Name="ParentNodes" TypeName="System.String" />
+                                       <TypeDescriptor Name="ChildNodes" TypeName="System.String" />
+                                       <TypeDescriptor Name="Content" TypeName="System.String" />
+                                    </TypeDescriptors>
+                                 </TypeDescriptor>
+                              </TypeDescriptors>
+                           </TypeDescriptor>
+                        </Parameter>
+                     </Parameters>
+                     <MethodInstances>
+                        <Association Name="GetNodesInMapInstance" Type="AssociationNavigator" ReturnParameterName="GetNodesInMapResult">
+                           <Properties>
+                              <Property Name="DirectoryLink" Type="System.String"></Property>
+                              <Property Name="LastModifiedTimeStampField" Type="System.String">LastModified</Property>
+                              <Property Name="UseClientCachingForSearch" Type="System.String"></Property>
+                           </Properties>
+                           <AccessControlList>
+                              <AccessControlEntry Principal="NT AUTHORITY\Authenticated Users">
+                                 <Right BdcRight="Execute" />
+                              </AccessControlEntry>
+                           </AccessControlList>
+                           <SourceEntity Name="GlymaMap" Namespace="Glyma.SharePoint.Search" />
+                           <DestinationEntity Name="GlymaNode" Namespace="Glyma.SharePoint.Search" />
+                        </Association>
+                     </MethodInstances>
+                  </Method>
+                  <Method Name="GetNode" LobName="GetNode">
+                     <Parameters>
+                        <Parameter Name="RepositoryName" Direction="In">
+                           <TypeDescriptor Name="RepositoryNameType" TypeName="System.String" IdentifierName="RepositoryName" />
+                        </Parameter>
+                        <Parameter Name="DomainId" Direction="In">
+                           <TypeDescriptor Name="DomainIdType" TypeName="System.Guid" IdentifierName="DomainIdentifier" />
+                        </Parameter>
+                        <Parameter Name="RootMapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="RootMapIdentifier" />
+                        </Parameter>                        
+                        <Parameter Name="MapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="MapIdentifier" />
+                        </Parameter>
+                        <Parameter Name="NodeId" Direction="In">
+                           <TypeDescriptor Name="NodeIdType" TypeName="System.Guid" IdentifierName="NodeIdentifier" />
+                        </Parameter>
+                        <Parameter Name="GetNodeResult" Direction="Return">
+                           <TypeDescriptor Name="GlymaNode" TypeName="Microsoft.BusinessData.Runtime.DynamicType">
+                              <TypeDescriptors>
+                                 <TypeDescriptor Name="Id" TypeName="System.Guid" IdentifierName="NodeIdentifier" />
+                                 <TypeDescriptor Name="Name" TypeName="System.String" />
+                                 <TypeDescriptor Name="Note" TypeName="System.String" />
+                                 <TypeDescriptor Name="Description.Content" TypeName="System.String" />
+                                 <TypeDescriptor Name="Description.Type" TypeName="System.String" />
+                                 <TypeDescriptor Name="RepositoryName" TypeName="System.String" IdentifierName="RepositoryName" />
+                                 <TypeDescriptor Name="DomainId" TypeName="System.Guid" IdentifierName="DomainIdentifier" />
+                                 <TypeDescriptor Name="DomainName" TypeName="System.String" />
+                                 <TypeDescriptor Name="RootMapId" TypeName="System.Guid" IdentifierName="RootMapIdentifier" />
+                                 <TypeDescriptor Name="MapId" TypeName="System.Guid" IdentifierName="MapIdentifier" />
+                                 <TypeDescriptor Name="MapName" TypeName="System.String" />
+                                 <TypeDescriptor Name="NodeType" TypeName="System.String" />
+                                 <TypeDescriptor Name="LastModified" TypeName="System.DateTime">
+                                    <Interpretation>
+                                       <NormalizeDateTime LobDateTimeMode="UTC" />
+                                    </Interpretation>
+                                 </TypeDescriptor>
+                                 <TypeDescriptor Name="TotalDeletedNodes" TypeName="System.Int64" />
+                                 <TypeDescriptor Name="ParentNodes" TypeName="System.String" />
+                                 <TypeDescriptor Name="ChildNodes" TypeName="System.String" />
+                                 <TypeDescriptor Name="Content" TypeName="System.String" />
+                              </TypeDescriptors>
+                           </TypeDescriptor>
+                        </Parameter>
+                     </Parameters>
+                     <MethodInstances>
+                        <MethodInstance Name="GetNodeInstance" Type="SpecificFinder" ReturnParameterName="GetNodeResult">
+                           <Properties>
+                              <Property Name="LastModifiedTimeStampField" Type="System.String">LastModified</Property>
+                           </Properties>
+                           <AccessControlList>
+                              <AccessControlEntry Principal="NT AUTHORITY\Authenticated Users">
+                                 <Right BdcRight="Execute" />
+                              </AccessControlEntry>
+                           </AccessControlList>
+                        </MethodInstance>
+                     </MethodInstances>
+                  </Method>
+                  <Method Name="GetNodeAcl" LobName="GetNodeAcl">
+                     <Parameters>
+                        <Parameter Name="RepositoryName" Direction="In">
+                           <TypeDescriptor Name="RepositoryNameType" TypeName="System.String" IdentifierName="RepositoryName" />
+                        </Parameter>
+                        <Parameter Name="DomainId" Direction="In">
+                           <TypeDescriptor Name="DomainIdType" TypeName="System.Guid" IdentifierName="DomainIdentifier" />
+                        </Parameter>
+                        <Parameter Name="RootMapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="RootMapIdentifier" />
+                        </Parameter>
+                        <Parameter Name="MapId" Direction="In">
+                           <TypeDescriptor Name="MapIdType" TypeName="System.Guid" IdentifierName="MapIdentifier" />
+                        </Parameter>
+                        <Parameter Name="NodeId" Direction="In">
+                           <TypeDescriptor Name="NodeIdType" TypeName="System.Guid" IdentifierName="NodeIdentifier" />
+                        </Parameter>
+                        <Parameter Name="ItemSecurityDescriptor" Direction="Return">
+                           <TypeDescriptor Name="SecurityDescriptor" TypeName="System.Byte[]">
+                              <TypeDescriptors>
+                                 <TypeDescriptor Name="SecurityDescriptorByte" TypeName="System.Byte" />
+                              </TypeDescriptors>
+                           </TypeDescriptor>
+                        </Parameter>
+                     </Parameters>
+                     <MethodInstances>
+                        <MethodInstance Name="GetNodeAclInstance" Type="BinarySecurityDescriptorAccessor" ReturnParameterName="ItemSecurityDescriptor">
+                           <AccessControlList>
+                              <AccessControlEntry Principal="NT AUTHORITY\Authenticated Users">
+                                 <Right BdcRight="Execute" />
+                              </AccessControlEntry>
+                           </AccessControlList>
+                        </MethodInstance>
+                     </MethodInstances>
+                  </Method>
+               </Methods>
+            </Entity>
+         </Entities>
+      </LobSystem>
+   </LobSystems>
+</Model>

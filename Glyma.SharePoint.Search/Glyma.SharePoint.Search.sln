@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glyma.SharePoint.Search", "Glyma.SharePoint.Search.csproj", "{F9860B66-2077-475B-A55C-BC591BADFF5B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - SharePoint 2010|Any CPU = Debug - SharePoint 2010|Any CPU
+		Debug - SharePoint 2010|Mixed Platforms = Debug - SharePoint 2010|Mixed Platforms
+		Debug - SharePoint 2010|x86 = Debug - SharePoint 2010|x86
+		Debug - SharePoint 2013|Any CPU = Debug - SharePoint 2013|Any CPU
+		Debug - SharePoint 2013|Mixed Platforms = Debug - SharePoint 2013|Mixed Platforms
+		Debug - SharePoint 2013|x86 = Debug - SharePoint 2013|x86
+		Release - SharePoint 2010|Any CPU = Release - SharePoint 2010|Any CPU
+		Release - SharePoint 2010|Mixed Platforms = Release - SharePoint 2010|Mixed Platforms
+		Release - SharePoint 2010|x86 = Release - SharePoint 2010|x86
+		Release - SharePoint 2013|Any CPU = Release - SharePoint 2013|Any CPU
+		Release - SharePoint 2013|Mixed Platforms = Release - SharePoint 2013|Mixed Platforms
+		Release - SharePoint 2013|x86 = Release - SharePoint 2013|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2010|Any CPU.ActiveCfg = Debug - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2010|Any CPU.Build.0 = Debug - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2010|Any CPU.Deploy.0 = Debug - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2010|Mixed Platforms.ActiveCfg = Debug - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2010|Mixed Platforms.Build.0 = Debug - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2010|Mixed Platforms.Deploy.0 = Debug - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2010|x86.ActiveCfg = Debug - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2013|Any CPU.ActiveCfg = Debug - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2013|Any CPU.Build.0 = Debug - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2013|Any CPU.Deploy.0 = Debug - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2013|Mixed Platforms.ActiveCfg = Debug - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2013|Mixed Platforms.Build.0 = Debug - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2013|Mixed Platforms.Deploy.0 = Debug - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Debug - SharePoint 2013|x86.ActiveCfg = Debug - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2010|Any CPU.ActiveCfg = Release - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2010|Any CPU.Build.0 = Release - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2010|Any CPU.Deploy.0 = Release - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2010|Mixed Platforms.ActiveCfg = Release - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2010|Mixed Platforms.Build.0 = Release - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2010|Mixed Platforms.Deploy.0 = Release - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2010|x86.ActiveCfg = Release - SharePoint 2010|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2013|Any CPU.ActiveCfg = Release - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2013|Any CPU.Build.0 = Release - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2013|Any CPU.Deploy.0 = Release - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2013|Mixed Platforms.ActiveCfg = Release - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2013|Mixed Platforms.Build.0 = Release - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2013|Mixed Platforms.Deploy.0 = Release - SharePoint 2013|Any CPU
+		{F9860B66-2077-475B-A55C-BC591BADFF5B}.Release - SharePoint 2013|x86.ActiveCfg = Release - SharePoint 2013|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

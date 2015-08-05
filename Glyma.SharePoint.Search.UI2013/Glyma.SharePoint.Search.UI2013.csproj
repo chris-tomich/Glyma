@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1DE4CCD2-93ED-4704-87F6-DDFE52E1498B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Glyma.SharePoint.Search.UI</RootNamespace>
+    <AssemblyName>Glyma.SharePoint.Search.UI2013</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GlymaAssemblyKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Server.Search, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Common Files\microsoft shared\Web Server Extensions\15\ISAPI\Microsoft.Office.Server.Search.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SharePoint" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\Glyma.SharePoint.Search.UI2013\Glyma.SharePoint.Search.UI2013.EventReceiver.cs">
+      <DependentUpon>Glyma.SharePoint.Search.UI2013.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Search Configuration Classes\SearchConfigurationManager.cs" />
+    <Compile Include="Search UI Controls\SearchCssInjector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Glyma.SharePoint.Search.UI2013\Glyma.SharePoint.Search.UI2013.feature">
+      <FeatureId>{45fedd86-0f21-4992-b603-e90ed8f13be6}</FeatureId>
+    </None>
+    <None Include="GlymaAssemblyKey.pfx" />
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c71ac452-bc73-4f03-939a-0851c7323cd5}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{9cb7c286-46da-454d-9d98-b0ed5fbe7af8}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Search UI Controls\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{2962a0ed-2ee9-4481-898a-452ff448a631}</SharePointProjectItemId>
+    </None>
+    <None Include="Search UI Resources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{5882d8c1-7339-4e2c-b11f-975049ef6008}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\Glyma.SharePoint.Search.UI2013\Glyma.SharePoint.Search.UI2013.Template.xml">
+      <DependentUpon>Glyma.SharePoint.Search.UI2013.feature</DependentUpon>
+    </Content>
+    <Content Include="Images\Glyma.SharePoint.Search.UI2013\GlymaFeatureLogo.png" />
+    <Content Include="Search UI Controls\Elements.xml" />
+    <Content Include="Search UI Resources\Display Templates\Search\Glyma\Item_Glyma.html" />
+    <Content Include="Search UI Resources\Display Templates\Search\Glyma\Item_Glyma.js" />
+    <Content Include="Search UI Resources\Display Templates\Search\Glyma\Item_Glyma_HoverPanel.html" />
+    <Content Include="Search UI Resources\Display Templates\Search\Glyma\Item_Glyma_HoverPanel.js" />
+    <Content Include="Search UI Resources\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Search UI Resources\Style Library\Glyma\Search\Css\GlymaSearchResults.css" />
+    <Content Include="Search UI Resources\Style Library\Glyma\Search\Js\GlymaSearchResults.js" />
+    <Content Include="Search UI Resources\Style Library\Glyma\Search\Js\GlymaSearchResultsConfig.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>

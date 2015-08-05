@@ -1,0 +1,164 @@
+﻿/* Search Page Begin */
+#s4-workspace .customWidth /* Custom viewer master page element */
+{
+   margin-left:0px;   
+   padding-top:10px;
+}
+
+#s4-workspace .ms-core-navigation
+{
+   font-family:inherit;
+}
+
+#sideNavBox .ms-siteicon-img
+{
+   display:none;
+}
+/* Search Page End */
+
+/* Search Result Begin */
+.glymaSearchResult a:link, .glymaSearchResult a:visited, .glymaSearchResult a:hover
+{
+   color:#0072c6;
+}  
+
+.glymaSearchResult .ms-srch-item-body
+{
+   width:100%;
+}
+
+.glymaSearchResult .glymaSearchResultTitle
+{
+   margin-bottom:5px;
+}
+
+.glymaSearchResult .glymaNodeIcon
+{
+   height:21px;
+   width:21px; 
+}
+
+.glymaSearchResult .ms-srch-item-title, .glymaSearchResult .glymaSearchResultMetadata .glymaNodeName
+{
+   display:inline-block;
+   margin-left:4px;
+}
+
+.glymaSearchResult .glymaNodeIcon, .glymaSearchResult .ms-srch-item-title, .glymaSearchResult .glymaSearchResultMetadata .glymaNodeName 
+{
+   vertical-align:top;
+}
+
+.glymaSearchResult .glymaSearchResultMetadata
+{
+   margin-left:29px;
+}
+
+.glymaSearchResult .glymaSearchResultMetadataItem
+{
+   padding-bottom:5px;
+}
+
+.glymaSearchResultMetadataLabel
+{
+   color:#828282;
+   font-weight:bold;
+}
+
+.glymaSearchResult .glymaSearchResultMetadata .glymaNodeIcon
+{
+   height:16px;
+   width:16px; 
+}
+
+.glymaSearchResult .glymaSearchResultMetadata .glymaNodeName
+{
+   max-width:446px; /* 500 - 29 - 25 */
+}
+/* Search Result End */
+
+/* Hover Panel Begin */
+.glyamSearchResultHover .glymaSearchResultParentNode, .glyamSearchResultHover .glymaSearchResultChildNode
+{
+   padding-bottom:5px;
+}
+
+.glyamSearchResultHover .glymaSearchResultHoverTitle
+{
+   font-size:1em;
+   font-weight:bold;
+   padding-bottom:5px;
+   padding-top:5px;
+}
+
+.glyamSearchResultHover .ms-srch-hover-body
+{
+   padding-top:10px;
+}
+
+.glyamSearchResultHover .glymaNodeIcon 
+{
+   height:16px;
+   vertical-align:top;
+   width:16px; 
+}
+
+.glyamSearchResultHover .glymaNodeName
+{
+   display:inline-block;
+   height:100%;
+   padding-left:4px;
+   vertical-align:top;
+}
+
+.glyamSearchResultHover .glymaSearchResultAlternate
+{
+   background-color:#F0F8Fb;
+}
+
+.glyamSearchResultHover .glymaSearchResultOneLevelIndent
+{
+   margin-left:24px;   
+}
+
+.glyamSearchResultHover .glymaSearchResultTwoLevelIndent
+{
+   margin-left:48px;    
+}
+
+.glyamSearchResultHover .glymaSearchResultChildNode
+{
+   margin-left:24px;
+   padding:5px;
+}
+
+.glyamSearchResultHover .glymaSearchResultParentDomainNode .glymaNodeName
+{
+    max-width:352px;
+}
+
+.glyamSearchResultHover .glymaNodeName
+{
+    max-width:327px; /* 352 - 25 */
+}
+
+.glyamSearchResultHover .glymaSearchResultOneLevelIndent .glymaNodeName
+{
+   max-width:300px; /* 352 - 25 - 25 */
+}
+
+.glyamSearchResultHover .glymaSearchResultTwoLevelIndent .glymaNodeName
+{
+   max-width:273px; /* 352 - 25 - 25 - 25 */
+}
+
+.glyamSearchResultHover .glymaSearchResultOneLevelIndent .glymaSearchResultChildNode .glymaNodeName
+{
+   max-width:270px; /* 352 - 25 - 25 - 25 - 7 (padding) */
+}
+
+.glyamSearchResultHover .glymaSearchResultTwoLevelIndent .glymaSearchResultChildNode .glymaNodeName
+{
+   max-width:245px; /* 352 - 25 - 25 - 25 - 25 - 7 (padding) */
+}
+/* Hover Panel End */

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+   <Module Name="Style Library Css" RootWebOnly="true" Url="Style Library/Glyma/Search/Css" Path="Search UI Resources\Style Library\Css">
+      <File Url="GlymaSearchResults.css" Type="GhostableInLibrary">
+         <Property Name="Title" Value="GlymaSearchResults" />
+      </File>
+   </Module>
+   <Module Name="Style Library JavaScript" RootWebOnly="true" Url="Style Library/Glyma/Search/Js" Path="Search UI Resources\Style Library\Js">
+      <File Url="GlymaSearchResults.js" Type="GhostableInLibrary">
+         <Property Name="Title" Value="GlymaSearchResults" />
+      </File>
+   </Module>
+   <Module Name="Style Library Xsl" RootWebOnly="true" Url="Style Library/Glyma/Search/Xsl" Path="Search UI Resources\Style Library\Xsl">
+      <File Url="GlymaSearchResults.xslt" Type="GhostableInLibrary">
+         <Property Name="Title" Value="GlymaSearchResults" />
+      </File>
+      <File Url="GlymaSearchResultsSiteSpecific.xslt" Type="GhostableInLibrary">
+         <Property Name="Title" Value="GlymaSearchResultsSiteSpecific" />
+      </File>
+   </Module>
+</Elements>

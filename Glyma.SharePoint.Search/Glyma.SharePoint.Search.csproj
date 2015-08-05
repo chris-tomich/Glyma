@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug - SharePoint 2010</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9860B66-2077-475B-A55C-BC591BADFF5B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Glyma.SharePoint.Search</RootNamespace>
+    <AssemblyName>Glyma.SharePoint.Search</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <ProjectMode>SharePointCustomization</ProjectMode>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>14.0</TargetOfficeVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SP2010</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SP2013</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>14.0</TargetOfficeVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;SP2010</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>15.0</TargetOfficeVersion>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;SP2013</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GlymaAssemblyKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.BusinessData" />
+    <Reference Include="Microsoft.IdentityModel">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files\Reference Assemblies\Microsoft\Windows Identity Foundation\v3.5\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Server.Search.Connector" />
+    <Reference Include="Microsoft.SharePoint.WorkflowActions" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data Access\DataAccessType.cs" />
+    <Compile Include="Data Access\SqlGlymaMapRepository.cs" />
+    <Compile Include="Data Access\IGlymaMapRepository.cs" />
+    <Compile Include="Features\Glyma.SharePoint.Search.Logging\Glyma.SharePoint.Search.Logging.EventReceiver.cs">
+      <DependentUpon>Glyma.SharePoint.Search.Logging.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\BasicCache.cs" />
+    <Compile Include="Infrastructure\BasicCacheItem.cs" />
+    <Compile Include="Infrastructure\BasicCacheConstants.cs" />
+    <Compile Include="Logging\GlymaSearchLogger.cs" />
+    <Compile Include="Logging\GlymaSearchLoggingService.cs" />
+    <Compile Include="Security\NodeAclType.cs" />
+    <Compile Include="Crawl Connector\GlymaNodeReference.cs" />
+    <Compile Include="Security\GlymaSecurityManager.cs" />
+    <Compile Include="Security\WindowsGlymaSecurityManager.cs" />
+    <Compile Include="Data Access\RepositoryConnectionSetting.cs" />
+    <Compile Include="Data Access\ConnectionSettingProperty.cs" />
+    <Compile Include="Data Access\SqlDbConnectionSetting.cs" />
+    <Compile Include="Data Access\SpSiteCollectionConnectionSetting.cs" />
+    <Compile Include="Infrastructure\RunningTaskQueue.cs" />
+    <Compile Include="Infrastructure\RunUniqueTask.cs" />
+    <Compile Include="Models\SpGroupDetail.cs" />
+    <Compile Include="Models\SpFarmGroupIdentifier.cs" />
+    <Compile Include="Crawl Rules\SpecifiedQuestionFilter.cs" />
+    <Compile Include="Crawl Rules\IncludeChildrenTransform.cs" />
+    <Compile Include="Crawl Rules\IncludeParentsTransform.cs" />
+    <Compile Include="Crawl Rules\NodeComparer.cs" />
+    <Compile Include="Data Access\IGlymaSecurityRepository.cs" />
+    <Compile Include="Data Access\SpSiteCollectionRepository.cs" />
+    <Compile Include="Data Access\SqlGlymaSecurityRepository.cs" />
+    <Compile Include="Extension Classes\DynamicTypeExtensions.cs" />
+    <Compile Include="Crawl Rules\CrawlRuleTypes.cs" />
+    <Compile Include="Crawl Connector\GlymaEntityFields.cs" />
+    <Compile Include="Crawl Connector\GlymaLobUri.cs" />
+    <Compile Include="Crawl Connector\GlymaModelConstants.cs" />
+    <Compile Include="Crawl Connector\GlymaNamingContainer.cs" />
+    <Compile Include="Crawl Connector\GlymaNodeTypes.cs" />
+    <Compile Include="Crawl Connector\GlymaRepositoryProxy.cs" />
+    <Compile Include="Crawl Connector\GlymaRepositoryUtility.cs" />
+    <Compile Include="Extension Classes\INamedLobSystemInstanceDictionaryExtensions.cs" />
+    <Compile Include="Extension Classes\INamedPropertyDictionaryExtensions.cs" />
+    <Compile Include="Crawl Rules\INodeCrawlRule.cs" />
+    <Compile Include="Crawl Rules\NodeCrawlRules.cs" />
+    <Compile Include="Crawl Rules\SimpleQuestionFilter.cs" />
+    <Compile Include="Extension Classes\SqlReaderExtensions.cs" />
+    <Compile Include="Models\SpGroupDetailContainer.cs" />
+    <Compile Include="Models\SpUserDetail.cs" />
+    <Compile Include="Models\SpUserDetailContainer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\SharePointUserGroup\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Features\Glyma.SharePoint.Search.Logging\Glyma.SharePoint.Search.Logging.feature">
+      <FeatureId>{c6ce64a6-c5fb-4db4-a602-0257ef081fdd}</FeatureId>
+    </None>
+    <None Include="GlymaAssemblyKey.pfx" />
+    <None Include="Images\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{12463d06-bd09-4780-b1a1-595e35d7eaf0}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{7bf4dd90-94f5-4db4-84e3-d09af7a98e63}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
+    <None Include="Service References\SharePointUserGroup\usergroup.wsdl" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'">
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'">
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'">
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Crawl Connector\GlymaRepositoryModel.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Features\Glyma.SharePoint.Search.Logging\Glyma.SharePoint.Search.Logging.Template.xml">
+      <DependentUpon>Glyma.SharePoint.Search.Logging.feature</DependentUpon>
+    </Content>
+    <Content Include="Images\Glyma.SharePoint.Search\GlymaFeatureLogo.png" />
+    <None Include="Service References\SharePointUserGroup\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SharePointUserGroup\configuration.svcinfo" />
+    <None Include="Service References\SharePointUserGroup\configuration91.svcinfo" />
+    <None Include="Service References\SharePointUserGroup\usergroup.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SharePointUserGroup\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SP2010</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;SP2013</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'">
+    <OutputPath>bin\Release - SharePoint 2010\</OutputPath>
+    <DefineConstants>TRACE;SP2010</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'">
+    <OutputPath>bin\Release - SharePoint 2013\</OutputPath>
+    <DefineConstants>TRACE;SP2013</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="false" />
+  <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
+  <Target Name="AfterBuild">
+    <ItemGroup>
+      <ProjectWebFiles Include=".\**\Package.Template.xml" />
+    </ItemGroup>
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointCoreCssFile\$" ReplacementText="Themable/corev15.css" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="14.0" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="15.0" Condition="'$(Configuration)|$(Platform)' == 'Debug - SharePoint 2013|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="14.0" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2010|AnyCPU'" />
+    <FileUpdate Files="@(ProjectWebFiles)" Regex="\$SharePointProductVersion\$" ReplacementText="15.0" Condition="'$(Configuration)|$(Platform)' == 'Release - SharePoint 2013|AnyCPU'" />
+  </Target>
+</Project>

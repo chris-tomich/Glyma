@@ -1,0 +1,160 @@
+﻿<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"> 
+<head>
+<title>Glyma Item Body</title>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:TemplateHidden msdt:dt="string">0</mso:TemplateHidden>
+<mso:MasterPageDescription msdt:dt="string">Displays the Glyma item template.</mso:MasterPageDescription>
+<mso:ContentTypeId msdt:dt="string">0x0101002039C03B61C64EC4A04F5361F385106603</mso:ContentTypeId>
+<mso:TargetControlType msdt:dt="string">;#SearchResults;#</mso:TargetControlType>
+<mso:HtmlDesignAssociated msdt:dt="string">1</mso:HtmlDesignAssociated>
+<mso:ManagedPropertyMapping msdt:dt="string">'Title':'Title','Path':'Path','Description':'Description','EditorOWSUSER':'EditorOWSUSER','LastModifiedTime':'LastModifiedTime','CollapsingStatus':'CollapsingStatus','DocId':'DocId','HitHighlightedSummary':'HitHighlightedSummary','HitHighlightedProperties':'HitHighlightedProperties','FileExtension':'FileExtension','ViewsLifeTime':'ViewsLifeTime','ParentLink':'ParentLink','FileType':'FileType','IsContainer':'IsContainer','SecondaryFileExtension':'SecondaryFileExtension','DisplayAuthor':'DisplayAuthor','GlymaRepositoryName':'GlymaRepositoryName','GlymaNodeType':'GlymaNodeType','GlymaDomainId':'GlymaDomainId','GlymaDomainName':'GlymaDomainName','GlymaMapId':'GlymaMapId','GlymaMapName':'GlymaMapName','GlymaNodeId':'GlymaNodeId','GlymaContent':'GlymaContent','GlymaDescription':'GlymaDescription','GlymaDescriptionType':'GlymaDescriptionType','GlymaParentNodes':'GlymaParentNodes','GlymaChildNodes':'GlymaChildNodes','GlymaNote':'GlymaNote'</mso:ManagedPropertyMapping>
+<mso:HtmlDesignStatusAndPreview msdt:dt="string">http://sp2013/sites/Glyma2013/_catalogs/masterpage/Display Templates/Search/Glyma/Item_Glyma.html, Conversion successful.</mso:HtmlDesignStatusAndPreview>
+<mso:HtmlDesignConversionSucceeded msdt:dt="string">True</mso:HtmlDesignConversionSucceeded>
+<mso:CrawlerXSLFile msdt:dt="string"></mso:CrawlerXSLFile>
+<mso:HtmlDesignPreviewUrl msdt:dt="string"></mso:HtmlDesignPreviewUrl>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+   <script>     
+      $includeScript(this.url, "~sitecollection/Style Library/Glyma/Search/Js/GlymaSearchResults.js");
+      $includeScript(this.url, "~sitecollection/Style Library/Glyma/Search/Js/GlymaSearchResultsConfig.js");          
+   </script>
+   
+   <div id="Item_Glyma">	
+<!--#_
+
+   if(!$isNull(ctx.CurrentItem) && !$isNull(ctx.ClientControl))
+   {
+      var id = ctx.ClientControl.get_nextUniqueId();
+      var itemId = id + Srch.U.Ids.item;
+	   var hoverId = id + Srch.U.Ids.hover;
+	   var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Glyma/Item_Glyma_HoverPanel.js";
+      $setResultItem(itemId, ctx.CurrentItem);
+      if(ctx.CurrentItem.IsContainer)
+      {
+		   ctx.CurrentItem.csr_Icon = Srch.U.getFolderIconUrl();
+	   }
+	   ctx.currentItem_ShowHoverPanelCallback = Srch.U.getShowHoverPanelCallback(itemId, hoverId, hoverUrl);
+      ctx.currentItem_HideHoverPanelCallback = Srch.U.getHideHoverPanelCallback();
+              
+      var appAttribs = "";
+      if (!$isEmptyString(ctx.CurrentItem.csr_OpenApp)) 
+      {
+         appAttribs += "openApp=\"" + $htmlEncode(ctx.CurrentItem.csr_OpenApp) + "\""; 
+      }
+      
+      if (!$isEmptyString(ctx.CurrentItem.csr_OpenControl)) 
+      {
+         appAttribs += " openControl=\"" + $htmlEncode(ctx.CurrentItem.csr_OpenControl) + "\""; 
+      }
+      
+      var showHoverPanelCallback = ctx.currentItem_ShowHoverPanelCallback;
+      if (Srch.U.n(showHoverPanelCallback)) 
+      {
+         var itemId = id + Srch.U.Ids.item;
+         var hoverId = id + Srch.U.Ids.hover;
+         showHoverPanelCallback = Srch.U.getShowHoverPanelCallback(itemId, hoverId, hoverUrl);
+      }
+                 
+      var siteCollectionUrl = glyma.getSiteCollectionUrl();      
+      var glymaViewerPageUrl = glyma.getViewerPageUrl(ctx.CurrentItem.GlymaRepositoryName);
+      var nodeQueryString = glyma.getNodeQueryString(ctx.CurrentItem.GlymaDomainId, ctx.CurrentItem.GlymaMapId, ctx.CurrentItem.GlymaNodeId);
+      if (nodeQueryString) {
+         glymaViewerPageUrl += "?" + nodeQueryString;
+      }
+      var nodeIconUrl = glyma.getNodeTypeIconUrl(ctx.CurrentItem.GlymaNodeType);              
+      var mapIconUrl = glyma.getNodeTypeIconUrl("map"); 
+         
+      var clickType = ctx.CurrentItem.csr_ClickType;
+      if(!clickType) 
+      {
+         clickType = "Result";
+      } 
+         
+      var maxTitleLengthInChars = Srch.U.titleTruncationLength;
+      var termsToUse = 2;
+      if(ctx.CurrentItem.csr_PreviewImage != null)
+      {
+         maxTitleLengthInChars = Srch.U.titleTruncationLengthWithPreview;
+         termsToUse = 1;
+      }
+         
+      var title = Srch.U.getHighlightedProperty(id, ctx.CurrentItem, "Title");
+      if ($isEmptyString(title)) 
+      {
+         title = $htmlEncode(ctx.CurrentItem.Title);
+      }     
+      var titleHtml = String.format('<a clicktype="{0}" id="{1}" href="{2}" class="ms-srch-item-link" title="{3}" onfocus="{4}" {5}>{6}</a>',
+   			                  $htmlEncode(clickType), $htmlEncode(id + Srch.U.Ids.titleLink), $urlHtmlEncode(glymaViewerPageUrl), $htmlEncode(ctx.CurrentItem.Title), 
+                              showHoverPanelCallback, appAttribs, Srch.U.trimTitle(title, maxTitleLengthInChars, termsToUse));                                                                      
+_#-->			
+   
+      <div id="_#= $htmlEncode(itemId) =#_" name="Item" data-displaytemplate="GlymaItem" class="ms-srch-item glymaSearchResult" onmouseover="_#= ctx.currentItem_ShowHoverPanelCallback =#_" onmouseout="_#= ctx.currentItem_HideHoverPanelCallback =#_">
+   
+         <div id="_#= $htmlEncode(id + Srch.U.Ids.body) =#_" class="ms-srch-item-body" onclick="_#= showHoverPanelCallback =#_">
+         
+            <div class="glymaSearchResultTitle">
+               <img id="_#= $htmlEncode(id + Srch.U.Ids.icon) =#_" onload="this.style.display='inline'" src="_#= $urlHtmlEncode(nodeIconUrl) =#_" class="glymaNodeIcon" />
+             
+               <div id="_#= $htmlEncode(id + Srch.U.Ids.title) =#_" class="ms-srch-item-title"> 
+                  <h3 class="ms-srch-ellipsis">
+      					_#= titleHtml =#_
+      				</h3>
+      			</div>	
+   			</div>
+   			
+   			<div class="glymaSearchResultMetadata">
+   			
+      			<div class="glymaSearchResultMetadataItem">
+      			   <span class="glymaSearchResultMetadataLabel">Project: </span><span class="glymaSearchResultMetadataValue">_#= ctx.CurrentItem.GlymaDomainName =#_</span>
+        			</div>		
+<!--#_ 
+   	if (!$isEmptyString(ctx.CurrentItem.GlymaMapName)) 
+   	{ 
+_#-->    			
+      			<div class="glymaSearchResultMetadataItem">
+   		         <img class="glymaNodeIcon" src="_#= mapIconUrl =#_" alt="Map Node" />
+                  <div class="glymaNodeName">_#= ctx.CurrentItem.GlymaMapName =#_</div> 
+        			</div>     		
+<!--#_ 
+      }
+   	if (!$isEmptyString(ctx.CurrentItem.GlymaNote)) 
+   	{ 
+_#-->
+      			<div class="glymaSearchResultMetadataItem">
+      			   <span class="glymaSearchResultMetadataValue">
+      			   _#= ctx.CurrentItem.GlymaNote.substr(0,200) =#_
+ <!--#_ 
+   	if (ctx.CurrentItem.GlymaNote.length > 200) 
+   	{ 
+_#--> 			   
+   			   ...
+ <!--#_ 
+      }
+_#-->    			   
+      			   </span>
+        			</div> 	
+<!--#_ 
+      }
+   	if (!$isEmptyString(ctx.CurrentItem.HitHighlightedSummary)) 
+   	{ 
+_#-->
+      			<div id="_#= $htmlEncode(id + Srch.U.Ids.summary) =#_" class="ms-srch-item-summary glymaSearchResultMetadataItem">
+      			   _#= Srch.U.processHHXML(ctx.CurrentItem.HitHighlightedSummary) =#_
+      			</div>
+<!--#_ 
+	   }
+_#-->  	    
+   		   </div>
+         </div>
+         <div id="_#= $htmlEncode(hoverId) =#_" class="ms-srch-hover-outerContainer"></div>
+      </div>
+<!--#_
+	}
+_#-->
+   </div>   
+</body>
+</html>

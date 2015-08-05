@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+   <Module Name="Style Library Css" RootWebOnly="true" Url="Style Library/Glyma/Search/Css" Path="Search UI Resources\Style Library\Glyma\Search\Css">
+      <File Url="GlymaSearchResults.css" Type="GhostableInLibrary" ReplaceContent="True" >
+         <Property Name="Title" Value="GlymaSearchResults" />
+      </File>
+   </Module>
+   <Module Name="Style Library Js" RootWebOnly="true" Url="Style Library/Glyma/Search/Js" Path="Search UI Resources\Style Library\Glyma\Search\Js">  
+      <File Url="GlymaSearchResults.js" Type="GhostableInLibrary" ReplaceContent="True">
+         <Property Name="Title" Value="GlymaSearchResults" />
+      </File>
+      <File Url="GlymaSearchResultsConfig.js" Type="GhostableInLibrary" ReplaceContent="False">
+         <Property Name="Title" Value="GlymaSearchResultsConfig" />
+      </File>      
+   </Module>
+   <Module Name="Display Templates" RootWebOnly="true" Url="_catalogs/masterpage/Display Templates/Search/Glyma" Path="Search UI Resources\Display Templates\Search\Glyma">
+      <File Url="Item_Glyma.html" Type="GhostableInLibrary" ReplaceContent="True" />
+      <File Url="Item_Glyma.js" Type="GhostableInLibrary" ReplaceContent="True">
+         <Property Name="Title" Value="Glyma Item Body" />
+         <Property Name="ContentType" Value="Display Template Code" />
+         <Property Name="MasterPageDescription" Value="Displays the Glyma item template." />
+         <Property Name="TemplateHidden" Value="FALSE" />
+         <Property Name="TargetControlType" Value=";#SearchResults;#" />
+         <Property Name="DisplayTemplateLevel" Value="Item" />
+         <Property Name="ManagedPropertyMapping" Value="'Title':'Title','Path':'Path','Description':'Description','EditorOWSUSER':'EditorOWSUSER','LastModifiedTime':'LastModifiedTime','CollapsingStatus':'CollapsingStatus','DocId':'DocId','HitHighlightedSummary':'HitHighlightedSummary','HitHighlightedProperties':'HitHighlightedProperties','FileExtension':'FileExtension','ViewsLifeTime':'ViewsLifeTime','ParentLink':'ParentLink','FileType':'FileType','IsContainer':'IsContainer','SecondaryFileExtension':'SecondaryFileExtension','DisplayAuthor':'DisplayAuthor','GlymaRepositoryName':'GlymaRepositoryName','GlymaNodeType':'GlymaNodeType','GlymaDomainId':'GlymaDomainId','GlymaDomainName':'GlymaDomainName','GlymaMapId':'GlymaMapId','GlymaMapName':'GlymaMapName','GlymaNodeId':'GlymaNodeId','GlymaContent':'GlymaContent','GlymaDescription':'GlymaDescription','GlymaDescriptionType':'GlymaDescriptionType','GlymaParentNodes':'GlymaParentNodes','GlymaChildNodes':'GlymaChildNodes','GlymaNote':'GlymaNote'" />
+      </File>
+      <File Url="Item_Glyma_HoverPanel.html" Type="GhostableInLibrary" ReplaceContent="True" />
+      <File Url="Item_Glyma_HoverPanel.js" Type="GhostableInLibrary" ReplaceContent="True">
+         <Property Name="Title" Value="Glyma Hover Panel" />
+         <Property Name="ContentType" Value="Display Template Code" />
+         <Property Name="MasterPageDescription" Value="Displays the Glyma hover panel template." />
+         <Property Name="TemplateHidden" Value="FALSE" />
+         <Property Name="TargetControlType" Value=";#SearchHoverPanel;#" />
+         <Property Name="DisplayTemplateLevel" Value="Item" />
+         <Property Name="ManagedPropertyMapping" Value="'Title':'Title','Path':'Path','Description':'Description','EditorOWSUSER':'EditorOWSUSER','LastModifiedTime':'LastModifiedTime','CollapsingStatus':'CollapsingStatus','DocId':'DocId','HitHighlightedSummary':'HitHighlightedSummary','HitHighlightedProperties':'HitHighlightedProperties','FileExtension':'FileExtension','ViewsLifeTime':'ViewsLifeTime','ParentLink':'ParentLink','FileType':'FileType','IsContainer':'IsContainer','SecondaryFileExtension':'SecondaryFileExtension','DisplayAuthor':'DisplayAuthor'" />
+      </File>
+  </Module>
+</Elements>
